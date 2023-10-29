@@ -13,12 +13,15 @@ export const StyledSection = styled.section`
 `
 
 export const Card = styled.div`
-  width: 400px;
-  height: 400px;
   position: relative;
+  width: 500px;
+  height: 450px;
+  margin-top: -225px;
+  margin-bottom: 200px;
 
-  & > div {
+  div:first-child {
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
     top: 0;
@@ -26,10 +29,48 @@ export const Card = styled.div`
     background-color: ${({ theme }) => theme.colors.primaryColor};
     opacity: 0.6;
   }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `
 
-export const BackgroundImage = styled(Image)`
+export const CardContent = styled.div`
+  position: absolute;
+  z-index: 2;
   width: 100%;
   height: 100%;
-  position: relative;
+  padding: 1.5rem 3rem 2rem 3rem;
+  color: ${({ theme }) => theme.colors.thirdColor};
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  a {
+    margin-top: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+    align-self: flex-end;
+    color: ${({ theme }) => theme.colors.thirdColor};
+    text-decoration: none;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.thirdColor};
+  }
 `
