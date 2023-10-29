@@ -8,7 +8,7 @@ export default function Home() {
         <div className="row justify-content-center">
           <div className="col-md-10 main-title">
             <h1>Website</h1>
-            <h2>under development</h2>
+            <h2>under development, released soon</h2>
           </div>
         </div>
         <div className="row align-items-center">
