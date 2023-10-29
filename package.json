@@ -1,0 +1,29 @@
+{
+  "name": "node-ahmedabad-website",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "^14.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.18.2",
+    "npm": ">=9",
+    "yarn": ">=1.22"
+  }
+}
