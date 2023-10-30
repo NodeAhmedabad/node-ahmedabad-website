@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import styled from 'styled-components'
+import Image from "next/image"
+import styled from "styled-components"
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -46,7 +46,7 @@ export const StyledList = styled.ul`
     }
 
     &:not(:last-child)::after {
-      content: '';
+      content: "";
       margin: 30px;
       width: 2px;
       height: 15px;

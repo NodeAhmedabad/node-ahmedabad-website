@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import styled from 'styled-components'
+import Image from "next/image"
+import styled from "styled-components"
 
 export const StyledSection = styled.section`
   width: 100%;
@@ -51,6 +51,12 @@ export const CardContent = styled.div`
 
   h1 {
     font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   h3 {
