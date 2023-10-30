@@ -41,6 +41,8 @@ const Countdown = (
         second,
       })
     }, 1000)
+
+    return () => clearInterval(interval)
   }, [countdownAt])
 
   return (
