@@ -16,6 +16,7 @@ const theme = {
     backupColor: "#3C873A",
     greenColor: "#29af8a",
     grayColor: "#f7f7f7",
+    secondaryDarkColor: "#252525",
   },
 }
 
