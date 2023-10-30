@@ -1,5 +1,5 @@
-import Image from "next/image"
-import styled from "styled-components"
+import Image from 'next/image'
+import styled from 'styled-components'
 
 export const StyledSection = styled.section`
   width: 100%;
@@ -17,7 +17,7 @@ export const Card = styled.div`
   width: 500px;
   height: 450px;
   margin-top: -225px;
-  margin-bottom: 200px;
+  /* margin-bottom: 200px; */
 
   div:first-child {
     position: absolute;
