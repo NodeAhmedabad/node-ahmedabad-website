@@ -1,36 +1,26 @@
 {
-  "name": "node-ahmedabad-website",
+  "name": "node-ahmedabad-ts",
   "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
-    "prettier": "prettier \"**/*.{js,jsx,ts,tsx,css,scss,json}\"",
-    "prettier:check": "yarn prettier --check",
-    "prettier:fix": "yarn prettier --write",
-    "start": "next start"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.0",
-    "normalize.css": "^8.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "sharp": "^0.32.6",
     "styled-components": "^6.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.8.9",
-    "@types/react": "^18.2.33",
-    "@types/react-dom": "^18.2.14",
-    "eslint": "^8.52.0",
-    "eslint-config-next": "^14.0.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
-  },
-  "engines": {
-    "node": ">=18.18.2",
-    "npm": ">=9",
-    "yarn": ">=1.22"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "typescript": "^5"
   }
 }
