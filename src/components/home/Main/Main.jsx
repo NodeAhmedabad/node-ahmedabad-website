@@ -1,4 +1,4 @@
-import Button from '../Button/Button';
+import Button from 'src/components/ui/Button/Button';
 import { StyledMain } from './Main.styled';
 
 const Main = () => {

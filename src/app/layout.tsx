@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Layout } from '@/types';
+import Providers from '@/app/providers';
 
 export const metadata: Metadata = {
   title: 'Node Ahmedabad',
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 const RootLayout: Layout = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 };

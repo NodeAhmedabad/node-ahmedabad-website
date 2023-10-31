@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { StyledSection, Card, CardContent } from './Cards.styled';
-import image1 from '../../assets/images/image1.jpg';
-import image2 from '../../assets/images/image2.jpg';
-import image3 from '../../assets/images/image3.jpg';
-import Icons from '../Icons/Icons';
+import image1 from '../../../assets/images/image1.jpg';
+import image2 from '../../../assets/images/image2.jpg';
+import image3 from '../../../assets/images/image3.jpg';
+import Icons from 'src/components/home/Cards/Icons/Icons';
 // import UpcomingEvent from '../UpcomingEvent/UpcomingEvent'
 
 const data = [

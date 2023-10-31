@@ -3,9 +3,9 @@ import { RxDividerVertical } from 'react-icons/rx';
 import { FaQuoteRight } from 'react-icons/fa';
 
 import { StyledSection, SectionHeader, CardWrapper, Card, StyledImg } from './Contributors.styled';
-import profileImg1 from '../../assets/images/profileImg1.webp';
-import profileImg2 from '../../assets/images/profileImg2.webp';
-import profileImg3 from '../../assets/images/profileImg3.webp';
+import profileImg1 from '../../../assets/images/profileImg1.webp';
+import profileImg2 from '../../../assets/images/profileImg2.webp';
+import profileImg3 from '../../../assets/images/profileImg3.webp';
 
 const Contributors = () => {
   return (

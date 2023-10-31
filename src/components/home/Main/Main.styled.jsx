@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import MainBackground from '../../assets/images/MainBackground.avif';
+import MainBackground from '../../../assets/images/MainBackground.avif';
 
 export const StyledMain = styled.section`
   width: 100%;

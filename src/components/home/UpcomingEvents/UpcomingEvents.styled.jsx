@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import upcomingEvents from '../../assets/images/upcomingEvents.jpeg';
+import upcomingEvents from '../../../assets/images/upcomingEvents.jpeg';
 
 export const StyledSection = styled.section`
   position: relative;

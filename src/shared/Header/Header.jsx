@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { StyledHeader, Wrapper, StyledLogo, StyledList } from './Header.styled';
 import NodeAhmLogo from '../../assets/images/NodeAhmedabadLogo.png';
-import Button from '../Button/Button';
+import Button from '@/components/ui/Button/Button';
 
 const Header = () => {
   return (

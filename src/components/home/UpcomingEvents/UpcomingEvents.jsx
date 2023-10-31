@@ -4,7 +4,7 @@ import { SlCalender } from 'react-icons/sl';
 import { FaLocationDot } from 'react-icons/fa6';
 
 import { StyledSection, Overlay, Content, Timer, EventDetails, Box } from './UpcomingEvents.styled';
-import Button from '../Button/Button';
+import Button from 'src/components/ui/Button/Button';
 
 const UpcomingEvents = () => {
   const [countdownTime, setCountdownTime] = useState({
