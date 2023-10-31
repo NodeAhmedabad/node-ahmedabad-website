@@ -5,12 +5,17 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "prettier": "prettier \"**/*.{js,jsx,ts,tsx,css,scss,json}\"",
+    "prettier:check": "yarn prettier --check",
+    "prettier:fix": "yarn prettier --write",
     "start": "next start"
   },
   "dependencies": {
     "next": "14.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.9",

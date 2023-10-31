@@ -1,27 +1,41 @@
-import { Fragment } from 'react';
-import UserIcon from '@/components/UserIcon';
+'use client';
+
+import { ThemeProvider } from 'styled-components';
+
+import GlobalStyles from '../styles/GlobalStyles';
+import Header from '../components/Header/Header';
+import Main from '../components/Main/Main';
+import Cards from '../components/Cards/Cards';
+import Footer from '../components/Footer/Footer';
+import UpcomingEvents from '../components/UpcomingEvents/UpcomingEvents';
+import Contributors from '../components/Contributors/Contributors';
+// import UpcomingEvent from '../components/UpcomingEvent/UpcomingEvent'
+
+const theme = {
+  colors: {
+    primaryColor: '#68A063',
+    secondaryColor: '#303030',
+    thirdColor: '#ffffff',
+    backupColor: '#3C873A',
+    greenColor: '#29af8a',
+    grayColor: '#f7f7f7',
+    secondaryDarkColor: '#252525',
+  },
+};
 
 export default function Home() {
   return (
-    <Fragment>
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-10 main-title">
-            <h1>Website</h1>
-            <h2>under construction</h2>
-          </div>
-        </div>
-        <div className="row align-items-center">
-          <div className="col-sm-10 col-md-6 col-lg-6 svg-img p-5">
-            <UserIcon />
-          </div>
-        </div>
-      </div>
-      <footer className="footer">
-        <div className="container text-center">
-          <span>nodeahmedabad.com</span>
-        </div>
-      </footer>
-    </Fragment>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <main>
+        <Header />
+        <Main />
+        <Cards />
+        <UpcomingEvents />
+        <Contributors />
+        {/* <UpcomingEvent /> */}
+        <Footer />
+      </main>
+    </ThemeProvider>
   );
 }
