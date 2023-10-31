@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Layout } from '@/types';
 import Providers from '@/app/providers';
+import StyledComponentsRegistry from '@/app/registry';
 
 export const metadata: Metadata = {
   title: 'Node Ahmedabad',
@@ -12,7 +13,9 @@ const RootLayout: Layout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <StyledComponentsRegistry>
+          <Providers>{children}</Providers>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
