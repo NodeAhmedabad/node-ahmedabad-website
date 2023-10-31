@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import { Layout } from '@/types';
 import Providers from '@/app/providers';
 import StyledComponentsRegistry from '@/app/registry';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin', 'latin-ext', 'devanagari'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: 'normal',
+});
 
 export const metadata: Metadata = {
   title: 'Node Ahmedabad',
@@ -12,7 +19,7 @@ export const metadata: Metadata = {
 const RootLayout: Layout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
+      <body className={poppins.className}>
         <StyledComponentsRegistry>
           <Providers>{children}</Providers>
         </StyledComponentsRegistry>
