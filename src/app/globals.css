@@ -1,18 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -24,4 +31,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+img {
+  height: fit-content !important;
+}
+
+.ahmedabad-img {
+  object-fit: contain; /* Ensure the image fits within the container */
+  width: 100%; /* Scale the image to fit the width of the parent div */
+  height: auto; /* Maintain aspect ratio */
 }
