@@ -123,16 +123,7 @@ const Logo = () => {
         flexBasis: "fit-content",
       }}
     />,
-    <Image
-      key="B"
-      src={B}
-      alt="Ahmedabad"
-      className="ahmedabad-img"
-      style={{
-        transform: "translateY(300px)",
-        flexBasis: "fit-content",
-      }}
-    />,
+
     <Image
       key="A"
       src={A}
@@ -282,7 +273,7 @@ const Logo = () => {
               clipPath: "inset(0% 0% 100% 0%)",
             }}
           />
-          <div className="flex gap-x-1 scale-75 md:scale-100 left-[-13px] top-[4px] absolute md:left-[48px] md:top-[12px]">
+          <div className="flex gap-x-1 scale-75 md:scale-100 left-[3px] top-[4px] absolute md:left-[72px] md:top-[12px]">
             {ahmedabad.map((a, index) => (
               <div
                 key={a.key}
