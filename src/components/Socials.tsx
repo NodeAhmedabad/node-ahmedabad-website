@@ -59,6 +59,7 @@ const Socials = () => {
     <div className="flex gap-x-10  h-max overflow-hidden p-9">
       {socials.map((social) => (
         <a
+          key={social.name}
           href={social.url}
           target="_blank"
           className={`p-3 h-min bg-[#262626] text-white flex flex-col items-center justify-center cursor-pointer translate-y-[1000px] social-icon ${social.hoverClass} hover:drop-shadow-lg`}
