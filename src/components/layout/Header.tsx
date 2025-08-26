@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from 'react';
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, Users, Calendar, BookOpen, Star, Mail } from 'lucide-react';
+import { BookOpen, Calendar, Code2, Mail, Menu, Star, Users, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -26,18 +26,22 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-slate-900/95 backdrop-blur-lg border-b border-green-500/20' : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-slate-900/95 backdrop-blur-lg border-b border-green-500/20'
+          : 'bg-transparent'
+      }`}
+    >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link className="flex items-center space-x-3 group" to="/">
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
-              <div className="absolute -inset-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg opacity-25 group-hover:opacity-75 blur transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg opacity-25 group-hover:opacity-75 blur transition-opacity duration-300" />
             </div>
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-white">Node Ahmedabad</h1>
@@ -54,8 +58,8 @@ const Header = () => {
                   key={item.name}
                   to={item.path}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
-                    isActive 
-                      ? 'text-green-400 bg-green-400/10' 
+                    isActive
+                      ? 'text-green-400 bg-green-400/10'
                       : 'text-gray-300 hover:text-green-400 hover:bg-green-400/5'
                   }`}
                 >
@@ -69,8 +73,8 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link
-              to="/community"
               className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
+              to="/community"
             >
               Join Community
             </Link>
@@ -78,15 +82,15 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
+        {isMenuOpen ? (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-lg border-b border-green-500/20 animate-fade-in">
             <div className="container mx-auto px-6 py-4">
               <div className="space-y-4">
@@ -95,11 +99,11 @@ const Header = () => {
                   return (
                     <Link
                       key={item.name}
-                      to={item.path}
                       onClick={() => setIsMenuOpen(false)}
+                      to={item.path}
                       className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
-                        isActive 
-                          ? 'text-green-400 bg-green-400/10' 
+                        isActive
+                          ? 'text-green-400 bg-green-400/10'
                           : 'text-gray-300 hover:text-green-400 hover:bg-green-400/5'
                       }`}
                     >
@@ -110,9 +114,9 @@ const Header = () => {
                 })}
                 <div className="pt-4 border-t border-gray-700">
                   <Link
-                    to="/community"
-                    onClick={() => setIsMenuOpen(false)}
                     className="block w-full text-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                    to="/community"
                   >
                     Join Community
                   </Link>
@@ -120,7 +124,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        )}
+        ) : null}
       </nav>
     </header>
   );

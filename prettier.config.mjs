@@ -6,6 +6,6 @@ const config = {
   printWidth: 100,
   singleQuote: true,
   plugins: ['prettier-plugin-packagejson'],
-}
+};
 
-export default config
+export default config;

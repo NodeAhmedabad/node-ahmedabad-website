@@ -1,7 +1,8 @@
-
 import React, { useState } from 'react';
-import { Calendar, MapPin, Users, Clock, ArrowRight, ExternalLink, Star } from 'lucide-react';
+
+import { ArrowRight, Calendar, Clock, ExternalLink, MapPin, Star, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 import ScrollReveal from '../ui/ScrollReveal';
 
 const EventsSection = () => {
@@ -80,17 +81,22 @@ const EventsSection = () => {
   ];
 
   const EventCard = ({ event, isPast = false }: { event: any; isPast?: boolean }) => (
-    <div className={`bg-slate-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-green-500/50 transition-all duration-300 hover:transform hover:translate-y-[-2px] ${event.featured ? 'ring-2 ring-green-500/20' : ''}`}>
-      {event.featured && (
+    <div
+      className={`bg-slate-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-green-500/50 transition-all duration-300 hover:transform hover:translate-y-[-2px] ${event.featured ? 'ring-2 ring-green-500/20' : ''}`}
+    >
+      {event.featured ? (
         <div className="flex items-center mb-4">
           <Star className="w-4 h-4 text-yellow-400 mr-2" />
           <span className="text-yellow-400 text-sm font-medium">Featured Event</span>
         </div>
-      )}
-      
+      ) : null}
+
       <div className="flex flex-wrap gap-2 mb-4">
         {(event.tags || []).map((tag: string) => (
-          <span key={tag} className="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20">
+          <span
+            key={tag}
+            className="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20"
+          >
             {tag}
           </span>
         ))}
@@ -101,7 +107,7 @@ const EventsSection = () => {
       </h3>
 
       {!isPast && (
-        <>
+        <React.Fragment>
           <div className="space-y-2 mb-4 text-gray-300">
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-3 text-green-400" />
@@ -126,22 +132,20 @@ const EventsSection = () => {
                 {event.attendees}/{event.maxAttendees} attending
               </span>
             </div>
-            <div className="text-sm text-gray-400">
-              by {event.speaker}
-            </div>
+            <div className="text-sm text-gray-400">by {event.speaker}</div>
           </div>
 
           <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
-            <div 
+            <div
               className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full"
               style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
-            ></div>
+            />
           </div>
-        </>
+        </React.Fragment>
       )}
 
-      {isPast && (
-        <>
+      {isPast ? (
+        <React.Fragment>
           <div className="space-y-2 mb-4 text-gray-300">
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-3 text-green-400" />
@@ -161,14 +165,17 @@ const EventsSection = () => {
             <h4 className="text-sm font-medium text-gray-300 mb-2">Event Highlights:</h4>
             <div className="flex flex-wrap gap-2">
               {event.highlights.map((highlight: string) => (
-                <span key={highlight} className="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">
+                <span
+                  key={highlight}
+                  className="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20"
+                >
                   {highlight}
                 </span>
               ))}
             </div>
           </div>
-        </>
-      )}
+        </React.Fragment>
+      ) : null}
 
       <button className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center group">
         {isPast ? 'View Summary' : 'Register Now'}
@@ -181,8 +188,8 @@ const EventsSection = () => {
     <section className="py-20 bg-slate-900 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-green-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -192,14 +199,16 @@ const EventsSection = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Our 
+                  Our
                 </span>
                 <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-                  {" "}Events
+                  {' '}
+                  Events
                 </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Join us for workshops, talks, and networking sessions designed to elevate your JavaScript skills
+                Join us for workshops, talks, and networking sessions designed to elevate your
+                JavaScript skills
               </p>
             </div>
           </ScrollReveal>
@@ -234,17 +243,19 @@ const EventsSection = () => {
 
           {/* Events Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {activeTab === 'upcoming' && upcomingEvents.map((event, index) => (
-              <ScrollReveal key={event.id} delay={300 + index * 100}>
-                <EventCard event={event} />
-              </ScrollReveal>
-            ))}
-            
-            {activeTab === 'past' && pastEvents.map((event, index) => (
-              <ScrollReveal key={event.id} delay={300 + index * 100}>
-                <EventCard event={event} isPast={true} />
-              </ScrollReveal>
-            ))}
+            {activeTab === 'upcoming' &&
+              upcomingEvents.map((event, index) => (
+                <ScrollReveal key={event.id} delay={300 + index * 100}>
+                  <EventCard event={event} />
+                </ScrollReveal>
+              ))}
+
+            {activeTab === 'past' &&
+              pastEvents.map((event, index) => (
+                <ScrollReveal key={event.id} delay={300 + index * 100}>
+                  <EventCard isPast event={event} />
+                </ScrollReveal>
+              ))}
           </div>
 
           {/* CTA Section */}
@@ -252,19 +263,20 @@ const EventsSection = () => {
             <div className="text-center bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
               <h3 className="text-3xl font-bold text-white mb-4">Want to Speak at Our Events?</h3>
               <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
-                Share your knowledge and experience with our community. We're always looking for passionate speakers.
+                Share your knowledge and experience with our community. We're always looking for
+                passionate speakers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/events"
                   className="group bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                  to="/events"
                 >
                   View All Events
                   <ExternalLink className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
                 </Link>
                 <Link
-                  to="/get-involved"
                   className="group border border-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 flex items-center justify-center"
+                  to="/get-involved"
                 >
                   Become a Speaker
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />

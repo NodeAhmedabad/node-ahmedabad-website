@@ -1,157 +1,159 @@
-
 import React, { useState } from 'react';
-import Header from '../components/layout/Header';
+
+import { Book, Code, Download, ExternalLink, FileText, Play, Star } from 'lucide-react';
+
 import Footer from '../components/layout/Footer';
-import ScrollReveal from '../components/ui/ScrollReveal';
+import Header from '../components/layout/Header';
 import AnimatedText from '../components/ui/AnimatedText';
-import { Book, Video, Download, ExternalLink, Code, FileText, Play, Star } from 'lucide-react';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const learningMaterials = [
     {
-      title: "Node.js Fundamentals",
-      description: "Complete guide to getting started with Node.js",
-      type: "tutorial",
-      format: "Article Series",
-      level: "Beginner",
-      duration: "4 hours",
-      author: "Rajesh Patel",
-      url: "#",
-      rating: 4.8
+      title: 'Node.js Fundamentals',
+      description: 'Complete guide to getting started with Node.js',
+      type: 'tutorial',
+      format: 'Article Series',
+      level: 'Beginner',
+      duration: '4 hours',
+      author: 'Rajesh Patel',
+      url: '#',
+      rating: 4.8,
     },
     {
-      title: "Advanced Express.js Patterns",
-      description: "Deep dive into Express.js architectural patterns",
-      type: "video",
-      format: "Video Course",
-      level: "Advanced",
-      duration: "6 hours",
-      author: "Priya Sharma",
-      url: "#",
-      rating: 4.9
+      title: 'Advanced Express.js Patterns',
+      description: 'Deep dive into Express.js architectural patterns',
+      type: 'video',
+      format: 'Video Course',
+      level: 'Advanced',
+      duration: '6 hours',
+      author: 'Priya Sharma',
+      url: '#',
+      rating: 4.9,
     },
     {
-      title: "MongoDB Integration Guide",
-      description: "Best practices for MongoDB with Node.js",
-      type: "guide",
-      format: "PDF Guide",
-      level: "Intermediate",
-      duration: "2 hours",
-      author: "Amit Kumar",
-      url: "#",
-      rating: 4.7
-    }
+      title: 'MongoDB Integration Guide',
+      description: 'Best practices for MongoDB with Node.js',
+      type: 'guide',
+      format: 'PDF Guide',
+      level: 'Intermediate',
+      duration: '2 hours',
+      author: 'Amit Kumar',
+      url: '#',
+      rating: 4.7,
+    },
   ];
 
   const communityDocs = [
     {
-      title: "New Member Onboarding",
-      description: "Everything you need to know to get started",
+      title: 'New Member Onboarding',
+      description: 'Everything you need to know to get started',
       icon: Book,
-      downloadUrl: "#"
+      downloadUrl: '#',
     },
     {
-      title: "Event Speaker Guidelines",
-      description: "Guidelines for speakers at our events",
+      title: 'Event Speaker Guidelines',
+      description: 'Guidelines for speakers at our events',
       icon: FileText,
-      downloadUrl: "#"
+      downloadUrl: '#',
     },
     {
-      title: "Code of Conduct",
-      description: "Community standards and expectations",
+      title: 'Code of Conduct',
+      description: 'Community standards and expectations',
       icon: FileText,
-      downloadUrl: "#"
+      downloadUrl: '#',
     },
     {
-      title: "Volunteer Handbook",
-      description: "Guide for community volunteers",
+      title: 'Volunteer Handbook',
+      description: 'Guide for community volunteers',
       icon: Book,
-      downloadUrl: "#"
-    }
+      downloadUrl: '#',
+    },
   ];
 
   const pastSlides = [
     {
-      title: "Node.js Performance Optimization",
-      speaker: "Rajesh Patel",
-      event: "Node Ahmedabad Meetup #15",
-      date: "2024-01-20",
-      downloadUrl: "#",
-      viewUrl: "#"
+      title: 'Node.js Performance Optimization',
+      speaker: 'Rajesh Patel',
+      event: 'Node Ahmedabad Meetup #15',
+      date: '2024-01-20',
+      downloadUrl: '#',
+      viewUrl: '#',
     },
     {
-      title: "Building Microservices with Node.js",
-      speaker: "Sarah Kumar",
-      event: "Node Ahmedabad Conference 2023",
-      date: "2023-12-15",
-      downloadUrl: "#",
-      viewUrl: "#"
+      title: 'Building Microservices with Node.js',
+      speaker: 'Sarah Kumar',
+      event: 'Node Ahmedabad Conference 2023',
+      date: '2023-12-15',
+      downloadUrl: '#',
+      viewUrl: '#',
     },
     {
-      title: "GraphQL with Node.js",
-      speaker: "Amit Patel",
-      event: "Node Ahmedabad Workshop",
-      date: "2023-11-25",
-      downloadUrl: "#",
-      viewUrl: "#"
-    }
+      title: 'GraphQL with Node.js',
+      speaker: 'Amit Patel',
+      event: 'Node Ahmedabad Workshop',
+      date: '2023-11-25',
+      downloadUrl: '#',
+      viewUrl: '#',
+    },
   ];
 
   const usefulTools = [
     {
-      name: "Node Version Manager (nvm)",
-      description: "Manage multiple Node.js versions easily",
-      category: "Development",
-      url: "https://github.com/nvm-sh/nvm",
-      type: "CLI Tool"
+      name: 'Node Version Manager (nvm)',
+      description: 'Manage multiple Node.js versions easily',
+      category: 'Development',
+      url: 'https://github.com/nvm-sh/nvm',
+      type: 'CLI Tool',
     },
     {
-      name: "PM2",
-      description: "Production process manager for Node.js",
-      category: "Deployment",
-      url: "https://pm2.keymetrics.io/",
-      type: "Process Manager"
+      name: 'PM2',
+      description: 'Production process manager for Node.js',
+      category: 'Deployment',
+      url: 'https://pm2.keymetrics.io/',
+      type: 'Process Manager',
     },
     {
-      name: "Nodemon",
-      description: "Automatically restart Node.js applications",
-      category: "Development",
-      url: "https://nodemon.io/",
-      type: "Development Tool"
+      name: 'Nodemon',
+      description: 'Automatically restart Node.js applications',
+      category: 'Development',
+      url: 'https://nodemon.io/',
+      type: 'Development Tool',
     },
     {
-      name: "Express Generator",
-      description: "Quickly scaffold Express.js applications",
-      category: "Scaffolding",
-      url: "https://expressjs.com/en/starter/generator.html",
-      type: "Generator"
-    }
+      name: 'Express Generator',
+      description: 'Quickly scaffold Express.js applications',
+      category: 'Scaffolding',
+      url: 'https://expressjs.com/en/starter/generator.html',
+      type: 'Generator',
+    },
   ];
 
   const categories = ['all', 'tutorial', 'video', 'guide'];
 
-  const filteredMaterials = learningMaterials.filter(material => 
-    activeCategory === 'all' || material.type === activeCategory
+  const filteredMaterials = learningMaterials.filter(
+    (material) => activeCategory === 'all' || material.type === activeCategory,
   );
 
   return (
     <div className="min-h-screen bg-slate-900">
       <Header />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <AnimatedText 
-                  text="Learning Resources"
+                <AnimatedText
                   className="text-5xl md:text-6xl font-bold text-white mb-6"
+                  text="Learning Resources"
                 />
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Curated learning materials, documentation, and tools to help you master Node.js and advance your career.
+                  Curated learning materials, documentation, and tools to help you master Node.js
+                  and advance your career.
                 </p>
               </div>
             </ScrollReveal>
@@ -164,7 +166,9 @@ const Resources = () => {
             <ScrollReveal>
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-white mb-6">Learning Materials</h2>
-                <p className="text-gray-300 text-lg">High-quality tutorials and courses from our community experts</p>
+                <p className="text-gray-300 text-lg">
+                  High-quality tutorials and courses from our community experts
+                </p>
               </div>
             </ScrollReveal>
 
@@ -181,7 +185,9 @@ const Resources = () => {
                         : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
                     }`}
                   >
-                    {category === 'all' ? 'All Materials' : category.charAt(0).toUpperCase() + category.slice(1)}
+                    {category === 'all'
+                      ? 'All Materials'
+                      : category.charAt(0).toUpperCase() + category.slice(1)}
                   </button>
                 ))}
               </div>
@@ -193,11 +199,15 @@ const Resources = () => {
                   <div className="bg-slate-800 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 overflow-hidden">
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-4">
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          material.type === 'tutorial' ? 'bg-blue-500/20 text-blue-400' :
-                          material.type === 'video' ? 'bg-red-500/20 text-red-400' :
-                          'bg-green-500/20 text-green-400'
-                        }`}>
+                        <span
+                          className={`px-3 py-1 rounded-full text-sm font-medium ${
+                            material.type === 'tutorial'
+                              ? 'bg-blue-500/20 text-blue-400'
+                              : material.type === 'video'
+                                ? 'bg-red-500/20 text-red-400'
+                                : 'bg-green-500/20 text-green-400'
+                          }`}
+                        >
                           {material.format}
                         </span>
                         <div className="flex items-center">
@@ -221,10 +231,14 @@ const Resources = () => {
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-400">by {material.author}</span>
                         <a
-                          href={material.url}
                           className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors flex items-center"
+                          href={material.url}
                         >
-                          {material.type === 'video' ? <Play className="w-4 h-4 mr-1" /> : <Book className="w-4 h-4 mr-1" />}
+                          {material.type === 'video' ? (
+                            <Play className="w-4 h-4 mr-1" />
+                          ) : (
+                            <Book className="w-4 h-4 mr-1" />
+                          )}
                           {material.type === 'video' ? 'Watch' : 'Read'}
                         </a>
                       </div>
@@ -242,7 +256,9 @@ const Resources = () => {
             <ScrollReveal>
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-white mb-6">Community Documentation</h2>
-                <p className="text-gray-300 text-lg">Essential guides and documentation for community members</p>
+                <p className="text-gray-300 text-lg">
+                  Essential guides and documentation for community members
+                </p>
               </div>
             </ScrollReveal>
 
@@ -254,8 +270,8 @@ const Resources = () => {
                     <h3 className="text-lg font-bold text-white mb-3">{doc.title}</h3>
                     <p className="text-gray-300 mb-4 text-sm">{doc.description}</p>
                     <a
-                      href={doc.downloadUrl}
                       className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors"
+                      href={doc.downloadUrl}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       Download
@@ -273,7 +289,9 @@ const Resources = () => {
             <ScrollReveal>
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-white mb-6">Past Slides & Notes</h2>
-                <p className="text-gray-300 text-lg">Download presentation slides and notes from our events</p>
+                <p className="text-gray-300 text-lg">
+                  Download presentation slides and notes from our events
+                </p>
               </div>
             </ScrollReveal>
 
@@ -292,15 +310,15 @@ const Resources = () => {
                       </div>
                       <div className="flex gap-3 mt-4 lg:mt-0">
                         <a
-                          href={slide.viewUrl}
                           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+                          href={slide.viewUrl}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
                           View
                         </a>
                         <a
-                          href={slide.downloadUrl}
                           className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors flex items-center"
+                          href={slide.downloadUrl}
                         >
                           <Download className="w-4 h-4 mr-2" />
                           Download
@@ -320,7 +338,9 @@ const Resources = () => {
             <ScrollReveal>
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-white mb-6">Recommended Tools</h2>
-                <p className="text-gray-300 text-lg">Essential development tools recommended by our community</p>
+                <p className="text-gray-300 text-lg">
+                  Essential development tools recommended by our community
+                </p>
               </div>
             </ScrollReveal>
 
@@ -335,7 +355,7 @@ const Resources = () => {
                       </div>
                       <Code className="w-8 h-8 text-green-400 flex-shrink-0" />
                     </div>
-                    
+
                     <div className="flex items-center justify-between">
                       <div className="flex gap-2">
                         <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm">
@@ -346,10 +366,10 @@ const Resources = () => {
                         </span>
                       </div>
                       <a
-                        href={tool.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-green-400 hover:text-green-300 transition-colors flex items-center"
+                        href={tool.url}
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         <ExternalLink className="w-4 h-4 mr-1" />
                         Visit
@@ -370,18 +390,19 @@ const Resources = () => {
                 <Book className="w-16 h-16 text-white mx-auto mb-6" />
                 <h2 className="text-4xl font-bold text-white mb-6">Contribute Resources</h2>
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Have a great tutorial, tool, or resource to share? Help us expand our community library!
+                  Have a great tutorial, tool, or resource to share? Help us expand our community
+                  library!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="/contact"
                     className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                    href="/contact"
                   >
                     Submit Resource
                   </a>
                   <a
-                    href="/get-involved"
                     className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
+                    href="/get-involved"
                   >
                     Become Contributor
                   </a>

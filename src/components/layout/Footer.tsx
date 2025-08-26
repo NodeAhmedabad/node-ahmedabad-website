@@ -1,6 +1,16 @@
-
 import React from 'react';
-import { Code2, Github, Twitter, Linkedin, Mail, MapPin, Calendar, Users, ExternalLink } from 'lucide-react';
+
+import {
+  Calendar,
+  Code2,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Twitter,
+  Users,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -32,10 +42,30 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, url: 'https://github.com/nodeahmedabad', color: 'hover:text-gray-400' },
-    { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/nodeahmedabad', color: 'hover:text-blue-400' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/company/nodeahmedabad', color: 'hover:text-blue-500' },
-    { name: 'Email', icon: Mail, url: 'mailto:hello@nodeahmedabad.com', color: 'hover:text-green-400' },
+    {
+      name: 'GitHub',
+      icon: Github,
+      url: 'https://github.com/nodeahmedabad',
+      color: 'hover:text-gray-400',
+    },
+    {
+      name: 'Twitter',
+      icon: Twitter,
+      url: 'https://twitter.com/nodeahmedabad',
+      color: 'hover:text-blue-400',
+    },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      url: 'https://linkedin.com/company/nodeahmedabad',
+      color: 'hover:text-blue-500',
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      url: 'mailto:hello@nodeahmedabad.com',
+      color: 'hover:text-green-400',
+    },
   ];
 
   return (
@@ -49,13 +79,14 @@ const Footer = () => {
             </div>
             <h3 className="text-3xl font-bold text-white mb-4">Stay Updated</h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Get the latest news about our events, workshops, and community updates delivered to your inbox.
+              Get the latest news about our events, workshops, and community updates delivered to
+              your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
-                type="email"
-                placeholder="Enter your email"
                 className="flex-1 px-4 py-3 bg-slate-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors duration-300"
+                placeholder="Enter your email"
+                type="email"
               />
               <button className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
                 Subscribe
@@ -73,12 +104,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center space-x-3 mb-6 group">
+            <Link className="flex items-center space-x-3 mb-6 group" to="/">
               <div className="relative">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Code2 className="w-7 h-7 text-white" />
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg opacity-25 group-hover:opacity-75 blur transition-opacity duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg opacity-25 group-hover:opacity-75 blur transition-opacity duration-300" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white">Node Ahmedabad</h2>
@@ -86,9 +117,10 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering developers in Ahmedabad through knowledge sharing, networking, and collaborative learning in the Node.js ecosystem.
+              Empowering developers in Ahmedabad through knowledge sharing, networking, and
+              collaborative learning in the Node.js ecosystem.
             </p>
-            
+
             {/* Community Stats */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               <div className="text-center p-3 bg-slate-800 rounded-lg">
@@ -113,11 +145,11 @@ const Footer = () => {
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`p-3 bg-slate-800 rounded-lg text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
                   aria-label={social.name}
+                  className={`p-3 bg-slate-800 rounded-lg text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                  href={social.url}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -133,8 +165,8 @@ const Footer = () => {
                 {footerLinks.community.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
+                      to={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -150,8 +182,8 @@ const Footer = () => {
                 {footerLinks.getInvolved.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
+                      to={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -167,8 +199,8 @@ const Footer = () => {
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
+                      to={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -184,8 +216,8 @@ const Footer = () => {
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
+                      to={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -205,7 +237,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-4 text-gray-400 text-sm">
               <span>Made in Ahmedabad</span>
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span>Powered by Node.js</span>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { configs, plugins, rules } from 'eslint-config-airbnb-extended'
+import { configs, plugins, rules } from 'eslint-config-airbnb-extended';
 
 const customTSESLintConfig = [
   // TypeScript ESLint Plugin
@@ -17,6 +17,6 @@ const customTSESLintConfig = [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
   },
-]
+];
 
-export default customTSESLintConfig
+export default customTSESLintConfig;

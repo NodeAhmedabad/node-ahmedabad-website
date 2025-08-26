@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface AnimatedTextProps {
@@ -9,12 +8,12 @@ interface AnimatedTextProps {
   once?: boolean;
 }
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({ 
-  text, 
-  className = '', 
-  delay = 0, 
+const AnimatedText: React.FC<AnimatedTextProps> = ({
+  text,
+  className = '',
+  delay = 0,
   speed = 50,
-  once = true 
+  once = true,
 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
@@ -28,7 +27,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {

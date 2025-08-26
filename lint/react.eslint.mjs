@@ -1,4 +1,4 @@
-import { configs, plugins, rules } from 'eslint-config-airbnb-extended'
+import { configs, plugins, rules } from 'eslint-config-airbnb-extended';
 
 const customReactESLintConfig = [
   // React Plugin
@@ -18,6 +18,6 @@ const customReactESLintConfig = [
       'jsx-a11y/label-has-associated-control': 'off',
     },
   },
-]
+];
 
-export default customReactESLintConfig
+export default customReactESLintConfig;

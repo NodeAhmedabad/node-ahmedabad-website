@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface ScrollRevealProps {
@@ -36,7 +35,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
           setIsVisible(false);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -48,18 +47,23 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
   const getTransform = () => {
     if (isVisible) return 'translate3d(0, 0, 0)';
-    
+
     switch (direction) {
-      case 'up':
+      case 'up': {
         return `translate3d(0, ${distance}px, 0)`;
-      case 'down':
+      }
+      case 'down': {
         return `translate3d(0, -${distance}px, 0)`;
-      case 'left':
+      }
+      case 'left': {
         return `translate3d(${distance}px, 0, 0)`;
-      case 'right':
+      }
+      case 'right': {
         return `translate3d(-${distance}px, 0, 0)`;
-      default:
+      }
+      default: {
         return `translate3d(0, ${distance}px, 0)`;
+      }
     }
   };
 
