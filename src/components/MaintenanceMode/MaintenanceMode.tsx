@@ -20,11 +20,6 @@ const MaintenanceMode: Component = () => (
         </div>
       </div>
     </div>
-    <footer className="footer">
-      <div className="container text-center">
-        <span>nodeahmedabad.com</span>
-      </div>
-    </footer>
   </Fragment>
 );
 
