@@ -1,23 +1,24 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import About from './pages1/About';
-import Blog from './pages1/Blog';
-import BlogPost from './pages1/BlogPost';
-import Community from './pages1/Community';
-import Contact from './pages1/Contact';
-import EventDetail from './pages1/EventDetail';
-import Events from './pages1/Events';
-import GetInvolved from './pages1/GetInvolved';
-import Index from './pages1/Index';
-import NotFound from './pages1/NotFound';
-import Resources from './pages1/Resources';
-import TeamMember from './pages1/TeamMember';
+import { Toaster as Sonner } from '@/backup/components/ui/sonner';
+import { Toaster } from '@/backup/components/ui/toaster';
+import { TooltipProvider } from '@/backup/components/ui/tooltip';
+import About from '@/backup/pages/About';
+import Blog from '@/backup/pages/Blog';
+import BlogPost from '@/backup/pages/BlogPost';
+import Community from '@/backup/pages/Community';
+import Contact from '@/backup/pages/Contact';
+import EventDetail from '@/backup/pages/EventDetail';
+import Events from '@/backup/pages/Events';
+import GetInvolved from '@/backup/pages/GetInvolved';
+import Index from '@/backup/pages/Index';
+import NotFound from '@/backup/pages/NotFound';
+import Resources from '@/backup/pages/Resources';
+import TeamMember from '@/backup/pages/TeamMember';
 
-import { Toaster as Sonner } from '@/components/ui/sonner';
-import { Toaster } from '@/components/ui/toaster';
-import { TooltipProvider } from '@/components/ui/tooltip';
+import type { Component } from '@/types';
 
-const App = () => (
+const App: Component = () => (
   <TooltipProvider>
     <Toaster />
     <Sonner />

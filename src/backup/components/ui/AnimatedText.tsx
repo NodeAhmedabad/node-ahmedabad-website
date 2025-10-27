@@ -56,6 +56,8 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
 
       return () => clearTimeout(timer);
     }
+
+    return () => null;
   }, [isVisible, text, delay, speed, once, hasAnimated]);
 
   return (
