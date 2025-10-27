@@ -7,8 +7,10 @@ const customReactESLintConfig = [
   plugins.reactHooks,
   // React JSX A11y Plugin
   plugins.reactA11y,
-  // Airbnb React Recommended Config
-  ...configs.react.recommended,
+  // Next Plugin
+  plugins.next,
+  // Airbnb Next Recommended Config
+  ...configs.next.recommended,
   // Airbnb React Strict Rules
   rules.react.strict,
   // JSX A11y Config Rules

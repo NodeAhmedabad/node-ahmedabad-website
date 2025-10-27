@@ -6,7 +6,7 @@ const customTSESLintConfig = [
   // Airbnb Base TypeScript Config
   ...configs.base.typescript,
   // Airbnb Next TypeScript Config
-  ...configs.react.typescript,
+  ...configs.next.typescript,
   // Airbnb TypeScript ESLint Strict Rules
   rules.typescript.typescriptEslintStrict,
   // Disable Return Type for Features Hook
