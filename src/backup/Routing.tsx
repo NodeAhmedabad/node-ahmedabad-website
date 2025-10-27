@@ -1,9 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { Toaster as Sonner } from '@/components/ui/sonner';
-import { Toaster } from '@/components/ui/toaster';
-import { TooltipProvider } from '@/components/ui/tooltip';
-
 import About from './pages1/About';
 import Blog from './pages1/Blog';
 import BlogPost from './pages1/BlogPost';
@@ -16,6 +12,10 @@ import Index from './pages1/Index';
 import NotFound from './pages1/NotFound';
 import Resources from './pages1/Resources';
 import TeamMember from './pages1/TeamMember';
+
+import { Toaster as Sonner } from '@/components/ui/sonner';
+import { Toaster } from '@/components/ui/toaster';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 const App = () => (
   <TooltipProvider>

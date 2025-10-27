@@ -13,16 +13,14 @@ export const metadata: Metadata = {
   description: constants.APP_DESCRIPTION,
 };
 
-const RootLayout: Layout = async ({ children }) => {
-  return (
-    <html lang="en">
-      <body>
-        <Suspense fallback={null}>
-          <App>{children}</App>
-        </Suspense>
-      </body>
-    </html>
-  );
-};
+const RootLayout: Layout = async ({ children }) => (
+  <html lang="en">
+    <body>
+      <Suspense fallback={null}>
+        <App>{children}</App>
+      </Suspense>
+    </body>
+  </html>
+);
 
 export default RootLayout;
