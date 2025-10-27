@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import App from '@/app/app';
 import constants from '@/constants';
 import '@/styles/globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 import type { Metadata } from 'next';
 
@@ -19,6 +20,7 @@ const RootLayout: Layout = async ({ children }) => (
       <Suspense fallback={null}>
         <App>{children}</App>
       </Suspense>
+      <Analytics />
     </body>
   </html>
 );
