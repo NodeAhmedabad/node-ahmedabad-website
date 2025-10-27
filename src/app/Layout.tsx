@@ -1,9 +1,10 @@
 import { Suspense } from 'react';
 
+import { Analytics } from '@vercel/analytics/next';
+
 import App from '@/app/app';
 import constants from '@/constants';
 import '@/styles/globals.css';
-import { Analytics } from '@vercel/analytics/next';
 
 import type { Metadata } from 'next';
 
