@@ -1,4 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
+import type { Component } from '@/types';
 
 interface AnimatedTextProps {
   text: string;
@@ -8,13 +12,9 @@ interface AnimatedTextProps {
   once?: boolean;
 }
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({
-  text,
-  className = '',
-  delay = 0,
-  speed = 50,
-  once = true,
-}) => {
+const AnimatedText: Component<AnimatedTextProps> = (props) => {
+  const { text, className = '', delay = 0, speed = 50, once = true } = props;
+
   const [displayedText, setDisplayedText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -44,7 +44,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
         const interval = setInterval(() => {
           if (currentIndex <= text.length) {
             setDisplayedText(text.slice(0, currentIndex));
-            currentIndex++;
+            currentIndex += 1;
           } else {
             clearInterval(interval);
             setHasAnimated(true);

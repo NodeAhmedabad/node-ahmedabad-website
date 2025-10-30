@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Calendar,
   Code2,
@@ -11,7 +9,7 @@ import {
   Twitter,
   Users,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -104,7 +102,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link className="flex items-center space-x-3 mb-6 group" to="/">
+            <Link className="flex items-center space-x-3 mb-6 group" href="/">
               <div className="relative">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Code2 className="w-7 h-7 text-white" />
@@ -166,7 +164,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
-                      to={link.path}
+                      href={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -183,7 +181,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
-                      to={link.path}
+                      href={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -200,7 +198,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
-                      to={link.path}
+                      href={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -217,7 +215,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
-                      to={link.path}
+                      href={link.path}
                     >
                       <span>{link.name}</span>
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

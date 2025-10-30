@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import { useEffect, useState } from 'react';
 
 import { BookOpen, Calendar, Code2, Mail, Menu, Star, Users, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Header = () => {
+  const pathname = usePathname();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -36,7 +41,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link className="flex items-center space-x-3 group" to="/">
+          <Link className="flex items-center space-x-3 group" href="/">
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Code2 className="w-6 h-6 text-white" />
@@ -52,11 +57,11 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
+              const isActive = pathname === item.path;
               return (
                 <Link
                   key={item.name}
-                  to={item.path}
+                  href={item.path}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
                     isActive
                       ? 'text-green-400 bg-green-400/10'
@@ -74,7 +79,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Link
               className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
-              to="/community"
+              href="/community"
             >
               Join Community
             </Link>
@@ -95,12 +100,12 @@ const Header = () => {
             <div className="container mx-auto px-6 py-4">
               <div className="space-y-4">
                 {navItems.map((item) => {
-                  const isActive = location.pathname === item.path;
+                  const isActive = pathname === item.path;
                   return (
                     <Link
                       key={item.name}
                       onClick={() => setIsMenuOpen(false)}
-                      to={item.path}
+                      href={item.path}
                       className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                         isActive
                           ? 'text-green-400 bg-green-400/10'
@@ -116,7 +121,7 @@ const Header = () => {
                   <Link
                     className="block w-full text-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
                     onClick={() => setIsMenuOpen(false)}
-                    to="/community"
+                    href="/community"
                   >
                     Join Community
                   </Link>

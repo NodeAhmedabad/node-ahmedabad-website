@@ -1,7 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
+import type { ReactNode } from 'react';
+
+import type { Component } from '@/types';
 
 interface ScrollRevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   direction?: 'up' | 'down' | 'left' | 'right';
   delay?: number;
   duration?: number;
@@ -10,15 +16,17 @@ interface ScrollRevealProps {
   once?: boolean;
 }
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({
-  children,
-  direction = 'up',
-  delay = 0,
-  duration = 600,
-  distance = 60,
-  className = '',
-  once = true,
-}) => {
+const ScrollReveal: Component<ScrollRevealProps> = (props) => {
+  const {
+    children,
+    direction = 'up',
+    delay = 0,
+    duration = 600,
+    distance = 60,
+    className = '',
+    once = true,
+  } = props;
+
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

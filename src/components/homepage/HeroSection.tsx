@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from 'react';
-
 import { ArrowRight, Calendar, Code2, Play, Sparkles, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
-import AnimatedText from '../ui/AnimatedText';
-import ScrollReveal from '../ui/ScrollReveal';
+import AnimatedText from '@/backup/components/ui/AnimatedText';
+import ScrollReveal from '@/backup/components/ui/ScrollReveal';
+import CursorFollowEffect from '@/components/homepage/CursorFollowEffect';
 
-const HeroSection = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+import type { Component } from '@/types';
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    globalThis.addEventListener('mousemove', handleMouseMove);
-    return () => globalThis.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
+const HeroSection: Component = () => {
   const codeSnippets = [
     'const community = new NodeAhmedabad();',
     'community.learn().share().grow();',
@@ -35,7 +25,7 @@ const HeroSection = () => {
         <div className="absolute inset-0">
           {codeSnippets.map((code, index) => (
             <div
-              key={index}
+              key={code}
               className="absolute text-green-400/20 font-mono text-sm animate-float"
               style={{
                 top: `${20 + index * 30}%`,
@@ -48,14 +38,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Cursor Follow Effect */}
-        <div
-          className="absolute w-96 h-96 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none"
-          style={{
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-          }}
-        />
+        <CursorFollowEffect />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -124,14 +107,14 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link
                     className="group bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center"
-                    to="/community"
+                    href="/community"
                   >
                     Join Community
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                   <Link
                     className="group border border-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 flex items-center justify-center"
-                    to="/events"
+                    href="/events"
                   >
                     <Play className="w-5 h-5 mr-2" />
                     Watch Highlights
