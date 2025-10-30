@@ -2,10 +2,17 @@ import { Award, Target } from 'lucide-react';
 
 import AnimatedText from '@/components/AnimatedText';
 import ScrollReveal from '@/components/ScrollReveal';
+import constants from '@/constants';
 import coreValues from '@/data/about/coreValues';
 import timeline from '@/data/about/timeline';
 
+import type { Metadata } from 'next';
+
 import type { Component } from '@/types';
+
+export const metadata = {
+  title: `About | ${constants.APP_NAME}`,
+} satisfies Metadata;
 
 const AboutPage: Component = () => (
   <main className="pt-20">

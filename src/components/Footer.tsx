@@ -1,25 +1,15 @@
-import {
-  Calendar,
-  Code2,
-  ExternalLink,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  Twitter,
-  Users,
-} from 'lucide-react';
+import { Calendar, Code2, ExternalLink, Mail, MapPin, Users } from 'lucide-react';
 import Link from 'next/link';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+import { socialMedia } from '@/data/stats';
 
+import type { Component } from '@/types';
+
+const Footer: Component = () => {
   const footerLinks = {
     community: [
       { name: 'About Us', path: '/about' },
       { name: 'Events', path: '/events' },
-      { name: 'Blog', path: '/blog' },
-      { name: 'Hall of Fame', path: '/hall-of-fame' },
     ],
     getInvolved: [
       { name: 'Join Community', path: '/community' },
@@ -38,33 +28,6 @@ const Footer = () => {
       { name: 'Terms of Use', path: '/terms' },
     ],
   };
-
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: Github,
-      url: 'https://github.com/nodeahmedabad',
-      color: 'hover:text-gray-400',
-    },
-    {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/nodeahmedabad',
-      color: 'hover:text-blue-400',
-    },
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      url: 'https://linkedin.com/company/nodeahmedabad',
-      color: 'hover:text-blue-500',
-    },
-    {
-      name: 'Email',
-      icon: Mail,
-      url: 'mailto:hello@nodeahmedabad.com',
-      color: 'hover:text-green-400',
-    },
-  ];
 
   return (
     <footer className="bg-slate-900 border-t border-gray-800">
@@ -86,7 +49,10 @@ const Footer = () => {
                 placeholder="Enter your email"
                 type="email"
               />
-              <button className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
+              <button
+                className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
+                type="button"
+              >
                 Subscribe
               </button>
             </div>
@@ -140,7 +106,7 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+              {socialMedia.map((social) => (
                 <a
                   key={social.name}
                   aria-label={social.name}
@@ -231,7 +197,8 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © {currentYear} Node Ahmedabad. All rights reserved. Built with ❤️ by the community.
+              © {new Date().getFullYear()} Node Ahmedabad. All rights reserved. Built with ❤️ by
+              the community.
             </div>
             <div className="flex items-center space-x-4 text-gray-400 text-sm">
               <span>Made in Ahmedabad</span>
