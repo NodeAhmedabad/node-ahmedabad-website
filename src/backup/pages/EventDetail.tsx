@@ -151,7 +151,7 @@ const EventDetail: Component = () => {
           <ScrollReveal>
             <Link
               className="group inline-flex items-center text-green-400 transition-colors duration-300 hover:text-green-300"
-              to="/events"
+              href="/events"
             >
               <ArrowLeft className="mr-2 size-4 transition-transform duration-300 group-hover:-translate-x-1" />
               Back to Events

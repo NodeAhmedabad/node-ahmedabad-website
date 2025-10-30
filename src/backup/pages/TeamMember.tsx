@@ -98,7 +98,7 @@ const TeamMember: Component = () => {
       <div className="flex min-h-screen items-center justify-center bg-slate-900">
         <div className="text-center">
           <h1 className="mb-4 text-4xl font-bold text-white">Team Member Not Found</h1>
-          <Link className="text-green-400 hover:text-green-300" to="/about">
+          <Link className="text-green-400 hover:text-green-300" href="/about">
             Back to Team
           </Link>
         </div>
