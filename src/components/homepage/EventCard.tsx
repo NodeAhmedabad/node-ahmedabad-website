@@ -2,8 +2,8 @@ import { Fragment } from 'react';
 
 import { ArrowRight, Calendar, Clock, MapPin, Star, Users } from 'lucide-react';
 
-import type pastEvents from '@/data/pastEvents';
-import type upcomingEvents from '@/data/upcomingEvents';
+import type pastEvents from '@/data/homepage/pastEvents';
+import type upcomingEvents from '@/data/homepage/upcomingEvents';
 import type { Component } from '@/types';
 
 interface PastEvents {

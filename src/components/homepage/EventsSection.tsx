@@ -3,14 +3,14 @@
 import { useState } from 'react';
 
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
-import ScrollReveal from '@/backup/components/ui/ScrollReveal';
+import ScrollReveal from '@/components/ScrollReveal';
 import EventCard from '@/components/homepage/EventCard';
-import pastEvents from '@/data/pastEvents';
-import upcomingEvents from '@/data/upcomingEvents';
+import pastEvents from '@/data/homepage/pastEvents';
+import upcomingEvents from '@/data/homepage/upcomingEvents';
 
 import type { Component } from '@/types';
-import Link from 'next/link';
 
 const EventsSection: Component = () => {
   const [activeTab, setActiveTab] = useState('upcoming');

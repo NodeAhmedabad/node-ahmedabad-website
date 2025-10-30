@@ -1,6 +1,6 @@
 import { Heart, Lightbulb, Target, Users } from 'lucide-react';
 
-const homeAboutValues = [
+const aboutValues = [
   {
     icon: Users,
     title: 'Inclusive Community',
@@ -31,4 +31,4 @@ const homeAboutValues = [
   },
 ];
 
-export default homeAboutValues;
+export default aboutValues;

@@ -1,5 +1,3 @@
-import { Fragment } from 'react/jsx-runtime';
-
 import AboutSection from '@/components/homepage/AboutSection';
 import EventsSection from '@/components/homepage/EventsSection';
 import HeroSection from '@/components/homepage/HeroSection';
@@ -14,11 +12,11 @@ export const metadata = {
 } satisfies Metadata;
 
 const HomePage: Component = () => (
-  <Fragment>
+  <main>
     <HeroSection />
     <AboutSection />
     <EventsSection />
-  </Fragment>
+  </main>
 );
 
 export default HomePage;

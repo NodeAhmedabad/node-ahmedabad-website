@@ -2,11 +2,15 @@
 
 import { useEffect, useState } from 'react';
 
-import { BookOpen, Calendar, Code2, Mail, Menu, Star, Users, X } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { Code2, Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-const Header = () => {
+import menu from '@/data/homepage/menu';
+
+import type { Component } from '@/types';
+
+const Header: Component = () => {
   const pathname = usePathname();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,15 +24,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { name: 'Home', path: '/', icon: Code2 },
-    { name: 'About', path: '/about', icon: Users },
-    { name: 'Events', path: '/events', icon: Calendar },
-    { name: 'Blog', path: '/blog', icon: BookOpen },
-    { name: 'Community', path: '/community', icon: Star },
-    { name: 'Contact', path: '/contact', icon: Mail },
-  ];
 
   return (
     <header
@@ -56,7 +51,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => {
+            {menu.map((item) => {
               const isActive = pathname === item.path;
               return (
                 <Link
@@ -89,6 +84,7 @@ const Header = () => {
           <button
             className="lg:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            type="button"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -104,8 +100,8 @@ const Header = () => {
                   return (
                     <Link
                       key={item.name}
-                      onClick={() => setIsMenuOpen(false)}
                       href={item.path}
+                      onClick={() => setIsMenuOpen(false)}
                       className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                         isActive
                           ? 'text-green-400 bg-green-400/10'
@@ -120,8 +116,8 @@ const Header = () => {
                 <div className="pt-4 border-t border-gray-700">
                   <Link
                     className="block w-full text-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
                     href="/community"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     Join Community
                   </Link>

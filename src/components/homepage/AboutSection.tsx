@@ -1,10 +1,10 @@
 import { ArrowRight, Users } from 'lucide-react';
+import Link from 'next/link';
 
-import ScrollReveal from '@/backup/components/ui/ScrollReveal';
-import homeAboutValues from '@/data/homeAboutValues';
+import ScrollReveal from '@/components/ScrollReveal';
+import aboutValues from '@/data/homepage/aboutValues';
 
 import type { Component } from '@/types';
-import Link from 'next/link';
 
 const AboutSection: Component = () => (
   <section className="py-20 bg-slate-800 relative overflow-hidden">
@@ -48,7 +48,7 @@ const AboutSection: Component = () => (
 
         {/* Values Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {homeAboutValues.map((value, index) => {
+          {aboutValues.map((value, index) => {
             const Icon = value.icon;
             return (
               <ScrollReveal key={value.title} delay={300 + index * 100}>

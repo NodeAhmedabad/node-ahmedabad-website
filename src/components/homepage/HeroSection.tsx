@@ -1,8 +1,8 @@
 import { ArrowRight, Calendar, Code2, Play, Sparkles, Users } from 'lucide-react';
 import Link from 'next/link';
 
-import AnimatedText from '@/backup/components/ui/AnimatedText';
-import ScrollReveal from '@/backup/components/ui/ScrollReveal';
+import AnimatedText from '@/components/AnimatedText';
+import ScrollReveal from '@/components/ScrollReveal';
 import CursorFollowEffect from '@/components/homepage/CursorFollowEffect';
 
 import type { Component } from '@/types';
