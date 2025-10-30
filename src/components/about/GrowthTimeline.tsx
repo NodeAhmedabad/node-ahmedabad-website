@@ -24,7 +24,7 @@ const GrowthTimeline: Component = () => (
         <div className="relative">
           <div
             aria-hidden="true"
-            className="absolute bottom-0 left-8 top-0 w-0.5 bg-gradient-to-b from-green-400 to-emerald-500 sm:left-12 lg:left-16"
+            className="absolute inset-y-0 left-8 w-0.5 bg-gradient-to-b from-green-400 to-emerald-500 sm:left-12 lg:left-16"
           />
           {timeline.map((item, index) => {
             const { year, event, description, icon: Icon, color } = item;
@@ -33,12 +33,9 @@ const GrowthTimeline: Component = () => (
               <ScrollReveal key={year} delay={index * 150}>
                 <div className="relative mb-12 flex items-center last:mb-0 sm:mb-16 lg:mb-20">
                   <div
-                    className={`h-16 w-16 flex-shrink-0 bg-gradient-to-br sm:h-20 sm:w-20 lg:h-24 lg:w-24 ${color} absolute left-8 z-10 flex -translate-x-1/2 items-center justify-center rounded-full border-4 border-slate-900 shadow-lg sm:left-12 lg:left-16`}
+                    className={`size-16 shrink-0 bg-gradient-to-br sm:size-20 lg:size-24 ${color} absolute left-8 z-10 flex -translate-x-1/2 items-center justify-center rounded-full border-4 border-slate-900 shadow-lg sm:left-12 lg:left-16`}
                   >
-                    <Icon
-                      aria-hidden="true"
-                      className="h-6 w-6 text-white sm:h-8 sm:w-8 lg:h-10 lg:w-10"
-                    />
+                    <Icon aria-hidden="true" className="size-6 text-white sm:size-8 lg:size-10" />
                   </div>
                   <div className="min-w-0 flex-1 pl-24 sm:pl-28 lg:pl-32">
                     <div className="mb-7 rounded-xl border border-gray-700 bg-slate-800 p-6 shadow-lg transition-colors duration-300 hover:border-green-500/50 sm:p-8">

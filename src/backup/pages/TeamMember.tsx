@@ -119,7 +119,7 @@ const TeamMember: Component = () => {
                 className="inline-flex items-center text-gray-300 transition-colors duration-300 hover:text-green-400"
                 href="/about"
               >
-                <ArrowLeft className="mr-2 h-5 w-5" />
+                <ArrowLeft className="mr-2 size-5" />
                 Back to Team
               </Link>
             </ScrollReveal>
@@ -132,10 +132,10 @@ const TeamMember: Component = () => {
             <div className="mx-auto max-w-4xl">
               <ScrollReveal>
                 <div className="flex flex-col items-center gap-12 md:flex-row">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <img
                       alt={member.name}
-                      className="h-48 w-48 rounded-2xl border-4 border-green-400/20 object-cover"
+                      className="size-48 rounded-2xl border-4 border-green-400/20 object-cover"
                       src={member.image}
                     />
                   </div>
@@ -147,11 +147,11 @@ const TeamMember: Component = () => {
                     <p className="mb-6 text-2xl text-green-400">{member.role}</p>
                     <div className="flex flex-wrap justify-center gap-4 text-gray-300 md:justify-start">
                       <div className="flex items-center">
-                        <MapPin className="mr-2 h-4 w-4" />
+                        <MapPin className="mr-2 size-4" />
                         {member.location}
                       </div>
                       <div className="flex items-center">
-                        <Calendar className="mr-2 h-4 w-4" />
+                        <Calendar className="mr-2 size-4" />
                         Joined {member.joinedDate}
                       </div>
                     </div>
@@ -193,7 +193,7 @@ const TeamMember: Component = () => {
                 <ScrollReveal>
                   <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
                     <h3 className="mb-6 flex items-center text-2xl font-bold text-white">
-                      <Award className="mr-3 h-6 w-6 text-green-400" />
+                      <Award className="mr-3 size-6 text-green-400" />
                       Expertise
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -216,7 +216,7 @@ const TeamMember: Component = () => {
                     <ul className="space-y-4">
                       {member.contributions.map((contribution, index) => (
                         <li key={index} className="flex items-start">
-                          <div className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" />
+                          <div className="mr-3 mt-2 size-2 shrink-0 rounded-full bg-green-400" />
                           <span className="text-gray-300">{contribution}</span>
                         </li>
                       ))}
@@ -240,40 +240,40 @@ const TeamMember: Component = () => {
                   <div className="flex justify-center gap-6">
                     {member.social.github ? (
                       <a
-                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
+                        className="flex size-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={member.social.github}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Github className="h-5 w-5 text-gray-300" />
+                        <Github className="size-5 text-gray-300" />
                       </a>
                     ) : null}
                     {member.social.linkedin ? (
                       <a
-                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
+                        className="flex size-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={member.social.linkedin}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Linkedin className="h-5 w-5 text-gray-300" />
+                        <Linkedin className="size-5 text-gray-300" />
                       </a>
                     ) : null}
                     {member.social.twitter ? (
                       <a
-                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
+                        className="flex size-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={member.social.twitter}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Twitter className="h-5 w-5 text-gray-300" />
+                        <Twitter className="size-5 text-gray-300" />
                       </a>
                     ) : null}
                     {member.social.email ? (
                       <a
-                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
+                        className="flex size-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={`mailto:${member.social.email}`}
                       >
-                        <Mail className="h-5 w-5 text-gray-300" />
+                        <Mail className="size-5 text-gray-300" />
                       </a>
                     ) : null}
                   </div>

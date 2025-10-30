@@ -19,8 +19,8 @@ const EventsSection: Component = () => {
     <section className="relative overflow-hidden bg-slate-900 py-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute left-10 top-20 h-32 w-32 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute bottom-20 right-10 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
+        <div className="absolute left-10 top-20 size-32 rounded-full bg-green-500/5 blur-3xl" />
+        <div className="absolute bottom-20 right-10 size-40 rounded-full bg-emerald-500/5 blur-3xl" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
@@ -105,14 +105,14 @@ const EventsSection: Component = () => {
                   href="/events"
                 >
                   View All Events
-                  <ExternalLink className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  <ExternalLink className="ml-2 size-5 transition-transform duration-300 group-hover:scale-110" />
                 </Link>
                 <Link
                   className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                   href="/get-involved"
                 >
                   Become a Speaker
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>

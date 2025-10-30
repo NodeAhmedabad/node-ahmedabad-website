@@ -25,11 +25,11 @@ const EventCard: Component<EventCardProps> = (props) => {
 
   return (
     <div
-      className={`rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:translate-y-[-2px] hover:transform hover:border-green-500/50 ${isFeatured ? 'ring-2 ring-green-500/20' : ''}`}
+      className={`rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-green-500/50${isFeatured ? 'ring-2 ring-green-500/20' : ''}`}
     >
       {isFeatured ? (
         <div className="mb-4 flex items-center">
-          <Star className="mr-2 h-4 w-4 text-yellow-400" />
+          <Star className="mr-2 size-4 text-yellow-400" />
           <span className="text-sm font-medium text-yellow-400">Featured Event</span>
         </div>
       ) : null}
@@ -53,15 +53,15 @@ const EventCard: Component<EventCardProps> = (props) => {
         <Fragment>
           <div className="mb-4 space-y-2 text-gray-300">
             <div className="flex items-center">
-              <Calendar className="mr-3 h-4 w-4 text-green-400" />
+              <Calendar className="mr-3 size-4 text-green-400" />
               <span>{event.date}</span>
             </div>
             <div className="flex items-center">
-              <Clock className="mr-3 h-4 w-4 text-green-400" />
+              <Clock className="mr-3 size-4 text-green-400" />
               <span>{event.time}</span>
             </div>
             <div className="flex items-center">
-              <MapPin className="mr-3 h-4 w-4 text-green-400" />
+              <MapPin className="mr-3 size-4 text-green-400" />
               <span>{event.location}</span>
             </div>
           </div>
@@ -70,7 +70,7 @@ const EventCard: Component<EventCardProps> = (props) => {
 
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
-              <Users className="mr-2 h-4 w-4 text-green-400" />
+              <Users className="mr-2 size-4 text-green-400" />
               <span className="text-gray-300">
                 {event.attendees}/{event.maxAttendees} attending
               </span>
@@ -91,15 +91,15 @@ const EventCard: Component<EventCardProps> = (props) => {
         <Fragment>
           <div className="mb-4 space-y-2 text-gray-300">
             <div className="flex items-center">
-              <Calendar className="mr-3 h-4 w-4 text-green-400" />
+              <Calendar className="mr-3 size-4 text-green-400" />
               <span>{event.date}</span>
             </div>
             <div className="flex items-center">
-              <Users className="mr-3 h-4 w-4 text-green-400" />
+              <Users className="mr-3 size-4 text-green-400" />
               <span>{event.attendees} attended</span>
             </div>
             <div className="flex items-center">
-              <Star className="mr-3 h-4 w-4 text-yellow-400" />
+              <Star className="mr-3 size-4 text-yellow-400" />
               <span>{event.rating}/5.0 rating</span>
             </div>
           </div>
@@ -125,7 +125,7 @@ const EventCard: Component<EventCardProps> = (props) => {
         type="button"
       >
         {isPast ? 'View Summary' : 'Register Now'}
-        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
       </button>
     </div>
   );

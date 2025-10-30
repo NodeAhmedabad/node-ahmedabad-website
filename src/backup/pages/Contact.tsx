@@ -105,7 +105,7 @@ const Contact: Component = () => {
             {contactInfo.map((info, index) => (
               <ScrollReveal key={info.title} delay={index * 100}>
                 <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 text-center transition-colors duration-300 hover:bg-slate-700">
-                  <info.icon className="mx-auto mb-4 h-12 w-12 text-green-400" />
+                  <info.icon className="mx-auto mb-4 size-12 text-green-400" />
                   <h3 className="mb-2 text-xl font-bold text-white">{info.title}</h3>
                   <p className="mb-3 font-semibold text-green-400">{info.content}</p>
                   <p className="text-sm text-gray-300">{info.description}</p>
@@ -133,7 +133,7 @@ const Contact: Component = () => {
                       </label>
                       <input
                         required
-                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                         id="name"
                         name="name"
                         onChange={handleChange}
@@ -149,7 +149,7 @@ const Contact: Component = () => {
                       </label>
                       <input
                         required
-                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                         id="email"
                         name="email"
                         onChange={handleChange}
@@ -166,7 +166,7 @@ const Contact: Component = () => {
                     </label>
                     <input
                       required
-                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                       id="subject"
                       name="subject"
                       onChange={handleChange}
@@ -182,7 +182,7 @@ const Contact: Component = () => {
                     </label>
                     <textarea
                       required
-                      className="resize-vertical w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                      className="resize-vertical w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                       id="message"
                       name="message"
                       onChange={handleChange}
@@ -196,7 +196,7 @@ const Contact: Component = () => {
                     className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
                     type="submit"
                   >
-                    <Send className="mr-2 h-5 w-5" />
+                    <Send className="mr-2 size-5" />
                     Send Message
                   </button>
                 </form>
@@ -224,7 +224,7 @@ const Contact: Component = () => {
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <social.icon className="h-6 w-6" />
+                        <social.icon className="size-6" />
                       </a>
                     ))}
                   </div>
@@ -270,7 +270,7 @@ const Contact: Component = () => {
             <div className="overflow-hidden rounded-2xl border border-gray-700 bg-slate-800">
               <div className="flex h-96 items-center justify-center bg-gradient-to-br from-green-500/20 to-emerald-500/20">
                 <div className="text-center">
-                  <MapPin className="mx-auto mb-4 h-16 w-16 text-green-400" />
+                  <MapPin className="mx-auto mb-4 size-16 text-green-400" />
                   <h3 className="mb-2 text-2xl font-bold text-white">Interactive Map</h3>
                   <p className="text-gray-300">Map integration coming soon</p>
                 </div>

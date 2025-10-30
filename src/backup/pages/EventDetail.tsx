@@ -153,7 +153,7 @@ const EventDetail: Component = () => {
               className="group inline-flex items-center text-green-400 transition-colors duration-300 hover:text-green-300"
               to="/events"
             >
-              <ArrowLeft className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
+              <ArrowLeft className="mr-2 size-4 transition-transform duration-300 group-hover:-translate-x-1" />
               Back to Events
             </Link>
           </ScrollReveal>
@@ -163,8 +163,8 @@ const EventDetail: Component = () => {
       {/* Event Header */}
       <section className="relative overflow-hidden bg-slate-900 py-12">
         <div className="absolute inset-0">
-          <div className="absolute left-10 top-20 h-32 w-32 rounded-full bg-green-500/5 blur-3xl" />
-          <div className="absolute bottom-20 right-10 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
+          <div className="absolute left-10 top-20 size-32 rounded-full bg-green-500/5 blur-3xl" />
+          <div className="absolute bottom-20 right-10 size-40 rounded-full bg-emerald-500/5 blur-3xl" />
         </div>
 
         <div className="container relative z-10 mx-auto px-6">
@@ -175,7 +175,7 @@ const EventDetail: Component = () => {
                 <ScrollReveal>
                   {event.featured ? (
                     <div className="mb-4 flex items-center">
-                      <Star className="mr-2 h-4 w-4 text-yellow-400" />
+                      <Star className="mr-2 size-4 text-yellow-400" />
                       <span className="text-sm font-medium text-yellow-400">Featured Event</span>
                     </div>
                   ) : null}
@@ -200,7 +200,7 @@ const EventDetail: Component = () => {
                   {/* Event Details */}
                   <div className="mb-8 grid gap-4 sm:grid-cols-2">
                     <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
-                      <Calendar className="mr-3 h-5 w-5 text-green-400" />
+                      <Calendar className="mr-3 size-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Date</div>
                         <div className="font-medium text-white">
@@ -215,7 +215,7 @@ const EventDetail: Component = () => {
                     </div>
 
                     <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
-                      <Clock className="mr-3 h-5 w-5 text-green-400" />
+                      <Clock className="mr-3 size-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Time</div>
                         <div className="font-medium text-white">{event.time}</div>
@@ -223,7 +223,7 @@ const EventDetail: Component = () => {
                     </div>
 
                     <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
-                      <MapPin className="mr-3 h-5 w-5 text-green-400" />
+                      <MapPin className="mr-3 size-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Location</div>
                         <div className="font-medium text-white">{event.location}</div>
@@ -231,7 +231,7 @@ const EventDetail: Component = () => {
                     </div>
 
                     <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
-                      <Users className="mr-3 h-5 w-5 text-green-400" />
+                      <Users className="mr-3 size-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Attendees</div>
                         <div className="font-medium text-white">
@@ -248,14 +248,14 @@ const EventDetail: Component = () => {
                       onClick={addToCalendar}
                       type="button"
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      <CalendarIcon className="mr-2 size-4" />
                       Add to Calendar
                     </button>
                     <button
                       className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
                       type="button"
                     >
-                      <Share2 className="mr-2 h-4 w-4" />
+                      <Share2 className="mr-2 size-4" />
                       Share Event
                     </button>
                     <a
@@ -264,7 +264,7 @@ const EventDetail: Component = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                      <ExternalLink className="mr-2 size-4" />
                       View Map
                     </a>
                   </div>
@@ -278,7 +278,7 @@ const EventDetail: Component = () => {
                     <div className="rounded-2xl border border-gray-700 bg-slate-800/50 p-6">
                       {isRegistered ? (
                         <div className="text-center">
-                          <CheckCircle className="mx-auto mb-4 h-16 w-16 text-green-400" />
+                          <CheckCircle className="mx-auto mb-4 size-16 text-green-400" />
                           <h3 className="mb-2 text-2xl font-bold text-white">
                             Registration Successful!
                           </h3>
@@ -406,7 +406,7 @@ const EventDetail: Component = () => {
                     key={index}
                     className="flex items-start rounded-lg border border-gray-700 bg-slate-800/50 p-4"
                   >
-                    <CheckCircle className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
+                    <CheckCircle className="mr-3 mt-0.5 size-5 shrink-0 text-green-400" />
                     <span className="text-gray-300">{requirement}</span>
                   </div>
                 ))}
@@ -428,9 +428,9 @@ const EventDetail: Component = () => {
                     key={index}
                     className="flex gap-6 rounded-xl border border-gray-700 bg-slate-900/50 p-6"
                   >
-                    <div className="flex-shrink-0">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-full border border-green-500/30 bg-gradient-to-r from-green-500/20 to-emerald-500/20">
-                        <Clock className="h-6 w-6 text-green-400" />
+                    <div className="shrink-0">
+                      <div className="flex size-20 items-center justify-center rounded-full border border-green-500/30 bg-gradient-to-r from-green-500/20 to-emerald-500/20">
+                        <Clock className="size-6 text-green-400" />
                       </div>
                     </div>
                     <div className="flex-1">
@@ -456,7 +456,7 @@ const EventDetail: Component = () => {
                 <div className="flex flex-col items-center gap-6 md:flex-row">
                   <img
                     alt={event.speaker.name}
-                    className="h-32 w-32 rounded-full border-4 border-green-500/20"
+                    className="size-32 rounded-full border-4 border-green-500/20"
                     src={event.speaker.avatar}
                   />
                   <div className="flex-1 text-center md:text-left">
@@ -502,7 +502,7 @@ const EventDetail: Component = () => {
                     <div key={index} className="flex flex-col items-center">
                       <img
                         alt={sponsor.name}
-                        className="mb-2 h-16 w-auto grayscale filter transition-all duration-300 hover:grayscale-0"
+                        className="mb-2 h-16 w-auto grayscale transition-all duration-300 hover:grayscale-0"
                         src={sponsor.logo}
                       />
                       <span className="text-xs text-gray-400">{sponsor.tier} Sponsor</span>

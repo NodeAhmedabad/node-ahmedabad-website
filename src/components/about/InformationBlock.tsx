@@ -31,7 +31,7 @@ const InformationBlock: Component = () => (
               <div className="h-full rounded-2xl border border-gray-700 bg-slate-800 p-6 sm:p-8">
                 <Icon
                   aria-hidden="true"
-                  className="mb-4 h-10 w-10 text-green-400 sm:mb-6 sm:h-12 sm:w-12"
+                  className="mb-4 size-10 text-green-400 sm:mb-6 sm:size-12"
                 />
                 <h2 className="mb-3 text-2xl font-bold text-white sm:mb-4 sm:text-3xl">{label}</h2>
                 <p className="text-sm leading-relaxed text-gray-300 sm:text-base">{description}</p>

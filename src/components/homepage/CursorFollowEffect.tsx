@@ -18,7 +18,7 @@ const CursorFollowEffect: Component = () => {
 
   return (
     <div
-      className="pointer-events-none absolute h-96 w-96 rounded-full bg-gradient-to-br from-green-500/10 to-emerald-500/10 blur-3xl transition-all duration-1000 ease-out"
+      className="pointer-events-none absolute size-96 rounded-full bg-gradient-to-br from-green-500/10 to-emerald-500/10 blur-3xl transition-all duration-1000 ease-out"
       style={{
         left: mousePosition.x - 192,
         top: mousePosition.y - 192,

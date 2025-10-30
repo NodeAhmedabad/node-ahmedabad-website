@@ -47,7 +47,7 @@ const Footer: Component = () => (
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <Icon className="h-5 w-5" />
+                  <Icon className="size-5" />
                 </a>
               );
             })}
@@ -69,7 +69,7 @@ const Footer: Component = () => (
                         href={link.path}
                       >
                         <span>{link.name}</span>
-                        <ExternalLink className="ml-1 h-3 w-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        <ExternalLink className="ml-1 size-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       </Link>
                     </li>
                   ))}
@@ -87,7 +87,7 @@ const Footer: Component = () => (
             by the community.
           </div>
           <div className="flex items-center space-x-4 text-sm text-gray-400">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+            <div className="size-2 animate-pulse rounded-full bg-green-400" />
             <span>Made in Ahmedabad ❤️</span>
           </div>
         </div>

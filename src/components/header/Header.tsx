@@ -39,7 +39,7 @@ const Header: Component<HeaderProps> = (props) => {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isFixedBar
           ? 'border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg'
           : 'bg-transparent'
@@ -71,7 +71,7 @@ const Header: Component<HeaderProps> = (props) => {
                       : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400'
                   }`}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="size-4" />
                   <span className="font-medium">{name}</span>
                 </Link>
               );
@@ -92,7 +92,7 @@ const Header: Component<HeaderProps> = (props) => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
           </button>
         </div>
 

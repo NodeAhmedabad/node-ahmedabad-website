@@ -52,12 +52,12 @@ const AboutSection: Component = () => (
             const Icon = value.icon;
             return (
               <ScrollReveal key={value.title} delay={300 + index * 100}>
-                <div className="group rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:transform hover:border-green-500/50">
+                <div className="group rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-green-500/50">
                   <div className="flex items-start space-x-4">
                     <div
-                      className={`h-12 w-12 bg-gradient-to-r ${value.color} flex items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110`}
+                      className={`size-12 bg-gradient-to-r ${value.color} flex items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110`}
                     >
-                      <Icon className="h-6 w-6 text-white" />
+                      <Icon className="size-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="mb-2 text-xl font-semibold text-white">{value.title}</h4>
@@ -108,14 +108,14 @@ const AboutSection: Component = () => (
                 href="/about"
               >
                 Learn More About Us
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
                 className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                 href="/community"
               >
                 Join Community
-                <Users className="ml-2 h-5 w-5" />
+                <Users className="ml-2 size-5" />
               </Link>
             </div>
           </div>

@@ -120,9 +120,9 @@ const Events: Component = () => {
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             {/* Search */}
             <div className="relative max-w-md flex-1">
-              <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+              <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
               <input
-                className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search events..."
                 type="text"
@@ -143,7 +143,7 @@ const Events: Component = () => {
                       : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
                   }`}
                 >
-                  <category.icon className="h-4 w-4" />
+                  <category.icon className="size-4" />
                   <span>{category.name}</span>
                 </button>
               ))}
@@ -190,7 +190,7 @@ const Events: Component = () => {
 
                       <div className="mb-4 space-y-2">
                         <div className="flex items-center text-gray-400">
-                          <Calendar className="mr-2 h-4 w-4" />
+                          <Calendar className="mr-2 size-4" />
                           <span>
                             {new Date(event.date).toLocaleDateString('en-US', {
                               weekday: 'long',
@@ -201,15 +201,15 @@ const Events: Component = () => {
                           </span>
                         </div>
                         <div className="flex items-center text-gray-400">
-                          <Clock className="mr-2 h-4 w-4" />
+                          <Clock className="mr-2 size-4" />
                           <span>{event.time}</span>
                         </div>
                         <div className="flex items-center text-gray-400">
-                          <MapPin className="mr-2 h-4 w-4" />
+                          <MapPin className="mr-2 size-4" />
                           <span>{event.location}</span>
                         </div>
                         <div className="flex items-center text-gray-400">
-                          <Users className="mr-2 h-4 w-4" />
+                          <Users className="mr-2 size-4" />
                           <span>
                             {event.attendees}/{event.maxAttendees} attendees
                           </span>
@@ -258,11 +258,11 @@ const Events: Component = () => {
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-gray-400">
-                        <Calendar className="mr-2 h-4 w-4" />
+                        <Calendar className="mr-2 size-4" />
                         <span>{new Date(event.date).toLocaleDateString()}</span>
                       </div>
                       <div className="flex items-center text-gray-400">
-                        <Users className="mr-2 h-4 w-4" />
+                        <Users className="mr-2 size-4" />
                         <span>{event.attendees} attended</span>
                       </div>
                     </div>
@@ -279,7 +279,7 @@ const Events: Component = () => {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 p-12 text-center">
-              <Lightbulb className="mx-auto mb-6 h-16 w-16 text-white" />
+              <Lightbulb className="mx-auto mb-6 size-16 text-white" />
               <h2 className="mb-6 text-4xl font-bold text-white">Want to Host or Speak?</h2>
               <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
                 Have an idea for a workshop or want to share your knowledge with the community?

@@ -150,7 +150,7 @@ const GetInvolved: Component = () => {
             {ways.map((way, index) => (
               <ScrollReveal key={way.title} delay={index * 100}>
                 <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 transition-all duration-300 hover:border-green-500">
-                  <way.icon className="mb-6 h-12 w-12 text-green-400" />
+                  <way.icon className="mb-6 size-12 text-green-400" />
                   <h3 className="mb-4 text-2xl font-bold text-white">{way.title}</h3>
                   <p className="mb-6 text-gray-300">{way.description}</p>
 
@@ -159,7 +159,7 @@ const GetInvolved: Component = () => {
                     <ul className="space-y-2">
                       {way.benefits.map((benefit, benefitIndex) => (
                         <li key={benefitIndex} className="flex items-center text-gray-300">
-                          <CheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-green-400" />
+                          <CheckCircle className="mr-2 size-4 shrink-0 text-green-400" />
                           {benefit}
                         </li>
                       ))}
@@ -202,7 +202,7 @@ const GetInvolved: Component = () => {
                       </label>
                       <input
                         required
-                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                         id="name"
                         name="name"
                         onChange={handleSpeakerChange}
@@ -218,7 +218,7 @@ const GetInvolved: Component = () => {
                       </label>
                       <input
                         required
-                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                         id="email"
                         name="email"
                         onChange={handleSpeakerChange}
@@ -235,7 +235,7 @@ const GetInvolved: Component = () => {
                     </label>
                     <input
                       required
-                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                       id="topic"
                       name="topic"
                       onChange={handleSpeakerChange}
@@ -270,7 +270,7 @@ const GetInvolved: Component = () => {
                     </label>
                     <textarea
                       required
-                      className="resize-vertical w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                      className="resize-vertical w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                       id="bio"
                       name="bio"
                       onChange={handleSpeakerChange}
@@ -284,7 +284,7 @@ const GetInvolved: Component = () => {
                     className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
                     type="submit"
                   >
-                    <Send className="mr-2 h-5 w-5" />
+                    <Send className="mr-2 size-5" />
                     Submit Application
                   </button>
                 </form>
@@ -315,7 +315,7 @@ const GetInvolved: Component = () => {
 
                   <div className="mb-6">
                     <div className="mb-2 flex items-center">
-                      <Star className="mr-2 h-5 w-5 text-green-400" />
+                      <Star className="mr-2 size-5 text-green-400" />
                       <span className="font-semibold text-white">Time Commitment:</span>
                     </div>
                     <span className="text-gray-300">{role.commitment}</span>
@@ -323,7 +323,7 @@ const GetInvolved: Component = () => {
 
                   <div className="mb-6">
                     <div className="mb-2 flex items-center">
-                      <Heart className="mr-2 h-5 w-5 text-green-400" />
+                      <Heart className="mr-2 size-5 text-green-400" />
                       <span className="font-semibold text-white">Skills Needed:</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -357,7 +357,7 @@ const GetInvolved: Component = () => {
           <ScrollReveal>
             <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12">
               <div className="text-center">
-                <Code className="mx-auto mb-6 h-16 w-16 text-green-400" />
+                <Code className="mx-auto mb-6 size-16 text-green-400" />
                 <h2 className="mb-6 text-4xl font-bold text-white">Contribute to Open Source</h2>
                 <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-300">
                   Help us build and maintain our community tools, website, and other open-source

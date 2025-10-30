@@ -38,9 +38,9 @@ const TeamMembers: Component = () => {
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             {/* Search */}
             <div className="relative max-w-md flex-1">
-              <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+              <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
               <input
-                className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
+                className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search members..."
                 type="text"
@@ -76,7 +76,7 @@ const TeamMembers: Component = () => {
                 >
                   <img
                     alt={`${member.name}, ${member.role}`}
-                    className="mx-auto mb-4 h-20 w-20 rounded-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-24 sm:w-24"
+                    className="mx-auto mb-4 size-20 rounded-full object-cover transition-transform duration-300 group-hover:scale-105 sm:size-24"
                     loading="lazy"
                     src={member.image}
                   />

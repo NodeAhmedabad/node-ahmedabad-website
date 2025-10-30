@@ -26,7 +26,7 @@ const CoreValues: Component = () => (
               <div className="h-full rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-colors duration-300 focus-within:ring-2 focus-within:ring-green-400 hover:bg-slate-700">
                 <Icon
                   aria-hidden="true"
-                  className="mx-auto mb-4 h-10 w-10 text-green-400 sm:h-12 sm:w-12"
+                  className="mx-auto mb-4 size-10 text-green-400 sm:size-12"
                 />
                 <h3 className="mb-3 text-lg font-bold text-white sm:text-xl">{title}</h3>
                 <p className="text-sm text-gray-300 sm:text-base">{description}</p>

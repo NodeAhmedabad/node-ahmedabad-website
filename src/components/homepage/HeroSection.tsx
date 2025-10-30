@@ -48,7 +48,7 @@ const HeroSection: Component = () => {
             <div className="text-center lg:text-left">
               <ScrollReveal delay={200}>
                 <div className="mb-6 inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2">
-                  <Sparkles className="mr-2 h-4 w-4 text-green-400" />
+                  <Sparkles className="mr-2 size-4 text-green-400" />
                   <span className="text-sm font-medium text-green-400">
                     Welcome to Node Ahmedabad
                   </span>
@@ -84,14 +84,14 @@ const HeroSection: Component = () => {
                   <div className="text-center">
                     <div className="mb-1 text-3xl font-bold text-green-400">2K+</div>
                     <div className="flex items-center text-sm text-gray-400">
-                      <Users className="mr-1 h-4 w-4" />
+                      <Users className="mr-1 size-4" />
                       Members
                     </div>
                   </div>
                   <div className="text-center">
                     <div className="mb-1 text-3xl font-bold text-green-400">50+</div>
                     <div className="flex items-center text-sm text-gray-400">
-                      <Calendar className="mr-1 h-4 w-4" />
+                      <Calendar className="mr-1 size-4" />
                       Events
                     </div>
                   </div>
@@ -110,13 +110,13 @@ const HeroSection: Component = () => {
                     href="/community"
                   >
                     Join Community
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                   <Link
                     className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                     href="/events"
                   >
-                    <Play className="mr-2 h-5 w-5" />
+                    <Play className="mr-2 size-5" />
                     Watch Highlights
                   </Link>
                 </div>
@@ -132,9 +132,9 @@ const HeroSection: Component = () => {
                     {/* Terminal Header */}
                     <div className="flex items-center border-b border-gray-700 bg-slate-900 px-4 py-3">
                       <div className="flex space-x-2">
-                        <div className="h-3 w-3 rounded-full bg-red-500" />
-                        <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                        <div className="h-3 w-3 rounded-full bg-green-500" />
+                        <div className="size-3 rounded-full bg-red-500" />
+                        <div className="size-3 rounded-full bg-yellow-500" />
+                        <div className="size-3 rounded-full bg-green-500" />
                       </div>
                       <div className="flex-1 text-center">
                         <span className="font-mono text-sm text-gray-400">node-ahmedabad.js</span>
@@ -196,11 +196,11 @@ const HeroSection: Component = () => {
                   </div>
 
                   {/* Floating Elements */}
-                  <div className="absolute -right-4 -top-4 flex h-20 w-20 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500">
-                    <Code2 className="h-10 w-10 text-white" />
+                  <div className="absolute -right-4 -top-4 flex size-20 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500">
+                    <Code2 className="size-10 text-white" />
                   </div>
 
-                  <div className="absolute -bottom-4 -left-4 flex h-16 w-16 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600">
+                  <div className="absolute -bottom-4 -left-4 flex size-16 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600">
                     <span className="text-xs font-bold text-white">JS</span>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ const HeroSection: Component = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="flex h-10 w-6 justify-center rounded-full border-2 border-gray-600">
           <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-green-400" />
         </div>

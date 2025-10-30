@@ -19,7 +19,7 @@ const MobileHeader: Component<MobileHeaderProps> = (props) => {
   const pathname = usePathname();
 
   return (
-    <div className="absolute left-0 right-0 top-full animate-fade-in border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg lg:hidden">
+    <div className="absolute inset-x-0 top-full animate-fade-in border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg lg:hidden">
       <div className="container mx-auto px-6 py-4">
         <div className="space-y-4">
           {menu.map((item) => {
@@ -36,7 +36,7 @@ const MobileHeader: Component<MobileHeaderProps> = (props) => {
                     : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400'
                 }`}
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="size-5" />
                 <span className="font-medium">{name}</span>
               </Link>
             );

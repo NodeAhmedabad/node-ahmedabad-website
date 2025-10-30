@@ -63,13 +63,13 @@ const CommunityPage: Component = () => (
                 className={`bg-gradient-to-br ${link.color} group relative overflow-hidden rounded-2xl p-8 text-white transition-transform duration-300 hover:scale-105`}
               >
                 <div className="relative z-10">
-                  <link.icon className="mb-6 h-12 w-12" />
+                  <link.icon className="mb-6 size-12" />
                   <h3 className="mb-4 text-2xl font-bold">{link.name}</h3>
                   <p className="mb-6 opacity-90">{link.description}</p>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <Users className="mr-2 h-5 w-5" />
+                      <Users className="mr-2 size-5" />
                       <span className="font-semibold">{link.members} members</span>
                     </div>
                     <a
@@ -106,7 +106,7 @@ const CommunityPage: Component = () => (
           {guidelines.map((guideline, index) => (
             <ScrollReveal key={guideline.title} delay={index * 100}>
               <div className="rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-colors duration-300 hover:bg-slate-700">
-                <guideline.icon className="mx-auto mb-4 h-12 w-12 text-green-400" />
+                <guideline.icon className="mx-auto mb-4 size-12 text-green-400" />
                 <h3 className="mb-3 text-xl font-bold text-white">{guideline.title}</h3>
                 <p className="text-gray-300">{guideline.description}</p>
               </div>
@@ -138,7 +138,7 @@ const CommunityPage: Component = () => (
 
                 <div className="mb-6">
                   <div className="mb-2 flex items-center">
-                    <Star className="mr-2 h-5 w-5 text-green-400" />
+                    <Star className="mr-2 size-5 text-green-400" />
                     <span className="font-semibold text-white">Time Commitment:</span>
                   </div>
                   <span className="text-gray-300">{role.commitment}</span>
@@ -146,7 +146,7 @@ const CommunityPage: Component = () => (
 
                 <div className="mb-6">
                   <div className="mb-2 flex items-center">
-                    <Code className="mr-2 h-5 w-5 text-green-400" />
+                    <Code className="mr-2 size-5 text-green-400" />
                     <span className="font-semibold text-white">Skills Needed:</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -179,7 +179,7 @@ const CommunityPage: Component = () => (
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <div className="rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 p-12 text-center">
-            <Users className="mx-auto mb-6 h-16 w-16 text-white" />
+            <Users className="mx-auto mb-6 size-16 text-white" />
             <h2 className="mb-6 text-4xl font-bold text-white">Ready to Get Started?</h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
               Join thousands of developers who are already part of our amazing community. Start your
