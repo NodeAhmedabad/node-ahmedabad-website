@@ -2,10 +2,10 @@ import { Code, Star, Users } from 'lucide-react';
 
 import AnimatedText from '@/components/AnimatedText';
 import ScrollReveal from '@/components/ScrollReveal';
+import communityStats from '@/data/community/communityStats';
 import guidelines from '@/data/community/guidelines';
 import socialMedia from '@/data/community/socialMedia';
 import volunteerRoles from '@/data/community/volunteerRoles';
-import { stats } from '@/data/stats';
 
 import type { Component } from '@/types';
 
@@ -29,11 +29,11 @@ const CommunityPage: Component = () => (
 
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          {stats.map((stat, index) => (
+          {communityStats.map((stat, index) => (
             <ScrollReveal key={stat.label} delay={index * 100}>
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">
-                  {stat.number}
+                  {stat.value}
                 </div>
                 <div className="text-gray-300">{stat.label}</div>
               </div>

@@ -1,14 +1,15 @@
-import React from 'react';
-
 import { ArrowLeft, Award, Calendar, Github, Linkedin, Mail, MapPin, Twitter } from 'lucide-react';
-import { Link, useParams } from 'react-router-dom';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
-import Footer from '../components/layout/Footer';
-import Header from '../components/layout/Header';
-import AnimatedText from '../components/ui/AnimatedText';
-import ScrollReveal from '../components/ui/ScrollReveal';
+import AnimatedText from '@/components/AnimatedText';
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/Header';
+import ScrollReveal from '@/components/ScrollReveal';
 
-const TeamMember = () => {
+import type { Component } from '@/types';
+
+const TeamMember: Component = () => {
   const { slug } = useParams();
 
   // Mock data - in a real app, this would come from an API or database
@@ -116,7 +117,7 @@ const TeamMember = () => {
             <ScrollReveal>
               <Link
                 className="inline-flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300"
-                to="/about"
+                href="/about"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Team

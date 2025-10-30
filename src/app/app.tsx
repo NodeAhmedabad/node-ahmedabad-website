@@ -1,4 +1,4 @@
-import Footer from '@/components/Footer';
+import Footer from '@/components/footer/Footer';
 import Header from '@/components/Header';
 import MaintenanceMode from '@/components/maintenanceMode/MaintenanceMode';
 import config from '@/config';

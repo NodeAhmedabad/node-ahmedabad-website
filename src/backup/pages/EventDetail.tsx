@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import {
   ArrowLeft,
@@ -12,13 +12,18 @@ import {
   Star,
   Users,
 } from 'lucide-react';
-import { Link, useParams } from 'react-router-dom';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
-import Footer from '../components/layout/Footer';
-import Header from '../components/layout/Header';
-import ScrollReveal from '../components/ui/ScrollReveal';
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/Header';
+import ScrollReveal from '@/components/ScrollReveal';
 
-const EventDetail = () => {
+import type { ChangeEvent, FormEvent } from 'react';
+
+import type { Component } from '@/types';
+
+const EventDetail: Component = () => {
   const { slug } = useParams();
   const [isRegistered, setIsRegistered] = useState(false);
   const [registrationData, setRegistrationData] = useState({
@@ -113,14 +118,14 @@ const EventDetail = () => {
     ],
   };
 
-  const handleRegistration = (e: React.FormEvent) => {
+  const handleRegistration = (e: FormEvent) => {
     e.preventDefault();
     setIsRegistered(true);
     // In real app, this would make an API call
     console.log('Registration data:', registrationData);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setRegistrationData({
       ...registrationData,
       [e.target.name]: e.target.value,
@@ -241,11 +246,15 @@ const EventDetail = () => {
                     <button
                       className="flex items-center justify-center px-6 py-3 bg-slate-700 border border-gray-600 text-white rounded-lg hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300"
                       onClick={addToCalendar}
+                      type="button"
                     >
                       <CalendarIcon className="w-4 h-4 mr-2" />
                       Add to Calendar
                     </button>
-                    <button className="flex items-center justify-center px-6 py-3 bg-slate-700 border border-gray-600 text-white rounded-lg hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300">
+                    <button
+                      className="flex items-center justify-center px-6 py-3 bg-slate-700 border border-gray-600 text-white rounded-lg hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300"
+                      type="button"
+                    >
                       <Share2 className="w-4 h-4 mr-2" />
                       Share Event
                     </button>
@@ -274,16 +283,16 @@ const EventDetail = () => {
                             Registration Successful!
                           </h3>
                           <p className="text-gray-300 mb-6">
-                            We've sent a confirmation email to {registrationData.email}
+                            We&apos;ve sent a confirmation email to {registrationData.email}
                           </p>
                           <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
                             <p className="text-green-400 text-sm">
-                              You'll receive event updates and joining instructions via email.
+                              You&apos;ll receive event updates and joining instructions via email.
                             </p>
                           </div>
                         </div>
                       ) : (
-                        <React.Fragment>
+                        <Fragment>
                           <h3 className="text-2xl font-bold text-white mb-4">Register for Event</h3>
                           <div className="text-3xl font-bold text-green-400 mb-6">
                             {event.price}
@@ -358,7 +367,7 @@ const EventDetail = () => {
                               Register Now
                             </button>
                           </form>
-                        </React.Fragment>
+                        </Fragment>
                       )}
                     </div>
                   </div>
