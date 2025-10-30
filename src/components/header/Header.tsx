@@ -8,8 +8,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import logo from '@/assets/logo.jpg';
+import MobileHeader from '@/components/header/MobileHeader';
 import constants from '@/constants';
-import menu from '@/data/homepage/menu';
+import menu, { menuButtonText } from '@/data/homepage/menu';
 
 import type { Component } from '@/types';
 
@@ -77,17 +78,15 @@ const Header: Component<HeaderProps> = (props) => {
             })}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden lg:block">
             <Link
               className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
               href="/community"
             >
-              Join Community
+              {menuButtonText}
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="lg:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -97,42 +96,7 @@ const Header: Component<HeaderProps> = (props) => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen ? (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-lg border-b border-green-500/20 animate-fade-in">
-            <div className="container mx-auto px-6 py-4">
-              <div className="space-y-4">
-                {navItems.map((item) => {
-                  const isActive = pathname === item.path;
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.path}
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
-                        isActive
-                          ? 'text-green-400 bg-green-400/10'
-                          : 'text-gray-300 hover:text-green-400 hover:bg-green-400/5'
-                      }`}
-                    >
-                      <item.icon className="w-5 h-5" />
-                      <span className="font-medium">{item.name}</span>
-                    </Link>
-                  );
-                })}
-                <div className="pt-4 border-t border-gray-700">
-                  <Link
-                    className="block w-full text-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
-                    href="/community"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Join Community
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        {isMenuOpen ? <MobileHeader setIsMenuOpen={setIsMenuOpen} /> : null}
       </nav>
     </header>
   );

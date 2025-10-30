@@ -28,4 +28,6 @@ const menu = [
   },
 ];
 
+export const menuButtonText = ' Join Community';
+
 export default menu;

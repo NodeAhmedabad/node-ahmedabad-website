@@ -16,7 +16,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 import Footer from '@/components/footer/Footer';
-import Header from '@/components/Header';
+import Header from '@/components/header/Header';
 import ScrollReveal from '@/components/ScrollReveal';
 
 import type { ChangeEvent, FormEvent } from 'react';

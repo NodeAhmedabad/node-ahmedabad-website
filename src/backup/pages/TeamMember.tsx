@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 
 import AnimatedText from '@/components/AnimatedText';
 import Footer from '@/components/footer/Footer';
-import Header from '@/components/Header';
+import Header from '@/components/header/Header';
 import ScrollReveal from '@/components/ScrollReveal';
 
 import type { Component } from '@/types';
