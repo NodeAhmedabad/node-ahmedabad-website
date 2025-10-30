@@ -81,15 +81,15 @@ const Contact: Component = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <AnimatedText
-                className="text-5xl md:text-6xl font-bold text-white mb-6"
+                className="mb-6 text-5xl font-bold text-white md:text-6xl"
                 text="Get In Touch"
               />
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="mx-auto max-w-3xl text-xl text-gray-300">
                 Have questions, suggestions, or want to collaborate? We'd love to hear from you and
                 help you get involved in our community.
               </p>
@@ -101,14 +101,14 @@ const Contact: Component = () => {
       {/* Contact Info */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {contactInfo.map((info, index) => (
               <ScrollReveal key={info.title} delay={index * 100}>
-                <div className="bg-slate-800 p-8 rounded-xl border border-gray-700 text-center hover:bg-slate-700 transition-colors duration-300">
-                  <info.icon className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
-                  <p className="text-green-400 font-semibold mb-3">{info.content}</p>
-                  <p className="text-gray-300 text-sm">{info.description}</p>
+                <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 text-center transition-colors duration-300 hover:bg-slate-700">
+                  <info.icon className="mx-auto mb-4 h-12 w-12 text-green-400" />
+                  <h3 className="mb-2 text-xl font-bold text-white">{info.title}</h3>
+                  <p className="mb-3 font-semibold text-green-400">{info.content}</p>
+                  <p className="text-sm text-gray-300">{info.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -117,23 +117,23 @@ const Contact: Component = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-slate-800/30">
+      <section className="bg-slate-800/30 py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Form */}
             <ScrollReveal>
-              <div className="bg-slate-800 p-8 rounded-2xl border border-gray-700">
-                <h2 className="text-3xl font-bold text-white mb-8">Send us a Message</h2>
+              <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
+                <h2 className="mb-8 text-3xl font-bold text-white">Send us a Message</h2>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                      <label className="block text-white font-medium mb-2" htmlFor="name">
+                      <label className="mb-2 block font-medium text-white" htmlFor="name">
                         Full Name *
                       </label>
                       <input
                         required
-                        className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                         id="name"
                         name="name"
                         onChange={handleChange}
@@ -144,12 +144,12 @@ const Contact: Component = () => {
                     </div>
 
                     <div>
-                      <label className="block text-white font-medium mb-2" htmlFor="email">
+                      <label className="mb-2 block font-medium text-white" htmlFor="email">
                         Email Address *
                       </label>
                       <input
                         required
-                        className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                         id="email"
                         name="email"
                         onChange={handleChange}
@@ -161,12 +161,12 @@ const Contact: Component = () => {
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-2" htmlFor="subject">
+                    <label className="mb-2 block font-medium text-white" htmlFor="subject">
                       Subject *
                     </label>
                     <input
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors"
+                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                       id="subject"
                       name="subject"
                       onChange={handleChange}
@@ -177,12 +177,12 @@ const Contact: Component = () => {
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-2" htmlFor="message">
+                    <label className="mb-2 block font-medium text-white" htmlFor="message">
                       Message *
                     </label>
                     <textarea
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors resize-vertical"
+                      className="resize-vertical w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                       id="message"
                       name="message"
                       onChange={handleChange}
@@ -193,10 +193,10 @@ const Contact: Component = () => {
                   </div>
 
                   <button
-                    className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 flex items-center justify-center"
+                    className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
                     type="submit"
                   >
-                    <Send className="w-5 h-5 mr-2" />
+                    <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </button>
                 </form>
@@ -207,8 +207,8 @@ const Contact: Component = () => {
             <ScrollReveal delay={200}>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <h3 className="mb-4 text-2xl font-bold text-white">Let's Connect</h3>
+                  <p className="mb-6 leading-relaxed text-gray-300">
                     Whether you're a beginner looking to learn, an experienced developer wanting to
                     share knowledge, or a company interested in sponsoring our events, we're here to
                     help you connect with our community.
@@ -219,19 +219,19 @@ const Contact: Component = () => {
                       <a
                         key={social.name}
                         aria-label={social.name}
-                        className={`p-3 bg-slate-800 rounded-lg text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                        className={`rounded-lg bg-slate-800 p-3 text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
                         href={social.url}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <social.icon className="w-6 h-6" />
+                        <social.icon className="h-6 w-6" />
                       </a>
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-slate-800 p-6 rounded-xl border border-gray-700">
-                  <h4 className="text-lg font-bold text-white mb-3">Quick Response Times</h4>
+                <div className="rounded-xl border border-gray-700 bg-slate-800 p-6">
+                  <h4 className="mb-3 text-lg font-bold text-white">Quick Response Times</h4>
                   <div className="space-y-2 text-gray-300">
                     <p>• Email inquiries: Within 24 hours</p>
                     <p>• Event queries: Within 12 hours</p>
@@ -240,8 +240,8 @@ const Contact: Component = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 p-6 rounded-xl border border-green-500/30">
-                  <h4 className="text-lg font-bold text-white mb-3">Office Hours</h4>
+                <div className="rounded-xl border border-green-500/30 bg-gradient-to-r from-green-500/20 to-emerald-500/20 p-6">
+                  <h4 className="mb-3 text-lg font-bold text-white">Office Hours</h4>
                   <div className="space-y-1 text-gray-300">
                     <p>Monday - Friday: 10:00 AM - 6:00 PM IST</p>
                     <p>Saturday: 10:00 AM - 2:00 PM IST</p>
@@ -258,20 +258,20 @@ const Contact: Component = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-6">Find Us</h2>
-              <p className="text-gray-300 text-lg">
+            <div className="mb-12 text-center">
+              <h2 className="mb-6 text-4xl font-bold text-white">Find Us</h2>
+              <p className="text-lg text-gray-300">
                 Our events are hosted at various tech hubs across Ahmedabad
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="bg-slate-800 rounded-2xl overflow-hidden border border-gray-700">
-              <div className="h-96 bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+            <div className="overflow-hidden rounded-2xl border border-gray-700 bg-slate-800">
+              <div className="flex h-96 items-center justify-center bg-gradient-to-br from-green-500/20 to-emerald-500/20">
                 <div className="text-center">
-                  <MapPin className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-2">Interactive Map</h3>
+                  <MapPin className="mx-auto mb-4 h-16 w-16 text-green-400" />
+                  <h3 className="mb-2 text-2xl font-bold text-white">Interactive Map</h3>
                   <p className="text-gray-300">Map integration coming soon</p>
                 </div>
               </div>

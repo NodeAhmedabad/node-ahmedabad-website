@@ -95,9 +95,9 @@ const TeamMember: Component = () => {
 
   if (!member) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-slate-900">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Team Member Not Found</h1>
+          <h1 className="mb-4 text-4xl font-bold text-white">Team Member Not Found</h1>
           <Link className="text-green-400 hover:text-green-300" to="/about">
             Back to Team
           </Link>
@@ -112,14 +112,14 @@ const TeamMember: Component = () => {
 
       <main className="pt-20">
         {/* Back Button */}
-        <section className="py-8 bg-slate-800/50">
+        <section className="bg-slate-800/50 py-8">
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <Link
-                className="inline-flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300"
+                className="inline-flex items-center text-gray-300 transition-colors duration-300 hover:text-green-400"
                 href="/about"
               >
-                <ArrowLeft className="w-5 h-5 mr-2" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back to Team
               </Link>
             </ScrollReveal>
@@ -127,31 +127,31 @@ const TeamMember: Component = () => {
         </section>
 
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
+            <div className="mx-auto max-w-4xl">
               <ScrollReveal>
-                <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="flex flex-col items-center gap-12 md:flex-row">
                   <div className="flex-shrink-0">
                     <img
                       alt={member.name}
-                      className="w-48 h-48 rounded-2xl object-cover border-4 border-green-400/20"
+                      className="h-48 w-48 rounded-2xl border-4 border-green-400/20 object-cover"
                       src={member.image}
                     />
                   </div>
                   <div className="flex-1 text-center md:text-left">
                     <AnimatedText
-                      className="text-4xl md:text-5xl font-bold text-white mb-4"
+                      className="mb-4 text-4xl font-bold text-white md:text-5xl"
                       text={member.name}
                     />
-                    <p className="text-2xl text-green-400 mb-6">{member.role}</p>
-                    <div className="flex flex-wrap gap-4 justify-center md:justify-start text-gray-300">
+                    <p className="mb-6 text-2xl text-green-400">{member.role}</p>
+                    <div className="flex flex-wrap justify-center gap-4 text-gray-300 md:justify-start">
                       <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-2" />
+                        <MapPin className="mr-2 h-4 w-4" />
                         {member.location}
                       </div>
                       <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-2" />
+                        <Calendar className="mr-2 h-4 w-4" />
                         Joined {member.joinedDate}
                       </div>
                     </div>
@@ -163,18 +163,18 @@ const TeamMember: Component = () => {
         </section>
 
         {/* Bio & Quote */}
-        <section className="py-20 bg-slate-800/30">
+        <section className="bg-slate-800/30 py-20">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
+            <div className="mx-auto max-w-4xl">
               <ScrollReveal>
-                <div className="bg-slate-800 p-8 rounded-2xl border border-gray-700 mb-12">
-                  <h3 className="text-2xl font-bold text-white mb-6">
+                <div className="mb-12 rounded-2xl border border-gray-700 bg-slate-800 p-8">
+                  <h3 className="mb-6 text-2xl font-bold text-white">
                     About {member.name.split(' ')[0]}
                   </h3>
-                  <p className="text-gray-300 text-lg leading-relaxed mb-8">{member.bio}</p>
+                  <p className="mb-8 text-lg leading-relaxed text-gray-300">{member.bio}</p>
 
-                  <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6">
-                    <blockquote className="text-gray-300 italic text-lg leading-relaxed">
+                  <div className="rounded-xl border border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6">
+                    <blockquote className="text-lg italic leading-relaxed text-gray-300">
                       "{member.quote}"
                     </blockquote>
                   </div>
@@ -187,20 +187,20 @@ const TeamMember: Component = () => {
         {/* Expertise & Contributions */}
         <section className="py-20">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
                 {/* Expertise */}
                 <ScrollReveal>
-                  <div className="bg-slate-800 p-8 rounded-2xl border border-gray-700">
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                      <Award className="w-6 h-6 text-green-400 mr-3" />
+                  <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
+                    <h3 className="mb-6 flex items-center text-2xl font-bold text-white">
+                      <Award className="mr-3 h-6 w-6 text-green-400" />
                       Expertise
                     </h3>
                     <div className="flex flex-wrap gap-3">
                       {member.expertise.map((skill, index) => (
                         <span
                           key={skill}
-                          className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 px-4 py-2 rounded-lg text-green-300 text-sm"
+                          className="rounded-lg border border-green-500/30 bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-4 py-2 text-sm text-green-300"
                         >
                           {skill}
                         </span>
@@ -211,12 +211,12 @@ const TeamMember: Component = () => {
 
                 {/* Contributions */}
                 <ScrollReveal delay={200}>
-                  <div className="bg-slate-800 p-8 rounded-2xl border border-gray-700">
-                    <h3 className="text-2xl font-bold text-white mb-6">Key Contributions</h3>
+                  <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
+                    <h3 className="mb-6 text-2xl font-bold text-white">Key Contributions</h3>
                     <ul className="space-y-4">
                       {member.contributions.map((contribution, index) => (
                         <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                          <div className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" />
                           <span className="text-gray-300">{contribution}</span>
                         </li>
                       ))}
@@ -229,51 +229,51 @@ const TeamMember: Component = () => {
         </section>
 
         {/* Social Links */}
-        <section className="py-20 bg-slate-800/30">
+        <section className="bg-slate-800/30 py-20">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
+            <div className="mx-auto max-w-4xl">
               <ScrollReveal>
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold text-white mb-8">
+                  <h3 className="mb-8 text-3xl font-bold text-white">
                     Connect with {member.name.split(' ')[0]}
                   </h3>
                   <div className="flex justify-center gap-6">
                     {member.social.github ? (
                       <a
-                        className="w-12 h-12 bg-slate-800 border border-gray-700 rounded-xl flex items-center justify-center hover:border-green-500 hover:bg-green-500/10 transition-all duration-300"
+                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={member.social.github}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Github className="w-5 h-5 text-gray-300" />
+                        <Github className="h-5 w-5 text-gray-300" />
                       </a>
                     ) : null}
                     {member.social.linkedin ? (
                       <a
-                        className="w-12 h-12 bg-slate-800 border border-gray-700 rounded-xl flex items-center justify-center hover:border-green-500 hover:bg-green-500/10 transition-all duration-300"
+                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={member.social.linkedin}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Linkedin className="w-5 h-5 text-gray-300" />
+                        <Linkedin className="h-5 w-5 text-gray-300" />
                       </a>
                     ) : null}
                     {member.social.twitter ? (
                       <a
-                        className="w-12 h-12 bg-slate-800 border border-gray-700 rounded-xl flex items-center justify-center hover:border-green-500 hover:bg-green-500/10 transition-all duration-300"
+                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={member.social.twitter}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Twitter className="w-5 h-5 text-gray-300" />
+                        <Twitter className="h-5 w-5 text-gray-300" />
                       </a>
                     ) : null}
                     {member.social.email ? (
                       <a
-                        className="w-12 h-12 bg-slate-800 border border-gray-700 rounded-xl flex items-center justify-center hover:border-green-500 hover:bg-green-500/10 transition-all duration-300"
+                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700 bg-slate-800 transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                         href={`mailto:${member.social.email}`}
                       >
-                        <Mail className="w-5 h-5 text-gray-300" />
+                        <Mail className="h-5 w-5 text-gray-300" />
                       </a>
                     ) : null}
                   </div>

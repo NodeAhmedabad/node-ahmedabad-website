@@ -117,15 +117,15 @@ const GetInvolved: Component = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <AnimatedText
-                className="text-5xl md:text-6xl font-bold text-white mb-6"
+                className="mb-6 text-5xl font-bold text-white md:text-6xl"
                 text="Get Involved"
               />
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="mx-auto max-w-3xl text-xl text-gray-300">
                 Help us build an amazing community by contributing your skills, knowledge, and
                 passion for Node.js and JavaScript.
               </p>
@@ -138,28 +138,28 @@ const GetInvolved: Component = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">Ways to Contribute</h2>
-              <p className="text-gray-300 text-lg">
+            <div className="mb-16 text-center">
+              <h2 className="mb-6 text-4xl font-bold text-white">Ways to Contribute</h2>
+              <p className="text-lg text-gray-300">
                 Choose how you'd like to make an impact in our community
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {ways.map((way, index) => (
               <ScrollReveal key={way.title} delay={index * 100}>
-                <div className="bg-slate-800 p-8 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300">
-                  <way.icon className="w-12 h-12 text-green-400 mb-6" />
-                  <h3 className="text-2xl font-bold text-white mb-4">{way.title}</h3>
-                  <p className="text-gray-300 mb-6">{way.description}</p>
+                <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 transition-all duration-300 hover:border-green-500">
+                  <way.icon className="mb-6 h-12 w-12 text-green-400" />
+                  <h3 className="mb-4 text-2xl font-bold text-white">{way.title}</h3>
+                  <p className="mb-6 text-gray-300">{way.description}</p>
 
                   <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Benefits:</h4>
+                    <h4 className="mb-3 font-semibold text-white">Benefits:</h4>
                     <ul className="space-y-2">
                       {way.benefits.map((benefit, benefitIndex) => (
                         <li key={benefitIndex} className="flex items-center text-gray-300">
-                          <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                          <CheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-green-400" />
                           {benefit}
                         </li>
                       ))}
@@ -167,7 +167,7 @@ const GetInvolved: Component = () => {
                   </div>
 
                   <button
-                    className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
+                    className="w-full rounded-lg bg-green-500 py-3 font-semibold text-white transition-colors hover:bg-green-600"
                     type="button"
                   >
                     {way.action}
@@ -180,29 +180,29 @@ const GetInvolved: Component = () => {
       </section>
 
       {/* Speaker Application Form */}
-      <section className="py-20 bg-slate-800/30">
+      <section className="bg-slate-800/30 py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
             <ScrollReveal>
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-white mb-6">Speaker Application</h2>
-                <p className="text-gray-300 text-lg">
+              <div className="mb-12 text-center">
+                <h2 className="mb-6 text-4xl font-bold text-white">Speaker Application</h2>
+                <p className="text-lg text-gray-300">
                   Ready to share your knowledge? Apply to speak at our events!
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <div className="bg-slate-800 p-8 rounded-2xl border border-gray-700">
+              <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
                 <form className="space-y-6" onSubmit={handleSpeakerSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                      <label className="block text-white font-medium mb-2" htmlFor="name">
+                      <label className="mb-2 block font-medium text-white" htmlFor="name">
                         Full Name *
                       </label>
                       <input
                         required
-                        className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                         id="name"
                         name="name"
                         onChange={handleSpeakerChange}
@@ -213,12 +213,12 @@ const GetInvolved: Component = () => {
                     </div>
 
                     <div>
-                      <label className="block text-white font-medium mb-2" htmlFor="email">
+                      <label className="mb-2 block font-medium text-white" htmlFor="email">
                         Email Address *
                       </label>
                       <input
                         required
-                        className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors"
+                        className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                         id="email"
                         name="email"
                         onChange={handleSpeakerChange}
@@ -230,12 +230,12 @@ const GetInvolved: Component = () => {
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-2" htmlFor="topic">
+                    <label className="mb-2 block font-medium text-white" htmlFor="topic">
                       Proposed Topic *
                     </label>
                     <input
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors"
+                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                       id="topic"
                       name="topic"
                       onChange={handleSpeakerChange}
@@ -246,11 +246,11 @@ const GetInvolved: Component = () => {
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-2" htmlFor="experience">
+                    <label className="mb-2 block font-medium text-white" htmlFor="experience">
                       Speaking Experience
                     </label>
                     <select
-                      className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                      className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors focus:border-green-500 focus:outline-none"
                       id="experience"
                       name="experience"
                       onChange={handleSpeakerChange}
@@ -265,12 +265,12 @@ const GetInvolved: Component = () => {
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-2" htmlFor="bio">
+                    <label className="mb-2 block font-medium text-white" htmlFor="bio">
                       Brief Bio & Topic Description *
                     </label>
                     <textarea
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-500 transition-colors resize-vertical"
+                      className="resize-vertical w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-green-500 focus:outline-none"
                       id="bio"
                       name="bio"
                       onChange={handleSpeakerChange}
@@ -281,10 +281,10 @@ const GetInvolved: Component = () => {
                   </div>
 
                   <button
-                    className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 flex items-center justify-center"
+                    className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
                     type="submit"
                   >
-                    <Send className="w-5 h-5 mr-2" />
+                    <Send className="mr-2 h-5 w-5" />
                     Submit Application
                   </button>
                 </form>
@@ -298,39 +298,39 @@ const GetInvolved: Component = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">Open Volunteer Roles</h2>
-              <p className="text-gray-300 text-lg">
+            <div className="mb-16 text-center">
+              <h2 className="mb-6 text-4xl font-bold text-white">Open Volunteer Roles</h2>
+              <p className="text-lg text-gray-300">
                 Current opportunities to contribute to our community
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {openRoles.map((role, index) => (
               <ScrollReveal key={role.title} delay={index * 100}>
-                <div className="bg-slate-800 p-8 rounded-xl border border-gray-700 hover:border-green-500 transition-colors duration-300">
-                  <h3 className="text-2xl font-bold text-white mb-4">{role.title}</h3>
-                  <p className="text-gray-300 mb-6">{role.description}</p>
+                <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 transition-colors duration-300 hover:border-green-500">
+                  <h3 className="mb-4 text-2xl font-bold text-white">{role.title}</h3>
+                  <p className="mb-6 text-gray-300">{role.description}</p>
 
                   <div className="mb-6">
-                    <div className="flex items-center mb-2">
-                      <Star className="w-5 h-5 text-green-400 mr-2" />
-                      <span className="text-white font-semibold">Time Commitment:</span>
+                    <div className="mb-2 flex items-center">
+                      <Star className="mr-2 h-5 w-5 text-green-400" />
+                      <span className="font-semibold text-white">Time Commitment:</span>
                     </div>
                     <span className="text-gray-300">{role.commitment}</span>
                   </div>
 
                   <div className="mb-6">
-                    <div className="flex items-center mb-2">
-                      <Heart className="w-5 h-5 text-green-400 mr-2" />
-                      <span className="text-white font-semibold">Skills Needed:</span>
+                    <div className="mb-2 flex items-center">
+                      <Heart className="mr-2 h-5 w-5 text-green-400" />
+                      <span className="font-semibold text-white">Skills Needed:</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {role.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm"
+                          className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-400"
                         >
                           {skill}
                         </span>
@@ -339,7 +339,7 @@ const GetInvolved: Component = () => {
                   </div>
 
                   <button
-                    className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
+                    className="w-full rounded-lg bg-green-500 py-3 font-semibold text-white transition-colors hover:bg-green-600"
                     type="button"
                   >
                     Apply for Role
@@ -352,36 +352,36 @@ const GetInvolved: Component = () => {
       </section>
 
       {/* GitHub Contributions */}
-      <section className="py-20 bg-slate-800/30">
+      <section className="bg-slate-800/30 py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-2xl p-12 border border-gray-700">
+            <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12">
               <div className="text-center">
-                <Code className="w-16 h-16 text-green-400 mx-auto mb-6" />
-                <h2 className="text-4xl font-bold text-white mb-6">Contribute to Open Source</h2>
-                <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
+                <Code className="mx-auto mb-6 h-16 w-16 text-green-400" />
+                <h2 className="mb-6 text-4xl font-bold text-white">Contribute to Open Source</h2>
+                <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-300">
                   Help us build and maintain our community tools, website, and other open-source
                   projects. Perfect for developers looking to contribute to meaningful projects.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-green-400 mb-2">5+</h3>
+                    <h3 className="mb-2 text-2xl font-bold text-green-400">5+</h3>
                     <p className="text-gray-300">Active Projects</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-green-400 mb-2">50+</h3>
+                    <h3 className="mb-2 text-2xl font-bold text-green-400">50+</h3>
                     <p className="text-gray-300">Contributors</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-green-400 mb-2">200+</h3>
+                    <h3 className="mb-2 text-2xl font-bold text-green-400">200+</h3>
                     <p className="text-gray-300">Commits</p>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col justify-center gap-4 sm:flex-row">
                   <a
-                    className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
+                    className="rounded-lg bg-green-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-600"
                     href="https://github.com/nodeahmedabad"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -389,7 +389,7 @@ const GetInvolved: Component = () => {
                     View Projects
                   </a>
                   <a
-                    className="border-2 border-green-500 text-green-400 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-colors"
+                    className="rounded-lg border-2 border-green-500 px-8 py-3 font-semibold text-green-400 transition-colors hover:bg-green-500 hover:text-white"
                     href="https://github.com/nodeahmedabad/contributing"
                     rel="noopener noreferrer"
                     target="_blank"

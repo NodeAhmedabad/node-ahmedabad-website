@@ -15,7 +15,7 @@ const HeroSection: Component = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Grid Pattern */}
@@ -26,7 +26,7 @@ const HeroSection: Component = () => {
           {codeSnippets.map((code, index) => (
             <div
               key={code}
-              className="absolute text-green-400/20 font-mono text-sm animate-float"
+              className="absolute animate-float font-mono text-sm text-green-400/20"
               style={{
                 top: `${20 + index * 30}%`,
                 left: `${10 + index * 25}%`,
@@ -41,22 +41,22 @@ const HeroSection: Component = () => {
         <CursorFollowEffect />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Column - Content */}
             <div className="text-center lg:text-left">
               <ScrollReveal delay={200}>
-                <div className="inline-flex items-center px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full mb-6">
-                  <Sparkles className="w-4 h-4 text-green-400 mr-2" />
-                  <span className="text-green-400 text-sm font-medium">
+                <div className="mb-6 inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2">
+                  <Sparkles className="mr-2 h-4 w-4 text-green-400" />
+                  <span className="text-sm font-medium text-green-400">
                     Welcome to Node Ahmedabad
                   </span>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal delay={400}>
-                <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+                <h1 className="mb-6 text-5xl font-bold lg:text-7xl">
                   <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     Build. Learn.
                   </span>
@@ -68,7 +68,7 @@ const HeroSection: Component = () => {
               </ScrollReveal>
 
               <ScrollReveal delay={600}>
-                <div className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
+                <div className="mb-8 text-xl leading-relaxed text-gray-300 lg:text-2xl">
                   <AnimatedText
                     className="font-light"
                     delay={800}
@@ -80,43 +80,43 @@ const HeroSection: Component = () => {
 
               {/* Stats */}
               <ScrollReveal delay={1200}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8">
+                <div className="mb-8 flex flex-wrap justify-center gap-8 lg:justify-start">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">2K+</div>
-                    <div className="text-gray-400 text-sm flex items-center">
-                      <Users className="w-4 h-4 mr-1" />
+                    <div className="mb-1 text-3xl font-bold text-green-400">2K+</div>
+                    <div className="flex items-center text-sm text-gray-400">
+                      <Users className="mr-1 h-4 w-4" />
                       Members
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">50+</div>
-                    <div className="text-gray-400 text-sm flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
+                    <div className="mb-1 text-3xl font-bold text-green-400">50+</div>
+                    <div className="flex items-center text-sm text-gray-400">
+                      <Calendar className="mr-1 h-4 w-4" />
                       Events
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">5+</div>
-                    <div className="text-gray-400 text-sm">Years</div>
+                    <div className="mb-1 text-3xl font-bold text-green-400">5+</div>
+                    <div className="text-sm text-gray-400">Years</div>
                   </div>
                 </div>
               </ScrollReveal>
 
               {/* CTA Buttons */}
               <ScrollReveal delay={1400}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
                   <Link
-                    className="group bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                    className="group flex items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
                     href="/community"
                   >
                     Join Community
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                   <Link
-                    className="group border border-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 flex items-center justify-center"
+                    className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                     href="/events"
                   >
-                    <Play className="w-5 h-5 mr-2" />
+                    <Play className="mr-2 h-5 w-5" />
                     Watch Highlights
                   </Link>
                 </div>
@@ -128,16 +128,16 @@ const HeroSection: Component = () => {
               <ScrollReveal delay={800} direction="left">
                 <div className="relative">
                   {/* Terminal Window */}
-                  <div className="bg-slate-800 rounded-lg shadow-2xl border border-gray-700 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg border border-gray-700 bg-slate-800 shadow-2xl">
                     {/* Terminal Header */}
-                    <div className="flex items-center px-4 py-3 bg-slate-900 border-b border-gray-700">
+                    <div className="flex items-center border-b border-gray-700 bg-slate-900 px-4 py-3">
                       <div className="flex space-x-2">
-                        <div className="w-3 h-3 bg-red-500 rounded-full" />
-                        <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                        <div className="w-3 h-3 bg-green-500 rounded-full" />
+                        <div className="h-3 w-3 rounded-full bg-red-500" />
+                        <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                        <div className="h-3 w-3 rounded-full bg-green-500" />
                       </div>
                       <div className="flex-1 text-center">
-                        <span className="text-gray-400 text-sm font-mono">node-ahmedabad.js</span>
+                        <span className="font-mono text-sm text-gray-400">node-ahmedabad.js</span>
                       </div>
                     </div>
 
@@ -147,7 +147,7 @@ const HeroSection: Component = () => {
                         <div className="flex items-center">
                           <span className="text-green-400">$</span>
                           <AnimatedText
-                            className="text-white ml-2"
+                            className="ml-2 text-white"
                             delay={1000}
                             speed={80}
                             text=" npm install @node-ahmedabad/community"
@@ -177,7 +177,7 @@ const HeroSection: Component = () => {
                         <div className="flex items-center">
                           <span className="text-green-400">$</span>
                           <AnimatedText
-                            className="text-white ml-2"
+                            className="ml-2 text-white"
                             delay={7500}
                             speed={80}
                             text=" node community.start()"
@@ -196,12 +196,12 @@ const HeroSection: Component = () => {
                   </div>
 
                   {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center animate-bounce">
-                    <Code2 className="w-10 h-10 text-white" />
+                  <div className="absolute -right-4 -top-4 flex h-20 w-20 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500">
+                    <Code2 className="h-10 w-10 text-white" />
                   </div>
 
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center animate-pulse">
-                    <span className="text-white font-bold text-xs">JS</span>
+                  <div className="absolute -bottom-4 -left-4 flex h-16 w-16 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600">
+                    <span className="text-xs font-bold text-white">JS</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -211,9 +211,9 @@ const HeroSection: Component = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-pulse" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
+        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-gray-600">
+          <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-green-400" />
         </div>
       </div>
     </section>

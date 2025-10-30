@@ -4,32 +4,32 @@ import coreValues from '@/data/about/coreValues';
 import type { Component } from '@/types';
 
 const CoreValues: Component = () => (
-  <section className="py-12 sm:py-16 lg:py-20 bg-slate-800/30">
+  <section className="bg-slate-800/30 py-12 sm:py-16 lg:py-20">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <ScrollReveal>
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:mb-6 sm:text-4xl">
             Our Core Values
           </h2>
-          <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-base text-gray-300 sm:text-lg">
             These values guide everything we do and shape the culture of our community.
           </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
         {coreValues.map((item, index) => {
           const { icon: Icon, title, description } = item;
 
           return (
             <ScrollReveal key={title} delay={index * 100}>
-              <div className="h-full bg-slate-800 p-6 rounded-xl border border-gray-700 text-center hover:bg-slate-700 transition-colors duration-300 focus-within:ring-2 focus-within:ring-green-400">
+              <div className="h-full rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-colors duration-300 focus-within:ring-2 focus-within:ring-green-400 hover:bg-slate-700">
                 <Icon
                   aria-hidden="true"
-                  className="w-10 h-10 sm:w-12 sm:h-12 text-green-400 mx-auto mb-4"
+                  className="mx-auto mb-4 h-10 w-10 text-green-400 sm:h-12 sm:w-12"
                 />
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{title}</h3>
-                <p className="text-gray-300 text-sm sm:text-base">{description}</p>
+                <h3 className="mb-3 text-lg font-bold text-white sm:text-xl">{title}</h3>
+                <p className="text-sm text-gray-300 sm:text-base">{description}</p>
               </div>
             </ScrollReveal>
           );

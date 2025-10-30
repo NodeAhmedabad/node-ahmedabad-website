@@ -39,15 +39,15 @@ const Header: Component<HeaderProps> = (props) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isFixedBar
-          ? 'bg-slate-900/95 backdrop-blur-lg border-b border-green-500/20'
+          ? 'border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg'
           : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link className="flex items-center space-x-3 group" href="/">
+          <Link className="group flex items-center space-x-3" href="/">
             <div className="relative">
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
@@ -57,7 +57,7 @@ const Header: Component<HeaderProps> = (props) => {
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 lg:flex">
             {menu.map((item) => {
               const { name, path, icon: Icon } = item;
 
@@ -65,13 +65,13 @@ const Header: Component<HeaderProps> = (props) => {
                 <Link
                   key={name}
                   href={path}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                  className={`flex items-center space-x-2 rounded-lg px-3 py-2 transition-all duration-300 ${
                     pathname === path
-                      ? 'text-green-400 bg-green-400/10'
-                      : 'text-gray-300 hover:text-green-400 hover:bg-green-400/5'
+                      ? 'bg-green-400/10 text-green-400'
+                      : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="h-4 w-4" />
                   <span className="font-medium">{name}</span>
                 </Link>
               );
@@ -80,7 +80,7 @@ const Header: Component<HeaderProps> = (props) => {
 
           <div className="hidden lg:block">
             <Link
-              className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
+              className="rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-2 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
               href="/community"
             >
               {menuButtonText}
@@ -88,11 +88,11 @@ const Header: Component<HeaderProps> = (props) => {
           </div>
 
           <button
-            className="lg:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+            className="rounded-lg p-2 text-white transition-colors duration-300 hover:bg-gray-800 lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 

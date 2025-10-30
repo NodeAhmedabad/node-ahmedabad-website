@@ -146,14 +146,14 @@ const EventDetail: Component = () => {
       <Header />
 
       {/* Back Navigation */}
-      <section className="pt-24 pb-8 bg-slate-900">
+      <section className="bg-slate-900 pb-8 pt-24">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <Link
-              className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors duration-300 group"
+              className="group inline-flex items-center text-green-400 transition-colors duration-300 hover:text-green-300"
               to="/events"
             >
-              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
               Back to Events
             </Link>
           </ScrollReveal>
@@ -161,49 +161,49 @@ const EventDetail: Component = () => {
       </section>
 
       {/* Event Header */}
-      <section className="py-12 bg-slate-900 relative overflow-hidden">
+      <section className="relative overflow-hidden bg-slate-900 py-12">
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-green-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl" />
+          <div className="absolute left-10 top-20 h-32 w-32 rounded-full bg-green-500/5 blur-3xl" />
+          <div className="absolute bottom-20 right-10 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-12">
+        <div className="container relative z-10 mx-auto px-6">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-12 lg:grid-cols-3">
               {/* Main Content */}
               <div className="lg:col-span-2">
                 <ScrollReveal>
                   {event.featured ? (
-                    <div className="flex items-center mb-4">
-                      <Star className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-yellow-400 text-sm font-medium">Featured Event</span>
+                    <div className="mb-4 flex items-center">
+                      <Star className="mr-2 h-4 w-4 text-yellow-400" />
+                      <span className="text-sm font-medium text-yellow-400">Featured Event</span>
                     </div>
                   ) : null}
 
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="mb-6 flex flex-wrap gap-2">
                     {event.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20"
+                        className="rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-xs text-green-400"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                  <h1 className="mb-6 text-4xl font-bold leading-tight text-white lg:text-5xl">
                     {event.title}
                   </h1>
 
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">{event.description}</p>
+                  <p className="mb-8 text-xl leading-relaxed text-gray-300">{event.description}</p>
 
                   {/* Event Details */}
-                  <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-center p-4 bg-slate-800/50 border border-gray-700 rounded-lg">
-                      <Calendar className="w-5 h-5 mr-3 text-green-400" />
+                  <div className="mb-8 grid gap-4 sm:grid-cols-2">
+                    <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
+                      <Calendar className="mr-3 h-5 w-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Date</div>
-                        <div className="text-white font-medium">
+                        <div className="font-medium text-white">
                           {new Date(event.date).toLocaleDateString('en-US', {
                             weekday: 'long',
                             year: 'numeric',
@@ -214,27 +214,27 @@ const EventDetail: Component = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center p-4 bg-slate-800/50 border border-gray-700 rounded-lg">
-                      <Clock className="w-5 h-5 mr-3 text-green-400" />
+                    <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
+                      <Clock className="mr-3 h-5 w-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Time</div>
-                        <div className="text-white font-medium">{event.time}</div>
+                        <div className="font-medium text-white">{event.time}</div>
                       </div>
                     </div>
 
-                    <div className="flex items-center p-4 bg-slate-800/50 border border-gray-700 rounded-lg">
-                      <MapPin className="w-5 h-5 mr-3 text-green-400" />
+                    <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
+                      <MapPin className="mr-3 h-5 w-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Location</div>
-                        <div className="text-white font-medium">{event.location}</div>
+                        <div className="font-medium text-white">{event.location}</div>
                       </div>
                     </div>
 
-                    <div className="flex items-center p-4 bg-slate-800/50 border border-gray-700 rounded-lg">
-                      <Users className="w-5 h-5 mr-3 text-green-400" />
+                    <div className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4">
+                      <Users className="mr-3 h-5 w-5 text-green-400" />
                       <div>
                         <div className="text-sm text-gray-400">Attendees</div>
-                        <div className="text-white font-medium">
+                        <div className="font-medium text-white">
                           {event.attendees}/{event.maxAttendees}
                         </div>
                       </div>
@@ -242,29 +242,29 @@ const EventDetail: Component = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <div className="mb-8 flex flex-col gap-4 sm:flex-row">
                     <button
-                      className="flex items-center justify-center px-6 py-3 bg-slate-700 border border-gray-600 text-white rounded-lg hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300"
+                      className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
                       onClick={addToCalendar}
                       type="button"
                     >
-                      <CalendarIcon className="w-4 h-4 mr-2" />
+                      <CalendarIcon className="mr-2 h-4 w-4" />
                       Add to Calendar
                     </button>
                     <button
-                      className="flex items-center justify-center px-6 py-3 bg-slate-700 border border-gray-600 text-white rounded-lg hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300"
+                      className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
                       type="button"
                     >
-                      <Share2 className="w-4 h-4 mr-2" />
+                      <Share2 className="mr-2 h-4 w-4" />
                       Share Event
                     </button>
                     <a
-                      className="flex items-center justify-center px-6 py-3 bg-slate-700 border border-gray-600 text-white rounded-lg hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300"
+                      className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
                       href={event.mapLink}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <ExternalLink className="mr-2 h-4 w-4" />
                       View Map
                     </a>
                   </div>
@@ -275,37 +275,37 @@ const EventDetail: Component = () => {
               <div className="lg:col-span-1">
                 <ScrollReveal delay={200}>
                   <div className="sticky top-24">
-                    <div className="bg-slate-800/50 border border-gray-700 rounded-2xl p-6">
+                    <div className="rounded-2xl border border-gray-700 bg-slate-800/50 p-6">
                       {isRegistered ? (
                         <div className="text-center">
-                          <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                          <h3 className="text-2xl font-bold text-white mb-2">
+                          <CheckCircle className="mx-auto mb-4 h-16 w-16 text-green-400" />
+                          <h3 className="mb-2 text-2xl font-bold text-white">
                             Registration Successful!
                           </h3>
-                          <p className="text-gray-300 mb-6">
+                          <p className="mb-6 text-gray-300">
                             We&apos;ve sent a confirmation email to {registrationData.email}
                           </p>
-                          <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
-                            <p className="text-green-400 text-sm">
+                          <div className="rounded-lg border border-green-500/20 bg-green-500/10 p-4">
+                            <p className="text-sm text-green-400">
                               You&apos;ll receive event updates and joining instructions via email.
                             </p>
                           </div>
                         </div>
                       ) : (
                         <Fragment>
-                          <h3 className="text-2xl font-bold text-white mb-4">Register for Event</h3>
-                          <div className="text-3xl font-bold text-green-400 mb-6">
+                          <h3 className="mb-4 text-2xl font-bold text-white">Register for Event</h3>
+                          <div className="mb-6 text-3xl font-bold text-green-400">
                             {event.price}
                           </div>
 
                           <form className="space-y-4" onSubmit={handleRegistration}>
                             <div>
-                              <label className="block text-sm font-medium text-gray-300 mb-2">
+                              <label className="mb-2 block text-sm font-medium text-gray-300">
                                 Full Name
                               </label>
                               <input
                                 required
-                                className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none"
+                                className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white focus:border-green-500 focus:outline-none"
                                 name="name"
                                 onChange={handleInputChange}
                                 placeholder="Enter your full name"
@@ -315,12 +315,12 @@ const EventDetail: Component = () => {
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-300 mb-2">
+                              <label className="mb-2 block text-sm font-medium text-gray-300">
                                 Email
                               </label>
                               <input
                                 required
-                                className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none"
+                                className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white focus:border-green-500 focus:outline-none"
                                 name="email"
                                 onChange={handleInputChange}
                                 placeholder="your@email.com"
@@ -330,12 +330,12 @@ const EventDetail: Component = () => {
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-300 mb-2">
+                              <label className="mb-2 block text-sm font-medium text-gray-300">
                                 Phone
                               </label>
                               <input
                                 required
-                                className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none"
+                                className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white focus:border-green-500 focus:outline-none"
                                 name="phone"
                                 onChange={handleInputChange}
                                 placeholder="+91 XXXXX XXXXX"
@@ -345,11 +345,11 @@ const EventDetail: Component = () => {
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-300 mb-2">
+                              <label className="mb-2 block text-sm font-medium text-gray-300">
                                 Experience Level
                               </label>
                               <select
-                                className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none"
+                                className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white focus:border-green-500 focus:outline-none"
                                 name="experience"
                                 onChange={handleInputChange}
                                 value={registrationData.experience}
@@ -361,7 +361,7 @@ const EventDetail: Component = () => {
                             </div>
 
                             <button
-                              className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
+                              className="w-full rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
                               type="submit"
                             >
                               Register Now
@@ -379,13 +379,13 @@ const EventDetail: Component = () => {
       </section>
 
       {/* Event Description */}
-      <section className="py-16 bg-slate-800/30">
+      <section className="bg-slate-800/30 py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-white mb-8">About This Workshop</h2>
+              <h2 className="mb-8 text-3xl font-bold text-white">About This Workshop</h2>
               <div className="prose prose-lg prose-invert max-w-none">
-                <div className="text-gray-300 leading-relaxed whitespace-pre-line">
+                <div className="whitespace-pre-line leading-relaxed text-gray-300">
                   {event.longDescription}
                 </div>
               </div>
@@ -395,18 +395,18 @@ const EventDetail: Component = () => {
       </section>
 
       {/* Requirements */}
-      <section className="py-16 bg-slate-900">
+      <section className="bg-slate-900 py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-white mb-8">Requirements</h2>
+              <h2 className="mb-8 text-3xl font-bold text-white">Requirements</h2>
               <div className="grid gap-4">
                 {event.requirements.map((requirement, index) => (
                   <div
                     key={index}
-                    className="flex items-start p-4 bg-slate-800/50 border border-gray-700 rounded-lg"
+                    className="flex items-start rounded-lg border border-gray-700 bg-slate-800/50 p-4"
                   >
-                    <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                     <span className="text-gray-300">{requirement}</span>
                   </div>
                 ))}
@@ -417,25 +417,25 @@ const EventDetail: Component = () => {
       </section>
 
       {/* Agenda */}
-      <section className="py-16 bg-slate-800/30">
+      <section className="bg-slate-800/30 py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-white mb-8">Event Agenda</h2>
+              <h2 className="mb-8 text-3xl font-bold text-white">Event Agenda</h2>
               <div className="space-y-6">
                 {event.agenda.map((item, index) => (
                   <div
                     key={index}
-                    className="flex gap-6 p-6 bg-slate-900/50 border border-gray-700 rounded-xl"
+                    className="flex gap-6 rounded-xl border border-gray-700 bg-slate-900/50 p-6"
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-20 h-20 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-green-400" />
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full border border-green-500/30 bg-gradient-to-r from-green-500/20 to-emerald-500/20">
+                        <Clock className="h-6 w-6 text-green-400" />
                       </div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm text-green-400 font-medium mb-1">{item.time}</div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                      <div className="mb-1 text-sm font-medium text-green-400">{item.time}</div>
+                      <h3 className="mb-2 text-xl font-semibold text-white">{item.title}</h3>
                       <p className="text-gray-300">{item.description}</p>
                     </div>
                   </div>
@@ -447,26 +447,26 @@ const EventDetail: Component = () => {
       </section>
 
       {/* Speaker Section */}
-      <section className="py-16 bg-slate-900">
+      <section className="bg-slate-900 py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-white mb-8">Meet Your Speaker</h2>
-              <div className="bg-slate-800/50 border border-gray-700 rounded-2xl p-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
+              <h2 className="mb-8 text-3xl font-bold text-white">Meet Your Speaker</h2>
+              <div className="rounded-2xl border border-gray-700 bg-slate-800/50 p-8">
+                <div className="flex flex-col items-center gap-6 md:flex-row">
                   <img
                     alt={event.speaker.name}
-                    className="w-32 h-32 rounded-full border-4 border-green-500/20"
+                    className="h-32 w-32 rounded-full border-4 border-green-500/20"
                     src={event.speaker.avatar}
                   />
                   <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-white mb-2">{event.speaker.name}</h3>
-                    <p className="text-green-400 font-medium mb-1">{event.speaker.role}</p>
-                    <p className="text-gray-400 mb-4">{event.speaker.company}</p>
-                    <p className="text-gray-300 leading-relaxed mb-4">{event.speaker.bio}</p>
-                    <div className="flex gap-4 justify-center md:justify-start">
+                    <h3 className="mb-2 text-2xl font-bold text-white">{event.speaker.name}</h3>
+                    <p className="mb-1 font-medium text-green-400">{event.speaker.role}</p>
+                    <p className="mb-4 text-gray-400">{event.speaker.company}</p>
+                    <p className="mb-4 leading-relaxed text-gray-300">{event.speaker.bio}</p>
+                    <div className="flex justify-center gap-4 md:justify-start">
                       <a
-                        className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                        className="text-blue-400 transition-colors duration-300 hover:text-blue-300"
                         href={event.speaker.linkedin}
                         rel="noopener noreferrer"
                         target="_blank"
@@ -474,7 +474,7 @@ const EventDetail: Component = () => {
                         LinkedIn
                       </a>
                       <a
-                        className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                        className="text-blue-400 transition-colors duration-300 hover:text-blue-300"
                         href={event.speaker.twitter}
                         rel="noopener noreferrer"
                         target="_blank"
@@ -492,17 +492,17 @@ const EventDetail: Component = () => {
 
       {/* Sponsors */}
       {event.sponsors.length > 0 && (
-        <section className="py-16 bg-slate-800/30">
+        <section className="bg-slate-800/30 py-16">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="mx-auto max-w-4xl text-center">
               <ScrollReveal>
-                <h2 className="text-3xl font-bold text-white mb-8">Event Sponsors</h2>
-                <div className="flex flex-wrap justify-center items-center gap-8">
+                <h2 className="mb-8 text-3xl font-bold text-white">Event Sponsors</h2>
+                <div className="flex flex-wrap items-center justify-center gap-8">
                   {event.sponsors.map((sponsor, index) => (
                     <div key={index} className="flex flex-col items-center">
                       <img
                         alt={sponsor.name}
-                        className="h-16 w-auto mb-2 filter grayscale hover:grayscale-0 transition-all duration-300"
+                        className="mb-2 h-16 w-auto grayscale filter transition-all duration-300 hover:grayscale-0"
                         src={sponsor.logo}
                       />
                       <span className="text-xs text-gray-400">{sponsor.tier} Sponsor</span>

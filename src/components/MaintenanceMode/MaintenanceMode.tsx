@@ -6,13 +6,13 @@ import type { Component } from '@/types';
 const MaintenanceMode: Component = () => (
   <div className="container">
     <div className="flex flex-wrap justify-center">
-      <div className="basis-10/12 main-title">
+      <div className="main-title basis-10/12">
         <h1>Website</h1>
         <h2>under construction</h2>
       </div>
     </div>
     <div className="flex flex-wrap items-center">
-      <div className="basis-10/12 md:basis-6/12 lg:basis-1/2 svg-img p-5">
+      <div className="svg-img basis-10/12 p-5 md:basis-6/12 lg:basis-1/2">
         <MaintenanceModeIcon />
       </div>
     </div>

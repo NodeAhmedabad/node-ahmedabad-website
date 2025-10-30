@@ -13,12 +13,12 @@ import { socialMedia } from '@/data/stats';
 import type { Component } from '@/types';
 
 const Footer: Component = () => (
-  <footer className="bg-slate-900 border-t border-gray-800">
+  <footer className="border-t border-gray-800 bg-slate-900">
     <NewsLetter />
     <div className="container mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
         <div className="lg:col-span-2">
-          <Link className="flex items-center space-x-3 mb-6 group" href="/">
+          <Link className="group mb-6 flex items-center space-x-3" href="/">
             <div className="relative">
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
@@ -27,8 +27,8 @@ const Footer: Component = () => (
               <p className="text-sm text-green-400">{constants.APP_COMMUNITY}</p>
             </div>
           </Link>
-          <p className="text-gray-400 mb-6 leading-relaxed">{constants.APP_DESCRIPTION}</p>
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <p className="mb-6 leading-relaxed text-gray-400">{constants.APP_DESCRIPTION}</p>
+          <div className="mb-6 grid grid-cols-3 gap-4">
             {statLinks.map((state) => (
               <StatBlock {...state} key={state.name} />
             ))}
@@ -42,34 +42,34 @@ const Footer: Component = () => (
                 <a
                   key={name}
                   aria-label={name}
-                  className={`p-3 bg-slate-800 rounded-lg text-gray-400 ${color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                  className={`rounded-lg bg-slate-800 p-3 text-gray-400 ${color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
                   href={url}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="h-5 w-5" />
                 </a>
               );
             })}
           </div>
         </div>
 
-        <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
           {footerLinks.map((item) => {
             const { id, name, links } = item;
 
             return (
               <div key={id}>
-                <h3 className="text-white font-semibold mb-4">{name}</h3>
+                <h3 className="mb-4 font-semibold text-white">{name}</h3>
                 <ul className="space-y-3">
                   {links.map((link) => (
                     <li key={link.name}>
                       <Link
-                        className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center group"
+                        className="group flex items-center text-gray-400 transition-colors duration-300 hover:text-green-400"
                         href={link.path}
                       >
                         <span>{link.name}</span>
-                        <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ExternalLink className="ml-1 h-3 w-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       </Link>
                     </li>
                   ))}
@@ -80,14 +80,14 @@ const Footer: Component = () => (
         </div>
       </div>
 
-      <div className="border-t border-gray-800 pt-8 mt-12">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-gray-400 text-sm">
+      <div className="mt-12 border-t border-gray-800 pt-8">
+        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+          <div className="text-sm text-gray-400">
             © {new Date().getFullYear()} ${constants.APP_NAME}. All rights reserved. Built with ❤️
             by the community.
           </div>
-          <div className="flex items-center space-x-4 text-gray-400 text-sm">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          <div className="flex items-center space-x-4 text-sm text-gray-400">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
             <span>Made in Ahmedabad ❤️</span>
           </div>
         </div>

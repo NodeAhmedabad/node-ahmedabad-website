@@ -15,15 +15,15 @@ const Banner: Component<BannerProps> = (props) => {
   const { title, description, children } = props;
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 sm:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="text-center mb-12 lg:mb-16">
+          <div className="mb-12 text-center lg:mb-16">
             <AnimatedText
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6"
+              className="mb-4 text-3xl font-bold text-white sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl"
               text={title}
             />
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">{description}</p>
+            <p className="mx-auto max-w-3xl px-4 text-lg text-gray-300 sm:text-xl">{description}</p>
           </div>
         </ScrollReveal>
         {children}

@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-import ScrollReveal from '@/components/ScrollReveal';
 import EventCard from '@/components/homepage/EventCard';
+import ScrollReveal from '@/components/ScrollReveal';
 import pastEvents from '@/data/homepage/pastEvents';
 import upcomingEvents from '@/data/homepage/upcomingEvents';
 
@@ -16,19 +16,19 @@ const EventsSection: Component = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
 
   return (
-    <section className="py-20 bg-slate-900 relative overflow-hidden">
+    <section className="relative overflow-hidden bg-slate-900 py-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-green-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl" />
+        <div className="absolute left-10 top-20 h-32 w-32 rounded-full bg-green-500/5 blur-3xl" />
+        <div className="absolute bottom-20 right-10 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="mx-auto max-w-6xl">
           {/* Header */}
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <div className="mb-12 text-center">
+              <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Our
                 </span>
@@ -37,7 +37,7 @@ const EventsSection: Component = () => {
                   Events
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300">
                 Join us for workshops, talks, and networking sessions designed to elevate your
                 JavaScript skills
               </p>
@@ -46,12 +46,12 @@ const EventsSection: Component = () => {
 
           {/* Tabs */}
           <ScrollReveal delay={200}>
-            <div className="flex justify-center mb-12">
-              <div className="bg-slate-800 border border-gray-700 rounded-lg p-1">
+            <div className="mb-12 flex justify-center">
+              <div className="rounded-lg border border-gray-700 bg-slate-800 p-1">
                 <button
                   onClick={() => setActiveTab('upcoming')}
                   type="button"
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  className={`rounded-lg px-6 py-3 font-medium transition-all duration-300 ${
                     activeTab === 'upcoming'
                       ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                       : 'text-gray-400 hover:text-white'
@@ -62,7 +62,7 @@ const EventsSection: Component = () => {
                 <button
                   onClick={() => setActiveTab('past')}
                   type="button"
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  className={`rounded-lg px-6 py-3 font-medium transition-all duration-300 ${
                     activeTab === 'past'
                       ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                       : 'text-gray-400 hover:text-white'
@@ -75,7 +75,7 @@ const EventsSection: Component = () => {
           </ScrollReveal>
 
           {/* Events Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="mb-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {activeTab === 'upcoming' &&
               upcomingEvents.map((event, index) => (
                 <ScrollReveal key={event.id} delay={300 + index * 100}>
@@ -93,26 +93,26 @@ const EventsSection: Component = () => {
 
           {/* CTA Section */}
           <ScrollReveal>
-            <div className="text-center bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
-              <h3 className="text-3xl font-bold text-white mb-4">Want to Speak at Our Events?</h3>
-              <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
+            <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-8 text-center backdrop-blur-sm">
+              <h3 className="mb-4 text-3xl font-bold text-white">Want to Speak at Our Events?</h3>
+              <p className="mx-auto mb-6 max-w-2xl text-lg text-gray-300">
                 Share your knowledge and experience with our community. We're always looking for
                 passionate speakers.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
-                  className="group bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                  className="group flex items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
                   href="/events"
                 >
                   View All Events
-                  <ExternalLink className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
+                  <ExternalLink className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 </Link>
                 <Link
-                  className="group border border-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 flex items-center justify-center"
+                  className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
                   href="/get-involved"
                 >
                   Become a Speaker
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>

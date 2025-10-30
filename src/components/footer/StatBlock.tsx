@@ -7,8 +7,8 @@ const StatBlock: Component<StatBlockProps> = (props) => {
   const { icon: Icon, value, name } = props;
 
   return (
-    <div className="text-center p-3 bg-slate-800 rounded-lg">
-      <Icon className="w-5 h-5 text-green-400 mx-auto mb-1" />
+    <div className="rounded-lg bg-slate-800 p-3 text-center">
+      <Icon className="mx-auto mb-1 h-5 w-5 text-green-400" />
       <div className="text-lg font-bold text-white">{value}</div>
       <div className="text-xs text-gray-400">{name}</div>
     </div>
