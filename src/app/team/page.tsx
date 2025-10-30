@@ -2,6 +2,7 @@ import AnimatedText from '@/components/AnimatedText';
 import ScrollReveal from '@/components/ScrollReveal';
 import TeamMembers from '@/components/team/TeamMembers';
 import constants from '@/constants';
+import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
 
@@ -12,7 +13,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const TeamPage: Component = () => (
-  <main className="pt-20">
+  <MainLayout className="pt-20">
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
@@ -29,7 +30,7 @@ const TeamPage: Component = () => (
       </div>
     </section>
     <TeamMembers />
-  </main>
+  </MainLayout>
 );
 
 export default TeamPage;

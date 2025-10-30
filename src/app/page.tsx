@@ -2,6 +2,7 @@ import AboutSection from '@/components/homepage/AboutSection';
 import EventsSection from '@/components/homepage/EventsSection';
 import HeroSection from '@/components/homepage/HeroSection';
 import constants from '@/constants';
+import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
 
@@ -12,11 +13,11 @@ export const metadata = {
 } satisfies Metadata;
 
 const HomePage: Component = () => (
-  <main>
+  <MainLayout>
     <HeroSection />
     <AboutSection />
     <EventsSection />
-  </main>
+  </MainLayout>
 );
 
 export default HomePage;

@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import constants from '@/constants';
 import coreValues from '@/data/about/coreValues';
 import timeline from '@/data/about/timeline';
+import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
 
@@ -15,7 +16,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const AboutPage: Component = () => (
-  <main className="pt-20">
+  <MainLayout className="pt-20">
     {/* Hero Section */}
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,7 +194,7 @@ const AboutPage: Component = () => (
         </div>
       </div>
     </section>
-  </main>
+  </MainLayout>
 );
 
 export default AboutPage;

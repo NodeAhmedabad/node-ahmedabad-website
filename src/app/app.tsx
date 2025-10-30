@@ -1,22 +1,12 @@
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/Header';
 import MaintenanceMode from '@/components/maintenanceMode/MaintenanceMode';
 import config from '@/config';
 
 import type { Layout } from '@/types';
 
-const App: Layout = ({ children }) => {
+const App: Layout = async ({ children }) => {
   const isInMaintenance = config.MAINTENANCE_MODE === 'ON';
 
-  if (isInMaintenance) return <MaintenanceMode />;
-
-  return (
-    <div className="min-h-screen bg-slate-900">
-      <Header />
-      {children}
-      <Footer />
-    </div>
-  );
+  return isInMaintenance ? <MaintenanceMode /> : children;
 };
 
 export default App;

@@ -1,5 +1,5 @@
 import MaintenanceModeIcon from '@/assets/MaintenanceModeIcon';
-import '@/components/MaintenanceMode/styles.css';
+import '@/components/maintenanceMode/styles.css';
 
 import type { Component } from '@/types';
 

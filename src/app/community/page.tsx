@@ -6,11 +6,12 @@ import communityStats from '@/data/community/communityStats';
 import guidelines from '@/data/community/guidelines';
 import socialMedia from '@/data/community/socialMedia';
 import volunteerRoles from '@/data/community/volunteerRoles';
+import MainLayout from '@/layouts/MainLayout';
 
 import type { Component } from '@/types';
 
 const CommunityPage: Component = () => (
-  <main className="pt-20">
+  <MainLayout className="pt-20">
     {/* Hero Section */}
     <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="container mx-auto px-6">
@@ -204,7 +205,7 @@ const CommunityPage: Component = () => (
         </ScrollReveal>
       </div>
     </section>
-  </main>
+  </MainLayout>
 );
 
 export default CommunityPage;

@@ -1,6 +1,8 @@
-import { Code2, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
+import logo from '@/assets/logo.jpg';
 import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
 import constants from '@/constants';
@@ -18,10 +20,7 @@ const Footer: Component = () => (
         <div className="lg:col-span-2">
           <Link className="flex items-center space-x-3 mb-6 group" href="/">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Code2 className="w-7 h-7 text-white" />
-              </div>
-              <div className="absolute -inset-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg opacity-25 group-hover:opacity-75 blur transition-opacity duration-300" />
+              <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
             <div>
               <h2 className="text-xl font-bold text-white">{constants.APP_NAME}</h2>

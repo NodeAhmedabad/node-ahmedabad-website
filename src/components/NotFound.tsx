@@ -1,26 +1,17 @@
-'use client';
-
-import React from 'react';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 import type { Component } from '@/types';
 
-const NotFound: Component = () => {
-  const pathname = usePathname();
-
-  return (
-    <div className="flex flex-col items-center">
-      <h2 className="p-4">Not Found</h2>
-      <p className="mb-4">Could not find requested resource &quot;{pathname}&quot;</p>
-      <Link href="/">
-        <button className="w-fit mx-auto my-0 py-2 px-4 cursor-pointer" type="button">
-          Return Home
-        </button>
+const NotFound: Component = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="text-center">
+      <h1 className="text-4xl font-bold mb-4">404</h1>
+      <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
+      <Link className="text-blue-500 hover:text-blue-700 underline" href="/">
+        Return to Home
       </Link>
     </div>
-  );
-};
+  </div>
+);
 
 export default NotFound;

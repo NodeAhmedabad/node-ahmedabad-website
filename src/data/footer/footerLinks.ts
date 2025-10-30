@@ -40,10 +40,6 @@ const footerLinks = [
     name: 'Resources',
     links: [
       {
-        name: 'Learning Materials',
-        path: '/resources',
-      },
-      {
         name: 'Code of Conduct',
         path: '/code-of-conduct',
       },
