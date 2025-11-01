@@ -6,7 +6,6 @@ labels:
   - new
   - bug
 type: bug
-projects: NodeAhmedabad/1
 body:
   - type: markdown
     attributes:
