@@ -5,15 +5,19 @@ import { useState } from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-import EventCard from '@/components/homepage/EventCard';
+import EventCard from '@/components/events/EventCard';
 import ScrollReveal from '@/components/ScrollReveal';
-import pastEvents from '@/data/homepage/pastEvents';
-import upcomingEvents from '@/data/homepage/upcomingEvents';
+import events, { categories } from '@/data/events/events';
 
 import type { Component } from '@/types';
 
 const EventsSection: Component = () => {
-  const [activeTab, setActiveTab] = useState('upcoming');
+  const [activeTab, setActiveTab] = useState(categories.UPCOMING);
+
+  const filteredEvents =
+    activeTab === categories.ALL
+      ? events
+      : events.filter((event) => (activeTab === categories.PAST ? event.isPast : !event.isPast));
 
   return (
     <section className="relative overflow-hidden bg-slate-900 py-20">
@@ -46,10 +50,10 @@ const EventsSection: Component = () => {
             <div className="mb-12 flex justify-center">
               <div className="rounded-lg border border-gray-700 bg-slate-800 p-1">
                 <button
-                  onClick={() => setActiveTab('upcoming')}
+                  onClick={() => setActiveTab(categories.UPCOMING)}
                   type="button"
                   className={`rounded-lg px-6 py-3 font-medium transition-all duration-300 ${
-                    activeTab === 'upcoming'
+                    activeTab === categories.UPCOMING
                       ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
@@ -57,10 +61,10 @@ const EventsSection: Component = () => {
                   Upcoming Events
                 </button>
                 <button
-                  onClick={() => setActiveTab('past')}
+                  onClick={() => setActiveTab(categories.PAST)}
                   type="button"
                   className={`rounded-lg px-6 py-3 font-medium transition-all duration-300 ${
-                    activeTab === 'past'
+                    activeTab === categories.PAST
                       ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
@@ -72,19 +76,15 @@ const EventsSection: Component = () => {
           </ScrollReveal>
 
           <div className="mb-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {activeTab === 'upcoming' &&
-              upcomingEvents.map((event, index) => (
-                <ScrollReveal key={event.id} delay={300 + index * 100}>
-                  <EventCard event={event} isPast={false} />
-                </ScrollReveal>
-              ))}
+            {filteredEvents.map((event, index) => {
+              const { slug } = event;
 
-            {activeTab === 'past' &&
-              pastEvents.map((event, index) => (
-                <ScrollReveal key={event.id} delay={300 + index * 100}>
-                  <EventCard isPast event={event} />
+              return (
+                <ScrollReveal key={slug} delay={300 + index * 100}>
+                  <EventCard event={event} />
                 </ScrollReveal>
-              ))}
+              );
+            })}
           </div>
 
           <ScrollReveal>

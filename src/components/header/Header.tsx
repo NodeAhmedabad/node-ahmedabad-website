@@ -33,6 +33,8 @@ const Header: Component<HeaderProps> = (props) => {
       setIsFixedBar(window.scrollY > 50);
     };
 
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [fixedBar]);
