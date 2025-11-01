@@ -1,6 +1,6 @@
 import { Calendar, MapPin, Users } from 'lucide-react';
 
-import { stats } from '@/data/stats';
+import { stats } from '@/data/information';
 
 const statLinks = [
   {

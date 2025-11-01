@@ -1,29 +1,35 @@
-import { Github, MessageCircle } from 'lucide-react';
+import { socialMedias } from '@/data/information';
 
 const socialMedia = [
   {
-    name: 'Discord',
+    ...socialMedias.WHATSAPP,
+    description: 'Get instant updates about events and quick community support.',
+    color: 'from-green-500 to-green-600',
+  },
+  {
+    ...socialMedias.LINKEDIN,
     description: 'Join our active Discord server for real-time discussions, help, and networking.',
-    icon: MessageCircle,
-    url: 'https://discord.gg/nodeahmedabad',
-    members: '2,000+',
+    color: 'from-blue-600 to-blue-800',
+  },
+  {
+    ...socialMedias.INSTAGRAM,
+    description: 'Contribute to open-source projects and collaborate on community initiatives.',
+    color: 'from-pink-600 to-pink-800',
+  },
+  {
+    ...socialMedias.X,
+    description: 'Contribute to open-source projects and collaborate on community initiatives.',
+    color: 'from-gray-700 to-gray-800',
+  },
+  {
+    ...socialMedias.DISCORD,
+    description: 'Join our active Discord server for real-time discussions, help, and networking.',
     color: 'from-indigo-500 to-purple-500',
   },
   {
-    name: 'GitHub',
-    description: 'Contribute to open-source projects and collaborate on community initiatives.',
-    icon: Github,
-    url: 'https://github.com/nodeahmedabad',
-    members: '500+',
-    color: 'from-gray-600 to-gray-800',
-  },
-  {
-    name: 'WhatsApp',
+    ...socialMedias.GITHUB,
     description: 'Get instant updates about events and quick community support.',
-    icon: MessageCircle,
-    url: 'https://chat.whatsapp.com/nodeahmedabad',
-    members: '800+',
-    color: 'from-green-500 to-green-600',
+    color: 'from-slate-800 to-slate-900',
   },
 ];
 

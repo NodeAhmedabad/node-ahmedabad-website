@@ -7,8 +7,9 @@ import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
 import constants from '@/constants';
 import footerLinks from '@/data/footer/footerLinks';
+import socialMedia from '@/data/footer/socialMedia';
 import statLinks from '@/data/footer/statLinks';
-import { socialMedia } from '@/data/stats';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -36,16 +37,19 @@ const Footer: Component = () => (
 
           <div className="flex space-x-4">
             {socialMedia.map((social) => {
-              const { name, icon: Icon, url, color } = social;
+              const { title, icon: Icon, url, color } = social;
 
               return (
                 <a
-                  key={name}
-                  aria-label={name}
-                  className={`rounded-lg bg-slate-800 p-3 text-gray-400 ${color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                  key={title}
+                  aria-label={title}
                   href={url}
                   rel="noopener noreferrer"
                   target="_blank"
+                  className={cn(
+                    'rounded-lg bg-slate-800 p-3 text-gray-400 transition-all duration-300 hover:scale-110 hover:shadow-lg',
+                    color,
+                  )}
                 >
                   <Icon className="size-5" />
                 </a>
