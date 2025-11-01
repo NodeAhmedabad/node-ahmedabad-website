@@ -3,11 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import logo from '@/assets/logo.jpg';
-import FooterLinks from '@/components/footer/FooterLinks';
 import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
+import SocialLinks from '@/components/SocialLinks';
 import constants from '@/constants';
 import footerLinks from '@/data/footer/footerLinks';
+import socialMedia from '@/data/footer/socialMedia';
 import statLinks from '@/data/footer/statLinks';
 
 import type { Component } from '@/types';
@@ -33,8 +34,7 @@ const Footer: Component = () => (
               <StatBlock {...state} key={state.name} />
             ))}
           </div>
-
-          <FooterLinks />
+          <SocialLinks socialMedias={socialMedia} />
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">

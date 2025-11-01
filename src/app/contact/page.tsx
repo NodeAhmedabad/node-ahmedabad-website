@@ -1,10 +1,17 @@
 import Banner from '@/components/Banner';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactInformation from '@/components/contact/ContactInformation';
-import SocialLinks from '@/components/contact/SocialLinks';
+import LetsConnect from '@/components/contact/LetsConnect';
+import constants from '@/constants';
 import MainLayout from '@/layouts/MainLayout';
 
+import type { Metadata } from 'next';
+
 import type { Component } from '@/types';
+
+export const metadata = {
+  title: ['Contact', constants.APP_NAME].join(' | '),
+} satisfies Metadata;
 
 const Contact: Component = () => (
   <MainLayout className="pt-20">
@@ -18,7 +25,7 @@ const Contact: Component = () => (
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <ContactForm />
-          <SocialLinks />
+          <LetsConnect />
         </div>
       </div>
     </section>

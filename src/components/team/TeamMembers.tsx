@@ -78,7 +78,7 @@ const TeamMembers: Component = () => {
                   href={`/team/${member.slug}`}
                 >
                   <Image
-                    alt={`${member.name}, ${member.role}`}
+                    alt={member.name}
                     className="mx-auto mb-4 size-24 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
                     height={96}
                     loading="lazy"

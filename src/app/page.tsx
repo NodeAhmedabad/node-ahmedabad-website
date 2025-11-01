@@ -9,7 +9,7 @@ import type { Metadata } from 'next';
 import type { Component } from '@/types';
 
 export const metadata = {
-  title: `Homepage | ${constants.APP_NAME}`,
+  title: ['Homepage', constants.APP_NAME].join(' | '),
 } satisfies Metadata;
 
 const HomePage: Component = () => (

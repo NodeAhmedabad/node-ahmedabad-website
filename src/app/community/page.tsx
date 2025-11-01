@@ -3,10 +3,17 @@ import CommunityGuidelines from '@/components/community/CommunityGuidelines';
 import CtaSection from '@/components/community/CtaSection';
 import SocialBlock from '@/components/community/SocialBlock';
 import ScrollReveal from '@/components/ScrollReveal';
+import constants from '@/constants';
 import communityStats from '@/data/community/communityStats';
 import MainLayout from '@/layouts/MainLayout';
 
+import type { Metadata } from 'next';
+
 import type { Component } from '@/types';
+
+export const metadata = {
+  title: ['Community', constants.APP_NAME].join(' | '),
+} satisfies Metadata;
 
 const CommunityPage: Component = () => (
   <MainLayout className="pt-20">

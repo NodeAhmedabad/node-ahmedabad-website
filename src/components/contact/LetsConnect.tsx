@@ -1,9 +1,10 @@
-import FooterLinks from '@/components/footer/FooterLinks';
 import ScrollReveal from '@/components/ScrollReveal';
+import SocialLinks from '@/components/SocialLinks';
+import socialMedia from '@/data/community/socialMedia';
 
 import type { Component } from '@/types';
 
-const SocialLinks: Component = () => (
+const LetsConnect: Component = () => (
   <ScrollReveal delay={200}>
     <div className="space-y-8">
       <div>
@@ -13,10 +14,10 @@ const SocialLinks: Component = () => (
           knowledge, or a company interested in sponsoring our events, we&apos;re here to help you
           connect with our community.
         </p>
-        <FooterLinks />
+        <SocialLinks socialMedias={socialMedia} />
       </div>
     </div>
   </ScrollReveal>
 );
 
-export default SocialLinks;
+export default LetsConnect;

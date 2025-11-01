@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 import type { Component } from '@/types';
 
 export const metadata = {
-  title: `About | ${constants.APP_NAME}`,
+  title: ['About', constants.APP_NAME].join(' | '),
 } satisfies Metadata;
 
 const AboutPage: Component = () => (
