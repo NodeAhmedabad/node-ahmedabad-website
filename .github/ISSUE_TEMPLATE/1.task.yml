@@ -1,0 +1,35 @@
+name: Task report 📝
+description: Create a task
+assignees:
+  - NishargShah
+labels:
+  - new
+projects:
+  - 1
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for contributing by creating an issue! ❤️
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Current behavior
+      description: Describe what happens instead of the expected behavior.
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: Describe what should happen.
+  - type: textarea
+    attributes:
+      label: Images
+      description: Please provide the images of your problem
+  - type: input
+    attributes:
+      label: Live example link
+      description: Please provide a link to a live example, you can use codesandbox/stackblitz for that
+    validations:
+      required: true
