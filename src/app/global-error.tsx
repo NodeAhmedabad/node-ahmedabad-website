@@ -1,6 +1,6 @@
 'use client';
 
-import Error from '@/components/Error/Error';
+import Error from '@/components/Error';
 
 import type { Component, NextErrorType } from '@/types';
 
