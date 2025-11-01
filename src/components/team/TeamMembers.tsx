@@ -2,28 +2,36 @@
 
 import { Fragment, useState } from 'react';
 
-import { Search } from 'lucide-react';
+import { Search, UserCog, UserPlus, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import ScrollReveal from '@/components/ScrollReveal';
 import teamMembers, { categories } from '@/data/team/teamMembers';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
 const categoryOptions = [
   {
+    icon: Users,
+    label: 'All Members',
+    value: categories.ALL,
+  },
+  {
+    icon: UserCog,
     label: 'Core Members',
     value: categories.CORE,
   },
   {
+    icon: UserPlus,
     label: 'Volunteers',
     value: categories.VOLUNTEER,
   },
 ];
 
 const TeamMembers: Component = () => {
-  const [activeTab, setActiveTab] = useState(categories.CORE);
+  const [activeTab, setActiveTab] = useState(categories.ALL);
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleCategory = (value: string) => {
@@ -31,7 +39,10 @@ const TeamMembers: Component = () => {
     setSearchTerm('');
   };
 
-  const filteredMembers = teamMembers.filter((member) => member.category === activeTab);
+  const filteredMembers =
+    activeTab === categories.ALL
+      ? teamMembers
+      : teamMembers.filter((member) => member.category === activeTab);
 
   return (
     <Fragment>
@@ -50,16 +61,22 @@ const TeamMembers: Component = () => {
             </div>
             <div className="flex flex-wrap gap-2">
               {categoryOptions.map((tab) => {
-                const { label, value } = tab;
+                const { icon: Icon, label, value } = tab;
 
                 return (
                   <button
                     key={value}
-                    className={`rounded-lg border border-green-500/30 px-6 py-2 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900 ${activeTab === value ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white' : 'bg-slate-800 text-green-400 hover:bg-slate-700'}`}
                     onClick={() => handleCategory(value)}
                     type="button"
+                    className={cn(
+                      'flex items-center gap-2 rounded-lg border border-green-500/30 px-4 py-2 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900',
+                      activeTab === value
+                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+                        : 'bg-slate-800 text-green-400 hover:bg-slate-700',
+                    )}
                   >
-                    {label}
+                    <Icon className="size-4" />
+                    <span>{label}</span>
                   </button>
                 );
               })}
@@ -74,7 +91,7 @@ const TeamMembers: Component = () => {
               <ScrollReveal key={[member.name, index].join('-')} delay={index * 100}>
                 <Link
                   aria-label={`View ${member.name}'s profile`}
-                  className="group block w-96 rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-all duration-300 hover:border-green-500/50 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900"
+                  className="group block h-full w-96 rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-all duration-300 hover:border-green-500/50 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900"
                   href={`/team/${member.slug}`}
                 >
                   <Image

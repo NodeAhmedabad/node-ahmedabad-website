@@ -1,4 +1,5 @@
 export const categories = {
+  ALL: 'All',
   CORE: 'Core',
   VOLUNTEER: 'Volunteer',
 };

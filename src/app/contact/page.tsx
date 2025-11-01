@@ -13,7 +13,7 @@ export const metadata = {
   title: ['Contact', constants.APP_NAME].join(' | '),
 } satisfies Metadata;
 
-const Contact: Component = () => (
+const ContactPage: Component = () => (
   <MainLayout className="pt-20">
     <Banner
       description="Have questions, suggestions, or want to collaborate? We'd love to hear from you and help you get involved in our community."
@@ -32,4 +32,4 @@ const Contact: Component = () => (
   </MainLayout>
 );
 
-export default Contact;
+export default ContactPage;
