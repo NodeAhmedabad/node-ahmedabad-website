@@ -2,6 +2,7 @@ import { ArrowRight, Users } from 'lucide-react';
 import Link from 'next/link';
 
 import ScrollReveal from '@/components/ScrollReveal';
+import communityStats from '@/data/community/communityStats';
 import aboutValues from '@/data/homepage/aboutValues';
 
 import type { Component } from '@/types';
@@ -9,7 +10,7 @@ import type { Component } from '@/types';
 const AboutSection: Component = () => (
   <section className="relative overflow-hidden bg-slate-800 py-20">
     {/* Background Pattern */}
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)]" />
 
     <div className="container relative z-10 mx-auto px-6">
       <div className="mx-auto max-w-6xl">
@@ -32,7 +33,6 @@ const AboutSection: Component = () => (
           </div>
         </ScrollReveal>
 
-        {/* Mission Statement */}
         <ScrollReveal delay={200}>
           <div className="mb-16 rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-900/50 to-slate-800/50 p-8 backdrop-blur-sm">
             <div className="text-center">
@@ -46,22 +46,22 @@ const AboutSection: Component = () => (
           </div>
         </ScrollReveal>
 
-        {/* Values Grid */}
         <div className="mb-16 grid gap-8 md:grid-cols-2">
           {aboutValues.map((value, index) => {
-            const Icon = value.icon;
+            const { icon: Icon, title, description, color } = value;
+
             return (
-              <ScrollReveal key={value.title} delay={300 + index * 100}>
+              <ScrollReveal key={title} delay={300 + index * 100}>
                 <div className="group rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-green-500/50">
                   <div className="flex items-start space-x-4">
                     <div
-                      className={`size-12 bg-gradient-to-r ${value.color} flex items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110`}
+                      className={`size-12 bg-gradient-to-r ${color} flex items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110`}
                     >
                       <Icon className="size-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="mb-2 text-xl font-semibold text-white">{value.title}</h4>
-                      <p className="leading-relaxed text-gray-300">{value.description}</p>
+                      <h4 className="mb-2 text-xl font-semibold text-white">{title}</h4>
+                      <p className="leading-relaxed text-gray-300">{description}</p>
                     </div>
                   </div>
                 </div>
@@ -70,31 +70,19 @@ const AboutSection: Component = () => (
           })}
         </div>
 
-        {/* Stats Section */}
         <ScrollReveal>
           <div className="mb-16 rounded-2xl border border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-8">
             <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
-              <div>
-                <div className="mb-2 text-4xl font-bold text-green-400">2000+</div>
-                <div className="text-gray-300">Active Members</div>
-              </div>
-              <div>
-                <div className="mb-2 text-4xl font-bold text-green-400">50+</div>
-                <div className="text-gray-300">Events Hosted</div>
-              </div>
-              <div>
-                <div className="mb-2 text-4xl font-bold text-green-400">100+</div>
-                <div className="text-gray-300">Speakers</div>
-              </div>
-              <div>
-                <div className="mb-2 text-4xl font-bold text-green-400">5+</div>
-                <div className="text-gray-300">Years Strong</div>
-              </div>
+              {communityStats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="mb-2 text-4xl font-bold text-green-400">{stat.value}</div>
+                  <div className="text-gray-300">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </ScrollReveal>
 
-        {/* CTA Section */}
         <ScrollReveal>
           <div className="text-center">
             <h3 className="mb-6 text-3xl font-bold text-white">Ready to Join Our Journey?</h3>

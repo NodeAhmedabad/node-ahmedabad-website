@@ -87,7 +87,7 @@ const Footer: Component = () => (
       <div className="mt-12 border-t border-gray-800 pt-8">
         <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           <div className="text-sm text-gray-400">
-            © {new Date().getFullYear()} ${constants.APP_NAME}. All rights reserved. Built with ❤️
+            © {new Date().getFullYear()} {constants.APP_NAME}. All rights reserved. Built with ❤️
             by the community.
           </div>
           <div className="flex items-center space-x-4 text-sm text-gray-400">
