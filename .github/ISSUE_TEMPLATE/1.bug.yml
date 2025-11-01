@@ -1,11 +1,13 @@
-name: Create Task 📝
-description: Create a task
+name: Bug report 🐛
+description: Create a bug report
 assignees:
   - NishargShah
 labels:
   - new
+  - bug
+type: bug
 projects:
-  - 1
+  - NodeAhmedabad/1
 body:
   - type: markdown
     attributes:
