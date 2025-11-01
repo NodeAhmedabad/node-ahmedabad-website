@@ -6,8 +6,6 @@ labels:
   - new
   - enhancement
 type: feature
-projects:
-  - NodeAhmedabad/1
 body:
   - type: markdown
     attributes:
