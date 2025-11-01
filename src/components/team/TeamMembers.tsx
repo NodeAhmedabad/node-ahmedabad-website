@@ -71,7 +71,7 @@ const TeamMembers: Component = () => {
                     className={cn(
                       'flex items-center gap-2 rounded-lg border border-green-500/30 px-4 py-2 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900',
                       activeTab === value
-                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+                        ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'
                         : 'bg-slate-800 text-green-400 hover:bg-slate-700',
                     )}
                   >

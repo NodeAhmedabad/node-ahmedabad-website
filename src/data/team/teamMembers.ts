@@ -1,7 +1,7 @@
 export const categories = {
-  ALL: 'All',
-  CORE: 'Core',
-  VOLUNTEER: 'Volunteer',
+  ALL: 'all',
+  CORE: 'core',
+  VOLUNTEER: 'volunteer',
 };
 
 const teamMembers = [
