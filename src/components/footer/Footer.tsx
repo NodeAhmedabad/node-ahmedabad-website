@@ -10,6 +10,7 @@ import constants from '@/constants';
 import footerLinks from '@/data/footer/footerLinks';
 import socialMedia from '@/data/footer/socialMedia';
 import statLinks from '@/data/footer/statLinks';
+import packageJson from '~/package.json';
 
 import type { Component } from '@/types';
 
@@ -70,6 +71,7 @@ const Footer: Component = () => (
             by the community.
           </div>
           <div className="flex items-center space-x-4 text-sm text-gray-400">
+            <span>V{packageJson.version}</span>
             <div className="size-2 animate-pulse rounded-full bg-green-400" />
             <span>Made in Ahmedabad ❤️</span>
           </div>

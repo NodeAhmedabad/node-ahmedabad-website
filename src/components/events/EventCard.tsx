@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, Mic, Users } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 import Link from 'next/link';
 
 import FeaturedText from '@/components/events/event/FeaturedText';
@@ -20,7 +20,6 @@ const EventCard: Component<EventCardProps> = (props) => {
     location,
     attendees,
     shortDescription,
-    speaker,
     image,
     isPast,
     isFeatured,
@@ -81,10 +80,6 @@ const EventCard: Component<EventCardProps> = (props) => {
                 <span>
                   {attendees} {isPast ? 'attended' : 'attendees'}
                 </span>
-              </div>
-              <div className="flex items-center text-gray-400">
-                <Mic className="mr-2 size-4 text-green-400" />
-                <span>{speaker}</span>
               </div>
             </div>
             <div className="flex items-center justify-between">
