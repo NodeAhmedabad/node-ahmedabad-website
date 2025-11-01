@@ -5,7 +5,7 @@ assignees:
 labels:
   - new
 projects:
-  - Project Launch V1.0.0
+  - 1
 body:
   - type: markdown
     attributes:
