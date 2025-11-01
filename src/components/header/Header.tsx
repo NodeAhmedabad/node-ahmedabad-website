@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import logo from '@/assets/logo.jpg';
+import logo from '@/assets/logo.png';
 import MobileHeader from '@/components/header/MobileHeader';
 import constants from '@/constants';
 import menu, { menuButtonText } from '@/data/homepage/menu';

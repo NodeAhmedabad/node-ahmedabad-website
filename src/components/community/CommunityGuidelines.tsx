@@ -21,7 +21,7 @@ const CommunityGuidelines: Component = () => (
 
           return (
             <ScrollReveal key={title} delay={index * 100}>
-              <div className="rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-colors duration-300 hover:bg-slate-700">
+              <div className="h-full rounded-xl border border-gray-700 bg-slate-800 p-6 text-center transition-colors duration-300 hover:bg-slate-700">
                 <Icon className="mx-auto mb-4 size-12 text-green-400" />
                 <h3 className="mb-3 text-xl font-bold text-white">{title}</h3>
                 <p className="text-gray-300">{description}</p>

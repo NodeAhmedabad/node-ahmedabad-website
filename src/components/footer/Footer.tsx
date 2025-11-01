@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logo from '@/assets/logo.jpg';
+import logo from '@/assets/logo.png';
 import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
 import SocialLinks from '@/components/SocialLinks';
