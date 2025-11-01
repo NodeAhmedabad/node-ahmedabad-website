@@ -17,7 +17,7 @@ export const generateMetadata: GenerateMetadata<'id'> = async (props) => {
   const teamMember = teamMembers.find((member) => member.slug === id);
 
   return {
-    title: [...(teamMember?.name ? [teamMember.name] : ['Team']), constants.APP_NAME].join(' | '),
+    title: [...(teamMember?.name ? [teamMember.name] : []), constants.APP_NAME].join(' | '),
   };
 };
 

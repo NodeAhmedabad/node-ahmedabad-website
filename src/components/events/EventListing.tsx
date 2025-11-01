@@ -5,6 +5,7 @@ import { Fragment, useState } from 'react';
 import { Calendar, Clock, Code, MapPin, Mic, Search, Users } from 'lucide-react';
 import Link from 'next/link';
 
+import FeaturedText from '@/components/events/event/FeaturedText';
 import ScrollReveal from '@/components/ScrollReveal';
 import events, { categories } from '@/data/events/events';
 import cn from '@/lib/cn';
@@ -38,17 +39,10 @@ const EventListing: Component = () => {
     setSearchTerm('');
   };
 
-  const modifiedEvents = events.map((event) => ({
-    ...event,
-    isPast: new Date(event.date).getTime() < new Date(new Date().toDateString()).getTime(),
-  }));
-
   const filteredEvents =
     activeTab === categories.ALL
-      ? modifiedEvents
-      : modifiedEvents.filter((event) =>
-          activeTab === categories.PAST ? event.isPast : !event.isPast,
-        );
+      ? events
+      : events.filter((event) => (activeTab === categories.PAST ? event.isPast : !event.isPast));
 
   return (
     <Fragment>
@@ -116,6 +110,7 @@ const EventListing: Component = () => {
                 speaker,
                 image,
                 isPast,
+                isFeatured,
               } = event;
 
               return (
@@ -128,14 +123,22 @@ const EventListing: Component = () => {
                           className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
                           src={image}
                         />
-                        <div className="absolute left-4 top-4">
-                          <span className="rounded-full bg-green-500 px-3 py-1 text-sm font-medium capitalize text-white">
-                            {isPast ? 'Past' : 'Upcoming'}
-                          </span>
+                        <div className="absolute left-4 top-4 flex gap-2">
+                          {[...(isFeatured ? ['Featured'] : []), isPast ? 'Past' : 'Upcoming'].map(
+                            (tag) => (
+                              <span
+                                key={tag}
+                                className="rounded-full bg-green-500 px-3 py-1 text-sm font-medium capitalize text-white"
+                              >
+                                {tag}
+                              </span>
+                            ),
+                          )}
                         </div>
                       </div>
 
                       <div className="flex h-full flex-col p-6">
+                        {isFeatured ? <FeaturedText /> : null}
                         <div>
                           <h3 className="mb-3 text-xl font-bold text-white transition-colors group-hover:text-green-400">
                             {title}
