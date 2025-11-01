@@ -35,7 +35,7 @@ const HeroContent: Component = () => (
           className="font-light"
           delay={800}
           speed={30}
-          text="Join Ahmedabad's most vibrant JavaScript community. Where developers meet, learn, grow, connect and build amazing things together."
+          text="Join Ahmedabad's most vibrant JavaScript community. Where developers meet, learn, and build amazing things together.Join Ahmedabad's most vibrant and dedicated Node.js community. A trusted space where developers connect, solve real-world challenges, and drive innovation in the JavaScript ecosystem."
         />
       </div>
     </ScrollReveal>

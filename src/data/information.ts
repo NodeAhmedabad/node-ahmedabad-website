@@ -2,7 +2,7 @@ import { Facebook, Github, Instagram, Linkedin, Mail, MessageCircle, Twitter } f
 
 export const stats = {
   MEMBERS: {
-    short: '1.5k+',
+    short: '1.5K+',
     long: '1,500+',
   },
   EVENTS: {
