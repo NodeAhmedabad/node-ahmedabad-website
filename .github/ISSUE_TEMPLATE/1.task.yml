@@ -5,7 +5,7 @@ assignees:
 labels:
   - new
 projects:
-  - 1
+  - Project Launch V1.0.0
 body:
   - type: markdown
     attributes:
@@ -31,5 +31,3 @@ body:
     attributes:
       label: Live example link
       description: Please provide a link to a live example, you can use codesandbox/stackblitz for that
-    validations:
-      required: true
