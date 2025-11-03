@@ -25,17 +25,12 @@ const waysToContribute = [
     icon: Users,
     title: 'Volunteer',
     description: 'Help organize events, moderate discussions, and support community operations.',
-    benefits: [
-      'Develop leadership skills',
-      'Make connections',
-      'Event planning experience',
-      'Community impact',
-    ],
+    benefits: ['Make connections', 'Event planning experience', 'Community impact', 'Free Goodies'],
     actions: [
       {
         label: 'Join the Team',
         variant: 'solid',
-        href: 'https://forms.gle/mYP5sBhUchSm3uuQ6',
+        href: 'https://forms.gle/eJKWWn8Kikw8SyXy5',
         target: '_blank',
       },
       {

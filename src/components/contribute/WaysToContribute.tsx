@@ -2,7 +2,7 @@ import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
 import ScrollReveal from '@/components/ScrollReveal';
-import waysToContribute from '@/data/joinUs/waysToContribute';
+import waysToContribute from '@/data/contribute/waysToContribute';
 import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
@@ -25,7 +25,7 @@ const WaysToContribute: Component = () => (
 
           return (
             <ScrollReveal key={title} delay={index * 100}>
-              <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 transition-all duration-300 hover:border-green-500">
+              <div className="h-full rounded-xl border border-gray-700 bg-slate-800 p-8 transition-all duration-300 hover:border-green-500">
                 <Icon className="mb-6 size-12 text-green-400" />
                 <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
                 <p className="mb-6 text-gray-300">{description}</p>
@@ -42,7 +42,7 @@ const WaysToContribute: Component = () => (
                   </ul>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
                   {actions.map((action) => {
                     const { label, variant, href, target } = action;
 
@@ -51,7 +51,8 @@ const WaysToContribute: Component = () => (
                         key={label}
                         type="button"
                         className={cn(
-                          'w-full rounded-lg font-semibold transition-colors hover:bg-green-600',
+                          'rounded-lg font-semibold transition-colors hover:bg-green-600',
+                          actions.length === 1 ? 'w-full' : 'basis-1/2',
                           variant === 'solid' && 'bg-green-500 text-white',
                           variant === 'outlined' &&
                             'border-2 border-green-500 text-green-500 hover:text-white',

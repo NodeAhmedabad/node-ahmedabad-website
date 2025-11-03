@@ -1,7 +1,7 @@
-import { Heart, Star } from 'lucide-react';
+import { Clock, Star } from 'lucide-react';
 
 import ScrollReveal from '@/components/ScrollReveal';
-import volunteerRoles from '@/data/community/volunteerRoles';
+import volunteerRoles from '@/data/contribute/volunteerRoles';
 
 import type { Component } from '@/types';
 
@@ -19,36 +19,46 @@ const VolunteerRoles: Component = () => (
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {volunteerRoles.map((role, index) => {
-          const { title, description, commitment, skills } = role;
+          const { title, description, commitments, skills } = role;
 
           return (
             <ScrollReveal key={title} delay={index * 100}>
-              <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 transition-colors duration-300 hover:border-green-500">
-                <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
-                <p className="mb-6 text-gray-300">{description}</p>
-
-                <div className="mb-6">
-                  <div className="mb-2 flex items-center">
-                    <Star className="mr-2 size-5 text-green-400" />
-                    <span className="font-semibold text-white">Time Commitment:</span>
-                  </div>
-                  <span className="text-gray-300">{commitment}</span>
+              <div className="flex h-full flex-col rounded-xl border border-gray-700 bg-slate-800 p-8 transition-colors duration-300 hover:border-green-500">
+                <div className="flex flex-col">
+                  <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
+                  <p className="mb-6 text-gray-300">{description}</p>
                 </div>
 
-                <div>
-                  <div className="mb-2 flex items-center">
-                    <Heart className="mr-2 size-5 text-green-400" />
-                    <span className="font-semibold text-white">Skills Needed:</span>
+                <div className="flex flex-col">
+                  <div className="mb-6">
+                    <div className="mb-2 flex items-center">
+                      <Clock className="mr-2 size-5 text-green-400" />
+                      <span className="font-semibold text-white">Time Commitment:</span>
+                    </div>
+                    <div className="flex flex-col">
+                      {commitments.map((commitment) => (
+                        <span key={commitment} className="text-gray-300">
+                          {commitment}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-400"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+
+                  <div>
+                    <div className="mb-2 flex items-center">
+                      <Star className="mr-2 size-5 text-green-400" />
+                      <span className="font-semibold text-white">Skills Needed:</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-400"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
