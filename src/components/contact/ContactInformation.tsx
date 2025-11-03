@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 
 import ScrollReveal from '@/components/ScrollReveal';
 import { socialMedias } from '@/data/information';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -29,16 +30,22 @@ const contactInfo = [
 const ContactInformation: Component = () => (
   <section className="py-20">
     <div className="container mx-auto px-6">
-      <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {contactInfo.map((item, index) => {
           const { icon: Icon, title, content, description } = item;
 
           return (
-            <ScrollReveal key={title} delay={index * 100}>
-              <div className="rounded-xl border border-gray-700 bg-slate-800 p-8 text-center transition-colors duration-300 hover:bg-slate-700">
+            <ScrollReveal
+              key={title}
+              className={cn(contactInfo.length - 1 === index && 'md:col-span-full lg:col-span-1')}
+              delay={index * 100}
+            >
+              <div className="h-full rounded-xl border border-gray-700 bg-slate-800 p-8 text-center transition-colors duration-300 hover:bg-slate-700">
                 <Icon className="mx-auto mb-4 size-12 text-green-400" />
                 <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
-                <p className="mb-3 font-semibold text-green-400">{content}</p>
+                <p className="mb-3 whitespace-pre-line break-words font-semibold text-green-400">
+                  {content}
+                </p>
                 <p className="text-sm text-gray-300">{description}</p>
               </div>
             </ScrollReveal>
