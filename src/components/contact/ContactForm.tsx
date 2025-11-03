@@ -10,13 +10,23 @@ import type { ChangeEvent, FormEvent } from 'react';
 
 import type { Component } from '@/types';
 
+const statuses = {
+  PENDING: 'pending',
+  IN_PROGRESS: 'in-progress',
+  SUBMITTED: 'submitted',
+  ERROR: 'error',
+};
+
+const initialState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
+
 const ContactForm: Component = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [status, setStatus] = useState(statuses.PENDING);
+  const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -25,11 +35,32 @@ const ContactForm: Component = () => {
     }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    setStatus(statuses.IN_PROGRESS);
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    await res.json();
+
+    if (res.ok) setFormData(initialState);
+
+    setStatus(res.ok ? statuses.SUBMITTED : statuses.ERROR);
+    setTimeout(() => setStatus(statuses.PENDING), 5000);
   };
+
+  const text = (() => {
+    if (status === statuses.IN_PROGRESS) return 'Loading...';
+    if (status === statuses.SUBMITTED) return 'Message Sent';
+    if (status === statuses.ERROR) return 'Something went wrong';
+    return 'Send Message';
+  })();
 
   return (
     <ScrollReveal>
@@ -104,11 +135,12 @@ const ContactForm: Component = () => {
           </div>
 
           <button
-            className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
+            className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg enabled:hover:shadow-green-500/25 disabled:opacity-40"
+            disabled={status !== statuses.PENDING}
             type="submit"
           >
             <Send className="mr-2 size-5" />
-            Send Message
+            {text}
           </button>
         </form>
       </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { NextRequest } from 'next/server';
 
 import type { Component, Layout } from '@/types';
 
@@ -17,3 +18,9 @@ export type GenerateMetadata<T extends string | string[] | null = null> = T exte
   | string[]
   ? (params: NextParams<T>) => Promise<Metadata>
   : () => Promise<Metadata>;
+
+interface RouteContext {
+  params: Promise<Record<string, string>>;
+}
+
+export type Route = (request: NextRequest, context: RouteContext) => Promise<Response>;
