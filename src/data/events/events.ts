@@ -19,6 +19,7 @@ const events = [
       'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
     image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
     isFeatured: true,
+    category: 'Event',
     agenda: [
       {
         time: '10:00 PM - 10:30 PM',
@@ -91,6 +92,7 @@ const events = [
       'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600',
     isFeatured: false,
+    category: 'Event',
     agenda: [
       {
         time: '10:00 PM - 10:30 PM',
@@ -163,6 +165,7 @@ const events = [
       'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
     image: 'https://images.unsplash.com/photo-1560472355-536de3962603?w=600',
     isFeatured: false,
+    category: 'Event',
     agenda: [
       {
         time: '10:00 PM - 10:30 PM',

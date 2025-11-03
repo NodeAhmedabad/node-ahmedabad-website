@@ -53,7 +53,7 @@ const HeroContent: Component = () => (
           <div className="mb-1 text-3xl font-bold text-green-400">{stats.EVENTS.short}</div>
           <div className="flex items-center text-sm text-gray-400">
             <Calendar className="mr-1 size-4" />
-            Event
+            Events
           </div>
         </div>
         <div className="text-center">

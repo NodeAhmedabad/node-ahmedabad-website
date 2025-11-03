@@ -23,6 +23,7 @@ const EventCard: Component<EventCardProps> = (props) => {
     image,
     isPast,
     isFeatured,
+    category,
   } = event;
 
   return (
@@ -35,7 +36,7 @@ const EventCard: Component<EventCardProps> = (props) => {
             src={image}
           />
           <div className="absolute left-4 top-4 flex gap-2">
-            {[...(isFeatured ? ['Featured'] : []), isPast ? 'Past' : 'Upcoming'].map((tag) => (
+            {[...(isFeatured ? ['Featured'] : []), category].map((tag) => (
               <span
                 key={tag}
                 className="rounded-full bg-green-700 px-3 py-1 text-sm font-medium capitalize text-white"

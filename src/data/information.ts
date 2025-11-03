@@ -6,8 +6,8 @@ export const stats = {
     long: '1,500+',
   },
   EVENTS: {
-    short: '1',
-    long: '1',
+    short: '2',
+    long: '2',
   },
   SPEAKERS: {
     short: '3',

@@ -7,7 +7,7 @@ const communityStats = [
   },
   {
     value: stats.EVENTS.long,
-    label: 'Event Hosted',
+    label: 'Events Hosted',
   },
   {
     value: stats.SPEAKERS.long,

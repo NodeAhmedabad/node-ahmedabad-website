@@ -11,7 +11,7 @@ const statLinks = [
   {
     icon: Calendar,
     value: stats.EVENTS.short,
-    name: 'Event',
+    name: 'Events',
   },
   {
     icon: MapPin,
