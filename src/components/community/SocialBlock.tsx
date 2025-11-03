@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import ScrollReveal from '@/components/ScrollReveal';
 import socialMedia from '@/data/community/socialMedia';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -23,12 +24,17 @@ const SocialBlock: Component = () => (
           return (
             <ScrollReveal key={title} delay={index * 100}>
               <div
-                className={`bg-gradient-to-br ${color} group relative overflow-hidden rounded-2xl p-8 text-white transition-transform duration-300 hover:scale-105`}
+                className={cn(
+                  'group relative h-full overflow-hidden rounded-2xl bg-gradient-to-br p-8 text-white transition-transform duration-300 hover:scale-105',
+                  color,
+                )}
               >
-                <div className="relative z-10">
-                  <Icon className="mb-6 size-12" />
-                  <h3 className="mb-4 text-2xl font-bold">{title}</h3>
-                  <p className="mb-6 opacity-90">{description}</p>
+                <div className="relative z-10 flex h-full flex-col justify-between">
+                  <div>
+                    <Icon className="mb-6 size-12" />
+                    <h3 className="mb-4 text-2xl font-bold">{title}</h3>
+                    <p className="mb-6 opacity-90">{description}</p>
+                  </div>
                   <div className="flex items-center justify-between">
                     <Link
                       className="rounded-lg bg-white/20 px-6 py-2 font-semibold transition-colors hover:bg-white/30"

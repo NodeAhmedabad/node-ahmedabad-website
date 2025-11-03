@@ -28,9 +28,9 @@ const CtaSection: Component = () => (
             </a>
             <Link
               className="rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-green-600"
-              href="/events"
+              href="/contribute"
             >
-              View Events
+              Contribute
             </Link>
           </div>
         </div>
