@@ -19,9 +19,9 @@ const CtaSection: Component = () => (
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               className="rounded-lg bg-white px-8 py-3 font-semibold text-green-600 transition-colors hover:bg-gray-100"
-              href="/get-involved"
+              href="/contribute"
             >
-              Join the community
+              Contribute
             </Link>
           </div>
         </div>

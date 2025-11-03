@@ -23,11 +23,11 @@ const footerLinks = [
       },
       {
         name: 'Volunteer',
-        path: '/get-involved',
+        path: '/contribute',
       },
       {
         name: 'Become Speaker',
-        path: '/get-involved#speaker',
+        path: '/contribute',
       },
       {
         name: 'Sponsor Us',

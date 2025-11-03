@@ -1,4 +1,4 @@
-import { Calendar, Code2, Mail, PersonStanding, Users } from 'lucide-react';
+import { Calendar, Code2, HandHelping, Mail, Users } from 'lucide-react';
 
 const menu = [
   {
@@ -12,14 +12,14 @@ const menu = [
     icon: Calendar,
   },
   {
-    name: 'About',
-    path: '/about',
-    icon: PersonStanding,
-  },
-  {
     name: 'Team',
     path: '/team',
     icon: Users,
+  },
+  {
+    name: 'Contribute',
+    path: '/contribute',
+    icon: HandHelping,
   },
   {
     name: 'Contact',
@@ -28,6 +28,6 @@ const menu = [
   },
 ];
 
-export const menuButtonText = ' Join Community';
+export const menuButtonText = 'Join Community';
 
 export default menu;

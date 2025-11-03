@@ -104,7 +104,7 @@ const EventsSection: Component = () => {
                 </Link>
                 <Link
                   className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
-                  href="/get-involved"
+                  href="/contribute"
                 >
                   Become a Speaker
                   <ArrowRight className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
