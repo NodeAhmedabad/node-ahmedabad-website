@@ -1,22 +1,10 @@
 import { Facebook, Github, Instagram, Linkedin, Mail, MessageCircle, Twitter } from 'lucide-react';
 
 export const stats = {
-  MEMBERS: {
-    short: '1.5k+',
-    long: '1,500+',
-  },
-  EVENTS: {
-    short: '2',
-    long: '2',
-  },
-  SPEAKERS: {
-    short: '3',
-    long: '3',
-  },
-  YEARS: {
-    short: '2',
-    long: '2',
-  },
+  MEMBERS: '1.5k+',
+  EVENTS: '2',
+  SPEAKERS: '3',
+  YEARS: '2',
 };
 
 export const socialMedias = {

@@ -2,19 +2,19 @@ import { stats } from '@/data/information';
 
 const communityStats = [
   {
-    value: stats.MEMBERS.long,
+    value: stats.MEMBERS,
     label: 'Active Members',
   },
   {
-    value: stats.EVENTS.long,
+    value: stats.EVENTS,
     label: 'Events Hosted',
   },
   {
-    value: stats.SPEAKERS.long,
+    value: stats.SPEAKERS,
     label: 'Speakers',
   },
   {
-    value: stats.YEARS.long,
+    value: stats.YEARS,
     label: 'Years Active',
   },
 ];

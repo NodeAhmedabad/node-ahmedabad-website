@@ -43,21 +43,21 @@ const HeroContent: Component = () => (
     <ScrollReveal delay={1200}>
       <div className="mb-8 flex flex-wrap justify-center gap-8 lg:justify-start">
         <div className="text-center">
-          <div className="mb-1 text-3xl font-bold text-green-400">{stats.MEMBERS.short}</div>
+          <div className="mb-1 text-3xl font-bold text-green-400">{stats.MEMBERS}</div>
           <div className="flex items-center text-sm text-gray-400">
             <Users className="mr-1 size-4" />
             Members
           </div>
         </div>
         <div className="text-center">
-          <div className="mb-1 text-3xl font-bold text-green-400">{stats.EVENTS.short}</div>
+          <div className="mb-1 text-3xl font-bold text-green-400">{stats.EVENTS}</div>
           <div className="flex items-center text-sm text-gray-400">
             <Calendar className="mr-1 size-4" />
             Events
           </div>
         </div>
         <div className="text-center">
-          <div className="mb-1 text-3xl font-bold text-green-400">{stats.YEARS.short}</div>
+          <div className="mb-1 text-3xl font-bold text-green-400">{stats.YEARS}</div>
           <div className="flex items-center text-sm text-gray-400">
             <CalendarDays className="mr-1 size-4" />
             Years

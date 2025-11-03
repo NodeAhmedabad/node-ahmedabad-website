@@ -5,12 +5,12 @@ import { stats } from '@/data/information';
 const statLinks = [
   {
     icon: Users,
-    value: stats.MEMBERS.short,
+    value: stats.MEMBERS,
     name: 'Members',
   },
   {
     icon: Calendar,
-    value: stats.EVENTS.short,
+    value: stats.EVENTS,
     name: 'Events',
   },
   {
