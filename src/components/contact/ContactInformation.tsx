@@ -30,7 +30,7 @@ const contactInfo = [
 const ContactInformation: Component = () => (
   <section className="py-20">
     <div className="container mx-auto px-6">
-      <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 sm:mb-16 md:grid-cols-2 lg:grid-cols-3">
         {contactInfo.map((item, index) => {
           const { icon: Icon, title, content, description } = item;
 

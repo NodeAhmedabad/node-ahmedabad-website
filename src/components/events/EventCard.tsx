@@ -28,7 +28,7 @@ const EventCard: Component<EventCardProps> = (props) => {
 
   return (
     <Link className="group flex h-full" href={`/events/${slug}`}>
-      <div className="flex flex-col overflow-hidden rounded-xl border border-gray-700 bg-slate-900/20 transition-all duration-300 hover:scale-105 hover:border-green-500">
+      <div className="flex w-full flex-col overflow-hidden rounded-xl border border-gray-700 bg-slate-900/20 transition-all duration-300 hover:scale-105 hover:border-green-500">
         <div className="relative">
           <img
             alt={title}

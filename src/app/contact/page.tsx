@@ -23,7 +23,7 @@ const ContactPage: Component = () => (
 
     <section className="bg-slate-800/30 py-20">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="flex flex-col-reverse gap-12 lg:grid lg:grid-cols-2">
           <ContactForm />
           <LetsConnect />
         </div>
