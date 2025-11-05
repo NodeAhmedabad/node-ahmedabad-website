@@ -67,7 +67,7 @@ const events = [
         name: 'Swapnil Soni',
         role: 'Senior Software Engineer - FullStack',
         company: 'Dogsofelon (DOE)',
-        avatar: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+        avatar: 'src\assets\Swapnil_Soni-removebg-preview.png',
         bio: 'Swapnil Soni is a Full-Stack Engineer and active open-source contributor with six years of experience building production-grade software. Specializing in Node.js, web security, and high-performance scaling, he leads end-to-end development—from architecture to security hardening. He is recognized for successfully scaling systems to millions of requests and actively mentors through FOSS projects.',
         socialMedia: {
           linkedin: 'https://www.linkedin.com/in/swapnilsoni1999/',
