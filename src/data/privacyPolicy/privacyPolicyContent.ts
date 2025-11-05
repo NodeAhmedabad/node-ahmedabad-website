@@ -27,11 +27,10 @@ const privacyPolicyContent = [
     title: 'How We Use Your Information',
     content: `We use the information we collect to:
 
-      • Provide and improve our services
       • Send you event notifications and community updates
       • Respond to your inquiries and provide customer support
       • Analyze usage patterns to improve our website and events
-      • Ensure the security and integrity of our services
+      • Ensure the security
       • Comply with legal obligations
       
       We do not sell, rent, or lease your personal information to third parties.`,

@@ -5,11 +5,18 @@ import Banner from '@/components/Banner';
 import CollectedData from '@/components/privacyPolicy/CollectedData';
 import PrivacyPolicyContent from '@/components/privacyPolicy/PrivacyPolicyContent';
 import PrivacyQuestions from '@/components/privacyPolicy/PrivacyQuestions';
+import constants from '@/constants';
 import MainLayout from '@/layouts/MainLayout';
+
+import type { Metadata } from 'next';
 
 import type { Component } from '@/types';
 
-const PrivacyPolicy: Component = () => {
+export const metadata = {
+  title: ['Privacy Policy', constants.APP_NAME].join(' | '),
+} satisfies Metadata;
+
+const PrivacyPolicyPage: Component = () => {
   const lastUpdated = 'November 06, 2025';
 
   return (
@@ -32,4 +39,4 @@ const PrivacyPolicy: Component = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default PrivacyPolicyPage;
