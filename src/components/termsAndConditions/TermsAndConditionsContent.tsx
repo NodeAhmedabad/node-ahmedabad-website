@@ -1,14 +1,14 @@
 import ScrollReveal from '@/components/ScrollReveal';
-import termsContent from '@/data/terms/termsContent';
+import termsAndConditionsContent from '@/data/termsAndConditions/termsAndConditionsContent';
 import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
-const TermsContent: Component = () => (
+const TermsAndConditionsContent: Component = () => (
   <section className="bg-slate-800/30 py-20">
     <div className="container mx-auto px-6">
       <div className="mx-auto max-w-4xl">
-        {termsContent.map((item, index) => {
+        {termsAndConditionsContent.map((item, index) => {
           const { icon: Icon, title, content, className, iconClassName } = item;
 
           return (
@@ -32,4 +32,4 @@ const TermsContent: Component = () => (
   </section>
 );
 
-export default TermsContent;
+export default TermsAndConditionsContent;

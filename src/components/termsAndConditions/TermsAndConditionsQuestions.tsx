@@ -5,16 +5,18 @@ import { socialMedias } from '@/data/information';
 
 import type { Component } from '@/types';
 
-const TermsQuestions: Component = () => (
+const TermsAndConditionsQuestions: Component = () => (
   <section className="bg-slate-800/30 py-20">
     <div className="container mx-auto px-6">
       <ScrollReveal>
         <div className="rounded-2xl border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12 text-center">
           <Lock className="mx-auto mb-6 size-16 text-white" />
-          <h2 className="mb-6 text-4xl font-bold text-white">Questions About These Terms?</h2>
+          <h2 className="mb-6 text-4xl font-bold text-white">
+            Questions About These Terms and Conditions?
+          </h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
-            If you have any questions about these Terms of Service, please don&apos;t hesitate to
-            contact us.
+            If you have any questions about these Terms and Conditions, please don&apos;t hesitate
+            to contact us.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
@@ -37,4 +39,4 @@ const TermsQuestions: Component = () => (
   </section>
 );
 
-export default TermsQuestions;
+export default TermsAndConditionsQuestions;

@@ -62,8 +62,8 @@ const footerLinks = [
         path: '/privacy-policy',
       },
       {
-        name: 'Terms of Use',
-        path: '/terms',
+        name: 'Terms and Conditions',
+        path: '/terms-and-conditions',
       },
     ],
   },
