@@ -21,7 +21,7 @@ const CommunityPage: Component = () => (
       description="Connect with passionate Node.js developers, share knowledge, and grow your career in a supportive community environment."
       title="Join Our Community"
     >
-      <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 lg:grid-cols-4">
+      <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 lg:mt-16 lg:grid-cols-4">
         {communityStats.map((stat, index) => (
           <ScrollReveal key={stat.label} delay={index * 100}>
             <div className="text-center">

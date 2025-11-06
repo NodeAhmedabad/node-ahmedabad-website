@@ -1,30 +1,29 @@
-import ScrollReveal from '@/components/ScrollReveal';
+import Box from '@/components/ui/Box';
 import privacyPolicyContent from '@/data/privacyPolicy/privacyPolicyContent';
-import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
 const PrivacyPolicyContent: Component = () => (
-  <section className="py-20">
+  <section>
     <div className="container mx-auto px-6">
-      <div className="mx-auto max-w-4xl">
-        {privacyPolicyContent.map((item, index) => {
-          const { icon: Icon, title, content, className, iconClassName } = item;
+      <div className="mx-auto max-w-5xl">
+        {privacyPolicyContent.map((item, index, array) => {
+          const { icon, label, content, variant } = item;
+          const isLast = array.length - 1 === index;
 
           return (
-            <ScrollReveal key={title} delay={index * 50}>
-              <div className="mb-8">
-                <div
-                  className={cn('rounded-xl border border-gray-700 bg-slate-800 p-8', className)}
-                >
-                  {Icon ? (
-                    <Icon className={cn('mb-4 size-8 text-blue-400', iconClassName)} />
-                  ) : null}
-                  <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
-                  <div className="whitespace-pre-line leading-relaxed text-gray-300">{content}</div>
-                </div>
-              </div>
-            </ScrollReveal>
+            <Box
+              key={label}
+              center={false}
+              className={isLast ? '' : 'mb-8'}
+              content={content}
+              delay={index * 50}
+              icon={icon}
+              label={label}
+              sizes="icon-8"
+              titleVariant="2xl"
+              variant={variant}
+            />
           );
         })}
       </div>

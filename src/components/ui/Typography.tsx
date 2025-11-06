@@ -7,17 +7,16 @@ import type { ComponentProps } from 'react';
 
 import type { Layout } from '@/types';
 
-const typographyVariants = cva('whitespace-pre-line', {
+export const typographyVariants = cva('whitespace-pre-line', {
   variants: {
     variant: {
-      h1: 'text-4xl font-bold md:text-5xl lg:text-6xl',
-      h2: 'text-3xl font-bold md:text-4xl lg:text-5xl',
-      h3: 'text-2xl font-bold',
-      h4: 'text-xl font-bold',
-      h5: 'text-lg',
+      banner: 'text-4xl font-bold md:text-5xl lg:text-6xl',
+      title: 'text-3xl font-bold md:text-4xl',
+      '2xl': 'text-2xl font-bold',
+      xl: 'text-xl font-bold',
+      lg: 'text-lg',
       h6: '',
-      p: 'text-base',
-      span: '',
+      content: 'text-base',
     },
     decoration: {
       lineThrough: 'line-through',
@@ -33,7 +32,7 @@ const typographyVariants = cva('whitespace-pre-line', {
     },
     color: {
       white: 'text-white',
-      'gray-300': 'text-gray-300',
+      content: 'text-gray-300',
     },
   },
 });
@@ -43,9 +42,9 @@ type TypographyVariant = VariantProps<typeof typographyVariants>;
 type ActualTypographyVariant = Omit<TypographyVariant, 'variant'> &
   Required<Pick<TypographyVariant, 'variant'>>;
 
-type TypographyProps = ActualTypographyVariant &
+export type TypographyProps = ActualTypographyVariant &
   ComponentProps<'h1'> & {
-    as: NonNullable<TypographyVariant['variant']>;
+    as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
     classOnly?: boolean;
   };
 

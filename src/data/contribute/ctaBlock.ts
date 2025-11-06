@@ -1,3 +1,5 @@
+import type { CtaBlockProps } from '@/components/CtaBlock';
+
 const githubContribution = {
   title: 'Contribute to Our Website',
   description:
@@ -31,3 +33,24 @@ const githubContribution = {
 };
 
 export default githubContribution;
+
+const ctaBlock = {
+  title: 'Contribute to Our Website',
+  description:
+    "Join us in building and maintaining our community website. Whether you're a developer, designer, or content creator, your contributions help us make learning Node.js more accessible to everyone.",
+  actions: [
+    {
+      label: 'View Repository',
+      href: 'https://github.com/NodeAhmedabad/node-ahmedabad-website',
+      isOutlined: false,
+    },
+    {
+      label: 'Contribution Guide',
+      href: 'https://github.com/NodeAhmedabad/node-ahmedabad-website/blob/master/CONTRIBUTING.md',
+      isOutlined: true,
+    },
+  ],
+  variant: 'default',
+} satisfies CtaBlockProps;
+
+export default ctaBlock;

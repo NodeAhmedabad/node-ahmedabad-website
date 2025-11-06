@@ -2,11 +2,12 @@ import { Calendar } from 'lucide-react';
 
 import privacyPolicyImage from '@/assets/privacy-policy.jpg';
 import Banner from '@/components/Banner';
+import CtaBlock from '@/components/CtaBlock';
 import CollectedData from '@/components/privacyPolicy/CollectedData';
 import PrivacyPolicyContent from '@/components/privacyPolicy/PrivacyPolicyContent';
-import PrivacyQuestions from '@/components/privacyPolicy/PrivacyQuestions';
 import Typography from '@/components/ui/Typography';
 import constants from '@/constants';
+import ctaBlock from '@/data/privacyPolicy/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
@@ -29,7 +30,7 @@ const PrivacyPolicyPage: Component = () => {
         content={
           <div className="mt-6 flex items-center justify-center text-gray-400">
             <Calendar className="mr-2 size-4" />
-            <Typography as="span" variant="p">
+            <Typography as="span" variant="content">
               Last updated: {lastUpdated}
             </Typography>
           </div>
@@ -37,7 +38,7 @@ const PrivacyPolicyPage: Component = () => {
       />
       <CollectedData />
       <PrivacyPolicyContent />
-      <PrivacyQuestions />
+      <CtaBlock {...ctaBlock} />
     </MainLayout>
   );
 };

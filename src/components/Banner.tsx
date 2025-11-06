@@ -21,7 +21,7 @@ const Banner: Component<BannerProps> = (props) => {
   const { title, description, image, content, children } = props;
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 sm:py-16 lg:py-20">
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 !py-24">
       {image ? (
         <Fragment>
           <div
@@ -36,21 +36,21 @@ const Banner: Component<BannerProps> = (props) => {
       ) : null}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="mb-12 text-center lg:mb-16">
+          <div className="text-center">
             <AnimatedText
               text={title}
               className={cn(
                 'mb-4 sm:mb-6',
                 Typography({
                   as: 'h1',
-                  variant: 'h1',
+                  variant: 'banner',
                   children: null,
                   classOnly: true,
                   color: 'white',
                 }),
               )}
             />
-            <Typography as="p" className="mx-auto max-w-3xl px-4" color="gray-300" variant="h5">
+            <Typography as="p" className="mx-auto max-w-3xl px-4" color="content" variant="lg">
               {description}
             </Typography>
             {content}

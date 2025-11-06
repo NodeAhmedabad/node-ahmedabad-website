@@ -6,15 +6,18 @@ import type { ComponentProps } from 'react';
 
 import type { Layout } from '@/types';
 
-type MainLayout = ComponentProps<'main'>;
+type MainLayoutProps = ComponentProps<'main'>;
 
-const MainLayout: Layout<MainLayout> = (props) => {
+const MainLayout: Layout<MainLayoutProps> = (props) => {
   const { children, className, ...restProps } = props;
 
   return (
     <div className="min-h-screen bg-slate-900">
       <Header />
-      <main {...restProps} className={cn('pt-20', className)}>
+      <main
+        {...restProps}
+        className={cn('pt-20 [&>*:nth-child(even)]:bg-slate-800/30 [&>*]:py-20', className)}
+      >
         {children}
       </main>
       <Footer />

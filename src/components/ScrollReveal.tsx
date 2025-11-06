@@ -6,27 +6,19 @@ import type { ReactNode } from 'react';
 
 import type { Component } from '@/types';
 
-interface ScrollRevealProps {
+export interface ScrollRevealProps {
   children: ReactNode;
   direction?: 'up' | 'down' | 'left' | 'right';
   delay?: number;
-  duration?: number;
-  distance?: number;
   className?: string;
-  once?: boolean;
 }
 
 const ScrollReveal: Component<ScrollRevealProps> = (props) => {
-  const {
-    children,
-    direction = 'up',
-    delay = 0,
-    duration = 600,
-    distance = 60,
-    className = '',
-    once = true,
-  } = props;
+  const { children, direction = 'up', delay = 0, className = '' } = props;
 
+  const duration = 600;
+  const distance = 60;
+  const once = true;
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
