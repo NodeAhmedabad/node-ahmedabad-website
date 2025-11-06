@@ -6,7 +6,7 @@ import Typography from '@/components/ui/Typography';
 import cn from '@/lib/cn';
 
 import type { LucideIcon } from 'lucide-react';
-import type { ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import type { Component } from '@/types';
 
@@ -14,6 +14,7 @@ interface CtaBlockAction {
   label: string;
   href: string;
   icon?: LucideIcon;
+  target?: ComponentProps<'a'>['target'];
   isOutlined?: boolean;
 }
 
@@ -67,13 +68,13 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
             {content}
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               {actions.map((action) => {
-                const { label, href, icon: Icon, isOutlined = false } = action;
+                const { label, href, icon: Icon, target, isOutlined = false } = action;
 
                 return (
                   <Link
                     key={label}
                     href={href}
-                    target="_blank"
+                    target={target ?? '_blank'}
                     type="button"
                     className={cn(
                       'flex items-center justify-center rounded-lg px-8 py-3 font-semibold transition-colors',

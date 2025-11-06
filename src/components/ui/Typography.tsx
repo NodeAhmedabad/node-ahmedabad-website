@@ -33,6 +33,7 @@ export const typographyVariants = cva('whitespace-pre-line', {
     color: {
       white: 'text-white',
       content: 'text-gray-300',
+      'green-400': 'text-green-400',
     },
   },
 });
