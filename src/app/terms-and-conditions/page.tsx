@@ -21,7 +21,7 @@ const TermsAndConditionsPage: Component = () => {
   return (
     <MainLayout className="pt-20">
       <Banner
-        description="Terms and conditions for using Node Ahmedabad community services and participating in our events."
+        description="Terms and conditions for using Node Ahmedabad community website and being part of community and events."
         image={termsAndConditionImage.src}
         title="Terms and Conditions"
         content={

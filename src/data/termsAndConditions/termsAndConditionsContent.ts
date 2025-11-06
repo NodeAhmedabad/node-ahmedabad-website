@@ -44,7 +44,7 @@ const termsAndConditionsContent = [
   {
     title: '7. Privacy and Data Protection',
     content:
-      'We collect and process personal information in accordance with our Privacy Policy. By using our services or attending our events, you consent to the collection and use of your information as outlined in our Privacy Policy.',
+      'We collect and process personal information in accordance with our Privacy Policy. By using our website or being a part of our community or events, you consent to the collection and use of your information as outlined in our Privacy Policy.',
   },
   {
     title: '8. Cancellations and Refunds',
