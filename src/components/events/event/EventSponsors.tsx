@@ -21,7 +21,7 @@ const EventSponsors: Component<EventSponsorsProps> = (props) => {
             <h2 className="mb-8 text-3xl font-bold text-white">Event Sponsors</h2>
             <div className="flex flex-wrap items-center justify-center gap-8">
               {sponsors.map((sponsor) => {
-                const { name, logo, tier } = sponsor;
+                const { name, logo, partner } = sponsor;
 
                 return (
                   <div key={name} className="flex flex-col items-center">
@@ -30,7 +30,7 @@ const EventSponsors: Component<EventSponsorsProps> = (props) => {
                       className="mb-2 h-16 w-auto grayscale transition-all duration-300 hover:grayscale-0"
                       src={logo}
                     />
-                    <span className="text-xs text-gray-400">{tier} Sponsor</span>
+                    <span className="text-xs text-gray-400">{partner} Sponsor</span>
                   </div>
                 );
               })}

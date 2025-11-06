@@ -9,12 +9,10 @@ import type { Component } from '@/types';
 
 const AboutSection: Component = () => (
   <section className="relative overflow-hidden bg-slate-800 py-20">
-    {/* Background Pattern */}
     <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)]" />
 
     <div className="container relative z-10 mx-auto px-6">
       <div className="mx-auto max-w-6xl">
-        {/* Header */}
         <ScrollReveal>
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
@@ -28,7 +26,8 @@ const AboutSection: Component = () => (
             </h2>
             <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300">
               We&apos;re a passionate community of JavaScript developers in Ahmedabad, dedicated to
-              fostering learning, collaboration, and innovation in the Node.js ecosystem.
+              accelerating growth, fostering collaboration, and driving innovation in the Node.js
+              ecosystem.
             </p>
           </div>
         </ScrollReveal>
@@ -38,9 +37,9 @@ const AboutSection: Component = () => (
             <div className="text-center">
               <h3 className="mb-4 text-2xl font-bold text-white">Our Mission</h3>
               <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-300">
-                To create an inclusive platform where developers can enhance their skills, share
-                knowledge, build meaningful connections, and contribute to the growth of the
-                JavaScript community in Ahmedabad and beyond.
+                To operate an inclusive, high-value platform focused on developer mastery,
+                empowering members to enhance skills, solve complex backend challenges, and
+                collaboratively master microservices architecture.
               </p>
             </div>
           </div>
@@ -87,8 +86,8 @@ const AboutSection: Component = () => (
           <div className="text-center">
             <h3 className="mb-6 text-3xl font-bold text-white">Ready to Join Our Journey?</h3>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
-              Whether you&apos;re a seasoned developer or just starting out, there&apos;s a place
-              for you in our community.
+              Whether you&apos;re just starting in Node.js or a seasoned developer, find your
+              platform here to learn, collaborate, and contribute in the community.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
