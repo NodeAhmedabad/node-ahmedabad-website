@@ -12,7 +12,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const TeamPage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner
       description="The passionate individuals who make our community thrive"
       title="Meet Our Team"

@@ -61,10 +61,10 @@ const AnimatedText: Component<AnimatedTextProps> = (props) => {
   }, [isVisible, text, delay, speed, once, hasAnimated]);
 
   return (
-    <div ref={ref} className={className}>
+    <h1 ref={ref} className={className}>
       {displayedText}
       <span className="animate-pulse">|</span>
-    </div>
+    </h1>
   );
 };
 

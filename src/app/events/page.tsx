@@ -13,7 +13,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const EventsPage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner
       description="Join our regular meetups, workshops, and conferences to learn, network, and grow with fellow Node.js developers."
       title="Events"

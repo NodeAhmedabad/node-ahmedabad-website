@@ -30,7 +30,7 @@ const TeamMemberPage: ParamsComponent<'id'> = async (props) => {
   if (!teamMember) return notFound();
 
   return (
-    <MainLayout className="pt-20">
+    <MainLayout>
       <BackButton />
       <ProfileSection teamMember={teamMember} />
       <TeamMemberInformation teamMember={teamMember} />

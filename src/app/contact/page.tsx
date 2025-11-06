@@ -14,7 +14,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const ContactPage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner
       description="Have questions, suggestions, or want to collaborate? We'd love to hear from you and help you get involved in our community."
       title="Get In Touch"

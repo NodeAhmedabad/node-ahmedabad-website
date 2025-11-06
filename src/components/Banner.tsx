@@ -2,6 +2,8 @@ import { Fragment } from 'react';
 
 import AnimatedText from '@/components/AnimatedText';
 import ScrollReveal from '@/components/ScrollReveal';
+import Typography from '@/components/ui/Typography';
+import cn from '@/lib/cn';
 
 import type { ReactNode } from 'react';
 
@@ -36,10 +38,21 @@ const Banner: Component<BannerProps> = (props) => {
         <ScrollReveal>
           <div className="mb-12 text-center lg:mb-16">
             <AnimatedText
-              className="mb-4 text-3xl font-bold text-white sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl"
               text={title}
+              className={cn(
+                'mb-4 sm:mb-6',
+                Typography({
+                  as: 'h1',
+                  variant: 'h1',
+                  children: null,
+                  classOnly: true,
+                  color: 'white',
+                }),
+              )}
             />
-            <p className="mx-auto max-w-3xl px-4 text-lg text-gray-300 sm:text-xl">{description}</p>
+            <Typography as="p" className="mx-auto max-w-3xl px-4" color="gray-300" variant="h5">
+              {description}
+            </Typography>
             {content}
           </div>
         </ScrollReveal>

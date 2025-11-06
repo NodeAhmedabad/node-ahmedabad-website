@@ -14,7 +14,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const ContributePage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner
       description="Help us build an amazing community by contributing your skills, knowledge, and passion for Node.js and JavaScript."
       title="Contribute"

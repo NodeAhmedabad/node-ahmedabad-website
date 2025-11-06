@@ -19,7 +19,7 @@ const TermsAndConditionsPage: Component = () => {
   const lastUpdated = 'November 06, 2025';
 
   return (
-    <MainLayout className="pt-20">
+    <MainLayout>
       <Banner
         description="Terms and conditions for using Node Ahmedabad community website and being part of community and events."
         image={termsAndConditionImage.src}

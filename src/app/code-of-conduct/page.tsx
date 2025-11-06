@@ -19,7 +19,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const CodeOfConductPage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner
       description="Our commitment to creating a welcoming, safe, and inclusive environment for all community members."
       image={codeOfConductImage.src}

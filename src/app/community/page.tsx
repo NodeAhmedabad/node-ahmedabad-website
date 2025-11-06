@@ -16,7 +16,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const CommunityPage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner
       description="Connect with passionate Node.js developers, share knowledge, and grow your career in a supportive community environment."
       title="Join Our Community"

@@ -30,7 +30,7 @@ const TeamMemberPage: ParamsComponent<'slug'> = async (props) => {
   if (!event) return notFound();
 
   return (
-    <MainLayout className="pt-20">
+    <MainLayout>
       <EventHeader event={event} />
       <EventAgenda event={event} />
       <EventSpeakers event={event} />

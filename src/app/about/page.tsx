@@ -15,7 +15,7 @@ export const metadata = {
 } satisfies Metadata;
 
 const AboutPage: Component = () => (
-  <MainLayout className="pt-20">
+  <MainLayout>
     <Banner description={constants.APP_DESCRIPTION} title={constants.APP_NAME} />
     <InformationBlock />
     <OurStory />
