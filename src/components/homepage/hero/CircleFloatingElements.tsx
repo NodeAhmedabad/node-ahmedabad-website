@@ -1,8 +1,6 @@
 import { Code2 } from 'lucide-react';
 import { Fragment } from 'react/jsx-runtime';
 
-import ScrollIndicator from '@/components/homepage/hero/ScrollIndicator';
-
 import type { Component } from '@/types';
 
 const CircleFloatingElements: Component = () => (
@@ -11,10 +9,9 @@ const CircleFloatingElements: Component = () => (
       <Code2 className="size-10 text-white" />
     </div>
 
-    <div className="absolute -bottom-4 -left-4 flex size-16 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600">
+    <div className="absolute -bottom-10 -left-4 flex size-16 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500">
       <span className="text-xs font-bold text-white">JS</span>
     </div>
-    <ScrollIndicator />
   </Fragment>
 );
 
