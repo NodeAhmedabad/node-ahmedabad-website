@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { Search, UserCog, UserPlus, Users } from 'lucide-react';
 import Image from 'next/image';
@@ -33,16 +33,27 @@ const categoryOptions = [
 const TeamMembers: Component = () => {
   const [activeTab, setActiveTab] = useState(categories.ALL);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredMembers, setFilteredMembers] = useState(teamMembers);
 
   const handleCategory = (value: string) => {
     setActiveTab(value);
     setSearchTerm('');
   };
 
-  const filteredMembers =
-    activeTab === categories.ALL
-      ? teamMembers
-      : teamMembers.filter((member) => member.category === activeTab);
+  useEffect(() => {
+    const getFilteredMembers = () => {
+      const selectedCategoryMembers =
+        activeTab === categories.ALL
+          ? teamMembers
+          : teamMembers.filter((member) => member.category === activeTab);
+
+      return selectedCategoryMembers.filter((member) =>
+        member.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    };
+
+    setFilteredMembers(getFilteredMembers());
+  }, [activeTab, searchTerm]);
 
   return (
     <Fragment>

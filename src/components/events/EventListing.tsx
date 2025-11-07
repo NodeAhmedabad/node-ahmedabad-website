@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { Calendar, Code, Search, Users } from 'lucide-react';
 
@@ -32,16 +32,29 @@ const categoryOptions = [
 const EventListing: Component = () => {
   const [activeTab, setActiveTab] = useState(categories.ALL);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredEvents, setFilteredEvents] = useState(events);
 
   const handleCategory = (value: string) => {
     setActiveTab(value);
     setSearchTerm('');
   };
 
-  const filteredEvents =
-    activeTab === categories.ALL
-      ? events
-      : events.filter((event) => (activeTab === categories.PAST ? event.isPast : !event.isPast));
+  useEffect(() => {
+    const getFilteredCategories = () => {
+      const selectedCategoryEvents =
+        activeTab === categories.ALL
+          ? events
+          : events.filter((event) =>
+              activeTab === categories.PAST ? event.isPast : !event.isPast,
+            );
+
+      return selectedCategoryEvents.filter((el) =>
+        el.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    };
+
+    setFilteredEvents(getFilteredCategories());
+  }, [activeTab, searchTerm]);
 
   return (
     <Fragment>
