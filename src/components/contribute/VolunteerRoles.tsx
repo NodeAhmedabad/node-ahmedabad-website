@@ -6,7 +6,7 @@ import volunteerRoles from '@/data/contribute/volunteerRoles';
 import type { Component } from '@/types';
 
 const VolunteerRoles: Component = () => (
-  <section className="scroll-mt-20 py-20" id="volunteerRoles">
+  <section id="volunteerRoles">
     <div className="container mx-auto px-6">
       <ScrollReveal>
         <div className="mb-16 text-center">

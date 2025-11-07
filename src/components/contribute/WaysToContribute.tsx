@@ -8,7 +8,7 @@ import cn from '@/lib/cn';
 import type { Component } from '@/types';
 
 const WaysToContribute: Component = () => (
-  <section className="py-20">
+  <section>
     <div className="container mx-auto px-6">
       <ScrollReveal>
         <div className="mb-16 text-center">

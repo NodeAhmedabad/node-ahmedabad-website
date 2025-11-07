@@ -1,3 +1,4 @@
+import contributeImage from '@/assets/contribute.jpg';
 import Banner from '@/components/Banner';
 import GitHubContributions from '@/components/contribute/GitHubContributions';
 import VolunteerRoles from '@/components/contribute/VolunteerRoles';
@@ -17,6 +18,7 @@ const ContributePage: Component = () => (
   <MainLayout>
     <Banner
       description="Help us build an amazing community by contributing your skills, knowledge, and passion for Node.js and JavaScript."
+      image={contributeImage.src}
       title="Contribute"
     />
     <WaysToContribute />

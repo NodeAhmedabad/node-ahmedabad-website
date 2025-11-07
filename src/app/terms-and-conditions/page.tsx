@@ -2,9 +2,10 @@ import { Calendar } from 'lucide-react';
 
 import termsAndConditionImage from '@/assets/terms-and-conditions.jpg';
 import Banner from '@/components/Banner';
+import CtaBlock from '@/components/CtaBlock';
 import TermsAndConditionsContent from '@/components/termsAndConditions/TermsAndConditionsContent';
-import TermsAndConditionsQuestions from '@/components/termsAndConditions/TermsAndConditionsQuestions';
 import constants from '@/constants';
+import ctaBlock from '@/data/termsAndConditions/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
@@ -32,7 +33,7 @@ const TermsAndConditionsPage: Component = () => {
         }
       />
       <TermsAndConditionsContent />
-      <TermsAndConditionsQuestions />
+      <CtaBlock {...ctaBlock} />
     </MainLayout>
   );
 };

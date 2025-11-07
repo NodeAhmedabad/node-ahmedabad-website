@@ -16,7 +16,10 @@ const MainLayout: Layout<MainLayoutProps> = (props) => {
       <Header />
       <main
         {...restProps}
-        className={cn('pt-20 [&>*:nth-child(even)]:bg-slate-800/30 [&>*]:py-20', className)}
+        className={cn(
+          'scroll-mt-20 pt-20 [&>*:nth-child(even)]:bg-slate-800/30 [&>*]:py-20',
+          className,
+        )}
       >
         {children}
       </main>

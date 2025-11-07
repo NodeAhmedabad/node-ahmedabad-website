@@ -1,6 +1,7 @@
 import { Lock } from 'lucide-react';
 import Link from 'next/link';
 
+import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
 import Typography from '@/components/ui/Typography';
 import cn from '@/lib/cn';
@@ -54,43 +55,41 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
   })();
 
   return (
-    <section>
-      <div className="container mx-auto px-6">
-        <ScrollReveal>
-          <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12 text-center">
-            <Lock className={cn('mx-auto mb-6 size-16', classNames.iconClassName)} />
-            <Typography as="h2" className="mb-6" color="white" variant="title">
-              {title}
-            </Typography>
-            <Typography as="p" className="mx-auto mb-8 max-w-3xl" color="content" variant="lg">
-              {description}
-            </Typography>
-            {content}
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              {actions.map((action) => {
-                const { label, href, icon: Icon, target, isOutlined = false } = action;
+    <Section>
+      <ScrollReveal>
+        <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12 text-center">
+          <Lock className={cn('mx-auto mb-6 size-16', classNames.iconClassName)} />
+          <Typography as="h2" className="mb-6" color="white" variant="title">
+            {title}
+          </Typography>
+          <Typography as="p" className="mx-auto mb-8 max-w-3xl" color="content" variant="lg">
+            {description}
+          </Typography>
+          {content}
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            {actions.map((action) => {
+              const { label, href, icon: Icon, target, isOutlined = false } = action;
 
-                return (
-                  <Link
-                    key={label}
-                    href={href}
-                    target={target ?? '_blank'}
-                    type="button"
-                    className={cn(
-                      'flex items-center justify-center rounded-lg px-8 py-3 font-semibold transition-colors',
-                      isOutlined ? classNames.linkOutlineClassName : classNames.linkSolidClassName,
-                    )}
-                  >
-                    {Icon ? <Icon className="mr-2 size-4" /> : null}
-                    {label}
-                  </Link>
-                );
-              })}
-            </div>
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  target={target ?? '_blank'}
+                  type="button"
+                  className={cn(
+                    'flex items-center justify-center rounded-lg px-8 py-3 font-semibold transition-colors',
+                    isOutlined ? classNames.linkOutlineClassName : classNames.linkSolidClassName,
+                  )}
+                >
+                  {Icon ? <Icon className="mr-2 size-4" /> : null}
+                  {label}
+                </Link>
+              );
+            })}
           </div>
-        </ScrollReveal>
-      </div>
-    </section>
+        </div>
+      </ScrollReveal>
+    </Section>
   );
 };
 
