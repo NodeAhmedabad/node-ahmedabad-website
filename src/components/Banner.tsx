@@ -21,7 +21,7 @@ const Banner: Component<BannerProps> = (props) => {
   const { title, description, image, content, children } = props;
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 !py-24">
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 !py-28">
       {image ? (
         <Fragment>
           <div

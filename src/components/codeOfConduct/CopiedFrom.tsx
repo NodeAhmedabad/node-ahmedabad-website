@@ -1,28 +1,28 @@
+import Link from 'next/link';
+
+import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Typography from '@/components/ui/Typography';
 
 import type { Component } from '@/types';
 
 const CopiedFrom: Component = () => (
-  <section className="py-12">
-    <div className="container mx-auto px-6">
-      <ScrollReveal>
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm text-gray-400">
-            This Code of Conduct is adapted from the{' '}
-            <a
-              className="text-green-400 transition-colors hover:text-green-300"
-              href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contributor Covenant, version 2.1
-            </a>{' '}
-            and other community standards.
-          </p>
-        </div>
-      </ScrollReveal>
-    </div>
-  </section>
+  <Section className="py-12">
+    <ScrollReveal>
+      <Typography as="p" className="text-center" color="content" variant="sm">
+        This Code of Conduct is adapted from the{' '}
+        <Link
+          className="text-green-400 transition-colors hover:text-green-300"
+          href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Contributor Covenant, v2.1
+        </Link>{' '}
+        and other community standards.
+      </Typography>
+    </ScrollReveal>
+  </Section>
 );
 
 export default CopiedFrom;

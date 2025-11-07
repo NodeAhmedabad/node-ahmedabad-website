@@ -12,23 +12,12 @@ export const typographyVariants = cva('whitespace-pre-line', {
     variant: {
       banner: 'text-4xl font-bold md:text-5xl lg:text-6xl',
       title: 'text-3xl font-bold md:text-4xl',
+      '3xl': 'text-3xl font-bold',
       '2xl': 'text-2xl font-bold',
       xl: 'text-xl font-bold',
       lg: 'text-lg',
-      h6: '',
       content: 'text-base',
-    },
-    decoration: {
-      lineThrough: 'line-through',
-      underline: 'underline',
-    },
-    weight: {
-      light: 'font-light',
-      normal: 'font-normal',
-      medium: 'font-medium',
-      semibold: 'font-semibold',
-      bold: 'font-bold',
-      extrabold: 'font-extrabold',
+      sm: 'text-sm',
     },
     color: {
       white: 'text-white',
@@ -55,14 +44,12 @@ const Typography: Layout<TypographyProps> = (props) => {
     className,
     as: Component,
     variant,
-    decoration,
-    weight,
     color,
     classOnly = false,
     ...restProps
   } = props;
 
-  const classNames = cn(typographyVariants({ variant, decoration, weight, color }));
+  const classNames = cn(typographyVariants({ variant, color }));
 
   if (classOnly) return classNames;
 

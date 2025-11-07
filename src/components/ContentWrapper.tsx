@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 
 import ScrollReveal from '@/components/ScrollReveal';
 import Typography from '@/components/ui/Typography';
+import cn from '@/lib/cn';
 
 import type { ComponentProps } from 'react';
 
@@ -14,13 +15,13 @@ type ContentWrapperProps = ComponentProps<'div'> & {
 };
 
 const ContentWrapper: Component<ContentWrapperProps> = (props) => {
-  const { title, description, animation = true } = props;
+  const { className, title, description, animation = true } = props;
 
   const Component = animation ? ScrollReveal : Fragment;
 
   return (
     <Component>
-      <div className="mb-16 text-center">
+      <div className={cn('mx-auto mb-16 max-w-4xl text-center', className)}>
         <Typography as="h2" className="mb-6" color="white" variant="title">
           {title}
         </Typography>

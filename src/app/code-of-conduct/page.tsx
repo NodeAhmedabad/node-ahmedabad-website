@@ -2,12 +2,13 @@ import codeOfConductImage from '@/assets/code-of-conduct.jpeg';
 import Banner from '@/components/Banner';
 import BehaviorBlock from '@/components/codeOfConduct/BehaviorBlock';
 import Commitment from '@/components/codeOfConduct/Commitment';
-import ContactInformation from '@/components/codeOfConduct/ContactInformation';
 import CopiedFrom from '@/components/codeOfConduct/CopiedFrom';
 import CoreValues from '@/components/codeOfConduct/CoreValues';
 import Enforcement from '@/components/codeOfConduct/Enforcement';
 import ReportingProcess from '@/components/codeOfConduct/ReportingProcess';
+import CtaBlock from '@/components/CtaBlock';
 import constants from '@/constants';
+import ctaBlock from '@/data/codeOfConduct/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
@@ -29,7 +30,7 @@ const CodeOfConductPage: Component = () => (
     <CoreValues />
     <BehaviorBlock />
     <ReportingProcess />
-    <ContactInformation />
+    <CtaBlock {...ctaBlock} />
     <Enforcement />
     <CopiedFrom />
   </MainLayout>

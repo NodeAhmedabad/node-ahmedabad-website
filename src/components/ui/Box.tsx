@@ -6,7 +6,7 @@ import cn from '@/lib/cn';
 
 import type { VariantProps } from 'class-variance-authority';
 import type { LucideIcon } from 'lucide-react';
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import type { ScrollRevealProps } from '@/components/ScrollReveal';
 import type { TypographyProps } from '@/components/ui/Typography';
@@ -40,6 +40,7 @@ export type BoxProps = ComponentProps<'div'> &
     content: string;
     scrollRevealClassName?: string;
     titleVariant?: TypographyProps['variant'];
+    customIcon?: ReactNode;
     center?: boolean;
   };
 
@@ -55,6 +56,7 @@ const Box: Component<BoxProps> = (props) => {
     scrollRevealClassName,
     className,
     titleVariant,
+    customIcon,
     center = true,
     ...restProps
   } = props;
@@ -70,6 +72,7 @@ const Box: Component<BoxProps> = (props) => {
           className,
         )}
       >
+        {customIcon}
         {Icon ? <Icon className={cn('mb-6', center && 'mx-auto')} /> : null}
         <Typography as="h3" className="mb-4" color="white" variant={titleVariant ?? 'xl'}>
           {label}

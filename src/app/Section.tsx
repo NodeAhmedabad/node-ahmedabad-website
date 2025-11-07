@@ -4,14 +4,12 @@ import type { ComponentProps } from 'react';
 
 import type { Layout } from '@/types';
 
-const Section: Layout<ComponentProps<'div'>> = (props) => {
+const Section: Layout<ComponentProps<'section'>> = (props) => {
   const { children, className, ...restProps } = props;
 
   return (
-    <section>
-      <div {...restProps} className={cn('container mx-auto px-6', className)}>
-        {children}
-      </div>
+    <section {...restProps} className={cn('py-20', className)}>
+      <div className="container mx-auto px-6">{children}</div>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle, Heart, Shield, Users } from 'lucide-react';
+import { AlertTriangle, CheckCircle, Heart, Info, Shield, Users } from 'lucide-react';
 
 export const commitment = {
   title: 'Our Commitment',
@@ -94,20 +94,29 @@ export const enforcement = {
   description: 'Consequences for violations of our code of conduct',
   consequences: [
     {
+      icon: AlertTriangle,
       label: 'Warning',
       content: 'A private, written warning for minor violations',
       className: 'from-yellow-500 to-orange-500',
     },
     {
+      icon: AlertTriangle,
       label: 'Temporary Ban',
       content: 'Temporary removal from community spaces for serious violations',
       className: 'from-orange-500 to-red-500',
     },
     {
+      icon: AlertTriangle,
       label: 'Permanent Ban',
       content: 'Permanent removal from all community spaces for severe or repeated violations',
       className: 'from-red-500 to-red-700',
     },
+    {
+      icon: Info,
+      label: 'Note',
+      content:
+        'All enforcement decisions are made at the discretion of the community moderators and leadership team. We reserve the right to take any action deemed necessary to maintain a safe and welcoming environment.',
+      className: 'from-slate-500 to-slate-700',
+    },
   ],
-  note: 'All enforcement decisions are made at the discretion of the community moderators and leadership team. We reserve the right to take any action deemed necessary to maintain a safe and welcoming environment.',
 };
