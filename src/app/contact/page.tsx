@@ -18,7 +18,7 @@ const ContactPage: Component = () => (
     <Banner
       description="Have questions, suggestions, or want to collaborate? We'd love to hear from you and help you get involved in our community."
       image={contactImage.src}
-      title="Get In Touch"
+      title="Contact"
     />
     <ContactInformation />
     <LetsConnect />

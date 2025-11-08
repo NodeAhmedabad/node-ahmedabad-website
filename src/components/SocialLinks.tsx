@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import cn from '@/lib/cn';
 
 import type { LucideIcon } from 'lucide-react';
@@ -25,7 +27,7 @@ const SocialLinks: Component<SocialLinksProps> = (props) => {
         const { title, icon: Icon, url, className: innerClassName } = social;
 
         return (
-          <a
+          <Link
             key={title}
             aria-label={title}
             href={url}
@@ -37,7 +39,7 @@ const SocialLinks: Component<SocialLinksProps> = (props) => {
             )}
           >
             <Icon className="size-5" />
-          </a>
+          </Link>
         );
       })}
     </div>

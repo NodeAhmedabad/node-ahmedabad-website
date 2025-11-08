@@ -132,7 +132,7 @@ const ContactForm: Component = () => {
           </label>
           <textarea
             required
-            className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
+            className="w-full resize-none rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
             id="message"
             name="message"
             onChange={handleChange}
@@ -143,7 +143,7 @@ const ContactForm: Component = () => {
         </div>
 
         <button
-          className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg enabled:hover:shadow-green-500/25 disabled:opacity-40"
+          className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg enabled:hover:shadow-green-500/25 disabled:opacity-40"
           disabled={status !== statuses.PENDING}
           type="submit"
         >
