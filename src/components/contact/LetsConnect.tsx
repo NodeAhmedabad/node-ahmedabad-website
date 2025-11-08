@@ -4,8 +4,8 @@ import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
 import SocialLinks from '@/components/SocialLinks';
 import Typography from '@/components/ui/Typography';
-import socialMedia from '@/data/community/socialMedia';
 import letsConnect from '@/data/contact/letsConnect';
+import socialMedia from '@/data/footer/socialMedia';
 
 import type { Component } from '@/types';
 
