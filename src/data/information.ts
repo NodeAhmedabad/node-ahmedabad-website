@@ -1,4 +1,13 @@
-import { Facebook, Github, Instagram, Linkedin, Mail, MessageCircle, Twitter } from 'lucide-react';
+import {
+  DiscordLogoIcon,
+  EnvelopeSimpleIcon,
+  FacebookLogoIcon,
+  GithubLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+  WhatsappLogoIcon,
+  XLogoIcon,
+} from '@phosphor-icons/react/dist/ssr';
 
 export const stats = {
   MEMBERS: '1.5k+',
@@ -12,48 +21,48 @@ export const socialMedias = {
     slug: 'whatsapp',
     title: 'WhatsApp',
     url: 'https://chat.whatsapp.com/EqdK6ThyCk61QM0KarqTas',
-    icon: MessageCircle,
+    icon: WhatsappLogoIcon,
   },
   LINKEDIN: {
     slug: 'linkedin',
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/company/node-ahmedabad',
-    icon: Linkedin,
+    icon: LinkedinLogoIcon,
   },
   INSTAGRAM: {
     slug: 'instagram',
     title: 'Instagram',
     url: 'https://www.instagram.com/nodeahmedabad',
-    icon: Instagram,
+    icon: InstagramLogoIcon,
   },
   FACEBOOK: {
     slug: 'facebook',
     title: 'Facebook',
     url: 'http://facebook.com/nodeahmedabad',
-    icon: Facebook,
+    icon: FacebookLogoIcon,
   },
   X: {
     slug: 'x',
     title: 'X',
     url: 'https://x.com/nodeahmedabad',
-    icon: Twitter,
+    icon: XLogoIcon,
   },
   GITHUB: {
     slug: 'github',
     title: 'GitHub',
     url: 'https://github.com/nodeahmedabad',
-    icon: Github,
+    icon: GithubLogoIcon,
   },
   DISCORD: {
     slug: 'discord',
     title: 'Discord',
     url: 'https://discord.gg/Mu74pSvh',
-    icon: MessageCircle,
+    icon: DiscordLogoIcon,
   },
   EMAIL: {
     slug: 'email',
     title: 'Email',
     url: 'mailto:nodeahmedabad@gmail.com',
-    icon: Mail,
+    icon: EnvelopeSimpleIcon,
   },
 } as const;
