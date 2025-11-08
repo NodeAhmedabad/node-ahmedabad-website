@@ -55,9 +55,9 @@ const ContactForm: Component = () => {
   };
 
   return (
-    <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
-      <Typography as="h2" className="mb-8" color="white" variant="3xl">
-        Send us a Message
+    <div className="rounded-2xl border border-gray-700 px-4 py-8 md:p-8">
+      <Typography as="h2" className="mb-8 text-center sm:text-left" color="white" variant="3xl">
+        Contact
       </Typography>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

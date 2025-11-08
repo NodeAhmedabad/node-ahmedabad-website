@@ -32,13 +32,13 @@ const boxVariants = cva('', {
 
 type BoxVariant = VariantProps<typeof boxVariants>;
 
-export type BoxProps = ComponentProps<'div'> &
+export type BoxProps = Omit<ComponentProps<'div'>, 'content'> &
   Pick<ScrollRevealProps, 'delay' | 'direction'> &
   BoxVariant & {
     icon?: LucideIcon;
-    label: string;
-    content: string;
-    description?: string;
+    label: ReactNode;
+    content: ReactNode;
+    description?: ReactNode;
     scrollRevealClassName?: string;
     h3Props?: Partial<TypographyProps>;
     contentProps?: Partial<TypographyProps>;
@@ -86,24 +86,48 @@ const Box: Component<BoxProps> = (props) => {
           {...h3Props}
           as="h3"
           className={cn('mb-4', h3Props?.className)}
-          dangerouslySetInnerHTML={{ __html: label }}
-        />
+          {...(typeof label === 'string'
+            ? {
+                dangerouslySetInnerHTML: {
+                  __html: label,
+                },
+              }
+            : null)}
+        >
+          {typeof label === 'string' ? undefined : label}
+        </Typography>
         <Typography
           color="content"
           variant="content"
           {...contentProps}
           as="p"
           className={cn('mb-2', contentProps?.className)}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+          {...(typeof content === 'string'
+            ? {
+                dangerouslySetInnerHTML: {
+                  __html: content,
+                },
+              }
+            : null)}
+        >
+          {typeof content === 'string' ? undefined : content}
+        </Typography>
         {description ? (
           <Typography
             color="content"
             variant="sm"
             {...descriptionProps}
             as="p"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
+            {...(typeof description === 'string'
+              ? {
+                  dangerouslySetInnerHTML: {
+                    __html: description,
+                  },
+                }
+              : null)}
+          >
+            {typeof description === 'string' ? undefined : description}
+          </Typography>
         ) : null}
       </div>
     </ScrollReveal>
