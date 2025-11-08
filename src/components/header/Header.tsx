@@ -44,10 +44,11 @@ const Header: Component<HeaderProps> = (props) => {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
+        'fixed inset-x-0 top-0 z-50 transition-[background-color] duration-300',
         isFixedBar
           ? 'border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg'
           : 'bg-transparent',
+        isMenuOpen && 'bg-slate-900/95',
       )}
     >
       <nav className="container mx-auto px-6 py-4">
@@ -56,7 +57,7 @@ const Header: Component<HeaderProps> = (props) => {
             <div className="relative">
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
-            <div className="hidden md:block">
+            <div className="flex flex-col">
               <Typography as="h1" color="white" variant="xl">
                 {constants.APP_NAME}
               </Typography>
@@ -106,7 +107,7 @@ const Header: Component<HeaderProps> = (props) => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
           >
-            {isMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+            {isMenuOpen ? <X className="size-8" /> : <Menu className="size-8" />}
           </button>
         </div>
 

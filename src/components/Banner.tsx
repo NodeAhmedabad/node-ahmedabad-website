@@ -21,7 +21,8 @@ const Banner: Component<BannerProps> = (props) => {
   const { title, description, image, content, children } = props;
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 !py-28">
+    // 80px fix height of header
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-28 pt-48">
       {image ? (
         <Fragment>
           <div

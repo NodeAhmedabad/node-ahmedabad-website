@@ -9,7 +9,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import type { Component } from '@/types';
 
 const HeroSection: Component = () => (
-  <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 lg:pt-16 xl:pt-0">
+  <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-36 sm:pt-32 lg:pt-0">
     <div className="absolute inset-0">
       <FloatingCodeSnippets />
       <CursorFollowEffect />
