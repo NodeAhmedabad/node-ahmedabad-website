@@ -18,6 +18,7 @@ export const typographyVariants = cva('whitespace-pre-line', {
       lg: 'text-lg',
       content: 'text-base',
       sm: 'text-sm',
+      xs: 'text-xs',
     },
     weight: {
       light: 'font-light',

@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import Typography from '@/components/ui/Typography';
 import menu, { menuButtonText } from '@/data/homepage/menu';
+import cn from '@/lib/cn';
 
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -19,35 +21,41 @@ const MobileHeader: Component<MobileHeaderProps> = (props) => {
   const pathname = usePathname();
 
   return (
-    <div className="absolute inset-x-0 top-full animate-fade-in border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg xl:hidden">
+    <div className="absolute inset-x-0 top-full animate-fade-in border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg lg:hidden">
       <div className="container mx-auto px-6 py-4">
-        <div className="space-y-4">
+        <div className="flex flex-col gap-3">
           {menu.map((item) => {
-            const { name, path, icon: Icon } = item;
+            const { name, path, icon: Icon, className } = item;
 
             return (
               <Link
                 key={name}
                 href={path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center space-x-3 rounded-lg px-4 py-3 transition-all duration-300 ${
+                className={cn(
+                  'flex items-center gap-x-3 rounded-lg px-4 py-3 transition-all duration-300',
                   pathname === path
                     ? 'bg-green-400/10 text-green-400'
-                    : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400'
-                }`}
+                    : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400',
+                  className,
+                )}
               >
                 <Icon className="size-5" />
-                <span className="font-medium">{name}</span>
+                <Typography as="span" color="content" variant="content" weight="medium">
+                  {name}
+                </Typography>
               </Link>
             );
           })}
           <div className="border-t border-gray-700 pt-4">
             <Link
-              className="block w-full rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 text-center font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
+              className="block w-full rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 text-center text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
               href="/community"
               onClick={() => setIsMenuOpen(false)}
             >
-              {menuButtonText}
+              <Typography as="span" color="white" variant="content" weight="semibold">
+                {menuButtonText}
+              </Typography>
             </Link>
           </div>
         </div>

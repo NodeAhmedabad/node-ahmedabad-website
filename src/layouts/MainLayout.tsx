@@ -12,7 +12,7 @@ const MainLayout: Layout<MainLayoutProps> = (props) => {
   const { children, className, ...restProps } = props;
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen">
       <Header />
       <main
         {...restProps}

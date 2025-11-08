@@ -9,8 +9,10 @@ import { usePathname } from 'next/navigation';
 
 import logo from '@/assets/logo.jpg';
 import MobileHeader from '@/components/header/MobileHeader';
+import Typography from '@/components/ui/Typography';
 import constants from '@/constants';
 import menu, { menuButtonText } from '@/data/homepage/menu';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -41,56 +43,66 @@ const Header: Component<HeaderProps> = (props) => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         isFixedBar
           ? 'border-b border-green-500/20 bg-slate-900/95 backdrop-blur-lg'
-          : 'bg-transparent'
-      }`}
+          : 'bg-transparent',
+      )}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link className="group flex items-center space-x-3" href="/">
+          <Link className="group flex items-center gap-3" href="/">
             <div className="relative">
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-white">{constants.APP_NAME}</h1>
-              <p className="text-xs text-green-400">{constants.APP_COMMUNITY}</p>
+              <Typography as="h1" color="white" variant="xl">
+                {constants.APP_NAME}
+              </Typography>
+              <Typography as="p" color="green-400" variant="xs">
+                {constants.APP_COMMUNITY}
+              </Typography>
             </div>
           </Link>
-
-          <div className="hidden items-center space-x-8 xl:flex">
+          <div className="hidden items-center gap-8 lg:flex">
             {menu.map((item) => {
-              const { name, path, icon: Icon } = item;
+              const { name, path, icon: Icon, className } = item;
 
               return (
                 <Link
                   key={name}
                   href={path}
-                  className={`flex items-center space-x-2 rounded-lg px-3 py-2 transition-all duration-300 ${
+                  className={cn(
+                    'flex items-center gap-x-2 rounded-lg px-3 py-2 transition-all duration-300',
                     pathname === path
                       ? 'bg-green-400/10 text-green-400'
-                      : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400'
-                  }`}
+                      : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400',
+                    className,
+                  )}
                 >
                   <Icon className="size-4" />
-                  <span className="font-medium">{name}</span>
+                  <Typography as="span" color="content" variant="content" weight="medium">
+                    {name}
+                  </Typography>
                 </Link>
               );
             })}
           </div>
 
-          <div className="hidden xl:block">
+          <div className="hidden lg:flex">
             <Link
-              className="rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
+              className="rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
               href="/community"
             >
-              {menuButtonText}
+              <Typography as="span" color="white" variant="content" weight="semibold">
+                {menuButtonText}
+              </Typography>
             </Link>
           </div>
 
           <button
-            className="rounded-lg p-2 text-white transition-colors duration-300 hover:bg-gray-800 xl:hidden"
+            className="rounded-lg p-2 text-white transition-colors duration-300 hover:bg-gray-800 lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
           >

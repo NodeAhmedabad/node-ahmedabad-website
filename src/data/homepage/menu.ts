@@ -20,6 +20,7 @@ const menu = [
     name: 'Contribute',
     path: '/contribute',
     icon: HandHelping,
+    className: 'lg:hidden xl:flex',
   },
   {
     name: 'Contact',

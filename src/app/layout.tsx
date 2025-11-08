@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const RootLayout: Layout = async ({ children }) => (
   <html className="scroll-smooth" lang="en">
-    <body className="antialiased">
+    <body className="bg-slate-900 antialiased">
       <Suspense fallback={null}>
         <App>{children}</App>
       </Suspense>
