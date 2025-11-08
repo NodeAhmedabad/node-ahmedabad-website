@@ -54,11 +54,6 @@ const ContactForm: Component = () => {
     setStatus(statuses.PENDING);
   };
 
-  const text = (() => {
-    if (status === statuses.IN_PROGRESS) return 'Loading...';
-    return 'Send Message';
-  })();
-
   return (
     <div className="rounded-2xl border border-gray-700 bg-slate-800 p-8">
       <Typography as="h2" className="mb-8" color="white" variant="3xl">
@@ -146,7 +141,7 @@ const ContactForm: Component = () => {
         >
           <Send className="mr-2 size-5" />
           <Typography as="span" variant="content">
-            {text}
+            {status === statuses.IN_PROGRESS ? 'Loading...' : 'Send Message'}
           </Typography>
         </button>
       </form>

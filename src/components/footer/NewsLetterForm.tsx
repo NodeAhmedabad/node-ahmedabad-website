@@ -40,11 +40,6 @@ const NewsLetterForm: Component = () => {
     setStatus(statuses.PENDING);
   };
 
-  const text = (() => {
-    if (status === statuses.IN_PROGRESS) return 'Loading...';
-    return 'Subscribe';
-  })();
-
   return (
     <form className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row" onSubmit={handleSubmit}>
       <input
@@ -61,7 +56,7 @@ const NewsLetterForm: Component = () => {
         type="submit"
       >
         <Typography as="span" variant="content">
-          {text}
+          {status === statuses.IN_PROGRESS ? 'Loading...' : 'Subscribe'}
         </Typography>
       </button>
     </form>

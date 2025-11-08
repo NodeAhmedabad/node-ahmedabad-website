@@ -7,11 +7,8 @@ import type { Component } from '@/types';
 
 const FAQs: Component = () => (
   <MainLayout>
-    {/* Hero Section with Background Image */}
     <HeroSection />
-    {/* FAQ Categories */}
     <FaqCategories />
-    {/* Still Have Questions */}
     <ReachOut />
   </MainLayout>
 );
