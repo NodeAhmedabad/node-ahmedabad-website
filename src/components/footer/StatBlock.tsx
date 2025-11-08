@@ -1,3 +1,5 @@
+import Typography from '@/components/ui/Typography';
+
 import type statLinks from '@/data/footer/statLinks';
 import type { Component } from '@/types';
 
@@ -9,8 +11,12 @@ const StatBlock: Component<StatBlockProps> = (props) => {
   return (
     <div className="rounded-lg bg-slate-800 p-3 text-center">
       <Icon className="mx-auto mb-1 size-5 text-green-400" />
-      <div className="text-lg font-bold text-white">{value}</div>
-      <div className="text-xs text-gray-400">{name}</div>
+      <Typography as="p" color="white" variant="lg" weight="bold">
+        {value}
+      </Typography>
+      <Typography as="p" color="content" variant="xs">
+        {name}
+      </Typography>
     </div>
   );
 };

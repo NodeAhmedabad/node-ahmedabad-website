@@ -17,12 +17,12 @@ const termsAndConditionsContent = [
   {
     label: '1. Acceptance of Terms and Conditions',
     content:
-      'By accessing and using the Node Ahmedabad website and participating in our community activities, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these Terms, please refrain from attending our events or using our services.',
+      'By accessing and using the Node Ahmedabad website and participating in our community activities, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these Terms, please refrain from attending our events or using our community.',
   },
   {
     label: '2. Community Participation',
     content:
-      'Participation in Node Ahmedabad events and activities is subject to our Code of Conduct. Members are expected to behave respectfully and professionally at all times. We reserve the right to remove or restrict participation of any individual who violates our community standards.',
+      'Participation in Node Ahmedabad events and activities is subject to our <b>Code of Conduct</b>. Members are expected to behave respectfully and professionally at all times. We reserve the right to remove or restrict participation of any individual who violates our community standards.',
   },
   {
     label: '3. Event Registration and Attendance',
@@ -42,12 +42,12 @@ const termsAndConditionsContent = [
   {
     label: '6. Limitation of Liability',
     content:
-      'Node Ahmedabad and its organizers are not liable for any damages, losses, or injuries that may occur during participation in our events or activities. Participants attend events at their own discretion and risk and are responsible for their personal safety and belongings.',
+      'Node Ahmedabad and its organizers are not liable for any damages, losses, injuries, stampede or any accidental events that may occur during participation in our events or activities. Participants attend events at their own discretion and risk and are responsible for their personal safety and belongings.',
   },
   {
     label: '7. Privacy and Data Protection',
     content:
-      'We collect and process personal information in accordance with our Privacy Policy. By using our website or being a part of our community or events, you consent to the collection and use of your information as outlined in our Privacy Policy.',
+      'Node Ahmedabad Team collect and process personal information in accordance with our Privacy Policy. By using our website or being a part of our community or events, you consent to the collection and use of your information as outlined in our Privacy Policy.',
   },
   {
     label: '8. Cancellations and Refunds',
@@ -57,14 +57,14 @@ const termsAndConditionsContent = [
   {
     label: '9. Modifications to Terms and Conditions',
     content:
-      'We reserve the right to modify these Terms and Conditions at any time. Updates will be posted on this page with a revised effective date. Continued participation in our activities or use of our website after such updates constitutes acceptance of the modified Terms.',
+      'Node Ahmedabad Team reserve the right to modify these Terms and Conditions at any time. Updates will be posted on this page with a revised effective date. Continued participation in our activities or use of our website after such updates constitutes acceptance of the modified Terms.',
   },
   {
     label: '10. Contact Information',
-    content: `For questions regarding these Terms and Conditions, please contact us at ${socialMedias.EMAIL.url.replace(
+    content: `For questions regarding these Terms and Conditions, please contact us at <b>${socialMedias.EMAIL.url.replace(
       'mailto:',
       '',
-    )} or through the contact form available on our website.`,
+    )}</b> or through the contact form available on our website.`,
   },
   {
     label: '11. Governing Law',
@@ -79,7 +79,7 @@ const termsAndConditionsContent = [
   {
     label: '13. Entire Agreement',
     content:
-      'These Terms and Conditions, along with our Privacy Policy and Code of Conduct, constitute the entire agreement between you and Node Ahmedabad regarding participation in our community and events.',
+      'These Terms and Conditions, along with our <b>Privacy Policy</b> and <b>Code of Conduct</b>, constitute the entire agreement between you and Node Ahmedabad regarding participation in our community and events.',
   },
 ] satisfies TermsAndConditionsContent[];
 

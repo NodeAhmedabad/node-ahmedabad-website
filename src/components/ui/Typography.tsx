@@ -3,9 +3,9 @@ import { cva } from 'class-variance-authority';
 import cn from '@/lib/cn';
 
 import type { VariantProps } from 'class-variance-authority';
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
-import type { Layout } from '@/types';
+import type { Component } from '@/types';
 
 export const typographyVariants = cva('whitespace-pre-line', {
   variants: {
@@ -32,6 +32,7 @@ export const typographyVariants = cva('whitespace-pre-line', {
       white: 'text-white',
       content: 'text-gray-300',
       'green-400': 'text-green-400',
+      'gray-500': 'text-gray-500',
     },
   },
 });
@@ -45,9 +46,10 @@ export type TypographyProps = ActualTypographyVariant &
   ComponentProps<'h1'> & {
     as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
     classOnly?: boolean;
+    children?: ReactNode;
   };
 
-const Typography: Layout<TypographyProps> = (props) => {
+const Typography: Component<TypographyProps> = (props) => {
   const {
     children,
     className,

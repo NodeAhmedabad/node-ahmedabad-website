@@ -86,22 +86,24 @@ const Box: Component<BoxProps> = (props) => {
           {...h3Props}
           as="h3"
           className={cn('mb-4', h3Props?.className)}
-        >
-          {label}
-        </Typography>
+          dangerouslySetInnerHTML={{ __html: label }}
+        />
         <Typography
           color="content"
           variant="content"
           {...contentProps}
           as="p"
           className={cn('mb-2', contentProps?.className)}
-        >
-          {content}
-        </Typography>
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         {description ? (
-          <Typography color="content" variant="sm" {...descriptionProps} as="p">
-            {description}
-          </Typography>
+          <Typography
+            color="content"
+            variant="sm"
+            {...descriptionProps}
+            as="p"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         ) : null}
       </div>
     </ScrollReveal>
