@@ -6,17 +6,11 @@ import { Send } from 'lucide-react';
 import { toast } from 'sonner';
 
 import Typography from '@/components/ui/Typography';
+import { statuses } from '@/constants';
 
 import type { ChangeEvent, FormEvent } from 'react';
 
 import type { Component } from '@/types';
-
-const statuses = {
-  PENDING: 'pending',
-  IN_PROGRESS: 'in-progress',
-  SUBMITTED: 'submitted',
-  ERROR: 'error',
-};
 
 const initialState = {
   name: '',

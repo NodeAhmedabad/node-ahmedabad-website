@@ -5,4 +5,11 @@ const constants = {
   APP_COMMUNITY: 'JavaScript Community',
 } as const;
 
+export const statuses = {
+  PENDING: 'pending',
+  IN_PROGRESS: 'in-progress',
+  SUBMITTED: 'submitted',
+  ERROR: 'error',
+};
+
 export default constants;
