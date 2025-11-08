@@ -38,8 +38,11 @@ export type BoxProps = ComponentProps<'div'> &
     icon?: LucideIcon;
     label: string;
     content: string;
+    description?: string;
     scrollRevealClassName?: string;
-    titleVariant?: TypographyProps['variant'];
+    h3Props?: Partial<TypographyProps>;
+    contentProps?: Partial<TypographyProps>;
+    descriptionProps?: Partial<TypographyProps>;
     customIcon?: ReactNode;
     center?: boolean;
   };
@@ -51,11 +54,14 @@ const Box: Component<BoxProps> = (props) => {
     icon: Icon,
     label,
     content,
+    description,
     delay,
     direction,
     scrollRevealClassName,
     className,
-    titleVariant,
+    h3Props,
+    contentProps,
+    descriptionProps,
     customIcon,
     center = true,
     ...restProps
@@ -74,12 +80,29 @@ const Box: Component<BoxProps> = (props) => {
       >
         {customIcon}
         {Icon ? <Icon className={cn('mb-6', center && 'mx-auto')} /> : null}
-        <Typography as="h3" className="mb-4" color="white" variant={titleVariant ?? 'xl'}>
+        <Typography
+          color="white"
+          variant="xl"
+          {...h3Props}
+          as="h3"
+          className={cn('mb-4', h3Props?.className)}
+        >
           {label}
         </Typography>
-        <Typography as="p" color="content" variant="content">
+        <Typography
+          color="content"
+          variant="content"
+          {...contentProps}
+          as="p"
+          className={cn('mb-2', contentProps?.className)}
+        >
           {content}
         </Typography>
+        {description ? (
+          <Typography color="content" variant="sm" {...descriptionProps} as="p">
+            {description}
+          </Typography>
+        ) : null}
       </div>
     </ScrollReveal>
   );

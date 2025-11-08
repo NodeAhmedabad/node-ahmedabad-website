@@ -1,5 +1,5 @@
+import contactImage from '@/assets/contact.jpg';
 import Banner from '@/components/Banner';
-import ContactForm from '@/components/contact/ContactForm';
 import ContactInformation from '@/components/contact/ContactInformation';
 import LetsConnect from '@/components/contact/LetsConnect';
 import constants from '@/constants';
@@ -17,18 +17,11 @@ const ContactPage: Component = () => (
   <MainLayout>
     <Banner
       description="Have questions, suggestions, or want to collaborate? We'd love to hear from you and help you get involved in our community."
+      image={contactImage.src}
       title="Get In Touch"
     />
     <ContactInformation />
-
-    <section className="bg-slate-800/30 py-20">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <ContactForm />
-          <LetsConnect />
-        </div>
-      </div>
-    </section>
+    <LetsConnect />
   </MainLayout>
 );
 

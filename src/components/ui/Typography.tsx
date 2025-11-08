@@ -19,6 +19,14 @@ export const typographyVariants = cva('whitespace-pre-line', {
       content: 'text-base',
       sm: 'text-sm',
     },
+    weight: {
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
+    },
     color: {
       white: 'text-white',
       content: 'text-gray-300',
@@ -44,12 +52,13 @@ const Typography: Layout<TypographyProps> = (props) => {
     className,
     as: Component,
     variant,
+    weight,
     color,
     classOnly = false,
     ...restProps
   } = props;
 
-  const classNames = cn(typographyVariants({ variant, color }));
+  const classNames = cn(typographyVariants({ variant, weight, color }));
 
   if (classOnly) return classNames;
 

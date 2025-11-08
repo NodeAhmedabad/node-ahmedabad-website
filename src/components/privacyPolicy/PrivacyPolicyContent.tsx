@@ -18,10 +18,10 @@ const PrivacyPolicyContent: Component = () => (
             className={isLast ? '' : 'mb-8'}
             content={content}
             delay={index * 50}
+            h3Props={{ variant: '2xl' }}
             icon={icon}
             label={label}
             sizes="icon-8"
-            titleVariant="2xl"
             variant={variant}
           />
         );

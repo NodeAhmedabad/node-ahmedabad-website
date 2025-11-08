@@ -1,59 +1,33 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
-
-import ScrollReveal from '@/components/ScrollReveal';
-import { socialMedias } from '@/data/information';
+import Section from '@/app/Section';
+import Box from '@/components/ui/Box';
+import contactInformation from '@/data/contact/contactInformation';
 import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
-const contactInfo = [
-  {
-    icon: Mail,
-    title: 'Email Us',
-    content: socialMedias.EMAIL.url.replace('mailto:', ''),
-    description: "Send us an email and we'll get back to you within 24 hours",
-  },
-  {
-    icon: Phone,
-    title: 'Call Us',
-    content: '+91 87339 40250',
-    description: 'Available Monday to Friday, 10 AM to 10 PM IST',
-  },
-  {
-    icon: MapPin,
-    title: 'Visit Us',
-    content: 'Ahmedabad, Gujarat, India',
-    description: 'Our events are hosted at various locations across the city',
-  },
-];
-
 const ContactInformation: Component = () => (
-  <section className="py-20">
-    <div className="container mx-auto px-6">
-      <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {contactInfo.map((item, index) => {
-          const { icon: Icon, title, content, description } = item;
+  <Section>
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {contactInformation.map((item, index, array) => {
+        const { icon, label, content, description } = item;
+        const isLast = array.length - 1 === index;
 
-          return (
-            <ScrollReveal
-              key={title}
-              className={cn(contactInfo.length - 1 === index && 'md:col-span-full lg:col-span-1')}
-              delay={index * 100}
-            >
-              <div className="h-full rounded-xl border border-gray-700 bg-slate-800 p-8 text-center transition-colors duration-300 hover:bg-slate-700">
-                <Icon className="mx-auto mb-4 size-12 text-green-400" />
-                <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
-                <p className="mb-3 whitespace-pre-line break-words font-semibold text-green-400">
-                  {content}
-                </p>
-                <p className="text-sm text-gray-300">{description}</p>
-              </div>
-            </ScrollReveal>
-          );
-        })}
-      </div>
+        return (
+          <Box
+            key={label}
+            content={content}
+            contentProps={{ color: 'green-400', weight: 'semibold' }}
+            delay={index * 100}
+            description={description}
+            h3Props={{ className: 'mb-2' }}
+            icon={icon}
+            label={label}
+            scrollRevealClassName={cn(isLast && 'md:col-span-full lg:col-span-1')}
+          />
+        );
+      })}
     </div>
-  </section>
+  </Section>
 );
 
 export default ContactInformation;

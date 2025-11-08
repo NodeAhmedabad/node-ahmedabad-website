@@ -1,23 +1,40 @@
+import Section from '@/app/Section';
+import ContactForm from '@/components/contact/ContactForm';
+import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
 import SocialLinks from '@/components/SocialLinks';
+import Typography from '@/components/ui/Typography';
 import socialMedia from '@/data/community/socialMedia';
+import letsConnect from '@/data/contact/letsConnect';
 
 import type { Component } from '@/types';
 
-const LetsConnect: Component = () => (
-  <ScrollReveal delay={200}>
-    <div className="space-y-8">
-      <div>
-        <h3 className="mb-4 text-2xl font-bold text-white">Let&apos;s Connect</h3>
-        <p className="mb-6 leading-relaxed text-gray-300">
-          Whether you&apos;re a beginner looking to learn, an experienced developer wanting to share
-          knowledge, or a company interested in sponsoring our events, we&apos;re here to help you
-          connect with our community.
-        </p>
-        <SocialLinks socialMedias={socialMedia} />
+const LetsConnect: Component = () => {
+  const { title, description } = letsConnect;
+
+  return (
+    <Section>
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <ScrollReveal className="order-last lg:order-first">
+          <ContactForm />
+        </ScrollReveal>
+        <ScrollReveal className="flex flex-col gap-5 text-center lg:text-left" delay={200}>
+          <div className="hidden flex-col gap-5 lg:flex">
+            <Typography as="h2" color="white" variant="2xl">
+              {title}
+            </Typography>
+            <Typography as="p" color="content" variant="content">
+              {description}
+            </Typography>
+          </div>
+          <div className="flex flex-col gap-5 lg:hidden">
+            <ContentWrapper className="mb-4" description={description} title={title} />
+          </div>
+          <SocialLinks className="justify-center lg:justify-start" socialMedias={socialMedia} />
+        </ScrollReveal>
       </div>
-    </div>
-  </ScrollReveal>
-);
+    </Section>
+  );
+};
 
 export default LetsConnect;
