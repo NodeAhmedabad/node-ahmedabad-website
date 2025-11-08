@@ -59,7 +59,7 @@ const Header: Component<HeaderProps> = (props) => {
             </div>
           </Link>
 
-          <div className="hidden items-center space-x-8 lg:flex">
+          <div className="hidden items-center space-x-8 xl:flex">
             {menu.map((item) => {
               const { name, path, icon: Icon } = item;
 
@@ -80,7 +80,7 @@ const Header: Component<HeaderProps> = (props) => {
             })}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Link
               className="rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
               href="/community"
@@ -90,7 +90,7 @@ const Header: Component<HeaderProps> = (props) => {
           </div>
 
           <button
-            className="rounded-lg p-2 text-white transition-colors duration-300 hover:bg-gray-800 lg:hidden"
+            className="rounded-lg p-2 text-white transition-colors duration-300 hover:bg-gray-800 xl:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
           >
