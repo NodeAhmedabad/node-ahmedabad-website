@@ -63,7 +63,7 @@ const AnimatedText: Component<AnimatedTextProps> = (props) => {
   return (
     <h1 ref={ref} className={className}>
       {displayedText}
-      <span className="animate-pulse">|</span>
+      {!hasAnimated && <span className="animate-pulse">|</span>}
     </h1>
   );
 };

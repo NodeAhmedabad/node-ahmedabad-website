@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -10,24 +10,20 @@ const FloatingCodeSnippets: Component = () => {
   ];
 
   return (
-    <Fragment>
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)]" />
-      <div className="absolute inset-0">
-        {codeSnippets.map((code, index) => (
-          <div
-            key={code}
-            className="absolute animate-float font-mono text-sm text-green-400/20"
-            style={{
-              top: `${20 + index * 30}%`,
-              left: `${10 + index * 25}%`,
-              animationDelay: `${index * 2}s`,
-            }}
-          >
-            {code}
-          </div>
-        ))}
-      </div>
-    </Fragment>
+    <div className="absolute inset-0">
+      {codeSnippets.map((code, index) => (
+        <div
+          key={code}
+          className={cn('absolute animate-float font-mono text-sm text-green-400/20', {
+            '-top-[5%] left-[5%] lg:-top-[10%] lg:left-[5%]': index === 0,
+            'right-[5%] top-[20%] lg:left-[40%] lg:right-auto lg:top-[10%]': index === 1,
+            'bottom-[55%] left-[5%] lg:bottom-[5%] lg:left-auto lg:right-[5%]': index === 2,
+          })}
+        >
+          {code}
+        </div>
+      ))}
+    </div>
   );
 };
 

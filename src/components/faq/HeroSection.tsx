@@ -16,7 +16,7 @@ const HeroSection: Component = () => (
     {/* Overlay */}
     <div className="absolute inset-0 bg-slate-900/80" />
     {/* Pattern Overlay */}
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)]" />
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)] bg-[length:50px_50px]" />
 
     <div className="container relative z-10 mx-auto px-6">
       <ScrollReveal>

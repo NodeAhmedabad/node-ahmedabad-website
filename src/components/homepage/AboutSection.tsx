@@ -9,7 +9,7 @@ import type { Component } from '@/types';
 
 const AboutSection: Component = () => (
   <section className="relative overflow-hidden bg-slate-800 py-20">
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)]" />
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)] bg-[length:50px_50px]" />
 
     <div className="container relative z-10 mx-auto px-6">
       <div className="mx-auto max-w-6xl">

@@ -49,8 +49,14 @@ const Terminal: Component = () => (
           />
         </div>
 
-        <div className="text-green-400">
-          <AnimatedText delay={9000} speed={60} text="🚀 Community is now running on port 3000!" />
+        <div className="flex items-center text-green-400">
+          <span className="text-green-400">$</span>
+          <AnimatedText
+            className="ml-2"
+            delay={9000}
+            speed={60}
+            text="Community is now running on port 3000!"
+          />
         </div>
       </div>
     </div>
