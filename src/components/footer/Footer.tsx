@@ -19,9 +19,12 @@ const Footer: Component = () => (
   <footer className="border-t border-gray-800 bg-slate-900">
     <NewsLetter />
     <div className="container mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
-        <div className="lg:col-span-2">
-          <Link className="group mb-6 flex items-center space-x-3" href="/">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-12">
+        <div className="lg:col-span-2 xl:col-span-4">
+          <Link
+            className="group mb-6 flex items-center justify-center space-x-3 md:justify-start"
+            href="/"
+          >
             <div className="relative">
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
@@ -34,7 +37,12 @@ const Footer: Component = () => (
               </Typography>
             </div>
           </Link>
-          <Typography as="p" className="mb-6" color="gray-400" variant="content">
+          <Typography
+            as="p"
+            className="mb-6 text-center md:text-left"
+            color="gray-400"
+            variant="content"
+          >
             {constants.APP_DESCRIPTION}
           </Typography>
           <div className="mb-6 grid grid-cols-3 gap-4">
@@ -42,34 +50,39 @@ const Footer: Component = () => (
               <StatBlock {...state} key={state.name} />
             ))}
           </div>
-          <SocialLinks socialMedias={socialMedia} />
+          <SocialLinks className="justify-center md:justify-start" socialMedias={socialMedia} />
         </div>
-        <div className="grid grid-cols-1 gap-8 min-[400px]:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 min-[400px]:grid-cols-2 lg:col-span-4 lg:grid-cols-4 xl:col-span-7 xl:col-start-6">
           {footerLinks.map((item) => {
             const { id, name, links } = item;
 
             return (
-              <div key={id}>
+              <div key={id} className="flex flex-col items-center md:items-start">
                 <Typography
                   as="h3"
-                  className="mb-4"
+                  className="-ml-4 mb-4 md:ml-0"
                   color="white"
                   variant="content"
                   weight="semibold"
                 >
                   {name}
                 </Typography>
-                <ul className="space-y-3">
+                <ul className="flex flex-col gap-y-3">
                   {links.map((link) => {
-                    const { name: subName, path } = link;
+                    const { name: subName, path, contentClassName } = link;
 
                     return (
                       <li key={subName}>
                         <Link
-                          className="group flex items-center transition-colors duration-300 hover:text-green-400"
+                          className="group flex items-center justify-center transition-colors duration-300 hover:text-green-400 md:justify-start"
                           href={path}
                         >
-                          <Typography as="span" color="gray-400" variant="content">
+                          <Typography
+                            as="span"
+                            className={contentClassName}
+                            color="gray-400"
+                            variant="content"
+                          >
                             {subName}
                           </Typography>
                           <ExternalLink className="ml-1 size-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

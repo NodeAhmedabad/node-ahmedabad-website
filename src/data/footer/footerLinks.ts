@@ -64,6 +64,7 @@ const footerLinks = [
       {
         name: 'Terms and Conditions',
         path: '/terms-and-conditions',
+        contentClassName: 'whitespace-nowrap sm:whitespace-pre-line',
       },
     ],
   },
