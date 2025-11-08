@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Send } from 'lucide-react';
+import { toast } from 'sonner';
 
 import Typography from '@/components/ui/Typography';
 
@@ -49,16 +50,18 @@ const ContactForm: Component = () => {
 
     await res.json();
 
-    if (res.ok) setFormData(initialState);
+    if (res.ok) {
+      setFormData(initialState);
+      toast.success('Message received! Our team of Node ninjas will get back to you soon 🥷💚');
+    } else {
+      toast.error('Oops! Your message threw an unhandled rejection 😅 Try again!');
+    }
 
-    setStatus(res.ok ? statuses.SUBMITTED : statuses.ERROR);
-    setTimeout(() => setStatus(statuses.PENDING), 5000);
+    setStatus(statuses.PENDING);
   };
 
   const text = (() => {
     if (status === statuses.IN_PROGRESS) return 'Loading...';
-    if (status === statuses.SUBMITTED) return 'Message Sent';
-    if (status === statuses.ERROR) return 'Something went wrong';
     return 'Send Message';
   })();
 
