@@ -6,6 +6,7 @@ import logo from '@/assets/logo.jpg';
 import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
 import SocialLinks from '@/components/SocialLinks';
+import Typography from '@/components/ui/Typography';
 import constants from '@/constants';
 import footerLinks from '@/data/footer/footerLinks';
 import socialMedia from '@/data/footer/socialMedia';
@@ -25,11 +26,17 @@ const Footer: Component = () => (
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-white">{constants.APP_NAME}</h2>
-              <p className="text-sm text-green-400">{constants.APP_COMMUNITY}</p>
+              <Typography as="h2" color="white" variant="xl">
+                {constants.APP_NAME}
+              </Typography>
+              <Typography as="p" color="green-400" variant="xs">
+                {constants.APP_COMMUNITY}
+              </Typography>
             </div>
           </Link>
-          <p className="mb-6 leading-relaxed text-gray-400">{constants.APP_DESCRIPTION}</p>
+          <Typography as="p" className="mb-6" color="gray-400" variant="content">
+            {constants.APP_DESCRIPTION}
+          </Typography>
           <div className="mb-6 grid grid-cols-3 gap-4">
             {statLinks.map((state) => (
               <StatBlock {...state} key={state.name} />
@@ -37,26 +44,39 @@ const Footer: Component = () => (
           </div>
           <SocialLinks socialMedias={socialMedia} />
         </div>
-
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 min-[400px]:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
           {footerLinks.map((item) => {
             const { id, name, links } = item;
 
             return (
               <div key={id}>
-                <h3 className="mb-4 font-semibold text-white">{name}</h3>
+                <Typography
+                  as="h3"
+                  className="mb-4"
+                  color="white"
+                  variant="content"
+                  weight="semibold"
+                >
+                  {name}
+                </Typography>
                 <ul className="space-y-3">
-                  {links.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        className="group flex items-center text-gray-400 transition-colors duration-300 hover:text-green-400"
-                        href={link.path}
-                      >
-                        <span>{link.name}</span>
-                        <ExternalLink className="ml-1 size-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                      </Link>
-                    </li>
-                  ))}
+                  {links.map((link) => {
+                    const { name: subName, path } = link;
+
+                    return (
+                      <li key={subName}>
+                        <Link
+                          className="group flex items-center transition-colors duration-300 hover:text-green-400"
+                          href={path}
+                        >
+                          <Typography as="span" color="gray-400" variant="content">
+                            {subName}
+                          </Typography>
+                          <ExternalLink className="ml-1 size-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             );
@@ -65,15 +85,19 @@ const Footer: Component = () => (
       </div>
 
       <div className="mt-12 border-t border-gray-800 pt-8">
-        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-          <div className="text-sm text-gray-400">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <Typography as="p" className="text-center md:text-left" color="gray-400" variant="sm">
             © {new Date().getFullYear()} {constants.APP_NAME}. All rights reserved. Built with ❤️
             by the community.
-          </div>
-          <div className="flex items-center space-x-4 text-sm text-gray-400">
-            <span>V{packageJson.version}</span>
+          </Typography>
+          <div className="flex items-center gap-4">
             <div className="size-2 animate-pulse rounded-full bg-green-400" />
-            <span>Made in Ahmedabad ❤️</span>
+            <Typography as="p" color="gray-400" variant="sm">
+              V{packageJson.version}
+            </Typography>
+            <Typography as="p" color="gray-400" variant="sm">
+              Made in Ahmedabad ❤️
+            </Typography>
           </div>
         </div>
       </div>
