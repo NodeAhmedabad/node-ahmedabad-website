@@ -18,7 +18,7 @@ const HeroSection: Component = () => (
     <div className="container relative z-10 mx-auto px-6">
       <div className="mx-auto max-w-6xl">
         <FloatingCodeSnippets />
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="mb-32 grid items-center gap-12 lg:mb-0 lg:grid-cols-2">
           <HeroContent />
           <div className="relative">
             <ScrollReveal delay={800} direction="left">

@@ -51,7 +51,7 @@ const AboutSection: Component = () => (
 
             return (
               <ScrollReveal key={title} delay={300 + index * 100}>
-                <div className="group rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-green-500/50">
+                <div className="group h-full rounded-xl border border-gray-700 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-green-500/50">
                   <div className="flex items-start space-x-4">
                     <div
                       className={`size-12 bg-gradient-to-r ${color} flex items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110`}

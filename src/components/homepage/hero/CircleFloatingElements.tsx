@@ -5,12 +5,12 @@ import type { Component } from '@/types';
 
 const CircleFloatingElements: Component = () => (
   <Fragment>
-    <div className="absolute -right-4 -top-4 flex size-20 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500">
-      <Code2 className="size-10 text-white" />
+    <div className="absolute -right-4 -top-4 flex size-12 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500 sm:size-16">
+      <Code2 className="size-6 text-white sm:size-8" />
     </div>
 
-    <div className="absolute -bottom-10 -left-4 flex size-16 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500">
-      <span className="text-xs font-bold text-white">JS</span>
+    <div className="absolute -bottom-6 -left-4 flex size-12 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500 sm:size-16 md:-bottom-10">
+      <span className="font-bold text-white">JS</span>
     </div>
   </Fragment>
 );
