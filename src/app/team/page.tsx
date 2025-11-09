@@ -1,3 +1,4 @@
+import teamImage from '@/assets/team.jpg';
 import Banner from '@/components/Banner';
 import TeamMembers from '@/components/team/TeamMembers';
 import constants from '@/constants';
@@ -15,6 +16,7 @@ const TeamPage: Component = () => (
   <MainLayout>
     <Banner
       description="The passionate individuals who make our community thrive"
+      image={teamImage.src}
       title="Meet Our Team"
     />
     <TeamMembers />

@@ -40,7 +40,7 @@ export type BoxProps = Omit<ComponentProps<'div'>, 'content'> &
     content: ReactNode;
     description?: ReactNode;
     scrollRevealClassName?: string;
-    h3Props?: Partial<TypographyProps>;
+    labelProps?: Partial<TypographyProps>;
     contentProps?: Partial<TypographyProps>;
     descriptionProps?: Partial<TypographyProps>;
     customIcon?: ReactNode;
@@ -59,7 +59,7 @@ const Box: Component<BoxProps> = (props) => {
     direction,
     scrollRevealClassName,
     className,
-    h3Props,
+    labelProps,
     contentProps,
     descriptionProps,
     customIcon,
@@ -84,9 +84,9 @@ const Box: Component<BoxProps> = (props) => {
         <Typography
           color="white"
           variant="xl"
-          {...h3Props}
+          {...labelProps}
           as="h3"
-          className={cn('mb-4', h3Props?.className)}
+          className={cn('mb-4', labelProps?.className)}
           {...(typeof label === 'string'
             ? {
                 dangerouslySetInnerHTML: {

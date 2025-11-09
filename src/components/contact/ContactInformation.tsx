@@ -20,9 +20,9 @@ const ContactInformation: Component = () => (
             contentProps={{ color: 'green-400', weight: 'semibold' }}
             delay={index * 100}
             description={description}
-            h3Props={{ className: 'mb-2' }}
             icon={icon}
             label={label}
+            labelProps={{ className: 'mb-2' }}
             scrollRevealClassName={cn(isLast && 'md:col-span-full lg:col-span-1')}
             content={
               <Link href={href} target="_blank">

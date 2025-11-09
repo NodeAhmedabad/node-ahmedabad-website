@@ -19,9 +19,9 @@ const TermsAndConditionsContent: Component = () => (
             className={cn(!isLast && 'mb-8')}
             content={content}
             delay={index * 50}
-            h3Props={{ variant: '2xl' }}
             icon={icon}
             label={label}
+            labelProps={{ variant: '2xl' }}
             sizes="icon-8"
             variant={variant}
           />
