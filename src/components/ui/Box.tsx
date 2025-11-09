@@ -15,9 +15,9 @@ import type { Component } from '@/types';
 const boxVariants = cva('', {
   variants: {
     variant: {
-      default: 'border-gray-700 bg-slate-800 [&>svg]:text-green-400',
-      blue: 'border-blue-500/20 bg-blue-500/10 [&>svg]:text-blue-400',
-      red: 'border-red-500/20 bg-red-500/10 [&>svg]:text-red-400',
+      default: 'border-gray-700 bg-slate-800 hover:border-green-500 [&>svg]:text-green-400',
+      blue: 'border-blue-500/20 bg-blue-500/10 hover:border-blue-500 [&>svg]:text-blue-400',
+      red: 'border-red-500/20 bg-red-500/10 hover:border-red-500 [&>svg]:text-red-400',
     },
     sizes: {
       default: '[&>svg]:size-12',
@@ -63,6 +63,7 @@ const Box: Component<BoxProps> = (props) => {
     contentProps,
     descriptionProps,
     customIcon,
+    children,
     center = true,
     ...restProps
   } = props;
@@ -72,7 +73,7 @@ const Box: Component<BoxProps> = (props) => {
       <div
         {...restProps}
         className={cn(
-          'h-full rounded-xl border p-8',
+          'h-full rounded-xl border p-8 transition-[border-color] duration-300',
           center && 'text-center',
           boxVariants({ variant, sizes }),
           className,
@@ -129,6 +130,7 @@ const Box: Component<BoxProps> = (props) => {
             {typeof description === 'string' ? undefined : description}
           </Typography>
         ) : null}
+        {children}
       </div>
     </ScrollReveal>
   );

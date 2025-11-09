@@ -1,73 +1,86 @@
-import { Clock, Star } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
-import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/app/Section';
+import ContentWrapper from '@/components/ContentWrapper';
+import Box from '@/components/ui/Box';
+import Typography from '@/components/ui/Typography';
 import volunteerRoles from '@/data/contribute/volunteerRoles';
 
 import type { Component } from '@/types';
 
-const VolunteerRoles: Component = () => (
-  <section id="volunteerRoles">
-    <div className="container mx-auto px-6">
-      <ScrollReveal>
-        <div className="mb-16 text-center">
-          <h2 className="mb-6 text-4xl font-bold text-white">Volunteer Roles</h2>
-          <p className="text-lg text-gray-300">
-            Current opportunities to contribute to our community
-          </p>
-        </div>
-      </ScrollReveal>
+const VolunteerRoles: Component = () => {
+  const { title, description, roles } = volunteerRoles;
 
+  return (
+    <Section id="volunteer-roles">
+      <ContentWrapper description={description} title={title} />
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {volunteerRoles.map((role, index) => {
-          const { title, description, commitments, skills } = role;
+        {roles.map((role, index) => {
+          const { icon, label, content, commitments, skills } = role;
 
           return (
-            <ScrollReveal key={title} delay={index * 100}>
-              <div className="flex h-full flex-col rounded-xl border border-gray-700 bg-slate-800 p-8 transition-colors duration-300 hover:border-green-500">
+            <Box
+              key={label}
+              center={false}
+              className="flex flex-col"
+              content={content}
+              contentProps={{ className: 'mb-4' }}
+              delay={index * 100}
+              icon={icon}
+              label={label}
+            >
+              <div className="flex flex-col gap-4">
                 <div className="flex flex-col">
-                  <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
-                  <p className="mb-6 text-gray-300">{description}</p>
+                  <Typography
+                    as="h4"
+                    className="mb-3"
+                    color="white"
+                    variant="content"
+                    weight="semibold"
+                  >
+                    Time Commitment
+                  </Typography>
+                  <ul className="flex flex-col gap-y-2">
+                    {commitments.map((benefit) => (
+                      <li key={benefit} className="flex items-center text-gray-300">
+                        <CheckCircle className="mr-2 size-4 shrink-0 text-green-400" />
+                        <Typography as="span" color="content" variant="content">
+                          {benefit}
+                        </Typography>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
                 <div className="flex flex-col">
-                  <div className="mb-6">
-                    <div className="mb-2 flex items-center">
-                      <Clock className="mr-2 size-5 text-green-400" />
-                      <span className="font-semibold text-white">Time Commitment:</span>
-                    </div>
-                    <div className="flex flex-col">
-                      {commitments.map((commitment) => (
-                        <span key={commitment} className="text-gray-300">
-                          {commitment}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-2 flex items-center">
-                      <Star className="mr-2 size-5 text-green-400" />
-                      <span className="font-semibold text-white">Skills Needed:</span>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-400"
-                        >
+                  <Typography
+                    as="h4"
+                    className="mb-3"
+                    color="white"
+                    variant="content"
+                    weight="semibold"
+                  >
+                    Skills Needed
+                  </Typography>
+                  <div className="flex flex-wrap gap-x-2 gap-y-3">
+                    {skills.map((skill) => (
+                      <div
+                        key={skill}
+                        className="flex items-center rounded-full bg-green-500/20 px-3 py-2"
+                      >
+                        <Typography as="span" color="green-400" variant="xs">
                           {skill}
-                        </span>
-                      ))}
-                    </div>
+                        </Typography>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </Box>
           );
         })}
       </div>
-    </div>
-  </section>
-);
+    </Section>
+  );
+};
 
 export default VolunteerRoles;
