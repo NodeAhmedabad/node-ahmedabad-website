@@ -1,10 +1,12 @@
+import communityImage from '@/assets/community.jpg';
 import Banner from '@/components/Banner';
 import CommunityGuidelines from '@/components/community/CommunityGuidelines';
-import CtaSection from '@/components/community/CtaSection';
-import SocialBlock from '@/components/community/SocialBlock';
+import SocialPlatforms from '@/components/community/SocialPlatforms';
+import CtaBlock from '@/components/CtaBlock';
 import ScrollReveal from '@/components/ScrollReveal';
 import constants from '@/constants';
 import communityStats from '@/data/community/communityStats';
+import ctaBlock from '@/data/community/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
@@ -19,9 +21,10 @@ const CommunityPage: Component = () => (
   <MainLayout>
     <Banner
       description="Connect with passionate Node.js developers, share knowledge, and grow your career in a supportive community environment."
+      image={communityImage.src}
       title="Join Our Community"
     >
-      <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 lg:mt-16 lg:grid-cols-4">
+      <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-8 lg:grid-cols-4">
         {communityStats.map((stat, index) => (
           <ScrollReveal key={stat.label} delay={index * 100}>
             <div className="text-center">
@@ -32,9 +35,9 @@ const CommunityPage: Component = () => (
         ))}
       </div>
     </Banner>
-    <SocialBlock />
+    <SocialPlatforms />
     <CommunityGuidelines />
-    <CtaSection />
+    <CtaBlock {...ctaBlock} />
   </MainLayout>
 );
 

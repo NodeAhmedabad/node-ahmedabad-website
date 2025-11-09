@@ -1,6 +1,6 @@
 import ScrollReveal from '@/components/ScrollReveal';
 import SocialLinks from '@/components/SocialLinks';
-import socialMedia from '@/data/community/socialMedia';
+import socialMedia from '@/data/footer/socialMedia';
 
 import type { SocialMedias } from '@/components/SocialLinks';
 import type events from '@/data/events/events';

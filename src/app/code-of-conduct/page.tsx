@@ -1,4 +1,4 @@
-import codeOfConductImage from '@/assets/code-of-conduct.jpeg';
+import codeOfConductImage from '@/assets/code-of-conduct.jpg';
 import Banner from '@/components/Banner';
 import BehaviorBlock from '@/components/codeOfConduct/BehaviorBlock';
 import Commitment from '@/components/codeOfConduct/Commitment';
