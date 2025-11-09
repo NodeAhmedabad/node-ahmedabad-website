@@ -30,12 +30,17 @@ const HeroContent: Component = () => (
     </ScrollReveal>
 
     <ScrollReveal delay={600}>
-      <div className="mb-8 text-xl leading-relaxed text-gray-300 lg:text-2xl">
+      <div className="mb-8">
         <AnimatedText
-          className="font-light"
+          className="font-light lg:text-2xl"
           delay={800}
           speed={30}
           text="Join Ahmedabad's most vibrant JavaScript community. Where developers meet, learn, grow, connect and build amazing things together."
+          typographyProps={{
+            as: 'h2',
+            variant: 'xl',
+            color: 'content',
+          }}
         />
       </div>
     </ScrollReveal>

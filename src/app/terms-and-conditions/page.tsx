@@ -4,6 +4,7 @@ import termsAndConditionImage from '@/assets/terms-and-conditions.jpg';
 import Banner from '@/components/Banner';
 import CtaBlock from '@/components/CtaBlock';
 import TermsAndConditionsContent from '@/components/termsAndConditions/TermsAndConditionsContent';
+import Typography from '@/components/ui/Typography';
 import constants from '@/constants';
 import ctaBlock from '@/data/termsAndConditions/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
@@ -28,7 +29,9 @@ const TermsAndConditionsPage: Component = () => {
         content={
           <div className="mt-6 flex items-center justify-center text-gray-400">
             <Calendar className="mr-2 size-4" />
-            <span>Last updated: {lastUpdated}</span>
+            <Typography as="span" variant="content">
+              Last updated: {lastUpdated}
+            </Typography>
           </div>
         }
       />

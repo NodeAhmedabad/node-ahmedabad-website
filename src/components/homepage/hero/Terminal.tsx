@@ -1,66 +1,54 @@
 import AnimatedText from '@/components/AnimatedText';
+import Typography from '@/components/ui/Typography';
+import terminal from '@/data/homepage/terminal';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
-const Terminal: Component = () => (
-  <div className="overflow-hidden rounded-lg border border-gray-700 bg-slate-800 shadow-2xl">
-    <div className="flex items-center border-b border-gray-700 bg-slate-900 px-4 py-3">
-      <div className="flex space-x-2">
-        <div className="size-3 rounded-full bg-red-500" />
-        <div className="size-3 rounded-full bg-yellow-500" />
-        <div className="size-3 rounded-full bg-green-500" />
+const Terminal: Component = () => {
+  const { actions, fileName, commands } = terminal;
+
+  return (
+    <div className="overflow-hidden rounded-lg border border-gray-700 bg-slate-800 shadow-2xl">
+      <div className="flex items-center border-b border-gray-700 bg-slate-900 px-4 py-3">
+        <div className="flex space-x-2">
+          {actions.map((action) => (
+            <div key={action} className={cn('size-3 rounded-full', action)} />
+          ))}
+        </div>
+        <div className="flex-1 text-center">
+          <Typography as="span" className="font-mono" color="gray-400" variant="sm">
+            {fileName}
+          </Typography>
+        </div>
       </div>
-      <div className="flex-1 text-center">
-        <span className="font-mono text-sm text-gray-400">node-ahmedabad.js</span>
-      </div>
-    </div>
 
-    <div className="p-6 font-mono text-sm">
-      <div className="space-y-4">
-        <div className="flex items-center">
-          <span className="text-green-400">$</span>
-          <AnimatedText
-            className="ml-2 text-white"
-            delay={1000}
-            speed={80}
-            text=" npm install @node-ahmedabad/community"
-          />
-        </div>
+      <div className="flex flex-col gap-4 p-6">
+        {commands.map((command) => {
+          const { text, delay, isCommand } = command;
 
-        <div className="text-gray-400">
-          <AnimatedText delay={3000} speed={60} text="✓ Installing awesome developers..." />
-        </div>
-
-        <div className="text-gray-400">
-          <AnimatedText delay={4500} speed={60} text="✓ Setting up knowledge sharing..." />
-        </div>
-
-        <div className="text-gray-400">
-          <AnimatedText delay={6000} speed={60} text="✓ Building connections..." />
-        </div>
-
-        <div className="flex items-center">
-          <span className="text-green-400">$</span>
-          <AnimatedText
-            className="ml-2 text-white"
-            delay={7500}
-            speed={80}
-            text=" node community.start()"
-          />
-        </div>
-
-        <div className="flex items-center text-green-400">
-          <span className="text-green-400">$</span>
-          <AnimatedText
-            className="ml-2"
-            delay={9000}
-            speed={60}
-            text="Community is now running on port 3000!"
-          />
-        </div>
+          return (
+            <div key={text} className="flex items-center gap-2">
+              <Typography as="span" color={isCommand ? 'green-400' : 'gray-400'} variant="sm">
+                {isCommand ? '$' : '✓'}
+              </Typography>
+              <AnimatedText
+                className="font-mono"
+                delay={delay}
+                speed={60}
+                text={text}
+                typographyProps={{
+                  as: 'span',
+                  color: isCommand ? 'white' : 'gray-400',
+                  variant: 'sm',
+                }}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Terminal;

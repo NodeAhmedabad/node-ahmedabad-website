@@ -19,6 +19,7 @@ export const typographyVariants = cva('whitespace-pre-line', {
       content: 'text-base',
       sm: 'text-sm',
       xs: 'text-xs',
+      inherit: 'text-inherit',
     },
     weight: {
       light: 'font-light',
@@ -46,25 +47,13 @@ type ActualTypographyVariant = Omit<TypographyVariant, 'variant'> &
 export type TypographyProps = ActualTypographyVariant &
   ComponentProps<'h1'> & {
     as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
-    classOnly?: boolean;
     children?: ReactNode;
   };
 
 const Typography: Component<TypographyProps> = (props) => {
-  const {
-    children,
-    className,
-    as: Component,
-    variant,
-    weight,
-    color,
-    classOnly = false,
-    ...restProps
-  } = props;
+  const { children, className, as: Component, variant, weight, color, ...restProps } = props;
 
   const classNames = cn(typographyVariants({ variant, weight, color }));
-
-  if (classOnly) return classNames;
 
   return (
     <Component {...restProps} className={cn(classNames, className)}>

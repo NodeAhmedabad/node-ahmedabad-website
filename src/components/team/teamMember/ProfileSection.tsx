@@ -32,6 +32,7 @@ const ProfileSection: Component<ProfileSectionProps> = (props) => {
                 />
               </div>
               <div className="flex-1 text-center md:text-left">
+                {/* FIXME Bug */}
                 <AnimatedText
                   className="mb-4 text-4xl font-bold text-white md:text-5xl"
                   text={name}

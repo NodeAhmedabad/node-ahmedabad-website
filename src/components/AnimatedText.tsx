@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import Typography from '@/components/ui/Typography';
+
+import type { TypographyProps } from '@/components/ui/Typography';
 import type { Component } from '@/types';
 
 interface AnimatedTextProps {
@@ -10,10 +13,11 @@ interface AnimatedTextProps {
   delay?: number;
   speed?: number;
   once?: boolean;
+  typographyProps?: TypographyProps;
 }
 
 const AnimatedText: Component<AnimatedTextProps> = (props) => {
-  const { text, className = '', delay = 0, speed = 50, once = true } = props;
+  const { text, className, delay = 0, speed = 50, once = true, typographyProps = null } = props;
 
   const [displayedText, setDisplayedText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
@@ -61,10 +65,14 @@ const AnimatedText: Component<AnimatedTextProps> = (props) => {
   }, [isVisible, text, delay, speed, once, hasAnimated]);
 
   return (
-    <h1 ref={ref} className={className}>
+    <Typography ref={ref} as="p" variant="content" {...typographyProps} className={className}>
       {displayedText}
-      {!hasAnimated && <span className="animate-pulse">|</span>}
-    </h1>
+      {!hasAnimated && (
+        <Typography as="span" className="animate-pulse" variant="inherit">
+          |
+        </Typography>
+      )}
+    </Typography>
   );
 };
 
