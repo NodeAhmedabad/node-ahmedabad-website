@@ -50,7 +50,11 @@ const FaqCategories: Component = () => {
                       {openFAQ === faq.id && (
                         <div className="px-6 pb-6">
                           <div className="border-t border-gray-700 pt-4">
-                            <p className="leading-relaxed text-gray-300">{faq.answer}</p>
+                            <p
+                              className="leading-relaxed text-gray-300"
+                              // eslint-disable-next-line react/no-danger
+                              dangerouslySetInnerHTML={{ __html: faq.answer }}
+                            />
                           </div>
                         </div>
                       )}
