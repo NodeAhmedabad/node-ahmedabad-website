@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 import ScrollReveal from '@/components/ScrollReveal';
-import { faqCategories } from '@/data/faq/faqs';
+import faqCategories from '@/data/faqs/faqCategories';
 
 import type { Component } from '@/types';
 

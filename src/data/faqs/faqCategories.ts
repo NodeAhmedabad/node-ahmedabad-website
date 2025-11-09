@@ -1,8 +1,6 @@
 import { Calendar, Code, HelpCircle, Users } from 'lucide-react';
 
-export const temp = [];
-
-export const faqCategories = [
+const faqCategories = [
   {
     id: 'general',
     name: 'General',
@@ -129,3 +127,5 @@ export const faqCategories = [
     ],
   },
 ];
+
+export default faqCategories;

@@ -1,4 +1,3 @@
-import { Lock } from 'lucide-react';
 import Link from 'next/link';
 
 import Section from '@/app/Section';
@@ -20,6 +19,7 @@ interface CtaBlockAction {
 }
 
 export interface CtaBlockProps {
+  icon: LucideIcon;
   title: string;
   description: string;
   actions: CtaBlockAction[];
@@ -28,7 +28,7 @@ export interface CtaBlockProps {
 }
 
 const CtaBlock: Component<CtaBlockProps> = (props) => {
-  const { title, description, actions, variant, content } = props;
+  const { icon: Icon, title, description, actions, variant, content } = props;
 
   const classNames = (() => {
     const outlinedClassName = 'border-2';
@@ -58,7 +58,7 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
     <Section>
       <ScrollReveal>
         <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12 text-center">
-          <Lock className={cn('mx-auto mb-6 size-16', classNames.iconClassName)} />
+          <Icon className={cn('mx-auto mb-6 size-16', classNames.iconClassName)} />
           <Typography as="h2" className="mb-6" color="white" variant="title">
             {title}
           </Typography>
@@ -68,7 +68,7 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
           {content}
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             {actions.map((action) => {
-              const { label, href, icon: Icon, target, isOutlined = false } = action;
+              const { label, href, icon: ActionIcon, target, isOutlined = false } = action;
 
               return (
                 <Link
@@ -81,7 +81,7 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
                     isOutlined ? classNames.linkOutlineClassName : classNames.linkSolidClassName,
                   )}
                 >
-                  {Icon ? <Icon className="mr-2 size-4" /> : null}
+                  {ActionIcon ? <ActionIcon className="mr-2 size-4" /> : null}
                   {label}
                 </Link>
               );

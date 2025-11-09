@@ -8,6 +8,10 @@ const footerLinks = [
         path: '/about',
       },
       {
+        name: 'Team',
+        path: '/team',
+      },
+      {
         name: 'Events',
         path: '/events',
       },
@@ -28,10 +32,6 @@ const footerLinks = [
       {
         name: 'Become Speaker',
         path: '/contribute',
-      },
-      {
-        name: 'Sponsor Us',
-        path: '/sponsors',
       },
     ],
   },

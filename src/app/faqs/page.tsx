@@ -1,16 +1,29 @@
+import faqsImage from '@/assets/faqs.jpg';
+import Banner from '@/components/Banner';
+import CtaBlock from '@/components/CtaBlock';
 import FaqCategories from '@/components/faq/FaqCategories';
-import HeroSection from '@/components/faq/HeroSection';
-import ReachOut from '@/components/faq/ReachOut';
+import constants from '@/constants';
+import ctaBlock from '@/data/faqs/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
+
+import type { Metadata } from 'next';
 
 import type { Component } from '@/types';
 
-const FAQs: Component = () => (
+export const metadata = {
+  title: ['FAQs', constants.APP_NAME].join(' | '),
+} satisfies Metadata;
+
+const FAQsPage: Component = () => (
   <MainLayout>
-    <HeroSection />
+    <Banner
+      description="Find answers to common questions about our Node.js community, events, and how to get involved."
+      image={faqsImage.src}
+      title="FAQs"
+    />
     <FaqCategories />
-    <ReachOut />
+    <CtaBlock {...ctaBlock} />
   </MainLayout>
 );
 
-export default FAQs;
+export default FAQsPage;
