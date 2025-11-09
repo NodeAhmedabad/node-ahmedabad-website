@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 
-import BackButton from '@/components/team/teamMember/BackButton';
 import Connect from '@/components/team/teamMember/Connect';
 import ProfileSection from '@/components/team/teamMember/ProfileSection';
 import TeamMemberInformation from '@/components/team/teamMember/TeamMemberInformation';
@@ -31,7 +30,6 @@ const TeamMemberPage: ParamsComponent<'id'> = async (props) => {
 
   return (
     <MainLayout>
-      <BackButton />
       <ProfileSection teamMember={teamMember} />
       <TeamMemberInformation teamMember={teamMember} />
       <Connect teamMember={teamMember} />

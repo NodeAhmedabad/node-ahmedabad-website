@@ -15,12 +15,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',
@@ -41,12 +35,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',
@@ -67,12 +55,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',
@@ -93,12 +75,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',
@@ -119,12 +95,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',
@@ -145,12 +115,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/rajeshpatel',
       email: 'rajesh@nodeahmedabad.com',
@@ -168,12 +132,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',
@@ -194,12 +152,6 @@ const teamMembers = [
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'January 2020',
     skills: ['Node.js', 'React', 'MongoDB', 'AWS', 'Community Building'],
-    contributions: [
-      'Founded Node Ahmedabad community',
-      'Organized 50+ meetups and workshops',
-      'Mentored 100+ junior developers',
-      'Speaker at 20+ tech conferences',
-    ],
     socialMedia: {
       linkedin: 'https://linkedin.com/in/nishargshah',
       instagram: 'https://instagram.com/iamnisharg',

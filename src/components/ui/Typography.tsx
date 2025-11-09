@@ -47,7 +47,7 @@ type ActualTypographyVariant = Omit<TypographyVariant, 'variant'> &
 
 export type TypographyProps = ActualTypographyVariant &
   ComponentProps<'h1'> & {
-    as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+    as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'blockquote';
     children?: ReactNode;
   };
 

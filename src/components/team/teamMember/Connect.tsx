@@ -1,5 +1,7 @@
+import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
 import SocialLinks from '@/components/SocialLinks';
+import Typography from '@/components/ui/Typography';
 import socialMedia from '@/data/footer/socialMedia';
 
 import type { SocialMedias } from '@/components/SocialLinks';
@@ -30,20 +32,16 @@ const Connect: Component<ConnectProps> = (props) => {
   }, []);
 
   return (
-    <section className="bg-slate-800/50 py-20">
-      <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-4xl">
-          <ScrollReveal>
-            <div className="text-center">
-              <h3 className="mb-8 text-3xl font-bold text-white">Connect with {name}</h3>
-              <div className="flex justify-center gap-6">
-                <SocialLinks socialMedias={socialMedias} />
-              </div>
-            </div>
-          </ScrollReveal>
+    <Section>
+      <ScrollReveal className="text-center">
+        <Typography as="h2" className="mb-8" color="white" variant="3xl">
+          Connect with {name}
+        </Typography>
+        <div className="flex justify-center gap-6">
+          <SocialLinks socialMedias={socialMedias} />
         </div>
-      </div>
-    </section>
+      </ScrollReveal>
+    </Section>
   );
 };
 
