@@ -1,10 +1,11 @@
-import { Mail } from 'lucide-react';
+import { MailIcon } from 'lucide-react';
 
 import { socialMedias } from '@/data/information';
 
 import type { CtaBlockProps } from '@/components/CtaBlock';
 
 const ctaBlock = {
+  icon: MailIcon,
   title: 'Contact Information',
   description:
     'If you experience or witness any violations of our code of conduct, please contact us:',
@@ -12,7 +13,7 @@ const ctaBlock = {
     {
       label: socialMedias.EMAIL.url.replace('mailto:', ''),
       href: socialMedias.EMAIL.url,
-      icon: Mail,
+      icon: MailIcon,
       isOutlined: false,
     },
     {

@@ -1,6 +1,9 @@
+import { CodeIcon } from 'lucide-react';
+
 import type { CtaBlockProps } from '@/components/CtaBlock';
 
 const ctaBlock = {
+  icon: CodeIcon,
   title: 'Contribute to Our Website',
   description:
     "Join us in building and maintaining our community website. Whether you're a developer, designer, or content creator, your contributions help us make learning Node.js more accessible to everyone.",

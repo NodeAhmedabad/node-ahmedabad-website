@@ -1,10 +1,11 @@
-import { Mail } from 'lucide-react';
+import { FileTextIcon, Mail } from 'lucide-react';
 
 import { socialMedias } from '@/data/information';
 
 import type { CtaBlockProps } from '@/components/CtaBlock';
 
 const ctaBlock = {
+  icon: FileTextIcon,
   title: 'Questions About These Terms and Conditions?',
   description:
     "If you have any questions about these Terms and Conditions, please don't hesitate to contact us.",

@@ -1,8 +1,11 @@
+import { UsersIcon } from 'lucide-react';
+
 import { socialMedias } from '@/data/information';
 
 import type { CtaBlockProps } from '@/components/CtaBlock';
 
 const ctaBlock = {
+  icon: UsersIcon,
   title: 'Ready to Get Started?',
   description:
     'Join thousands of developers who are already part of our amazing community. Start your journey today!',
