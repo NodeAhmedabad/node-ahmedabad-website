@@ -1,13 +1,19 @@
 import Link from 'next/link';
 
+import Typography from '@/components/ui/Typography';
+
 import type { Component } from '@/types';
 
 const NotFound: Component = () => (
   <div className="flex min-h-screen items-center justify-center bg-gray-100">
-    <div className="text-center">
-      <h1 className="mb-4 text-4xl font-bold">404</h1>
-      <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-      <Link className="text-blue-500 underline hover:text-blue-700" href="/">
+    <div className="flex flex-col gap-4 p-4 text-center">
+      <Typography as="h1" variant="title">
+        404
+      </Typography>
+      <Typography as="p" color="gray-600" variant="xl" weight="normal">
+        Oops! Page not found
+      </Typography>
+      <Link className="font-bold text-blue-700 underline hover:text-blue-900" href="/">
         Return to Home
       </Link>
     </div>

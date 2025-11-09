@@ -1,3 +1,5 @@
+import Typography from '@/components/ui/Typography';
+
 import type { Component, NextErrorType } from '@/types';
 
 const Error: Component<NextErrorType> = ({ error, reset }) => {
@@ -6,12 +8,24 @@ const Error: Component<NextErrorType> = ({ error, reset }) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h2 className="p-4">It&apos;s not you. It&apos;s us. Give it another try, please!</h2>
-      <p className="mb-4">{error.message ?? ''}</p>
-      <button className="mx-auto my-0 w-fit px-4 py-2" onClick={handleReset} type="button">
-        Try Again
-      </button>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <div className="flex flex-col gap-4 p-4 text-center">
+        <Typography as="h1" variant="title">
+          It&apos;s not you. It&apos;s us. Give it another try, please!
+        </Typography>
+        <Typography as="p" color="gray-600" variant="xl" weight="normal">
+          {error.message ?? ''}
+        </Typography>
+        <div className="flex justify-center">
+          <button
+            className="mt-4 flex w-fit items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg enabled:hover:shadow-green-500/25 disabled:opacity-40"
+            onClick={handleReset}
+            type="button"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
