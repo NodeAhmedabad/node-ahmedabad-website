@@ -4,69 +4,88 @@ import { useState } from 'react';
 
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
+import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Typography from '@/components/ui/Typography';
 import faqCategories from '@/data/faqs/faqCategories';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
 const FaqCategories: Component = () => {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
 
-  const toggleFAQ = (faqId: string) => {
-    setOpenFAQ(openFAQ === faqId ? null : faqId);
+  const toggleFAQ = (question: string) => {
+    setOpenFAQ(openFAQ === question ? null : question);
   };
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-4xl">
-          {faqCategories.map((category, categoryIndex) => (
-            <ScrollReveal key={category.id} delay={categoryIndex * 100}>
-              <div className="mb-12">
-                <div className="mb-8 flex items-center">
-                  <category.icon className="mr-3 size-8 text-green-400" />
-                  <h2 className="text-3xl font-bold text-white">{category.name}</h2>
-                </div>
+    <Section>
+      <div className="mx-auto max-w-4xl">
+        {faqCategories.map((category, index, array) => {
+          const { icon: Icon, name, faqs } = category;
+          const isLast = array.length - 1 === index;
 
-                <div className="space-y-4">
-                  {category.faqs.map((faq) => (
+          return (
+            <ScrollReveal key={name} className={cn(!isLast && 'mb-12')} delay={index * 100}>
+              <div className="mb-8 flex items-center gap-3">
+                <Icon className="size-8 text-green-400" />
+                <Typography as="h2" color="white" variant="3xl">
+                  {name}
+                </Typography>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                {faqs.map((faq) => {
+                  const { question, answer } = faq;
+                  const isOpened = openFAQ === question;
+
+                  return (
                     <div
-                      key={faq.id}
+                      key={question}
                       className="overflow-hidden rounded-xl border border-gray-700 bg-slate-800"
                     >
                       <button
-                        className="flex w-full items-center justify-between p-6 text-left transition-colors duration-300 hover:bg-slate-700"
-                        onClick={() => toggleFAQ(faq.id)}
+                        className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors duration-300 hover:bg-slate-700"
+                        onClick={() => toggleFAQ(question)}
                         type="button"
                       >
-                        <h3 className="pr-4 text-lg font-semibold text-white">{faq.question}</h3>
-                        {openFAQ === faq.id ? (
+                        <Typography
+                          as="h3"
+                          color={isOpened ? 'green-400' : 'white'}
+                          variant="lg"
+                          weight="semibold"
+                        >
+                          {question}
+                        </Typography>
+                        {isOpened ? (
                           <ChevronUp className="size-5 shrink-0 text-green-400" />
                         ) : (
                           <ChevronDown className="size-5 shrink-0 text-gray-400" />
                         )}
                       </button>
 
-                      {openFAQ === faq.id && (
-                        <div className="px-6 pb-6">
+                      {isOpened ? (
+                        <div className="-mt-1 px-6 pb-6">
                           <div className="border-t border-gray-700 pt-4">
-                            <p
-                              className="leading-relaxed text-gray-300"
-                              // eslint-disable-next-line react/no-danger
-                              dangerouslySetInnerHTML={{ __html: faq.answer }}
+                            <Typography
+                              as="p"
+                              color="content"
+                              dangerouslySetInnerHTML={{ __html: answer }}
+                              variant="content"
                             />
                           </div>
                         </div>
-                      )}
+                      ) : null}
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
             </ScrollReveal>
-          ))}
-        </div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 };
 

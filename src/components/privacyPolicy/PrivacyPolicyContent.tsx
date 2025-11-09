@@ -1,6 +1,7 @@
 import Section from '@/app/Section';
 import Box from '@/components/ui/Box';
 import privacyPolicyContent from '@/data/privacyPolicy/privacyPolicyContent';
+import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -15,7 +16,7 @@ const PrivacyPolicyContent: Component = () => (
           <Box
             key={label}
             center={false}
-            className={isLast ? '' : 'mb-8'}
+            className={cn(!isLast && 'mb-8')}
             content={content}
             delay={index * 50}
             h3Props={{ variant: '2xl' }}
