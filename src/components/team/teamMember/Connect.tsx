@@ -34,7 +34,7 @@ const Connect: Component<ConnectProps> = (props) => {
   return (
     <Section>
       <ScrollReveal className="text-center">
-        <Typography as="h2" className="mb-8" color="white" variant="3xl">
+        <Typography as="h2" className="mb-4 sm:mb-8" color="white" variant="title">
           Connect with {name}
         </Typography>
         <div className="flex justify-center gap-6">

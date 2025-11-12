@@ -59,7 +59,7 @@ const TeamMembers: Component = () => {
 
   return (
     <Fragment>
-      <Section className="py-8">
+      <Section className="!py-8">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
           <div className="relative w-full max-w-md flex-1">
             <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
@@ -71,7 +71,7 @@ const TeamMembers: Component = () => {
               value={searchTerm}
             />
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-3">
             {categoryOptions.map((tab) => {
               const { icon: Icon, label, value } = tab;
 

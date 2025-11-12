@@ -6,7 +6,7 @@ import type { CtaBlockProps } from '@/components/CtaBlock';
 
 const ctaBlock = {
   icon: FileTextIcon,
-  title: 'Questions About These Terms and Conditions?',
+  title: 'Questions?',
   description:
     "If you have any questions about these Terms and Conditions, please don't hesitate to contact us.",
   actions: [

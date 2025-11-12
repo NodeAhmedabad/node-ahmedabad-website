@@ -55,12 +55,17 @@ const ContactForm: Component = () => {
   };
 
   return (
-    <div className="rounded-2xl border border-gray-700 px-4 py-8 md:p-8">
-      <Typography as="h2" className="mb-8 text-center sm:text-left" color="white" variant="3xl">
+    <div className="rounded-2xl border border-gray-700 px-4 py-6 md:p-8">
+      <Typography
+        as="h2"
+        className="mb-6 text-center sm:mb-8 sm:text-left"
+        color="white"
+        variant="3xl"
+      >
         Contact
       </Typography>
-      <form className="space-y-6" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <form className="flex flex-col gap-4 sm:gap-6" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
           <div>
             <label className="mb-2 block" htmlFor="name">
               <Typography as="span" color="white" variant="content" weight="medium">

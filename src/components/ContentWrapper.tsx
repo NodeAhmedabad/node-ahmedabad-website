@@ -10,7 +10,7 @@ import type { Component } from '@/types';
 
 type ContentWrapperProps = ComponentProps<'div'> & {
   title: string;
-  description: string;
+  description?: string;
   animation?: boolean;
 };
 
@@ -21,13 +21,15 @@ const ContentWrapper: Component<ContentWrapperProps> = (props) => {
 
   return (
     <Component>
-      <div className={cn('mx-auto mb-16 max-w-4xl text-center', className)}>
-        <Typography as="h2" className="mb-6" color="white" variant="title">
+      <div className={cn('mx-auto mb-8 max-w-4xl text-center sm:mb-16', className)}>
+        <Typography as="h2" className="mb-2 sm:mb-6" color="white" variant="title">
           {title}
         </Typography>
-        <Typography as="p" color="content" variant="lg">
-          {description}
-        </Typography>
+        {description ? (
+          <Typography as="p" className="mx-auto max-w-3xl" color="content" variant="lg">
+            {description}
+          </Typography>
+        ) : null}
       </div>
     </Component>
   );

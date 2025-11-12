@@ -9,7 +9,7 @@ import type { Component } from '@/types';
 const BehaviorBlock: Component = () => (
   <Section>
     <div className="mx-auto max-w-6xl">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2">
         {behaviors.map((item) => {
           const { icon: Icon, title, points, className, iconClassName } = item;
 
@@ -17,8 +17,7 @@ const BehaviorBlock: Component = () => (
             <ScrollReveal key={title}>
               <div className={cn('h-full rounded-2xl border bg-gradient-to-br p-8', className)}>
                 <div className="mb-6 flex items-center gap-3">
-                  <Icon className={cn('size-8', iconClassName)} />
-                  <Typography as="h3" color="white" variant="3xl">
+                  <Typography as="h3" color="white" variant="2xl">
                     {title}
                   </Typography>
                 </div>

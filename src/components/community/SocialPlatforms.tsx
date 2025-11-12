@@ -28,7 +28,7 @@ const SocialPlatforms: Component = () => {
                 )}
               >
                 <div className="relative z-10 flex h-full flex-col justify-between">
-                  <div className="mb-6 flex flex-col gap-4">
+                  <div className="mb-4 flex flex-col gap-2 sm:mb-6 sm:gap-4">
                     <Icon className="size-12" />
                     <Typography as="h2" color="white" variant="2xl">
                       {platform}

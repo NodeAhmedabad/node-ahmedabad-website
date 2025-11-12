@@ -3,19 +3,19 @@ import { cva } from 'class-variance-authority';
 import cn from '@/lib/cn';
 
 import type { VariantProps } from 'class-variance-authority';
-import type { ComponentProps, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import type { Component } from '@/types';
+const defaultElement = 'p';
 
 export const typographyVariants = cva('whitespace-pre-line', {
   variants: {
     variant: {
       banner: 'text-4xl font-bold md:text-5xl lg:text-6xl',
-      title: 'text-3xl font-bold md:text-4xl',
+      title: 'text-[28px] font-bold sm:text-3xl md:text-4xl',
       '3xl': 'text-3xl font-bold',
       '2xl': 'text-2xl font-bold',
       xl: 'text-xl font-bold',
-      lg: 'text-lg',
+      lg: 'text-base sm:text-lg',
       content: 'text-base',
       sm: 'text-sm',
       xs: 'text-xs',
@@ -40,19 +40,34 @@ export const typographyVariants = cva('whitespace-pre-line', {
   },
 });
 
+type TypographyElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+
 type TypographyVariant = VariantProps<typeof typographyVariants>;
 
 type ActualTypographyVariant = Omit<TypographyVariant, 'variant'> &
   Required<Pick<TypographyVariant, 'variant'>>;
 
-export type TypographyProps = ActualTypographyVariant &
-  ComponentProps<'h1'> & {
-    as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'blockquote';
-    children?: ReactNode;
-  };
+export type TypographyProps<T extends TypographyElement = typeof defaultElement> =
+  ActualTypographyVariant &
+    ComponentPropsWithoutRef<T> & {
+      as: T;
+      children?: ReactNode;
+    };
 
-const Typography: Component<TypographyProps> = (props) => {
-  const { children, className, as: Component, variant, weight, color, ...restProps } = props;
+type TypographyType = <T extends TypographyElement = typeof defaultElement>(
+  props: TypographyProps<T>,
+) => ReactNode;
+
+const Typography: TypographyType = (props) => {
+  const {
+    children,
+    className,
+    as: Component = defaultElement,
+    variant,
+    weight,
+    color,
+    ...restProps
+  } = props;
 
   const classNames = cn(typographyVariants({ variant, weight, color }));
 

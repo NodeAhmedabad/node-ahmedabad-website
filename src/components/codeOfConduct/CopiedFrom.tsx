@@ -7,7 +7,7 @@ import Typography from '@/components/ui/Typography';
 import type { Component } from '@/types';
 
 const CopiedFrom: Component = () => (
-  <Section className="py-12">
+  <Section className="py-8 sm:py-12">
     <ScrollReveal>
       <Typography as="p" className="text-center" color="content" variant="sm">
         This Code of Conduct is adapted from the{' '}

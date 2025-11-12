@@ -28,13 +28,18 @@ const TeamMemberInformation: Component<TeamMemberInformationProps> = (props) => 
             </Typography>
 
             <div className="rounded-xl border border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6">
-              <Typography as="blockquote" className="italic" color="content" variant="lg">
+              <Typography as="span" className="italic" color="content" variant="lg">
                 &quot;{quote}&quot;
               </Typography>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-6">
-              <Award className="mr-3 size-6 text-green-400" />
+            <div className="mt-6 flex flex-col gap-x-3 gap-y-6 md:flex-row md:items-center">
+              <div className="flex items-center gap-2 md:mr-3 md:gap-3">
+                <Award className="size-6 text-green-400" />
+                <Typography as="span" className="flex md:hidden" color="content" variant="xl">
+                  Skills
+                </Typography>
+              </div>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <Typography

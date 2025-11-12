@@ -80,7 +80,7 @@ const Box: Component<BoxProps> = (props) => {
         )}
       >
         {customIcon}
-        {Icon ? <Icon className={cn('mb-6', center && 'mx-auto')} /> : null}
+        {Icon ? <Icon className={cn('mb-4 sm:mb-6', center && 'mx-auto')} /> : null}
         <Typography
           color="white"
           variant="xl"

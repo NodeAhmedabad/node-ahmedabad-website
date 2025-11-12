@@ -7,15 +7,15 @@ import type { Children } from '@/types';
 const defaultElement = 'section';
 const defaultNestedElement = 'div';
 
-type SectionElements = 'section' | 'div' | 'footer' | 'header' | 'nav';
+type SectionElement = 'section' | 'div' | 'footer' | 'header' | 'nav';
 
-type SectionProps<T extends SectionElements = typeof defaultElement> = ComponentPropsWithoutRef<T> &
+type SectionProps<T extends SectionElement = typeof defaultElement> = ComponentPropsWithoutRef<T> &
   Children & {
     as?: T;
-    nestedAs?: SectionElements;
+    nestedAs?: SectionElement;
   };
 
-type SectionType = <T extends SectionElements = typeof defaultElement>(
+type SectionType = <T extends SectionElement = typeof defaultElement>(
   props: SectionProps<T>,
 ) => ReactNode;
 

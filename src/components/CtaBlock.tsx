@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import Section from '@/app/Section';
+import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
 import Typography from '@/components/ui/Typography';
 import cn from '@/lib/cn';
@@ -57,14 +58,9 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
   return (
     <Section>
       <ScrollReveal>
-        <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-12 text-center sm:p-12">
+        <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-8 text-center sm:p-12">
           <Icon className={cn('mx-auto mb-6 size-12 sm:size-16', classNames.iconClassName)} />
-          <Typography as="h2" className="mb-6" color="white" variant="title">
-            {title}
-          </Typography>
-          <Typography as="p" className="mx-auto mb-8 max-w-3xl" color="content" variant="lg">
-            {description}
-          </Typography>
+          <ContentWrapper description={description} title={title} />
           {content}
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             {actions.map((action) => {

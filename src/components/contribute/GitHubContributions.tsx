@@ -11,7 +11,7 @@ const GitHubContributions: Component = () => {
     <CtaBlock
       {...ctaBlock}
       content={
-        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mb-8 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-3">
           {stats.map((stat) => {
             const { value, label } = stat;
 

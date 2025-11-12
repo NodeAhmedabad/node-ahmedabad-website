@@ -27,10 +27,10 @@ const FaqCategories: Component = () => {
           const isLast = array.length - 1 === index;
 
           return (
-            <ScrollReveal key={name} className={cn(!isLast && 'mb-12')} delay={index * 100}>
-              <div className="mb-8 flex items-center gap-3">
-                <Icon className="size-8 text-green-400" />
-                <Typography as="h2" color="white" variant="3xl">
+            <ScrollReveal key={name} className={cn(!isLast && 'mb-10')} delay={index * 100}>
+              <div className="mb-6 flex items-center gap-3">
+                <Icon className="size-6 text-green-400" />
+                <Typography as="h2" color="white" variant="2xl">
                   {name}
                 </Typography>
               </div>
