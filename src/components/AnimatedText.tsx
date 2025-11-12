@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import Typography from '@/components/ui/Typography';
 
-import type { TypographyProps } from '@/components/ui/Typography';
+import type { TypographyElement, TypographyProps } from '@/components/ui/Typography';
 import type { Component } from '@/types';
 
 interface AnimatedTextProps {
@@ -13,7 +13,7 @@ interface AnimatedTextProps {
   delay?: number;
   speed?: number;
   once?: boolean;
-  typographyProps?: TypographyProps;
+  typographyProps?: TypographyProps<TypographyElement>;
 }
 
 const AnimatedText: Component<AnimatedTextProps> = (props) => {
@@ -22,7 +22,7 @@ const AnimatedText: Component<AnimatedTextProps> = (props) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
