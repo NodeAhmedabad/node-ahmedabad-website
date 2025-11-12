@@ -104,7 +104,7 @@ const TeamMembers: Component = () => {
               const { name, role, image, bio, slug } = member;
 
               return (
-                <Link key={name} href={`/team/${slug}`}>
+                <Link key={name} className="h-full" href={`/team/${slug}`}>
                   <Box
                     content={role}
                     contentProps={{ color: 'green-400', variant: 'content' }}
@@ -112,6 +112,7 @@ const TeamMembers: Component = () => {
                     description={bio}
                     label={name}
                     labelProps={{ className: 'mb-1' }}
+                    scrollRevealClassName="h-full"
                     customIcon={
                       <Image
                         alt={name}
