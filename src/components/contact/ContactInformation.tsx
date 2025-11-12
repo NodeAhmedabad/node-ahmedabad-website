@@ -11,7 +11,7 @@ const ContactInformation: Component = () => (
   <Section>
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {contactInformation.map((item, index, array) => {
-        const { icon, label, href, content, description } = item;
+        const { icon, label, href, content, description, target } = item;
         const isLast = array.length - 1 === index;
 
         return (
@@ -25,7 +25,7 @@ const ContactInformation: Component = () => (
             labelProps={{ className: 'mb-2' }}
             scrollRevealClassName={cn(isLast && 'md:col-span-full lg:col-span-1')}
             content={
-              <Link href={href} target="_blank">
+              <Link href={href} target={target}>
                 {content}
               </Link>
             }

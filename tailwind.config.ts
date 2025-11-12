@@ -1,3 +1,4 @@
+import plugin from 'tailwindcss/plugin';
 import tailwindAnimate from 'tailwindcss-animate';
 
 import type { Config } from 'tailwindcss';
@@ -108,5 +109,15 @@ export default {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [
+    tailwindAnimate,
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        // Overflow Wrap
+        '.break-word': {
+          wordBreak: 'break-word',
+        },
+      });
+    }),
+  ],
 } satisfies Config;

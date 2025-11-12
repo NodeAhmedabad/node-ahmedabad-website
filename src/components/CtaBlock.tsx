@@ -57,8 +57,8 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
   return (
     <Section>
       <ScrollReveal>
-        <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 p-12 text-center">
-          <Icon className={cn('mx-auto mb-6 size-16', classNames.iconClassName)} />
+        <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-12 text-center sm:p-12">
+          <Icon className={cn('mx-auto mb-6 size-12 sm:size-16', classNames.iconClassName)} />
           <Typography as="h2" className="mb-6" color="white" variant="title">
             {title}
           </Typography>
@@ -77,12 +77,20 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
                   target={target ?? '_blank'}
                   type="button"
                   className={cn(
-                    'flex items-center justify-center rounded-lg px-8 py-3 font-semibold transition-colors',
+                    'flex flex-wrap items-center justify-center gap-y-2 rounded-lg px-8 py-3 font-semibold transition-colors',
                     isOutlined ? classNames.linkOutlineClassName : classNames.linkSolidClassName,
                   )}
                 >
-                  {ActionIcon ? <ActionIcon className="mr-2 size-4" /> : null}
-                  {label}
+                  {ActionIcon ? <ActionIcon className="mr-2 size-4 shrink-0" /> : null}
+                  <Typography
+                    as="span"
+                    className="break-word"
+                    color="white"
+                    variant="content"
+                    weight="semibold"
+                  >
+                    {label}
+                  </Typography>
                 </Link>
               );
             })}

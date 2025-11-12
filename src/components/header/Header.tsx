@@ -58,7 +58,7 @@ const Header: Component<HeaderProps> = (props) => {
               <Image alt="logo" className="rounded-lg" height={40} src={logo} width={40} />
             </div>
             <div className="flex flex-col">
-              <Typography as="h1" color="white" variant="xl">
+              <Typography as="p" color="white" variant="xl">
                 {constants.APP_NAME}
               </Typography>
               <Typography as="p" color="green-400" variant="xs">

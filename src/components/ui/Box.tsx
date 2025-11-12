@@ -73,7 +73,7 @@ const Box: Component<BoxProps> = (props) => {
       <div
         {...restProps}
         className={cn(
-          'h-full rounded-xl border p-8 transition-[border-color] duration-300',
+          'h-full rounded-xl border p-6 transition-[border-color] duration-300 sm:p-8',
           center && 'text-center',
           boxVariants({ variant, sizes }),
           className,
