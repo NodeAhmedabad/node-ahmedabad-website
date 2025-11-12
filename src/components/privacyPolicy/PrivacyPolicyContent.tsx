@@ -16,7 +16,6 @@ const PrivacyPolicyContent: Component = () => (
           <Box
             key={label}
             center={false}
-            className={cn(!isLast && 'mb-8')}
             content={content}
             delay={index * 50}
             icon={icon}
@@ -24,6 +23,10 @@ const PrivacyPolicyContent: Component = () => (
             labelProps={{ variant: '2xl' }}
             sizes="icon-8"
             variant={variant}
+            className={cn(
+              !isLast &&
+                'mb-8 [&_ol]:ml-4 [&_ol]:flex [&_ol]:list-disc [&_ol]:flex-col [&_ol]:gap-2 [&_ol]:whitespace-normal',
+            )}
           />
         );
       })}

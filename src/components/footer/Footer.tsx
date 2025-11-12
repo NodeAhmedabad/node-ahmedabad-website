@@ -1,7 +1,9 @@
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Fragment } from 'react/jsx-runtime';
 
+import Section from '@/app/Section';
 import logo from '@/assets/logo.jpg';
 import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
@@ -17,9 +19,9 @@ import packageJson from '~/package.json';
 import type { Component } from '@/types';
 
 const Footer: Component = () => (
-  <footer className="border-t border-gray-800 bg-slate-900">
+  <Fragment>
     <NewsLetter />
-    <div className="container mx-auto px-6 py-12">
+    <Section as="footer" className="border-t border-gray-800 bg-slate-900">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-12">
         <div className="lg:col-span-2 xl:col-span-4">
           <Link
@@ -115,8 +117,8 @@ const Footer: Component = () => (
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </Section>
+  </Fragment>
 );
 
 export default Footer;
