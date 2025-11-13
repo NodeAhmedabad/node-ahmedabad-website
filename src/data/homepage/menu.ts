@@ -1,31 +1,31 @@
-import { Calendar, Code2, HandHelping, Mail, Users } from 'lucide-react';
+import { CalendarIcon, Code2Icon, HeartHandshakeIcon, MailIcon, UsersIcon } from 'lucide-react';
 
 const menu = [
   {
     name: 'Home',
     path: '/',
-    icon: Code2,
+    icon: Code2Icon,
   },
   {
     name: 'Events',
     path: '/events',
-    icon: Calendar,
+    icon: CalendarIcon,
   },
   {
     name: 'Team',
     path: '/team',
-    icon: Users,
+    icon: UsersIcon,
   },
   {
     name: 'Contribute',
     path: '/contribute',
-    icon: HandHelping,
+    icon: HeartHandshakeIcon,
     className: 'lg:hidden xl:flex',
   },
   {
     name: 'Contact',
     path: '/contact',
-    icon: Mail,
+    icon: MailIcon,
   },
 ];
 
