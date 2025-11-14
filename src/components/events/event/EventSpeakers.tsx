@@ -1,8 +1,10 @@
-import ScrollReveal from '@/components/ScrollReveal';
-import SocialLinks from '@/components/SocialLinks';
-import socialMedia from '@/data/footer/socialMedia';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import type { SocialMedias } from '@/components/SocialLinks';
+import Section from '@/app/Section';
+import ContentWrapper from '@/components/ContentWrapper';
+import Box from '@/components/ui/Box';
+
 import type events from '@/data/events/events';
 import type { Component } from '@/types';
 
@@ -15,54 +17,43 @@ const EventSpeakers: Component<EventSpeakersProps> = (props) => {
   const { speakers } = event;
 
   return (
-    <section className="bg-slate-900 py-16">
-      <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-4xl">
-          {speakers.map((speaker) => {
-            const { name, role, company, avatar, bio, socialMedia: social } = speaker;
-
-            const socialMedias = socialMedia.reduce<SocialMedias[]>((acc, item) => {
-              const { slug } = item;
-
-              const url = social[slug as keyof typeof social];
-
-              if (url) {
-                acc.push({
-                  ...item,
-                  url,
-                });
-              }
-
-              return acc;
-            }, []);
+    <Section>
+      <ContentWrapper
+        description="Learn more about the professionals delivering impactful talks throughout the event."
+        title="Meet Your Speakers"
+      />
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+          {speakers.map((speaker, index) => {
+            const { name, designation, company, image, shortBio, slug } = speaker;
 
             return (
-              <ScrollReveal key={avatar}>
-                <h2 className="mb-8 text-center text-3xl font-bold text-white">
-                  Meet Your Speakers
-                </h2>
-                <div className="rounded-2xl border border-gray-700 bg-slate-800/50 p-8">
-                  <div className="flex flex-col items-center gap-6 md:flex-row">
-                    <img
+              <Link key={name} className="h-full" href={`/speakers/${slug}`}>
+                <Box
+                  content={`${designation} @${company}`}
+                  contentProps={{ color: 'green-400', variant: 'content' }}
+                  delay={index * 100}
+                  description={shortBio}
+                  label={name}
+                  labelProps={{ className: 'mb-1' }}
+                  scrollRevealClassName="h-full"
+                  customIcon={
+                    <Image
                       alt={name}
-                      className="size-32 rounded-full border-4 border-green-500/20"
-                      src={avatar}
+                      className="mx-auto mb-4 size-24 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      height={96}
+                      loading="lazy"
+                      src={image}
+                      width={96}
                     />
-                    <div className="flex-1 text-center md:text-left">
-                      <h3 className="mb-2 text-2xl font-bold text-white">{name}</h3>
-                      <p className="mb-1 font-medium text-green-400">{role}</p>
-                      <p className="mb-4 text-gray-400">{company}</p>
-                      <p className="mb-4 leading-relaxed text-gray-300">{bio}</p>
-                      <SocialLinks socialMedias={socialMedias} />
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
+                  }
+                />
+              </Link>
             );
           })}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

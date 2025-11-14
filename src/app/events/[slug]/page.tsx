@@ -32,9 +32,9 @@ const TeamMemberPage: ParamsComponent<'slug'> = async (props) => {
   return (
     <MainLayout>
       <EventHeader event={event} />
-      <EventAgenda event={event} />
-      <EventSpeakers event={event} />
-      <EventSponsors event={event} />
+      {event.agenda.length > 0 ? <EventAgenda event={event} /> : null}
+      {event.speakers.length > 0 ? <EventSpeakers event={event} /> : null}
+      {event.sponsors.length > 0 ? <EventSponsors event={event} /> : null}
     </MainLayout>
   );
 };

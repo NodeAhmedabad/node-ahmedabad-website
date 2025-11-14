@@ -4,7 +4,7 @@ import Connect from '@/components/team/teamMember/Connect';
 import ProfileSection from '@/components/team/teamMember/ProfileSection';
 import TeamMemberInformation from '@/components/team/teamMember/TeamMemberInformation';
 import constants from '@/constants';
-import teamMembers from '@/data/team/teamMembers';
+import persons from '@/data/persons/persons';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { GenerateMetadata, ParamsComponent } from '@/types/next';
@@ -13,28 +13,28 @@ export const generateMetadata: GenerateMetadata<'id'> = async (props) => {
   const { params } = props;
   const { id } = await params;
 
-  const teamMember = teamMembers.find((member) => member.slug === id);
+  const speaker = Object.values(persons).find((person) => person.slug === id);
 
   return {
-    title: [...(teamMember?.name ? [teamMember.name] : []), constants.APP_NAME].join(' | '),
+    title: [...(speaker?.name ? [speaker.name] : []), constants.APP_NAME].join(' | '),
   };
 };
 
-const TeamMemberPage: ParamsComponent<'id'> = async (props) => {
+const SpeakerPage: ParamsComponent<'id'> = async (props) => {
   const { params } = props;
   const { id } = await params;
 
-  const teamMember = teamMembers.find((member) => member.slug === id);
+  const speaker = Object.values(persons).find((person) => person.slug === id);
 
-  if (!teamMember) return notFound();
+  if (!speaker) return notFound();
 
   return (
     <MainLayout>
-      <ProfileSection team teamMember={teamMember} />
-      <TeamMemberInformation teamMember={teamMember} />
-      <Connect teamMember={teamMember} />
+      <ProfileSection team={false} teamMember={speaker} />
+      <TeamMemberInformation teamMember={speaker} />
+      <Connect teamMember={speaker} />
     </MainLayout>
   );
 };
 
-export default TeamMemberPage;
+export default SpeakerPage;

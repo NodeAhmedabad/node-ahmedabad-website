@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { Calendar as CalendarIcon, ExternalLink, Share2Icon } from 'lucide-react';
+import { toast } from 'sonner';
 
-import { Calendar as CalendarIcon, ExternalLink, Share2 } from 'lucide-react';
-
+import Typography from '@/components/ui/Typography';
 import toGoogleLocalDateTime from '@/utils/toGoogleLocalDateTime';
 
 import type events from '@/data/events/events';
@@ -15,13 +15,12 @@ export interface EventHeaderActionsProps {
 
 const EventHeaderActions: Component<EventHeaderActionsProps> = (props) => {
   const { event } = props;
-  const { title, date, startTime, endTime, location, mapLink, description, isPast } = event;
-
-  const [copied, setCopied] = useState(false);
+  const { title, startDate, endDate, startTime, endTime, location, mapLink, description, isPast } =
+    event;
 
   const addToCalendar = () => {
-    const start = toGoogleLocalDateTime(date, startTime);
-    const end = toGoogleLocalDateTime(date, endTime);
+    const start = toGoogleLocalDateTime(startDate, startTime);
+    const end = toGoogleLocalDateTime(endDate ?? startDate, endTime);
 
     const params = new URLSearchParams({
       action: 'TEMPLATE',
@@ -36,43 +35,56 @@ const EventHeaderActions: Component<EventHeaderActionsProps> = (props) => {
   };
 
   const handleCopyUrl = async () => {
-    if (copied) return;
-
     await navigator.clipboard.writeText(globalThis.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 5000);
+    toast.success('Copied! 📋 Now spread the event link like we spread chai-time gossip ☕😄');
   };
 
+  const handleDirections = () => {
+    window.open(mapLink, '_blank');
+  };
+
+  const actions = [
+    {
+      icon: CalendarIcon,
+      label: 'Add to Calendar',
+      cond: !isPast,
+      onClick: addToCalendar,
+    },
+    {
+      icon: Share2Icon,
+      label: 'Copy URL',
+      cond: true,
+      onClick: handleCopyUrl,
+    },
+    {
+      icon: ExternalLink,
+      label: 'Directions',
+      cond: true,
+      onClick: handleDirections,
+    },
+  ];
+
   return (
-    <div className="mb-8 flex flex-col gap-4 sm:flex-row">
-      {isPast ? null : (
-        <button
-          className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
-          onClick={addToCalendar}
-          type="button"
-        >
-          <CalendarIcon className="mr-2 size-4" />
-          Add to Calendar
-        </button>
-      )}
-      <button
-        className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 enabled:hover:border-green-500/50 enabled:hover:bg-green-500/10 disabled:cursor-not-allowed"
-        disabled={copied}
-        onClick={handleCopyUrl}
-        type="button"
-      >
-        <Share2 className="mr-2 size-4" />
-        {copied ? 'Copied' : 'Copy URL'}
-      </button>
-      <a
-        className="flex items-center justify-center rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 text-white transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
-        href={mapLink}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <ExternalLink className="mr-2 size-4" />
-        Directions
-      </a>
+    <div className="flex flex-col gap-4 sm:flex-row">
+      {actions.map((action) => {
+        const { icon: Icon, label, cond, onClick } = action;
+
+        if (!cond) return null;
+
+        return (
+          <button
+            key={label}
+            className="flex items-center justify-center gap-2 rounded-lg border border-gray-600 bg-slate-700 px-6 py-3 transition-all duration-300 hover:border-green-500/50 hover:bg-green-500/10"
+            onClick={onClick}
+            type="button"
+          >
+            <Icon className="size-4 text-white" />
+            <Typography as="span" color="white" variant="content">
+              {label}
+            </Typography>
+          </button>
+        );
+      })}
     </div>
   );
 };

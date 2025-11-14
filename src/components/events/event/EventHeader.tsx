@@ -1,8 +1,9 @@
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { Calendar, Clock, MapPin, MessageSquareIcon, Users } from 'lucide-react';
 
 import EventHeaderActions from '@/components/events/event/EventHeaderActions';
 import FeaturedText from '@/components/events/event/FeaturedText';
 import ScrollReveal from '@/components/ScrollReveal';
+import Typography from '@/components/ui/Typography';
 
 import type events from '@/data/events/events';
 import type { Component } from '@/types';
@@ -13,18 +14,39 @@ interface EventHeaderProps {
 
 const EventHeader: Component<EventHeaderProps> = (props) => {
   const { event } = props;
-  const { title, date, time, location, attendees, description, isFeatured } = event;
+  const { title, isTBD, startDate, endDate, time, location, attendees, description, isFeatured } =
+    event;
+
+  const tbdDetails = [
+    {
+      icon: MessageSquareIcon,
+      label: 'Information',
+      value: 'TBD',
+    },
+  ];
 
   const details = [
     {
       icon: Calendar,
       label: 'Date',
-      value: new Date(date).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }),
+      value: [
+        new Date(startDate).toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }),
+        ...(endDate
+          ? [
+              new Date(endDate).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              }),
+            ]
+          : []),
+      ].join('\n'),
     },
     {
       icon: Clock,
@@ -44,37 +66,55 @@ const EventHeader: Component<EventHeaderProps> = (props) => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-slate-900 py-12">
+    // 80px fix height of header
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-16 pt-32 sm:pb-28 sm:pt-48">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)] bg-[length:50px_50px]" />
       <div className="container relative z-10 mx-auto px-6">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <ScrollReveal>
                 {isFeatured ? <FeaturedText /> : null}
-                <h1 className="mb-6 text-4xl font-bold leading-tight text-white lg:text-5xl">
+                <Typography
+                  as="h1"
+                  className="mb-6 text-center sm:text-left"
+                  color="white"
+                  variant="banner"
+                >
                   {title}
-                </h1>
-                <p className="mb-8 text-xl leading-relaxed text-gray-300">{description}</p>
-                <div className="mb-8 grid gap-4 sm:grid-cols-2">
-                  {details.map((item) => {
+                </Typography>
+                <Typography
+                  as="p"
+                  className="mb-8 text-center sm:text-left"
+                  color="content"
+                  variant="lg"
+                  weight="normal"
+                >
+                  {description}
+                </Typography>
+                <div className="mb-6 grid gap-4 sm:grid-cols-2">
+                  {(isTBD ? tbdDetails : details).map((item) => {
                     const { icon: Icon, label, value } = item;
 
                     return (
                       <div
-                        key={value}
+                        key={label}
                         className="flex items-center rounded-lg border border-gray-700 bg-slate-800/50 p-4"
                       >
                         <Icon className="mr-3 size-5 text-green-400" />
                         <div>
-                          <div className="text-sm text-gray-400">{label}</div>
-                          <div className="font-medium text-white">{value}</div>
+                          <Typography as="p" color="content" variant="sm">
+                            {label}
+                          </Typography>
+                          <Typography as="p" color="white" variant="content" weight="medium">
+                            {value}
+                          </Typography>
                         </div>
                       </div>
                     );
                   })}
                 </div>
-
-                <EventHeaderActions event={event} />
+                {isTBD ? null : <EventHeaderActions event={event} />}
               </ScrollReveal>
             </div>
           </div>

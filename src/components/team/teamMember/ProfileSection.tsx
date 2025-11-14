@@ -11,11 +11,12 @@ import type { Component } from '@/types';
 
 interface ProfileSectionProps {
   teamMember: (typeof teamMembers)[number];
+  team: boolean;
 }
 
 const ProfileSection: Component<ProfileSectionProps> = (props) => {
-  const { teamMember } = props;
-  const { name, image, role, location, joinedDate } = teamMember;
+  const { teamMember, team } = props;
+  const { name, image, role, designation, company, location, joinedDate } = teamMember;
 
   const information = [
     {
@@ -56,7 +57,7 @@ const ProfileSection: Component<ProfileSectionProps> = (props) => {
                 }}
               />
               <Typography as="p" className="mb-6" color="green-400" variant="2xl" weight="normal">
-                {role}
+                {team ? role : `${designation} @${company}`}
               </Typography>
               <div className="flex flex-wrap justify-center gap-4 md:justify-start">
                 {information.map((item) => {

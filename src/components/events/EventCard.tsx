@@ -36,10 +36,12 @@ const EventCard: Component<EventCardProps> = (props) => {
     window.open(registrationLink, '_blank');
   };
 
-  const tbdPoint = {
-    icon: MessageSquareIcon,
-    value: 'TBD',
-  };
+  const tbdPoint = [
+    {
+      icon: MessageSquareIcon,
+      value: 'TBD',
+    },
+  ];
 
   const eventPoints = [
     {
@@ -105,7 +107,7 @@ const EventCard: Component<EventCardProps> = (props) => {
             {shortDescription}
           </Typography>
           <div className="mb-4 flex flex-col gap-2">
-            {(isTBD ? [tbdPoint] : eventPoints).map((point) => {
+            {(isTBD ? tbdPoint : eventPoints).map((point) => {
               const { icon: Icon, value } = point;
 
               return (

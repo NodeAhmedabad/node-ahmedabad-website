@@ -1,4 +1,9 @@
+import Image from 'next/image';
+
+import Section from '@/app/Section';
+import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
+import Typography from '@/components/ui/Typography';
 
 import type events from '@/data/events/events';
 import type { Component } from '@/types';
@@ -14,31 +19,35 @@ const EventSponsors: Component<EventSponsorsProps> = (props) => {
   if (sponsors.length === 0) return null;
 
   return (
-    <section className="bg-slate-800/30 py-16">
-      <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <ScrollReveal>
-            <h2 className="mb-8 text-3xl font-bold text-white">Event Sponsors</h2>
-            <div className="flex flex-wrap items-center justify-center gap-8">
-              {sponsors.map((sponsor) => {
-                const { name, logo, partner } = sponsor;
+    <Section>
+      <ContentWrapper
+        description="Recognizing the sponsors whose support helps us deliver impactful community events."
+        title="Event Sponsors"
+      />
+      <div className="mx-auto max-w-4xl text-center">
+        <ScrollReveal>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {sponsors.map((sponsor) => {
+              const { name, logo, partner } = sponsor;
 
-                return (
-                  <div key={name} className="flex flex-col items-center">
-                    <img
-                      alt={name}
-                      className="mb-2 h-16 w-auto grayscale transition-all duration-300 hover:grayscale-0"
-                      src={logo}
-                    />
-                    <span className="text-xs text-gray-400">{partner} Sponsor</span>
+              return (
+                <div key={name} className="flex flex-col items-center">
+                  <div className="mb-4 bg-white p-4">
+                    <Image alt={name} className="h-16 w-auto" src={logo} />
                   </div>
-                );
-              })}
-            </div>
-          </ScrollReveal>
-        </div>
+                  <Typography as="p" color="green-400" variant="xl">
+                    {name}
+                  </Typography>
+                  <Typography as="p" color="gray-400" variant="content">
+                    {partner}
+                  </Typography>
+                </div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
       </div>
-    </section>
+    </Section>
   );
 };
 

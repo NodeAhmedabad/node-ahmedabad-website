@@ -9,7 +9,8 @@ import Link from 'next/link';
 import Section from '@/app/Section';
 import Box from '@/components/ui/Box';
 import Typography from '@/components/ui/Typography';
-import teamMembers, { categories } from '@/data/team/teamMembers';
+import { categories } from '@/data/persons/persons';
+import teamMembers from '@/data/team/teamMembers';
 import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
@@ -101,7 +102,7 @@ const TeamMembers: Component = () => {
         {filteredMembers.length > 0 ? (
           <div className="grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
             {filteredMembers.map((member, index) => {
-              const { name, role, image, bio, slug } = member;
+              const { name, role, image, shortBio, slug } = member;
 
               return (
                 <Link key={name} className="h-full" href={`/team/${slug}`}>
@@ -109,7 +110,7 @@ const TeamMembers: Component = () => {
                     content={role}
                     contentProps={{ color: 'green-400', variant: 'content' }}
                     delay={index * 100}
-                    description={bio}
+                    description={shortBio}
                     label={name}
                     labelProps={{ className: 'mb-1' }}
                     scrollRevealClassName="h-full"
