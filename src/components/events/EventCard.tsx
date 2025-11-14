@@ -1,7 +1,10 @@
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { Calendar, Clock, MapPin, MessageSquareIcon, Users } from 'lucide-react';
 import Link from 'next/link';
 
 import FeaturedText from '@/components/events/event/FeaturedText';
+import Typography from '@/components/ui/Typography';
+
+import type { MouseEvent } from 'react';
 
 import type events from '@/data/events/events';
 import type { Component } from '@/types';
@@ -15,9 +18,11 @@ const EventCard: Component<EventCardProps> = (props) => {
   const {
     title,
     slug,
-    date,
+    isTBD,
+    startDate,
     time,
     location,
+    registrationLink,
     attendees,
     shortDescription,
     image,
@@ -25,6 +30,40 @@ const EventCard: Component<EventCardProps> = (props) => {
     isFeatured,
     category,
   } = event;
+
+  const handleRegister = (e: MouseEvent) => {
+    e.preventDefault();
+    window.open(registrationLink, '_blank');
+  };
+
+  const tbdPoint = {
+    icon: MessageSquareIcon,
+    value: 'TBD',
+  };
+
+  const eventPoints = [
+    {
+      icon: Calendar,
+      value: new Date(startDate).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }),
+    },
+    {
+      icon: Clock,
+      value: time,
+    },
+    {
+      icon: MapPin,
+      value: location,
+    },
+    {
+      icon: Users,
+      value: `${attendees} ${isPast ? 'attended' : 'attendees'}`,
+    },
+  ];
 
   return (
     <Link className="group flex h-full" href={`/events/${slug}`}>
@@ -37,63 +76,61 @@ const EventCard: Component<EventCardProps> = (props) => {
           />
           <div className="absolute left-4 top-4 flex gap-2">
             {[...(isFeatured ? ['Featured'] : []), category].map((tag) => (
-              <span
+              <Typography
                 key={tag}
-                className="rounded-full bg-green-700 px-3 py-1 text-sm font-medium capitalize text-white"
+                as="span"
+                className="rounded-full bg-green-700 px-3 py-1"
+                color="white"
+                variant="sm"
+                weight="medium"
               >
                 {tag}
-              </span>
+              </Typography>
             ))}
           </div>
         </div>
 
         <div className="flex h-full flex-col p-6">
           {isFeatured ? <FeaturedText /> : null}
-          <div>
-            <h3 className="mb-3 text-xl font-bold text-white transition-colors group-hover:text-green-400">
-              {title}
-            </h3>
-            <p className="mb-4 text-gray-300">{shortDescription}</p>
+          <Typography
+            as="h3"
+            className="mb-3 transition-colors group-hover:text-green-400"
+            color="white"
+            variant="xl"
+            weight="bold"
+          >
+            {title}
+          </Typography>
+          <Typography as="p" className="mb-4" color="content" variant="content">
+            {shortDescription}
+          </Typography>
+          <div className="mb-4 flex flex-col gap-2">
+            {(isTBD ? [tbdPoint] : eventPoints).map((point) => {
+              const { icon: Icon, value } = point;
+
+              return (
+                <div key={value} className="flex items-center gap-2">
+                  <Icon className="size-4 text-green-400" />
+                  <Typography as="span" color="gray-400" variant="content">
+                    {value}
+                  </Typography>
+                </div>
+              );
+            })}
           </div>
-          <div>
-            <div className="mb-4 space-y-2">
-              <div className="flex items-center text-gray-400">
-                <Calendar className="mr-2 size-4 text-green-400" />
-                <span>
-                  {new Date(date).toLocaleDateString('en-US', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </span>
-              </div>
-              <div className="flex items-center text-gray-400">
-                <Clock className="mr-2 size-4 text-green-400" />
-                <span>{time}</span>
-              </div>
-              <div className="flex items-center text-gray-400">
-                <MapPin className="mr-2 size-4 text-green-400" />
-                <span>{location}</span>
-              </div>
-              <div className="flex items-center text-gray-400">
-                <Users className="mr-2 size-4 text-green-400" />
-                <span>
-                  {attendees} {isPast ? 'attended' : 'attendees'}
-                </span>
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              {!isPast && (
-                <button
-                  className="w-full rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-2 text-white transition-colors"
-                  type="button"
-                >
+          {!isPast && (
+            <div className="mt-auto flex items-center justify-between">
+              <button
+                className="w-full rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-2 text-center transition-colors"
+                onClick={handleRegister}
+                type="button"
+              >
+                <Typography as="span" color="white" variant="content">
                   Register
-                </button>
-              )}
+                </Typography>
+              </button>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </Link>

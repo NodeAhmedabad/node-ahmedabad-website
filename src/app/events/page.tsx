@@ -1,7 +1,9 @@
+import eventsImage from '@/assets/events.jpg';
 import Banner from '@/components/Banner';
-import CtaSection from '@/components/events/CtaSection';
+import CtaBlock from '@/components/CtaBlock';
 import EventListing from '@/components/events/EventListing';
 import constants from '@/constants';
+import ctaBlock from '@/data/events/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
@@ -16,10 +18,11 @@ const EventsPage: Component = () => (
   <MainLayout>
     <Banner
       description="Join our regular meetups, workshops, and conferences to learn, network, and grow with fellow Node.js developers."
+      image={eventsImage.src}
       title="Events"
     />
     <EventListing />
-    <CtaSection />
+    <CtaBlock {...ctaBlock} />
   </MainLayout>
 );
 

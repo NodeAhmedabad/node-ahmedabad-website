@@ -36,6 +36,7 @@ export const typographyVariants = cva('whitespace-pre-line', {
       'gray-400': 'text-gray-400',
       'gray-500': 'text-gray-500',
       'gray-600': 'text-gray-600',
+      'yellow-400': 'text-yellow-400',
     },
   },
 });
