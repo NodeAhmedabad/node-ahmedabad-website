@@ -4,7 +4,7 @@ import EventAgenda from '@/components/events/event/EventAgenda';
 import EventHeader from '@/components/events/event/EventHeader';
 import EventSpeakers from '@/components/events/event/EventSpeakers';
 import EventSponsors from '@/components/events/event/EventSponsors';
-import { Gallery } from '@/components/gallery';
+import EventGallery from '@/components/events/event/gallery/EventGallery';
 import constants from '@/constants';
 import events from '@/data/events/events';
 import MainLayout from '@/layouts/MainLayout';
@@ -35,7 +35,7 @@ const TeamMemberPage: ParamsComponent<'slug'> = async (props) => {
       <EventHeader event={event} />
       {event.agenda.length > 0 ? <EventAgenda event={event} /> : null}
       {event.speakers.length > 0 ? <EventSpeakers event={event} /> : null}
-      {event.gallery.length > 0 ? <Gallery items={event.gallery} /> : null}
+      {event.gallery.length > 0 ? <EventGallery event={event} /> : null}
       {event.sponsors.length > 0 ? <EventSponsors event={event} /> : null}
     </MainLayout>
   );

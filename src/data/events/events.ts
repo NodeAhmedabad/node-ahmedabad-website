@@ -11,10 +11,10 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
-import fullStackInnovationsBanner from '@/assets/events/full-stack-innovations-2024/banner.jpg';
+import fullStackInnovationsBannerImage from '@/assets/events/full-stack-innovations-2024/banner.jpg';
 import nodeAhmedabadMeetup2023BannerImage from '@/assets/events/node-ahmedabad-meetup-2023/banner.jpeg';
 import logo from '@/assets/logo.jpg';
-import event23Gallery from '@/components/gallery/galleryData';
+import gallery from '@/data/events/gallery';
 import sponsors from '@/data/events/sponsors';
 import persons from '@/data/persons/persons';
 import getFormattedDate from '@/utils/getFormattedDate';
@@ -47,7 +47,6 @@ const events = [
     agenda: [],
     speakers: [],
     sponsors: [],
-    gallery: [],
   },
   {
     title: 'Node Ahmedabad Meetup 2023',
@@ -111,7 +110,6 @@ const events = [
     ],
     speakers: [persons['hardik-khanesa'], persons['swapnil-soni'], persons['bhagyesh-radiya']],
     sponsors: [sponsors['skill-gpt'], sponsors['7-span']],
-    gallery: event23Gallery,
   },
   {
     title: 'Full Stack Innovations - Code, Create, Connect',
@@ -128,7 +126,7 @@ const events = [
     shortDescription: 'Collaborated with GDSC SOU & Department of Computer Engineering, SOCET',
     description:
       'Deep dive into JavaScript and React fundamentals with a practical, hands-on approach. Master core programming concepts and modern frontend development to build a solid foundation for your full-stack journey. Gain skills directly applicable to industry needs.',
-    image: fullStackInnovationsBanner,
+    image: fullStackInnovationsBannerImage,
     isFeatured: false,
     category: 'Workshop',
     agenda: [
@@ -168,6 +166,7 @@ const events = [
   ...event,
   isPast: new Date(event.startDate).getTime() < new Date(new Date().toDateString()).getTime(),
   time: `${event.startTime} - ${event.endTime}`,
+  gallery: gallery[event.slug as keyof typeof gallery] ?? [],
 }));
 
 export default events;
