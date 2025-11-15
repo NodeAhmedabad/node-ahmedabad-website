@@ -4,6 +4,7 @@ import EventHeaderActions from '@/components/events/event/EventHeaderActions';
 import FeaturedText from '@/components/events/event/FeaturedText';
 import ScrollReveal from '@/components/ScrollReveal';
 import Typography from '@/components/ui/Typography';
+import getFormattedDate from '@/utils/getFormattedDate';
 
 import type events from '@/data/events/events';
 import type { Component } from '@/types';
@@ -29,24 +30,9 @@ const EventHeader: Component<EventHeaderProps> = (props) => {
     {
       icon: Calendar,
       label: 'Date',
-      value: [
-        new Date(startDate).toLocaleDateString('en-US', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }),
-        ...(endDate
-          ? [
-              new Date(endDate).toLocaleDateString('en-US', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              }),
-            ]
-          : []),
-      ].join('\n'),
+      value: [getFormattedDate(startDate), ...(endDate ? [getFormattedDate(endDate)] : [])].join(
+        '\n',
+      ),
     },
     {
       icon: Clock,

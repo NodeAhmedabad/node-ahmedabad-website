@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
 import Box from '@/components/ui/Box';
+import cn from '@/lib/cn';
 
 import type events from '@/data/events/events';
 import type { Component } from '@/types';
@@ -23,12 +24,19 @@ const EventSpeakers: Component<EventSpeakersProps> = (props) => {
         title="Meet Your Speakers"
       />
       <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+        <div
+          className={cn(
+            'grid grid-cols-1 justify-center justify-items-center gap-6 sm:grid-cols-2 sm:gap-8',
+            {
+              'lg:grid-cols-3': speakers.length === 3,
+            },
+          )}
+        >
           {speakers.map((speaker, index) => {
             const { name, designation, company, image, shortBio, slug } = speaker;
 
             return (
-              <Link key={name} className="h-full" href={`/speakers/${slug}`}>
+              <Link key={name} className="size-full" href={`/speakers/${slug}`}>
                 <Box
                   content={`${designation} @${company}`}
                   contentProps={{ color: 'green-400', variant: 'content' }}

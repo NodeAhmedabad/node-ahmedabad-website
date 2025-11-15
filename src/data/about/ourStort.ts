@@ -3,15 +3,19 @@ const ourStory = {
   description:
     'Our story started with simple thoughts, honest excitement, and a desire to build something for developers like us.',
   story: [
-    "Node Ahmedabad didn't start with a big plan or a formal meeting. It actually began while I was walking down the street with a few friends. We were just talking randomly, imagining what it would be like to host our own meetup, how many people might come, how we'd manage everything, and how fun it would be if we could pull off a big event someday. Nothing serious… just casual, excited discussions.",
+    "Node Ahmedabad didn't begin with a formal business plan or a high-level meeting. It began, quite simply, on a casual walk down the street with a few friends who shared a common interest: Node.js.",
 
-    "But those small talks slowly turned into an idea we couldn't ignore. So we decided to give it a try. The first step was simple: we created a registration form and announced it.",
+    "The idea sparked from an excited, electric discussion, an almost playful challenge to ourselves. We started imagining: What if we hosted a local meetup specifically for the Node ecosystem in Ahmedabad? How would we manage it, and who would even show up? These small, casual conversations quickly turned into a purpose we couldn't ignore. We decided to stop imagining and start building.",
 
-    'I still remember that day clearly, within the first 24 hours, the form crossed 100 registrations. Honestly, we expected around 50-80 people at most, so watching the numbers jump like that felt unreal. And then it kept growing… 150… 200… 300…',
+    'Our first step was straightforward: we created a simple registration form and announced the event. We set a conservative goal, expecting perhaps 50 to 80 Node developers to attend.',
 
-    "By the end, we had more than 350 registrations, and on the event day, 180+ people actually showed up for our first-ever Node Ahmedabad meetup. Seeing that crowd felt surreal. From random street conversations to a packed room of developers, it's something I still think about with a smile.",
+    'The response was immediate and overwhelming. We were genuinely blown away: within the first 24 hours, registrations sprinted past 100. The momentum was undeniable. The numbers kept climbing, 150, 200, 300, and eventually topping over 350 registrations.',
 
-    "And that's pretty much how the journey started. Nothing fancy. Just a bunch of friends with an idea, some excitement, and a community that showed up way bigger than we expected.",
+    'On the day of our very first meetup, over 180 developers actually showed up. Watching that room fill up, all born from random street conversations, was a truly surreal and humbling experience.',
+
+    "The journey of Node Ahmedabad is a testament to the community's passion. We aren't a fancy, corporate initiative; we are a group of friends driven by a simple idea, fueled by excitement, and supported by a developer ecosystem that showed up bigger than we ever expected.",
+
+    "And that's how it continues: Nothing fancy. Just a shared passion for Node, a lot of excitement, and a community ready to learn, collaborate, and grow together.",
   ],
 };
 

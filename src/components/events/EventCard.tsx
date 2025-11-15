@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import FeaturedText from '@/components/events/event/FeaturedText';
 import Typography from '@/components/ui/Typography';
+import getFormattedDate from '@/utils/getFormattedDate';
 
 import type { MouseEvent } from 'react';
 
@@ -46,12 +47,7 @@ const EventCard: Component<EventCardProps> = (props) => {
   const eventPoints = [
     {
       icon: Calendar,
-      value: new Date(startDate).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }),
+      value: getFormattedDate(startDate),
     },
     {
       icon: Clock,
