@@ -24,7 +24,7 @@ const persons = {
     company: 'Codal',
     image: nishargShahImage,
     shortBio: 'Full Stack Developer | MERN Stack Developer | Tech Lead.',
-    bio: 'Full Stack Developer | MERN Stack Developer | Tech Lead.',
+    bio: 'I Like to learn code and debug new UI technologies and frameworks. Have a serious passion for UI effects and dynamic user experiences. Love to challenge myself to learn new ideas & skills and to implement them into my projects. Having Excellent Knowledge in MongoDB Database, as well as Good Knowledge in Server Management/DevOps.',
     slug: 'nisharg-shah',
     category: categories.CORE,
     location: 'Ahmedabad, Gujarat',
@@ -47,7 +47,7 @@ const persons = {
     image: dharmikPatelImage,
     shortBio:
       'Writes code, breaks things, fixes them… and still volunteers to help others break theirs too.',
-    bio: 'Writes code, breaks things, fixes them… and still volunteers to help others break theirs too.',
+    bio: "I'm Dharmik Patel, a Full Stack Developer at Openxcell with a deep interest in Node.js and the JavaScript ecosystem. I enjoy contributing to communities, connecting with developers, and helping others grow. For me, building isn't just about code—it's about people, collaboration, and impact.",
     slug: 'dharmik-patel',
     category: categories.CORE,
     location: 'Ahmedabad, Gujarat',
@@ -67,7 +67,7 @@ const persons = {
     company: 'Rivulet IQ',
     image: rajKhajanchiImage,
     shortBio: 'Ensuring quality in both code and community experiences with precision and care.',
-    bio: 'Ensuring quality in both code and community experiences with precision and care.',
+    bio: 'Raj Khajanachi is a meticulous Quality Analyst who ensures seamless user experiences across mobile games, apps, and payment systems, leveraging Cypress automation.',
     slug: 'raj-khajanchi',
     category: categories.CORE,
     location: 'Ahmedabad, Gujarat',
@@ -88,8 +88,8 @@ const persons = {
     company: 'OpenXcell',
     image: priyeshShahImage,
     shortBio:
-      "A community-driven strategist who blends analytics with empathy — Priyesh brings structure to chaos, clarity to ideas, and energy to every initiative he's part of.",
-    bio: "A community-driven strategist who blends analytics with empathy — Priyesh brings structure to chaos, clarity to ideas, and energy to every initiative he's part of.",
+      'A strategist blending analytics with empathy to bring clarity, structure, and energy to every initiative.',
+    bio: "A community-driven strategist who blends analytics with empathy, Priyesh brings structure to chaos, clarity to ideas, and energy to every initiative he's part of.",
     slug: 'priyesh-shah',
     category: categories.CORE,
     location: 'Ahmedabad, Gujarat',
@@ -122,7 +122,7 @@ const persons = {
     image: swapnilSoniImage,
     shortBio:
       'Crafting code and connections that strengthen the developer ecosystem, one event at a time.',
-    bio: 'Crafting code and connections that strengthen the developer ecosystem, one event at a time.',
+    bio: ' Swapnil Soni excels at the intersection of development and community building. He is dedicated to crafting quality code and building the vital connections that actively strengthen the developer ecosystem, one impactful event at a time.',
     slug: 'swapnil-soni',
     category: categories.CORE,
     location: 'Ahmedabad, Gujarat',
@@ -134,7 +134,7 @@ const persons = {
       x: 'https://x.com/iamnisharg',
     },
     quote:
-      "Building communities is not just about bringing people together; it's about creating an environment where everyone can learn, grow, and succeed together.",
+      'Building better software is only half the job; the other half is building the community that sustains it.',
   },
   'kushal-pathak': {
     name: 'Kushal Pathak',
@@ -143,7 +143,7 @@ const persons = {
     company: 'OpenXcell',
     image: kushalPathakImage,
     shortBio: 'Capturing innovation through code and creativity behind the lens.',
-    bio: 'Capturing innovation through code and creativity behind the lens.',
+    bio: 'Kushal Pathak operates at the intersection of technology and art, using code and development logic to build solutions. He complements this with a creative eye behind the lens, focusing on visual storytelling and expressing innovation.',
     slug: 'kushal-pathak',
     category: categories.VOLUNTEER,
     location: 'Ahmedabad, Gujarat',
@@ -153,7 +153,7 @@ const persons = {
       linkedin: 'https://www.linkedin.com/in/kushalpathak317',
     },
     quote:
-      "Building communities is not just about bringing people together; it's about creating an environment where everyone can learn, grow, and succeed together.",
+      'Code and the camera lens are just different tools for the same purpose: capturing and expressing innovation.',
   },
   'shruti-lalotra': {
     name: 'Shruti Lalotra',
@@ -162,7 +162,7 @@ const persons = {
     company: 'OpenXcell',
     image: shrutiLalotraImage,
     shortBio: 'Debugs bugs, commits kindness, and pushes positivity to the community repo.',
-    bio: 'Debugs bugs, commits kindness, and pushes positivity to the community repo.',
+    bio: 'Shruti Lalotra is a meticulous debugger committed to technical quality and problem-solving. She actively "commits kindness" and "pushes positivity" to foster a robust and supportive community culture.',
     slug: 'shruti-lalotra',
     category: categories.VOLUNTEER,
     location: 'Ahmedabad, Gujarat',
@@ -172,7 +172,7 @@ const persons = {
       linkedin: 'https://www.linkedin.com/in/shruti-lalotra-6261b31ab',
     },
     quote:
-      "Building communities is not just about bringing people together; it's about creating an environment where everyone can learn, grow, and succeed together.",
+      'Every great piece of software is built on robust code and a positive culture. I specialize in debugging both the bugs and the negativity',
   },
   'aneri-patel': {
     name: 'Aneri Patel',
@@ -181,7 +181,7 @@ const persons = {
     company: 'OpenXcell',
     image: aneriPatelImage,
     shortBio: 'Codes a little, laughs a lot, and somehow makes it all work in the end.',
-    bio: 'Codes a little, laughs a lot, and somehow makes it all work in the end.',
+    bio: 'Aneri Patel is an efficient technologist who relies on strategic code and exceptional problem-solving to "make it all work." Her infectious laughter ensures a resilient and high-energy team environment.',
     slug: 'aneri-patel',
     category: categories.VOLUNTEER,
     location: 'Ahmedabad, Gujarat',
@@ -191,7 +191,7 @@ const persons = {
       linkedin: 'https://www.linkedin.com/in/aneri-patel-068245288',
     },
     quote:
-      "Building communities is not just about bringing people together; it's about creating an environment where everyone can learn, grow, and succeed together.",
+      "The best tool for solving a tough problem isn't always another line of code; sometimes, it's just a little bit of laughter.",
   },
   'hardik-khanesa': {
     name: 'Hardik Khanesa',
@@ -199,19 +199,20 @@ const persons = {
     designation: 'Senior Software Engineer - Node JS',
     company: 'Talentica Software',
     image: hardikKhanesaImage,
-    shortBio: 'Hello',
+    shortBio:
+      'Cloud-native Software Engineer for fintech, building scalable Node.js/AWS microservices using NestJS for data performance.',
     bio: 'Hardik Khanesa is a Software Engineer at Talentica Software, specializing in cloud-native solutions and scalable backend systems for the fintech domain. With a background in Computer Engineering, he leverages Node.js, AWS, and agile methodologies to design robust backend APIs and microservices. His expertise focuses on harnessing frameworks like NestJS to significantly enhance data querying and manipulation in event-driven architectures.',
     slug: 'hardik-khanesa',
     category: categories.SPEAKER,
     location: 'Ahmedabad, Gujarat',
     joinedDate: 'November 2023',
-    skills: ['Node.js', 'Nest.js'],
+    skills: ['Node.js', 'Nest.js', 'AWS'],
     socialMedia: {
       linkedin: 'https://www.linkedin.com/in/hardik-khanesa',
       github: 'https://github.com/Hardikkhanesa/',
     },
     quote:
-      "Building communities is not just about bringing people together; it's about creating an environment where everyone can learn, grow, and succeed together.",
+      "The challenge isn't just writing the code; it's architecting a backend that can handle tomorrow's scale while delivering today's peak performance.",
   },
   'bhagyesh-radiya': {
     name: 'Bhagyesh Radiya',
@@ -219,7 +220,8 @@ const persons = {
     designation: 'Senior Software Engineer',
     company: '7Span',
     image: bhagyeshRadiyaImage,
-    shortBio: 'Hello',
+    shortBio:
+      'Full Stack Engineer (7 years), mastering React/Node.js, multi-cloud, TDD, and building high-impact, data-driven tools.',
     bio: 'Bhagyesh Radiya is a highly capable Full Stack Engineer with seven years of experience across the entire stack, from React/Next.js to Node.js backends and multiple cloud platforms (AWS and Azure). He possesses deep knowledge of various databases and TDD methodology. His expertise is crucial for developing tools like the Directus Custom Query Panel, which enables users to extract meaningful, data-driven insights without complex endpoint creation.',
     slug: 'bhagyesh-radiya',
     category: categories.SPEAKER,
@@ -231,7 +233,7 @@ const persons = {
       github: 'https://github.com/7span/directus-extension-custom-query-panel',
     },
     quote:
-      "Building communities is not just about bringing people together; it's about creating an environment where everyone can learn, grow, and succeed together.",
+      "True full-stack competence isn't just knowing the entire architecture; it's engineering the direct path for users to access and act on meaningful data.",
   },
 };
 

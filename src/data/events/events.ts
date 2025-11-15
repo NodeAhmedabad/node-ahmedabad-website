@@ -1,17 +1,23 @@
 import {
+  AtomIcon,
   BoxesIcon,
   ClipboardListIcon,
   ClipboardPenIcon,
-  ClockIcon,
+  CodeIcon,
   GamepadDirectionalIcon,
+  GraduationCapIcon,
   ShieldIcon,
   WebhookIcon,
+  WrenchIcon,
 } from 'lucide-react';
 
+import fullStackInnovationsBanner from '@/assets/events/full-stack-innovations-2024/banner.jpg';
 import nodeAhmedabadMeetup2023BannerImage from '@/assets/events/node-ahmedabad-meetup-2023/banner.jpeg';
+import logo from '@/assets/logo.jpg';
 import event23Gallery from '@/components/gallery/galleryData';
 import sponsors from '@/data/events/sponsors';
 import persons from '@/data/persons/persons';
+import getFormattedDate from '@/utils/getFormattedDate';
 
 export const categories = {
   ALL: 'all',
@@ -32,10 +38,10 @@ const events = [
     mapLink: 'https://maps.app.goo.gl/xz2g4zgp1Q2Sj4qV9',
     registrationLink: 'https://nodeahmedabad.com',
     attendees: 180,
-    shortDescription: 'Deep dive into Node.js',
+    shortDescription: 'Stay Tuned, Announcements Coming Soon',
     description:
       'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
-    image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+    image: logo,
     isFeatured: true,
     category: 'Event',
     agenda: [],
@@ -44,7 +50,7 @@ const events = [
     gallery: [],
   },
   {
-    title: 'Node Ahmedabad Meetup',
+    title: 'Node Ahmedabad Meetup 2023',
     slug: 'node-ahmedabad-meetup-2023',
     isTBD: false,
     startDate: '2023-11-04',
@@ -113,70 +119,50 @@ const events = [
     isTBD: false,
     startDate: '2024-01-23',
     endDate: '2024-01-27',
-    startTime: '8:00 AM',
-    endTime: '7:00 PM',
+    startTime: '10:00 AM',
+    endTime: '2:00 PM',
     location: 'Silver Oak University, Ahmedabad',
-    mapLink: 'https://maps.google.com',
+    mapLink: 'https://maps.app.goo.gl/uwp2jkqtSr2J463T8',
     registrationLink: 'https://nodeahmedabad.com',
     attendees: 240,
     shortDescription: 'Collaborated with GDSC SOU & Department of Computer Engineering, SOCET',
     description:
-      'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600',
+      'Deep dive into JavaScript and React fundamentals with a practical, hands-on approach. Master core programming concepts and modern frontend development to build a solid foundation for your full-stack journey. Gain skills directly applicable to industry needs.',
+    image: fullStackInnovationsBanner,
     isFeatured: false,
     category: 'Workshop',
     agenda: [
       {
-        icon: ClockIcon,
-        time: '10:00 PM - 10:30 PM',
-        title: 'Registration & Welcome Coffee',
-        description: 'Meet fellow developers and grab some refreshments',
+        icon: AtomIcon,
+        time: getFormattedDate('2024-01-23'),
+        title: 'React JS Fundamentals & Core Functionality',
+        description:
+          'Focus: Introduction to the core concepts and basic functionality of the React library.',
       },
       {
-        icon: ClockIcon,
-        time: '10:30 PM - 12:00 PM',
-        title: 'Understanding Node.js Performance',
-        description: 'Event loop, memory management, and profiling basics',
+        icon: CodeIcon,
+        time: getFormattedDate('2024-01-24'),
+        title: 'JavaScript Fundamentals & Core Functionality',
+        description:
+          'Focus: Deep dive into the foundational concepts and essential functionality of the JavaScript language.',
       },
       {
-        icon: ClockIcon,
-        time: '12:00 PM - 13:00 PM',
-        title: 'Lunch Break',
-        description: 'Networking lunch with the community',
+        icon: WrenchIcon,
+        time: getFormattedDate('2024-01-25'),
+        title: 'Workshop for JavaScript Fundamentals',
+        description:
+          'Focus: Practical, hands-on session applying the core JavaScript knowledge learned on Day 2.',
       },
       {
-        icon: ClockIcon,
-        time: '13:00 PM - 14:30 PM',
-        title: 'Database Optimization',
-        description: 'Query optimization, connection pooling, and indexing strategies',
-      },
-      {
-        icon: ClockIcon,
-        time: '14:30 PM - 14:45 PM',
-        title: 'Coffee Break',
-        description: 'Quick refreshment break',
-      },
-      {
-        icon: ClockIcon,
-        time: '14:45 PM - 16:00 PM',
-        title: 'Caching & Scaling Strategies',
-        description: 'Redis, clustering, and load balancing techniques',
+        icon: GraduationCapIcon,
+        time: getFormattedDate('2024-01-26'),
+        title: 'Query, Doubt Solving, Execution, and Closure',
+        description:
+          'Focus: Interactive session for clearing doubts, executing code examples, addressing queries, and closing the event.',
       },
     ],
     speakers: [persons['nisharg-shah'], persons['swapnil-soni']],
-    sponsors: [
-      {
-        name: 'Silver Oak University',
-        logo: 'https://placehold.co/600x400?text=Google',
-        partner: 'Gold',
-      },
-      {
-        name: 'DevTools Inc',
-        logo: 'https://placehold.co/600x400?text=Microsoft',
-        partner: 'Silver',
-      },
-    ],
-    gallery: [],
+    sponsors: [sponsors.ieee, sponsors['silver-oak-university']],
   },
 ].map((event) => ({
   ...event,
