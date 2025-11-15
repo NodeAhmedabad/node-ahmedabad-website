@@ -2,17 +2,17 @@
  * Sample Gallery Data
  * Example data for testing and demo purposes
  */
-import image1 from '@/assets/gallery/event-23/1.jpg';
-import image10 from '@/assets/gallery/event-23/10.jpg';
-import image11 from '@/assets/gallery/event-23/11.jpg';
-import image12 from '@/assets/gallery/event-23/12.jpg';
-import image13 from '@/assets/gallery/event-23/13.jpg';
-import image14 from '@/assets/gallery/event-23/14.jpg';
-import image15 from '@/assets/gallery/event-23/15.jpg';
-import image2 from '@/assets/gallery/event-23/2.jpg';
-import image3 from '@/assets/gallery/event-23/3.jpg';
-import image7 from '@/assets/gallery/event-23/7.jpg';
-import image8 from '@/assets/gallery/event-23/8.jpg';
+import image1 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/1.jpg';
+import image10 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/10.jpg';
+import image11 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/11.jpg';
+import image12 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/12.jpg';
+import image13 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/13.jpg';
+import image14 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/14.jpg';
+import image15 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/15.jpg';
+import image2 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/2.jpg';
+import image3 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/3.jpg';
+import image7 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/7.jpg';
+import image8 from '@/assets/events/node-ahmedabad-meetup-2023/gallery/8.jpg';
 
 import type { GalleryItem } from '@/components/gallery/types';
 

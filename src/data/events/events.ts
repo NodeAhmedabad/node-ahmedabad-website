@@ -8,6 +8,7 @@ import {
   WebhookIcon,
 } from 'lucide-react';
 
+import nodeAhmedabadMeetup2023BannerImage from '@/assets/events/node-ahmedabad-meetup-2023/banner.jpeg';
 import event23Gallery from '@/components/gallery/galleryData';
 import sponsors from '@/data/events/sponsors';
 import persons from '@/data/persons/persons';
@@ -57,7 +58,7 @@ const events = [
     shortDescription: 'Deep dive into Node.js performance optimization techniques',
     description:
       'A gathering to kick off our first-ever community event, bringing developers together to learn, connect, and explore the world of Node.js.',
-    image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+    image: nodeAhmedabadMeetup2023BannerImage,
     isFeatured: false,
     category: 'Event',
     agenda: [
