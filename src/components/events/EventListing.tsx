@@ -7,6 +7,7 @@ import { CalendarArrowDownIcon, CalendarArrowUpIcon, CalendarIcon, Search } from
 import Section from '@/app/Section';
 import EventCard from '@/components/events/EventCard';
 import ScrollReveal from '@/components/ScrollReveal';
+import Select from '@/components/ui/Select';
 import Typography from '@/components/ui/Typography';
 import events, { categories } from '@/data/events/events';
 import cn from '@/lib/cn';
@@ -73,6 +74,14 @@ const EventListing: Component = () => {
             />
           </div>
           <div className="flex flex-wrap gap-3">
+            <div className="w-full min-w-[200px] lg:w-auto">
+              <Select
+                onValueChange={handleCategory}
+                options={categoryOptions}
+                placeholder="Select category"
+                value={activeTab}
+              />
+            </div>
             {categoryOptions.map((tab) => {
               const { icon: Icon, label, value } = tab;
 

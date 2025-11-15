@@ -28,7 +28,7 @@ const Terminal: Component = () => {
           const { text, delay, isCommand } = command;
 
           return (
-            <div key={text} className="flex items-center gap-2">
+            <div key={text} className="flex gap-2">
               <Typography as="span" color={isCommand ? 'green-400' : 'gray-400'} variant="sm">
                 {isCommand ? '$' : '✓'}
               </Typography>

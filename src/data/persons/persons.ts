@@ -18,7 +18,7 @@ const persons = {
   'nisharg-shah': {
     name: 'Nisharg Shah',
     role: 'Organizer',
-    designation: 'Technical Lead',
+    designation: 'Senior Software Engineer',
     company: 'Codal',
     image: nishargShahImage,
     shortBio: 'Full Stack Developer | MERN Stack Developer | Tech Lead.',
