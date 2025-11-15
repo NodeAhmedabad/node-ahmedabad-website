@@ -1,5 +1,6 @@
 import sevenSpan from '@/assets/sponsors/7span-logo.svg';
 import skillGpt from '@/assets/sponsors/skill-gpt-logo.svg';
+import event23Gallery from '@/components/gallery/galleryData';
 import persons from '@/data/persons/persons';
 
 export const categories = {
@@ -30,6 +31,7 @@ const events = [
     agenda: [],
     speakers: [],
     sponsors: [],
+    gallery: [],
   },
   {
     title: 'Node Ahmedabad Meetup',
@@ -98,6 +100,7 @@ const events = [
         partner: 'Venue Sponsor',
       },
     ],
+    gallery: event23Gallery,
   },
   {
     title: 'Full Stack Innovations - Code, Create, Connect',
@@ -162,6 +165,7 @@ const events = [
         partner: 'Silver',
       },
     ],
+    gallery: [],
   },
 ].map((event) => ({
   ...event,
