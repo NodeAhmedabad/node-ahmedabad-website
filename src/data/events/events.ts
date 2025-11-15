@@ -11,8 +11,10 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
-import fullStackInnovationsBanner from '@/assets/events/full-stack-innovations-2024/banner.jpg';
+import fullStackInnovationsBannerImage from '@/assets/events/full-stack-innovations-2024/banner.jpg';
+import nodeAhmedabadMeetup2023BannerImage from '@/assets/events/node-ahmedabad-meetup-2023/banner.jpeg';
 import logo from '@/assets/logo.jpg';
+import gallery from '@/data/events/gallery';
 import sponsors from '@/data/events/sponsors';
 import persons from '@/data/persons/persons';
 import getFormattedDate from '@/utils/getFormattedDate';
@@ -61,7 +63,7 @@ const events = [
     shortDescription: 'Deep dive into Node.js performance optimization techniques',
     description:
       'A gathering to kick off our first-ever community event, bringing developers together to learn, connect, and explore the world of Node.js.',
-    image: fullStackInnovationsBanner,
+    image: nodeAhmedabadMeetup2023BannerImage,
     isFeatured: false,
     category: 'Event',
     agenda: [
@@ -124,7 +126,7 @@ const events = [
     shortDescription: 'Collaborated with GDSC SOU & Department of Computer Engineering, SOCET',
     description:
       'Deep dive into JavaScript and React fundamentals with a practical, hands-on approach. Master core programming concepts and modern frontend development to build a solid foundation for your full-stack journey. Gain skills directly applicable to industry needs.',
-    image: fullStackInnovationsBanner,
+    image: fullStackInnovationsBannerImage,
     isFeatured: false,
     category: 'Workshop',
     agenda: [
@@ -164,6 +166,7 @@ const events = [
   ...event,
   isPast: new Date(event.startDate).getTime() < new Date(new Date().toDateString()).getTime(),
   time: `${event.startTime} - ${event.endTime}`,
+  gallery: gallery[event.slug as keyof typeof gallery] ?? [],
 }));
 
 export default events;

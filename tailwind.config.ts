@@ -100,12 +100,62 @@ export default {
             transform: 'translateY(-10px)',
           },
         },
+        'card-in': {
+          from: {
+            opacity: '0',
+            transform: 'translateY(16px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        'lightbox-open': {
+          from: {
+            opacity: '0',
+            transform: 'scale(0.95)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'scale(1)',
+          },
+        },
+        'lightbox-close': {
+          from: {
+            opacity: '1',
+            transform: 'scale(1)',
+          },
+          to: {
+            opacity: '0',
+            transform: 'scale(0.95)',
+          },
+        },
+        'matrix-rain': {
+          '0%': {
+            transform: 'translateY(-100%)',
+            opacity: '0',
+          },
+          '10%': {
+            opacity: '1',
+          },
+          '90%': {
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateY(100vh)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fade-in 0.3s ease-out',
         float: 'float 3s ease-in-out infinite',
+        'card-in': 'card-in 0.4s ease-out backwards',
+        'lightbox-open': 'lightbox-open 0.3s ease-out',
+        'lightbox-close': 'lightbox-close 0.2s ease-in forwards',
+        'matrix-rain': 'matrix-rain linear infinite',
       },
     },
   },
