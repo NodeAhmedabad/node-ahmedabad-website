@@ -114,7 +114,9 @@ const EventHeader: Component<EventHeaderProps> = (props) => {
                     );
                   })}
                 </div>
-                {isTBD ? null : <EventHeaderActions event={event} />}
+                {isTBD ? null : (
+                  <EventHeaderActions event={{ ...event, agenda: [], speakers: [] }} />
+                )}
               </ScrollReveal>
             </div>
           </div>

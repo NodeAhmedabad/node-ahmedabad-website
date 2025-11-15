@@ -14,7 +14,6 @@ import footerLinks from '@/data/footer/footerLinks';
 import socialMedia from '@/data/footer/socialMedia';
 import statLinks from '@/data/footer/statLinks';
 import cn from '@/lib/cn';
-import packageJson from '~/package.json';
 
 import type { Component } from '@/types';
 
@@ -108,9 +107,6 @@ const Footer: Component = () => (
           </Typography>
           <div className="flex items-center gap-4">
             <div className="size-2 animate-pulse rounded-full bg-green-400" />
-            <Typography as="p" color="gray-400" variant="sm">
-              V{packageJson.version}
-            </Typography>
             <Typography as="p" color="gray-400" variant="sm">
               Made in Ahmedabad ❤️
             </Typography>

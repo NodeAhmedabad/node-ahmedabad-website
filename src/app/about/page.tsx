@@ -1,3 +1,4 @@
+import aboutImage from '@/assets/about.jpg';
 import CoreValues from '@/components/about/CoreValues';
 import GrowthTimeline from '@/components/about/GrowthTimeline';
 import InformationBlock from '@/components/about/InformationBlock';
@@ -16,7 +17,11 @@ export const metadata = {
 
 const AboutPage: Component = () => (
   <MainLayout>
-    <Banner description={constants.APP_DESCRIPTION} title={constants.APP_NAME} />
+    <Banner
+      description={constants.APP_DESCRIPTION}
+      image={aboutImage.src}
+      title={constants.APP_NAME}
+    />
     <InformationBlock />
     <OurStory />
     <CoreValues />
