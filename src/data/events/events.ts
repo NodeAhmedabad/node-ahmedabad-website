@@ -39,8 +39,7 @@ const events = [
     registrationLink: 'https://nodeahmedabad.com',
     attendees: 180,
     shortDescription: 'Stay Tuned, Announcements Coming Soon',
-    description:
-      'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
+    description: 'Stay Tuned, Announcements Coming Soon',
     image: logo,
     isFeatured: true,
     category: 'Event',
