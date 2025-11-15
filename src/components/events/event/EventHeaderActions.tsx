@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar as CalendarIcon, ExternalLink, Share2Icon } from 'lucide-react';
+import { CalendarIcon, ExternalLink, Share2Icon } from 'lucide-react';
 import { toast } from 'sonner';
 
 import Typography from '@/components/ui/Typography';
@@ -52,7 +52,7 @@ const EventHeaderActions: Component<EventHeaderActionsProps> = (props) => {
     },
     {
       icon: Share2Icon,
-      label: 'Copy URL',
+      label: 'Share Event',
       cond: true,
       onClick: handleCopyUrl,
     },

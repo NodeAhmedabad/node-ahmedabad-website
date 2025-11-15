@@ -67,7 +67,7 @@ const EventListing: Component = () => {
             <input
               className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search members..."
+              placeholder="Search events..."
               type="text"
               value={searchTerm}
             />

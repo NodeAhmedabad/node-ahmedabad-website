@@ -1,3 +1,5 @@
+import bhagyeshRadiyaImage from '@/assets/speakers/bhagyesh-radiya.jpg';
+import hardikKhanesaImage from '@/assets/speakers/hardik-khanesa.jpg';
 import aneriPatelImage from '@/assets/teams/aneriPatel.jpg';
 import dharmikPatelImage from '@/assets/teams/dharmikPatel.jpg';
 import kushalPathakImage from '@/assets/teams/kushalPathak.jpg';
@@ -196,7 +198,7 @@ const persons = {
     role: 'Speaker',
     designation: 'Senior Software Engineer - Node JS',
     company: 'Talentica Software',
-    image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+    image: hardikKhanesaImage,
     shortBio: 'Hello',
     bio: 'Hardik Khanesa is a Software Engineer at Talentica Software, specializing in cloud-native solutions and scalable backend systems for the fintech domain. With a background in Computer Engineering, he leverages Node.js, AWS, and agile methodologies to design robust backend APIs and microservices. His expertise focuses on harnessing frameworks like NestJS to significantly enhance data querying and manipulation in event-driven architectures.',
     slug: 'hardik-khanesa',
@@ -216,7 +218,7 @@ const persons = {
     role: 'Speaker',
     designation: 'Senior Software Engineer',
     company: '7Span',
-    image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+    image: bhagyeshRadiyaImage,
     shortBio: 'Hello',
     bio: 'Bhagyesh Radiya is a highly capable Full Stack Engineer with seven years of experience across the entire stack, from React/Next.js to Node.js backends and multiple cloud platforms (AWS and Azure). He possesses deep knowledge of various databases and TDD methodology. His expertise is crucial for developing tools like the Directus Custom Query Panel, which enables users to extract meaningful, data-driven insights without complex endpoint creation.',
     slug: 'bhagyesh-radiya',
