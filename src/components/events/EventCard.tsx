@@ -1,4 +1,5 @@
 import { Calendar, Clock, MapPin, MessageSquareIcon, Users } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import FeaturedText from '@/components/events/event/FeaturedText';
@@ -40,7 +41,7 @@ const EventCard: Component<EventCardProps> = (props) => {
   const tbdPoint = [
     {
       icon: MessageSquareIcon,
-      value: 'TBD',
+      value: 'To Be Announced',
     },
   ];
 
@@ -59,7 +60,7 @@ const EventCard: Component<EventCardProps> = (props) => {
     },
     {
       icon: Users,
-      value: `${attendees} ${isPast ? 'attended' : 'attendees'}`,
+      value: `${attendees} Attendees`,
     },
   ];
 
@@ -67,7 +68,7 @@ const EventCard: Component<EventCardProps> = (props) => {
     <Link className="group flex h-full" href={`/events/${slug}`}>
       <div className="flex w-full flex-col overflow-hidden rounded-xl border border-gray-700 bg-slate-900/20 transition-all duration-300 hover:scale-105 hover:border-green-500">
         <div className="relative">
-          <img
+          <Image
             alt={title}
             className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
             src={image}
@@ -119,12 +120,13 @@ const EventCard: Component<EventCardProps> = (props) => {
           {!isPast && (
             <div className="mt-auto flex items-center justify-between">
               <button
-                className="w-full rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-2 text-center transition-colors"
+                className="w-full rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-2 text-center transition-colors disabled:opacity-50"
+                disabled={isTBD}
                 onClick={handleRegister}
                 type="button"
               >
                 <Typography as="span" color="white" variant="content">
-                  Register
+                  {isTBD ? 'Coming Soon...' : 'Register'}
                 </Typography>
               </button>
             </div>

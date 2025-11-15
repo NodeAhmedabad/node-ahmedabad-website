@@ -22,7 +22,7 @@ const EventHeader: Component<EventHeaderProps> = (props) => {
     {
       icon: MessageSquareIcon,
       label: 'Information',
-      value: 'TBD',
+      value: 'To Be Announced',
     },
   ];
 

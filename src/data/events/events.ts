@@ -11,6 +11,8 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
+import fullStackInnovationsBanner from '@/assets/events/full-stack-innovations-2024/banner.jpg';
+import logo from '@/assets/logo.jpg';
 import sponsors from '@/data/events/sponsors';
 import persons from '@/data/persons/persons';
 import getFormattedDate from '@/utils/getFormattedDate';
@@ -34,10 +36,10 @@ const events = [
     mapLink: 'https://maps.app.goo.gl/xz2g4zgp1Q2Sj4qV9',
     registrationLink: 'https://nodeahmedabad.com',
     attendees: 180,
-    shortDescription: 'Deep dive into Node.js',
+    shortDescription: 'Stay Tuned, Announcements Coming Soon',
     description:
       'Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js Comprehensive guide to microservices with Node.js',
-    image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+    image: logo,
     isFeatured: true,
     category: 'Event',
     agenda: [],
@@ -45,7 +47,7 @@ const events = [
     sponsors: [],
   },
   {
-    title: 'Node Ahmedabad Meetup 2024',
+    title: 'Node Ahmedabad Meetup 2023',
     slug: 'node-ahmedabad-meetup-2023',
     isTBD: false,
     startDate: '2023-11-04',
@@ -59,7 +61,7 @@ const events = [
     shortDescription: 'Deep dive into Node.js performance optimization techniques',
     description:
       'A gathering to kick off our first-ever community event, bringing developers together to learn, connect, and explore the world of Node.js.',
-    image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600',
+    image: fullStackInnovationsBanner,
     isFeatured: false,
     category: 'Event',
     agenda: [
@@ -122,7 +124,7 @@ const events = [
     shortDescription: 'Collaborated with GDSC SOU & Department of Computer Engineering, SOCET',
     description:
       'Deep dive into JavaScript and React fundamentals with a practical, hands-on approach. Master core programming concepts and modern frontend development to build a solid foundation for your full-stack journey. Gain skills directly applicable to industry needs.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600',
+    image: fullStackInnovationsBanner,
     isFeatured: false,
     category: 'Workshop',
     agenda: [
