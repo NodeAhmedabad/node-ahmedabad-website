@@ -20,7 +20,7 @@ const RootLayout: Layout = async ({ children }) => (
   <html className="scroll-smooth" lang="en">
     <body className="bg-slate-900 antialiased">
       <Suspense fallback={null}>
-        <Toaster richColors position="top-right" />
+        <Toaster richColors duration={5000} position="top-right" />
         <App>{children}</App>
       </Suspense>
       <Analytics />
