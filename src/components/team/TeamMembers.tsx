@@ -8,10 +8,10 @@ import Link from 'next/link';
 
 import Section from '@/app/Section';
 import Box from '@/components/ui/Box';
+import Select from '@/components/ui/Select';
 import Typography from '@/components/ui/Typography';
 import { categories } from '@/data/persons/persons';
 import teamMembers from '@/data/team/teamMembers';
-import cn from '@/lib/cn';
 
 import type { Component } from '@/types';
 
@@ -61,8 +61,8 @@ const TeamMembers: Component = () => {
   return (
     <Fragment>
       <Section className="!py-8">
-        <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
-          <div className="relative w-full max-w-md flex-1">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div className="relative w-full flex-1 sm:max-w-md">
             <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
             <input
               className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
@@ -72,29 +72,15 @@ const TeamMembers: Component = () => {
               value={searchTerm}
             />
           </div>
-          <div className="flex flex-wrap gap-3">
-            {categoryOptions.map((tab) => {
-              const { icon: Icon, label, value } = tab;
-
-              return (
-                <button
-                  key={value}
-                  onClick={() => handleCategory(value)}
-                  type="button"
-                  className={cn(
-                    'flex items-center gap-2 rounded-lg border border-green-500/30 px-4 py-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900',
-                    activeTab === value
-                      ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'
-                      : 'bg-slate-800 text-green-400 hover:bg-slate-700',
-                  )}
-                >
-                  <Icon className="size-4" />
-                  <Typography as="span" variant="content" weight="medium">
-                    {label}
-                  </Typography>
-                </button>
-              );
-            })}
+          <div className="flex w-full shrink-0 flex-wrap gap-3 sm:w-auto">
+            <div className="w-full min-w-52">
+              <Select
+                onValueChange={handleCategory}
+                options={categoryOptions}
+                placeholder="Select category"
+                value={activeTab}
+              />
+            </div>
           </div>
         </div>
       </Section>

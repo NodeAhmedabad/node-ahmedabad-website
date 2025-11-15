@@ -14,6 +14,7 @@ import {
 } from '@radix-ui/react-select';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
+import Typography from '@/components/ui/Typography';
 import cn from '@/lib/cn';
 
 import type {
@@ -31,7 +32,7 @@ import type { Component } from '@/types';
 const SelectTrigger: Component<SelectTriggerProps> = ({ className, children, ...props }) => (
   <Trigger
     className={cn(
-      'flex w-full items-center justify-between rounded-md border border-gray-700 bg-slate-800 p-3 text-sm text-white ring-offset-background transition-all duration-300 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-green-500 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+      'flex w-full items-center justify-between rounded-md border border-gray-700 bg-slate-800 p-3.5 text-white ring-offset-background transition-all duration-300 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-green-500 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
       className,
     )}
     {...props}
@@ -103,16 +104,20 @@ const SelectLabel: Component<SelectLabelProps> = ({ className, ...props }) => (
 const SelectItem: Component<SelectItemProps> = ({ className, children, ...props }) => (
   <Item
     className={cn(
-      'relative flex w-full cursor-default select-none items-center rounded-sm bg-gradient-to-r py-1.5 pl-8 pr-2 outline-none hover:from-green-500 hover:to-emerald-500 hover:text-white focus:from-green-500 focus:to-emerald-500 focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex w-full cursor-default select-none items-center rounded-sm bg-gradient-to-r py-2 pl-8 pr-2 outline-none hover:from-green-500 hover:to-emerald-500 hover:text-white focus:from-green-500 focus:to-emerald-500 focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className,
     )}
     {...props}
   >
-    <span className="absolute left-2 flex size-3.5 items-center justify-center">
+    <Typography
+      as="span"
+      className="absolute left-2 flex size-3.5 items-center justify-center"
+      variant="content"
+    >
       <ItemIndicator>
         <Check className="size-4" />
       </ItemIndicator>
-    </span>
+    </Typography>
     <ItemText>{children}</ItemText>
   </Item>
 );
