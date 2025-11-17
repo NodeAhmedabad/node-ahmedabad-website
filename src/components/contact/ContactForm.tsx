@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Send } from 'lucide-react';
+import { SendIcon } from 'lucide-react';
 import { toast } from 'sonner';
 
 import Typography from '@/components/ui/Typography';
@@ -144,7 +144,7 @@ const ContactForm: Component = () => {
           disabled={status !== statuses.PENDING}
           type="submit"
         >
-          <Send className="mr-2 size-5" />
+          <SendIcon className="mr-2 size-5" />
           <Typography as="span" variant="content">
             {status === statuses.IN_PROGRESS ? 'Loading...' : 'Send Message'}
           </Typography>

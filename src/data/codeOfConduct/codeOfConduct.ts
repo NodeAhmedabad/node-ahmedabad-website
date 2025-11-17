@@ -1,4 +1,11 @@
-import { AlertTriangle, CheckCircle, Heart, Info, Shield, Users } from 'lucide-react';
+import {
+  AlertTriangleIcon,
+  CheckCircleIcon,
+  HeartIcon,
+  InfoIcon,
+  ShieldIcon,
+  UsersIcon,
+} from 'lucide-react';
 
 export const commitment = {
   title: 'Our Commitment',
@@ -11,19 +18,19 @@ export const coreValues = {
   description: 'The principles that guide our community',
   values: [
     {
-      icon: Heart,
+      icon: HeartIcon,
       label: 'Respect & Kindness',
       content:
         'We treat all community members with respect, kindness, and empathy, regardless of their background or experience level.',
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       label: 'Inclusivity',
       content:
         'We welcome and support people of all backgrounds and identities. Our community is open to everyone.',
     },
     {
-      icon: Shield,
+      icon: ShieldIcon,
       label: 'Safety',
       content:
         'We are committed to providing a harassment-free experience for everyone, in all community spaces.',
@@ -33,7 +40,7 @@ export const coreValues = {
 
 export const behaviors = [
   {
-    icon: CheckCircle,
+    icon: CheckCircleIcon,
     title: 'Expected Behavior',
     points: [
       'Use welcoming and inclusive language',
@@ -49,7 +56,7 @@ export const behaviors = [
     iconClassName: 'text-green-400',
   },
   {
-    icon: AlertTriangle,
+    icon: AlertTriangleIcon,
     title: 'Unacceptable Behavior',
     points: [
       'Harassment, discrimination, or hate speech',
@@ -94,25 +101,25 @@ export const enforcement = {
   description: 'Consequences for violations of our code of conduct',
   consequences: [
     {
-      icon: AlertTriangle,
+      icon: AlertTriangleIcon,
       label: 'Warning',
       content: 'A private, written warning for minor violations',
       className: 'from-yellow-500 to-orange-500',
     },
     {
-      icon: AlertTriangle,
+      icon: AlertTriangleIcon,
       label: 'Temporary Ban',
       content: 'Temporary removal from community spaces for serious violations',
       className: 'from-orange-500 to-red-500',
     },
     {
-      icon: AlertTriangle,
+      icon: AlertTriangleIcon,
       label: 'Permanent Ban',
       content: 'Permanent removal from all community spaces for severe or repeated violations',
       className: 'from-red-500 to-red-700',
     },
     {
-      icon: Info,
+      icon: InfoIcon,
       label: 'Note',
       content:
         'All enforcement decisions are made at the discretion of the community moderators and leadership team. We reserve the right to take any action deemed necessary to maintain a safe and welcoming environment.',

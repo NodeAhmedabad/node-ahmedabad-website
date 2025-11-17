@@ -12,7 +12,7 @@ import {
   Trigger,
   Viewport,
 } from '@radix-ui/react-select';
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
 import Typography from '@/components/ui/Typography';
 import cn from '@/lib/cn';
@@ -39,7 +39,7 @@ const SelectTrigger: Component<SelectTriggerProps> = ({ className, children, ...
   >
     {children}
     <Icon asChild>
-      <ChevronDown className="size-4 opacity-50" />
+      <ChevronDownIcon className="size-4 opacity-50" />
     </Icon>
   </Trigger>
 );
@@ -49,7 +49,7 @@ const SelectScrollUpButton: Component<SelectScrollUpButtonProps> = ({ className,
     className={cn('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
-    <ChevronUp className="size-4" />
+    <ChevronUpIcon className="size-4" />
   </ScrollUpButton>
 );
 
@@ -61,7 +61,7 @@ const SelectScrollDownButton: Component<SelectScrollDownButtonProps> = ({
     className={cn('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
-    <ChevronDown className="size-4" />
+    <ChevronDownIcon className="size-4" />
   </ScrollDownButton>
 );
 
@@ -115,7 +115,7 @@ const SelectItem: Component<SelectItemProps> = ({ className, children, ...props 
       variant="content"
     >
       <ItemIndicator>
-        <Check className="size-4" />
+        <CheckIcon className="size-4" />
       </ItemIndicator>
     </Typography>
     <ItemText>{children}</ItemText>

@@ -1,4 +1,4 @@
-import { Calendar } from 'lucide-react';
+import { CalendarIcon } from 'lucide-react';
 
 import privacyPolicyImage from '@/assets/privacy-policy.jpg';
 import Banner from '@/components/Banner';
@@ -29,7 +29,7 @@ const PrivacyPolicyPage: Component = () => {
         title="Privacy Policy"
         content={
           <div className="mt-6 flex items-center justify-center text-gray-400">
-            <Calendar className="mr-2 size-4" />
+            <CalendarIcon className="mr-2 size-4" />
             <Typography as="span" variant="content">
               Last updated: {lastUpdated}
             </Typography>

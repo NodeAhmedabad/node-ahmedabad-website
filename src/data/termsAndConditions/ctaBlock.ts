@@ -1,4 +1,4 @@
-import { FileTextIcon, Mail } from 'lucide-react';
+import { FileTextIcon, MailIcon } from 'lucide-react';
 
 import { socialMedias } from '@/data/information';
 
@@ -13,7 +13,7 @@ const ctaBlock = {
     {
       label: socialMedias.EMAIL.url.replace('mailto:', ''),
       href: socialMedias.EMAIL.url,
-      icon: Mail,
+      icon: MailIcon,
       isOutlined: false,
     },
     {

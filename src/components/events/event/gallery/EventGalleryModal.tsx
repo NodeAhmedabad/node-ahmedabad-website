@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 
 import MatrixBackground from '@/components/events/event/gallery/MatrixBackground';
@@ -94,7 +94,7 @@ const EventGalleryModal: Component<EventGalleryModalProps> = (props) => {
           onClick={onClose}
           type="button"
         >
-          <X className="size-6" />
+          <XIcon className="size-6" />
         </button>
 
         <div className="relative flex flex-1 items-center justify-center">
@@ -114,7 +114,7 @@ const EventGalleryModal: Component<EventGalleryModalProps> = (props) => {
           onClick={handlePrevious}
           type="button"
         >
-          <ChevronLeft className="size-6" />
+          <ChevronLeftIcon className="size-6" />
         </button>
         <button
           aria-label="Next image"
@@ -122,7 +122,7 @@ const EventGalleryModal: Component<EventGalleryModalProps> = (props) => {
           onClick={handleNext}
           type="button"
         >
-          <ChevronRight className="size-6" />
+          <ChevronRightIcon className="size-6" />
         </button>
 
         <div className="relative mt-4 text-center">
@@ -132,7 +132,7 @@ const EventGalleryModal: Component<EventGalleryModalProps> = (props) => {
             onClick={handlePrevious}
             type="button"
           >
-            <ChevronLeft className="size-5" />
+            <ChevronLeftIcon className="size-5" />
           </button>
           <button
             aria-label="Next image"
@@ -140,7 +140,7 @@ const EventGalleryModal: Component<EventGalleryModalProps> = (props) => {
             onClick={handleNext}
             type="button"
           >
-            <ChevronRight className="size-5" />
+            <ChevronRightIcon className="size-5" />
           </button>
           <Typography as="p" className="mb-1 px-12" color="white" variant="xl" weight="bold">
             {title}

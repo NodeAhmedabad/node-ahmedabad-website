@@ -1,4 +1,4 @@
-import { CheckCircle } from 'lucide-react';
+import { CheckCircleIcon } from 'lucide-react';
 
 import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
@@ -43,7 +43,7 @@ const VolunteerRoles: Component = () => {
                   <ul className="flex flex-col gap-y-2">
                     {commitments.map((benefit) => (
                       <li key={benefit} className="flex items-center text-gray-300">
-                        <CheckCircle className="mr-2 size-4 shrink-0 text-green-400" />
+                        <CheckCircleIcon className="mr-2 size-4 shrink-0 text-green-400" />
                         <Typography as="span" color="content" variant="content">
                           {benefit}
                         </Typography>

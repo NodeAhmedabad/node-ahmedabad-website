@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
 import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -59,9 +59,9 @@ const FaqCategories: Component = () => {
                           {question}
                         </Typography>
                         {isOpened ? (
-                          <ChevronUp className="size-5 shrink-0 text-green-400" />
+                          <ChevronUpIcon className="size-5 shrink-0 text-green-400" />
                         ) : (
-                          <ChevronDown className="size-5 shrink-0 text-gray-400" />
+                          <ChevronDownIcon className="size-5 shrink-0 text-gray-400" />
                         )}
                       </button>
 

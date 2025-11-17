@@ -1,4 +1,4 @@
-import { AlertTriangle, Shield } from 'lucide-react';
+import { AlertTriangleIcon, ShieldIcon } from 'lucide-react';
 
 import { socialMedias } from '@/data/information';
 
@@ -11,7 +11,7 @@ const privacyPolicyContent = [
     label: 'Our Commitment to Privacy',
     content:
       'Node Ahmedabad is committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website, attend our events, or interact with our community.',
-    icon: Shield,
+    icon: ShieldIcon,
     variant: 'blue',
   },
   {
@@ -129,7 +129,7 @@ const privacyPolicyContent = [
     label: 'Changes to This Privacy Policy',
     content:
       "We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the Last updated' date. We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.",
-    icon: AlertTriangle,
+    icon: AlertTriangleIcon,
     variant: 'red',
   },
 ] satisfies PrivacyPolicyContent[];

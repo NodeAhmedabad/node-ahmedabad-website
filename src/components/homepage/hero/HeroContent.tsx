@@ -1,4 +1,11 @@
-import { ArrowRight, Calendar, CalendarDays, Play, Sparkles, Users } from 'lucide-react';
+import {
+  ArrowRightIcon,
+  CalendarDaysIcon,
+  CalendarIcon,
+  PlayIcon,
+  SparklesIcon,
+  UsersIcon,
+} from 'lucide-react';
 import Link from 'next/link';
 
 import AnimatedText from '@/components/AnimatedText';
@@ -12,7 +19,7 @@ const HeroContent: Component = () => (
   <div className="text-center lg:text-left">
     <ScrollReveal delay={200}>
       <div className="mb-6 inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2">
-        <Sparkles className="mr-2 size-4 text-green-400" />
+        <SparklesIcon className="mr-2 size-4 text-green-400" />
         <span className="text-sm font-medium text-green-400">Welcome to {constants.APP_NAME}</span>
       </div>
     </ScrollReveal>
@@ -50,28 +57,27 @@ const HeroContent: Component = () => (
         <div className="text-center">
           <div className="mb-1 text-3xl font-bold text-green-400">{stats.MEMBERS}</div>
           <div className="flex items-center text-sm text-gray-400">
-            <Users className="mr-1 size-4" />
+            <UsersIcon className="mr-1 size-4" />
             Members
           </div>
         </div>
         <div className="text-center">
           <div className="mb-1 text-3xl font-bold text-green-400">{stats.EVENTS}</div>
           <div className="flex items-center text-sm text-gray-400">
-            <Calendar className="mr-1 size-4" />
+            <CalendarIcon className="mr-1 size-4" />
             Events
           </div>
         </div>
         <div className="text-center">
           <div className="mb-1 text-3xl font-bold text-green-400">{stats.YEARS}</div>
           <div className="flex items-center text-sm text-gray-400">
-            <CalendarDays className="mr-1 size-4" />
+            <CalendarDaysIcon className="mr-1 size-4" />
             Years
           </div>
         </div>
       </div>
     </ScrollReveal>
 
-    {/* CTA Buttons */}
     <ScrollReveal delay={1400}>
       <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
         <Link
@@ -79,13 +85,13 @@ const HeroContent: Component = () => (
           href="/community"
         >
           Join Community
-          <ArrowRight className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
+          <ArrowRightIcon className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
         <Link
           className="group flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10"
           href="/events"
         >
-          <Play className="mr-2 size-5" />
+          <PlayIcon className="mr-2 size-5" />
           Watch Highlights
         </Link>
       </div>

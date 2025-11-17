@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, MessageSquareIcon, Users } from 'lucide-react';
+import { CalendarIcon, ClockIcon, MapPinIcon, MessageSquareIcon, UsersIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -47,19 +47,19 @@ const EventCard: Component<EventCardProps> = (props) => {
 
   const eventPoints = [
     {
-      icon: Calendar,
+      icon: CalendarIcon,
       value: getFormattedDate(startDate),
     },
     {
-      icon: Clock,
+      icon: ClockIcon,
       value: time,
     },
     {
-      icon: MapPin,
+      icon: MapPinIcon,
       value: location,
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       value: `${attendees} Attendees`,
     },
   ];

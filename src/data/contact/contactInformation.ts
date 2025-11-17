@@ -1,10 +1,10 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 
 import { socialMedias } from '@/data/information';
 
 const contactInformation = [
   {
-    icon: Mail,
+    icon: MailIcon,
     label: 'Email Us',
     href: socialMedias.EMAIL.url,
     content: socialMedias.EMAIL.url.replace('mailto:', ''),
@@ -12,7 +12,7 @@ const contactInformation = [
     target: '_self',
   },
   {
-    icon: Phone,
+    icon: PhoneIcon,
     label: 'Call Us',
     href: 'tel:+918733940250',
     content: '+91 87339 40250',
@@ -20,7 +20,7 @@ const contactInformation = [
     target: '_self',
   },
   {
-    icon: MapPin,
+    icon: MapPinIcon,
     label: 'Visit Us',
     href: 'https://maps.app.goo.gl/HQdonaW3mwB1HYr5A',
     content: 'Ahmedabad, Gujarat, India',

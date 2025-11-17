@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { Menu, X } from 'lucide-react';
+import { MenuIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -109,7 +109,7 @@ const Header: Component<HeaderProps> = (props) => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           type="button"
         >
-          {isMenuOpen ? <X className="size-8" /> : <Menu className="size-8" />}
+          {isMenuOpen ? <XIcon className="size-8" /> : <MenuIcon className="size-8" />}
         </button>
       </div>
 

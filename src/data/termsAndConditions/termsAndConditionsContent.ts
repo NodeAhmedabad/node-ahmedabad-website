@@ -1,4 +1,4 @@
-import { AlertCircle } from 'lucide-react';
+import { AlertCircleIcon } from 'lucide-react';
 
 import { socialMedias } from '@/data/information';
 
@@ -11,7 +11,7 @@ const termsAndConditionsContent = [
     label: 'Important Notice',
     content:
       'These Terms and Conditions ("Terms") govern your use of the Node Ahmedabad website and participation in our community events and activities. Please read these Terms carefully before attending or engaging with our events or platforms.',
-    icon: AlertCircle,
+    icon: AlertCircleIcon,
     variant: 'blue',
   },
   {

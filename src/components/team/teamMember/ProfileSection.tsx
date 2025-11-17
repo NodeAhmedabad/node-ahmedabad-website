@@ -1,4 +1,4 @@
-import { Calendar, MapPin } from 'lucide-react';
+import { CalendarIcon, MapPinIcon } from 'lucide-react';
 import Image from 'next/image';
 
 import Section from '@/app/Section';
@@ -20,11 +20,11 @@ const ProfileSection: Component<ProfileSectionProps> = (props) => {
 
   const information = [
     {
-      icon: MapPin,
+      icon: MapPinIcon,
       title: location,
     },
     {
-      icon: Calendar,
+      icon: CalendarIcon,
       title: `Joined ${joinedDate}`,
     },
   ];

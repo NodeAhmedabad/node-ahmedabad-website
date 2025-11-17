@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState } from 'react';
 
-import { CalendarArrowDownIcon, CalendarArrowUpIcon, CalendarIcon, Search } from 'lucide-react';
+import { CalendarArrowDownIcon, CalendarArrowUpIcon, CalendarIcon, SearchIcon } from 'lucide-react';
 
 import Section from '@/app/Section';
 import EventCard from '@/components/events/EventCard';
@@ -63,7 +63,7 @@ const EventListing: Component = () => {
       <Section className="!py-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="relative w-full flex-1 sm:max-w-md">
-            <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
+            <SearchIcon className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
             <input
               className="w-full rounded-lg border border-gray-700 bg-slate-800 py-3 pl-10 pr-4 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
               onChange={(e) => setSearchTerm(e.target.value)}

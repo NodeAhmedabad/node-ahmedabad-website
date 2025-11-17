@@ -1,20 +1,20 @@
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { CalendarIcon, MapPinIcon, UsersIcon } from 'lucide-react';
 
 import { stats } from '@/data/information';
 
 const statLinks = [
   {
-    icon: Users,
+    icon: UsersIcon,
     value: stats.MEMBERS,
     name: 'Members',
   },
   {
-    icon: Calendar,
+    icon: CalendarIcon,
     value: stats.EVENTS,
     name: 'Events',
   },
   {
-    icon: MapPin,
+    icon: MapPinIcon,
     value: 'AMD',
     name: 'City',
   },

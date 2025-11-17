@@ -1,9 +1,16 @@
-import { Briefcase, Calendar, Code, HelpCircle, Settings, Users } from 'lucide-react';
+import {
+  BriefcaseIcon,
+  CalendarIcon,
+  CodeIcon,
+  HelpCircleIcon,
+  SettingsIcon,
+  UsersIcon,
+} from 'lucide-react';
 
 const faqCategories = [
   {
     name: 'About the Community',
-    icon: HelpCircle,
+    icon: HelpCircleIcon,
     faqs: [
       {
         question: 'What is the Node Ahmedabad Community?',
@@ -29,7 +36,7 @@ const faqCategories = [
   },
   {
     name: 'Events and Meetups',
-    icon: Calendar,
+    icon: CalendarIcon,
     faqs: [
       {
         question: 'How often do you host meetups, and where are they held?',
@@ -50,7 +57,7 @@ const faqCategories = [
   },
   {
     name: 'Community Interaction',
-    icon: Users,
+    icon: UsersIcon,
     faqs: [
       {
         question: 'How can I stay updated about upcoming events and announcements?',
@@ -71,7 +78,7 @@ const faqCategories = [
   },
   {
     name: 'Career & Mentorship',
-    icon: Briefcase,
+    icon: BriefcaseIcon,
     faqs: [
       {
         question: 'Does the community help with job opportunities or hiring?',
@@ -92,7 +99,7 @@ const faqCategories = [
   },
   {
     name: 'Contributing & Open Source',
-    icon: Code,
+    icon: CodeIcon,
     faqs: [
       {
         question: "How can I contribute to the community's content or projects?",
@@ -113,7 +120,7 @@ const faqCategories = [
   },
   {
     name: 'Technical & Logistics',
-    icon: Settings,
+    icon: SettingsIcon,
     faqs: [
       {
         question: 'Which Node.js version should I use to stay aligned with the community?',

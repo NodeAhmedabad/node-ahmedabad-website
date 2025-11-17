@@ -1,9 +1,9 @@
-import { FileTextIcon } from 'lucide-react';
+import { UserStarIcon } from 'lucide-react';
 
 import type { CtaBlockProps } from '@/components/CtaBlock';
 
 const ctaBlock = {
-  icon: FileTextIcon,
+  icon: UserStarIcon,
   title: 'Become a Speaker or Volunteer',
   description:
     "Got a topic you're passionate about or skills you'd like to contribute? Whether it's speaking or volunteering, we'd love to collaborate with you for upcoming events.",

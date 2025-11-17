@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { ExternalLinkIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react/jsx-runtime';
@@ -87,7 +87,7 @@ const Footer: Component = () => (
                           >
                             {subName}
                           </Typography>
-                          <ExternalLink className="ml-1 size-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                          <ExternalLinkIcon className="ml-1 size-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                         </Link>
                       </li>
                     );

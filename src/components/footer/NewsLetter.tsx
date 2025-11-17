@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import { MailIcon } from 'lucide-react';
 
 import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
@@ -15,7 +15,7 @@ const NewsLetter: Component = () => {
     <Section className="border-b border-gray-800 bg-gradient-to-r from-slate-900 to-slate-800">
       <div className="mx-auto max-w-4xl text-center">
         <div className="mb-4 inline-flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500 sm:mb-6">
-          <Mail className="size-8 text-white" />
+          <MailIcon className="size-8 text-white" />
         </div>
         <ContentWrapper animation={false} description={description} title={title} />
         <NewsLetterForm />

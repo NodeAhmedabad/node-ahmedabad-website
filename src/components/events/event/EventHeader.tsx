@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, MessageSquareIcon, Users } from 'lucide-react';
+import { CalendarIcon, ClockIcon, MapPinIcon, MessageSquareIcon, UsersIcon } from 'lucide-react';
 
 import EventHeaderActions from '@/components/events/event/EventHeaderActions';
 import FeaturedText from '@/components/events/event/FeaturedText';
@@ -28,24 +28,24 @@ const EventHeader: Component<EventHeaderProps> = (props) => {
 
   const details = [
     {
-      icon: Calendar,
+      icon: CalendarIcon,
       label: 'Date',
       value: [getFormattedDate(startDate), ...(endDate ? [getFormattedDate(endDate)] : [])].join(
         '\n',
       ),
     },
     {
-      icon: Clock,
+      icon: ClockIcon,
       label: 'Time',
       value: time,
     },
     {
-      icon: MapPin,
+      icon: MapPinIcon,
       label: 'Location',
       value: location,
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       label: 'Attendees',
       value: attendees,
     },

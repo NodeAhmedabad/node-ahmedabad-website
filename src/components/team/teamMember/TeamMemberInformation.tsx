@@ -1,4 +1,4 @@
-import { Award } from 'lucide-react';
+import { AwardIcon } from 'lucide-react';
 
 import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -35,7 +35,7 @@ const TeamMemberInformation: Component<TeamMemberInformationProps> = (props) => 
 
             <div className="mt-6 flex flex-col gap-x-3 gap-y-6 md:flex-row md:items-center">
               <div className="flex items-center gap-2 md:mr-3 md:gap-3">
-                <Award className="size-6 text-green-400" />
+                <AwardIcon className="size-6 text-green-400" />
                 <Typography as="span" className="flex md:hidden" color="content" variant="xl">
                   Skills
                 </Typography>

@@ -1,11 +1,11 @@
-import { Mic, Users } from 'lucide-react';
+import { MicIcon, UsersIcon } from 'lucide-react';
 
 const waysToContribute = {
   title: 'Ways to Contribute',
   description: "Choose how you'd like to make an impact in our community",
   ways: [
     {
-      icon: Mic,
+      icon: MicIcon,
       label: 'Become a Speaker',
       content: 'Share your knowledge and expertise with the community through talks and workshops.',
       benefits: [
@@ -24,7 +24,7 @@ const waysToContribute = {
       ],
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       label: 'Volunteer',
       content: 'Help organize events, moderate discussions, and support community operations.',
       benefits: [
