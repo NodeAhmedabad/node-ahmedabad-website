@@ -1,8 +1,8 @@
 import { MailIcon } from 'lucide-react';
 
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
 import NewsLetterForm from '@/components/footer/NewsLetterForm';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 import newsLetter from '@/data/footer/newsLetter';
 

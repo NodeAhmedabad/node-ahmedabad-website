@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
-import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 import faqCategories from '@/data/faqs/faqCategories';
 import cn from '@/lib/cn';

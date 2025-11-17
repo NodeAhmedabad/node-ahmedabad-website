@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 
 import type { Component } from '@/types';

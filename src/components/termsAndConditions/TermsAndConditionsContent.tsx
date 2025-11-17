@@ -1,4 +1,4 @@
-import Section from '@/app/Section';
+import Section from '@/components/Section';
 import Box from '@/components/ui/Box';
 import termsAndConditionsContent from '@/data/termsAndConditions/termsAndConditionsContent';
 import cn from '@/lib/cn';

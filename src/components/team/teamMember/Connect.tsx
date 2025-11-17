@@ -1,5 +1,5 @@
-import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import SocialLinks from '@/components/SocialLinks';
 import Typography from '@/components/ui/Typography';
 import socialMedia from '@/data/footer/socialMedia';

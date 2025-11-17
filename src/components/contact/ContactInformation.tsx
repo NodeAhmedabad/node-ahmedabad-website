@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Section from '@/app/Section';
+import Section from '@/components/Section';
 import Box from '@/components/ui/Box';
 import contactInformation from '@/data/contact/contactInformation';
 import cn from '@/lib/cn';

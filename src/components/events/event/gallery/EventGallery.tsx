@@ -1,6 +1,6 @@
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
 import EventGalleryGrid from '@/components/events/event/gallery/EventGalleryGrid';
+import Section from '@/components/Section';
 
 import type events from '@/data/events/events';
 import type { Component } from '@/types';

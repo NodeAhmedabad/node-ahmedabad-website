@@ -6,7 +6,7 @@ import { SearchIcon, UserCogIcon, UserPlusIcon, UsersIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Section from '@/app/Section';
+import Section from '@/components/Section';
 import Box from '@/components/ui/Box';
 import Select from '@/components/ui/Select';
 import Typography from '@/components/ui/Typography';

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 import socialPlatforms from '@/data/community/socialPlatforms';
 import cn from '@/lib/cn';

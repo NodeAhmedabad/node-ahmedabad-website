@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Section from '@/app/Section';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 import menu, { menuButtonText } from '@/data/homepage/menu';
 import cn from '@/lib/cn';

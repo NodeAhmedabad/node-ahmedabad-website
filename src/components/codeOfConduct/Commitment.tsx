@@ -1,5 +1,5 @@
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
+import Section from '@/components/Section';
 import { commitment } from '@/data/codeOfConduct/codeOfConduct';
 
 import type { Component } from '@/types';

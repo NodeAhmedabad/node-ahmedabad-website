@@ -4,9 +4,9 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { CalendarArrowDownIcon, CalendarArrowUpIcon, CalendarIcon, SearchIcon } from 'lucide-react';
 
-import Section from '@/app/Section';
 import EventCard from '@/components/events/EventCard';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Select from '@/components/ui/Select';
 import Typography from '@/components/ui/Typography';
 import events, { categories } from '@/data/events/events';

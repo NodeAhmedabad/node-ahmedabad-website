@@ -1,7 +1,7 @@
 import { CheckCircleIcon } from 'lucide-react';
 
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
+import Section from '@/components/Section';
 import Box from '@/components/ui/Box';
 import Typography from '@/components/ui/Typography';
 import volunteerRoles from '@/data/contribute/volunteerRoles';

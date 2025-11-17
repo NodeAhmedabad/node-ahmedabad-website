@@ -1,5 +1,5 @@
-import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 import { behaviors } from '@/data/codeOfConduct/codeOfConduct';
 import cn from '@/lib/cn';

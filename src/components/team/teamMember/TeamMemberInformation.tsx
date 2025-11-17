@@ -1,7 +1,7 @@
 import { AwardIcon } from 'lucide-react';
 
-import Section from '@/app/Section';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 
 import type teamMembers from '@/data/team/teamMembers';

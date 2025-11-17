@@ -3,10 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react/jsx-runtime';
 
-import Section from '@/app/Section';
 import logo from '@/assets/logo.jpg';
 import NewsLetter from '@/components/footer/NewsLetter';
 import StatBlock from '@/components/footer/StatBlock';
+import Section from '@/components/Section';
 import SocialLinks from '@/components/SocialLinks';
 import Typography from '@/components/ui/Typography';
 import constants from '@/constants';

@@ -1,6 +1,6 @@
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Box from '@/components/ui/Box';
 import growthTimeline from '@/data/about/timeline';
 import cn from '@/lib/cn';

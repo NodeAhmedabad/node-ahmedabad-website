@@ -1,6 +1,6 @@
-import Section from '@/app/Section';
 import ContentWrapper from '@/components/ContentWrapper';
 import ScrollReveal from '@/components/ScrollReveal';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 
 import type events from '@/data/events/events';

@@ -7,9 +7,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Section from '@/app/Section';
 import logo from '@/assets/logo.jpg';
 import MobileHeader from '@/components/header/MobileHeader';
+import Section from '@/components/Section';
 import Typography from '@/components/ui/Typography';
 import constants from '@/constants';
 import menu, { menuButtonText } from '@/data/homepage/menu';
