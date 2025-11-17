@@ -1,7 +1,9 @@
+import CtaBlock from '@/components/CtaBlock';
 import AboutSection from '@/components/homepage/AboutSection';
 import EventsSection from '@/components/homepage/EventsSection';
 import HeroSection from '@/components/homepage/HeroSection';
 import constants from '@/constants';
+import ctaBlock from '@/data/homepage/ctaBlock';
 import MainLayout from '@/layouts/MainLayout';
 
 import type { Metadata } from 'next';
@@ -17,6 +19,7 @@ const HomePage: Component = () => (
     <HeroSection />
     <AboutSection />
     <EventsSection />
+    <CtaBlock {...ctaBlock} />
   </MainLayout>
 );
 

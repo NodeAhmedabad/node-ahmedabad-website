@@ -47,10 +47,10 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
 
     return {
       iconClassName: 'text-green-400',
-      linkSolidClassName: 'bg-green-500 text-white hover:bg-green-600',
+      linkSolidClassName: 'bg-gradient-to-r from-green-500 to-emerald-500 text-white',
       linkOutlineClassName: cn(
         outlinedClassName,
-        'border-green-500 text-green-500 hover:bg-green-500 hover:text-white',
+        'border-gray-600 text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10 hover:text-white',
       ),
     };
   })();
@@ -60,7 +60,7 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
       <ScrollReveal>
         <div className="rounded-2xl border border-gray-700 bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-8 text-center sm:p-12">
           <Icon className={cn('mx-auto mb-6 size-12 sm:size-16', classNames.iconClassName)} />
-          <ContentWrapper description={description} title={title} />
+          <ContentWrapper className="sm:mb-8" description={description} title={title} />
           {content}
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             {actions.map((action) => {

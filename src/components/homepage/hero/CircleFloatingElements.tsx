@@ -1,6 +1,8 @@
 import { Code2Icon } from 'lucide-react';
 import { Fragment } from 'react/jsx-runtime';
 
+import Typography from '@/components/ui/Typography';
+
 import type { Component } from '@/types';
 
 const CircleFloatingElements: Component = () => (
@@ -10,7 +12,9 @@ const CircleFloatingElements: Component = () => (
     </div>
 
     <div className="absolute -bottom-6 -left-4 flex size-12 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500 sm:size-16 md:-bottom-10">
-      <span className="font-bold text-white">JS</span>
+      <Typography as="span" color="white" variant="content" weight="bold">
+        JS
+      </Typography>
     </div>
   </Fragment>
 );

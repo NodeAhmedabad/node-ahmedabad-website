@@ -4,13 +4,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import Typography from '@/components/ui/Typography';
 import cn from '@/lib/cn';
 
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import type { Component } from '@/types';
 
-type ContentWrapperProps = ComponentProps<'div'> & {
-  title: string;
-  description?: string;
+type ContentWrapperProps = Omit<ComponentProps<'div'>, 'title'> & {
+  title: ReactNode;
+  description?: ReactNode;
   animation?: boolean;
 };
 

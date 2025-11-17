@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState } from 'react';
 
-import { SearchIcon, SearchIcon, UserCogIcon, UserPlusIcon, UsersIcon } from 'lucide-react';
+import { SearchIcon, UserCogIcon, UserPlusIcon, UsersIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
