@@ -47,7 +47,8 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
 
     return {
       iconClassName: 'text-green-400',
-      linkSolidClassName: 'bg-gradient-to-r from-green-500 to-emerald-500 text-white',
+      linkSolidClassName:
+        'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:scale-105 hover:shadow-lg hover:shadow-green-500/25',
       linkOutlineClassName: cn(
         outlinedClassName,
         'border-gray-600 text-white hover:border-green-500 hover:bg-green-500/10 hover:text-white',

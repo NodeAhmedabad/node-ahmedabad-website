@@ -63,11 +63,12 @@ const WaysToContribute: Component = () => {
                         key={name}
                         type="button"
                         className={cn(
-                          'rounded-lg font-semibold transition-colors hover:bg-green-600',
+                          'rounded-lg font-semibold transition-all duration-300',
                           actions.length === 1 ? 'w-full' : 'basis-1/2',
-                          variant === 'solid' && 'bg-green-500 text-white',
+                          variant === 'solid' &&
+                            'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:scale-105 hover:shadow-lg hover:shadow-green-500/25',
                           variant === 'outlined' &&
-                            'border-2 border-green-500 text-green-500 hover:text-white',
+                            'border-2 border-gray-600 text-white hover:border-green-500 hover:bg-green-500/10 hover:text-white',
                         )}
                       >
                         <Link className="flex justify-center py-3" href={href} target={target}>
