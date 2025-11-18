@@ -15,10 +15,12 @@ import type { Component } from '@/types';
 const actions = [
   {
     label: 'Upcoming Events',
+    mobileLabel: 'Upcoming',
     value: categories.UPCOMING,
   },
   {
     label: 'Past Events',
+    mobileLabel: 'Past',
     value: categories.PAST,
   },
 ];
@@ -59,9 +61,9 @@ const EventsSection: Component = () => {
       <div className="mx-auto max-w-6xl">
         <ScrollReveal delay={200}>
           <div className="mb-12 flex justify-center">
-            <div className="rounded-lg border border-gray-700 bg-slate-800 p-1">
+            <div className="flex flex-wrap gap-2 rounded-lg border border-gray-700 bg-slate-800 p-1">
               {actions.map((action) => {
-                const { label, value } = action;
+                const { label, mobileLabel, value } = action;
 
                 return (
                   <button
@@ -69,13 +71,18 @@ const EventsSection: Component = () => {
                     onClick={() => setActiveTab(value)}
                     type="button"
                     className={cn(
-                      'rounded-lg px-6 py-3 font-medium transition-all duration-300',
+                      'min-w-28 rounded-lg p-3 font-medium transition-all duration-300 sm:px-6',
                       activeTab === value
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                         : 'text-gray-400 hover:text-white',
                     )}
                   >
-                    {label}
+                    <Typography as="span" className="block sm:hidden" variant="inherit">
+                      {mobileLabel}
+                    </Typography>
+                    <Typography as="span" className="hidden sm:block" variant="inherit">
+                      {label}
+                    </Typography>{' '}
                   </button>
                 );
               })}
