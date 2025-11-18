@@ -9,7 +9,7 @@ import type { ComponentProps, ReactNode } from 'react';
 
 import type { Component } from '@/types';
 
-type BannerProps = ComponentProps<'section'> & {
+type BannerProps = Omit<ComponentProps<'section'>, 'title' | 'content'> & {
   title: string;
   description: string;
   image?: string;
