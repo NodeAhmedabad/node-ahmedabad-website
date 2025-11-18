@@ -1,7 +1,5 @@
 import { HeartIcon, LightbulbIcon, TargetIcon, UsersIcon } from 'lucide-react';
 
-import communityStats from '@/data/community/communityStats';
-
 const about = {
   title: 'Our Mission',
   description:
@@ -32,7 +30,6 @@ const about = {
         'We provide networking opportunities and resources to advance your professional journey.',
     },
   ],
-  stats: communityStats,
 };
 
 export default about;

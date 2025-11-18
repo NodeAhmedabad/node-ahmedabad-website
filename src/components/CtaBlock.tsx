@@ -50,7 +50,7 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
       linkSolidClassName: 'bg-gradient-to-r from-green-500 to-emerald-500 text-white',
       linkOutlineClassName: cn(
         outlinedClassName,
-        'border-gray-600 text-white transition-all duration-300 hover:border-green-500 hover:bg-green-500/10 hover:text-white',
+        'border-gray-600 text-white hover:border-green-500 hover:bg-green-500/10 hover:text-white',
       ),
     };
   })();
@@ -73,18 +73,12 @@ const CtaBlock: Component<CtaBlockProps> = (props) => {
                   target={target ?? '_blank'}
                   type="button"
                   className={cn(
-                    'flex flex-wrap items-center justify-center gap-y-2 rounded-lg px-8 py-3 font-semibold transition-colors',
+                    'flex flex-wrap items-center justify-center gap-y-2 rounded-lg px-8 py-3 font-semibold transition-all duration-300',
                     isOutlined ? classNames.linkOutlineClassName : classNames.linkSolidClassName,
                   )}
                 >
                   {ActionIcon ? <ActionIcon className="mr-2 size-4 shrink-0" /> : null}
-                  <Typography
-                    as="span"
-                    className="break-word"
-                    color="white"
-                    variant="content"
-                    weight="semibold"
-                  >
+                  <Typography as="span" className="break-word" variant="content" weight="semibold">
                     {label}
                   </Typography>
                 </Link>
