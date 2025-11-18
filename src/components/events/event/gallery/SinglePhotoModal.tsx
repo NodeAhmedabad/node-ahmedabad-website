@@ -74,7 +74,7 @@ const SinglePhotoModal: Component<SinglePhotoModalProps> = (props) => {
       <div
         aria-label="Image lightbox"
         aria-modal="true"
-        className="animate-lightbox-open relative z-10 flex size-full flex-col p-4 md:p-8"
+        className="relative z-10 flex size-full animate-lightbox-open flex-col p-4 md:p-8"
         onClick={(e) => e.stopPropagation()}
         onKeyUp={(e) => e.stopPropagation()}
         role="dialog"
