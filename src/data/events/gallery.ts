@@ -1,5 +1,7 @@
 import fullStackInnovationsImage1 from '@/assets/events/full-stack-innovations-2024/gallery/1.jpeg';
 import fullStackInnovationsImage10 from '@/assets/events/full-stack-innovations-2024/gallery/10.jpeg';
+import fullStackInnovationsImage11 from '@/assets/events/full-stack-innovations-2024/gallery/11.jpeg';
+import fullStackInnovationsImage12 from '@/assets/events/full-stack-innovations-2024/gallery/12.jpeg';
 import fullStackInnovationsImage2 from '@/assets/events/full-stack-innovations-2024/gallery/2.jpeg';
 import fullStackInnovationsImage3 from '@/assets/events/full-stack-innovations-2024/gallery/3.jpeg';
 import fullStackInnovationsImage4 from '@/assets/events/full-stack-innovations-2024/gallery/4.jpeg';
@@ -143,12 +145,12 @@ const gallery = {
     },
     {
       id: 3,
-      title: 'Tech Talk: Web Performance',
-      src: fullStackInnovationsImage3,
+      title: 'Coffee & Code Session',
+      src: fullStackInnovationsImage5,
       srcBlur:
-        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAcEAABBAMBAAAAAAAAAAAAAAABAAIDBAURITH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwCur+CKNvUOdNKE+wLdTqoJ3A//2Q==',
-      width: 700,
-      height: 500,
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAYDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAABAwUBAQAAAAAAAAAAAAABAAIDBBEFBhIhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEQMSIf/aAAwDAQACEQMRAD8AjaWBk7tSvlZl0kY7OiDp/U6K2xt5EmlJ+h//2Q==',
+      width: 600,
+      height: 900,
     },
     {
       id: 4,
@@ -161,15 +163,25 @@ const gallery = {
     },
     {
       id: 5,
-      title: 'Coffee & Code Session',
-      src: fullStackInnovationsImage5,
+      title: 'Annual Conference 2024',
+      src: fullStackInnovationsImage12,
       srcBlur:
-        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAYDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAABAwUBAQAAAAAAAAAAAAABAAIDBBEFBhIhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEQMSIf/aAAwDAQACEQMRAD8AjaWBk7tSvlZl0kY7OiDp/U6K2xt5EmlJ+h//2Q==',
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAACAQQDAQAAAAAAAAAAAAABAgMABAURBhIhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEQMSIf/aAAwDAQACEQMRAD8AT5Y4d62SdfkL/gmEc5wyBncIPlSfsUX11Hf6J//Z',
       width: 600,
       height: 900,
     },
     {
-      id: 11,
+      id: 6,
+      title: 'Tech Talk: Web Performance',
+      src: fullStackInnovationsImage3,
+      srcBlur:
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAcEAABBAMBAAAAAAAAAAAAAAABAAIDBAURITH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwCur+CKNvUOdNKE+wLdTqoJ3A//2Q==',
+      width: 700,
+      height: 500,
+    },
+
+    {
+      id: 7,
       title: 'Community Meetup 2024',
       src: fullStackInnovationsImage6,
       srcBlur:
@@ -178,7 +190,7 @@ const gallery = {
       height: 600,
     },
     {
-      id: 6,
+      id: 8,
       title: 'React Best Practices',
       src: fullStackInnovationsImage7,
       srcBlur:
@@ -187,7 +199,7 @@ const gallery = {
       height: 550,
     },
     {
-      id: 7,
+      id: 9,
       title: 'Team Building Event',
       src: fullStackInnovationsImage8,
       srcBlur:
@@ -196,7 +208,7 @@ const gallery = {
       height: 700,
     },
     {
-      id: 8,
+      id: 10,
       title: 'Open Source Contributors',
       src: fullStackInnovationsImage9,
       srcBlur:
@@ -205,9 +217,18 @@ const gallery = {
       height: 800,
     },
     {
-      id: 9,
+      id: 11,
       title: 'Annual Conference 2024',
       src: fullStackInnovationsImage10,
+      srcBlur:
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAACAQQDAQAAAAAAAAAAAAABAgMABAURBhIhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEQMSIf/aAAwDAQACEQMRAD8AT5Y4d62SdfkL/gmEc5wyBncIPlSfsUX11Hf6J//Z',
+      width: 600,
+      height: 900,
+    },
+    {
+      id: 12,
+      title: 'Annual Conference 2024',
+      src: fullStackInnovationsImage11,
       srcBlur:
         'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAACAQQDAQAAAAAAAAAAAAABAgMABAURBhIhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEQMSIf/aAAwDAQACEQMRAD8AT5Y4d62SdfkL/gmEc5wyBncIPlSfsUX11Hf6J//Z',
       width: 600,
