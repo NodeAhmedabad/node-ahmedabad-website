@@ -1,4 +1,4 @@
-import { CableIcon, HistoryIcon, UsersIcon } from 'lucide-react';
+import { CableIcon, HistoryIcon, RocketIcon, UsersIcon } from 'lucide-react';
 
 const growthTimeline = {
   title: 'Growth Timeline',
@@ -25,6 +25,14 @@ const growthTimeline = {
       content:
         'Launched our first-ever conference & workshop, uniting 300+ developers for 4-day of technical growth.',
       icon: CableIcon,
+      color: 'from-green-500 to-green-600',
+    },
+    {
+      year: 'More Events Coming Soon',
+      event: 'Expanding Our Technical Community',
+      content:
+        'We are planning several new conferences, workshops, and meetups designed to unite and empower developers with technical growth opportunities throughout the coming year.',
+      icon: RocketIcon,
       color: 'from-green-500 to-green-600',
     },
   ],

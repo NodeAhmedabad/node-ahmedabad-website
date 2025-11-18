@@ -16,10 +16,11 @@ const waysToContribute = {
       ],
       actions: [
         {
-          name: 'Apply to Speak',
+          name: 'Coming Soon...',
           variant: 'solid',
           href: 'https://forms.gle/mYP5sBhUchSm3uuQ6',
           target: '_blank',
+          disabled: true,
         },
       ],
     },
@@ -35,16 +36,18 @@ const waysToContribute = {
       ],
       actions: [
         {
-          name: 'Join the Team',
+          name: 'Coming Soon...',
           variant: 'solid',
           href: 'https://forms.gle/eJKWWn8Kikw8SyXy5',
           target: '_blank',
+          disabled: true,
         },
         {
           name: 'Learn More',
           variant: 'outlined',
           href: '/contribute#volunteer-roles',
           target: '_self',
+          disabled: false,
         },
       ],
     },

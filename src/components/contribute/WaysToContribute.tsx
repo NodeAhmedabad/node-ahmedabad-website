@@ -24,14 +24,14 @@ const WaysToContribute: Component = () => {
             <Box
               key={label}
               center={false}
-              className="flex flex-col"
+              className="flex flex-col [&>svg]:shrink-0"
               content={content}
               contentProps={{ className: 'mb-4' }}
               delay={index * 100}
               icon={icon}
               label={label}
             >
-              <div className="flex flex-col gap-6">
+              <div className="flex h-full flex-col gap-6">
                 <div className="flex flex-col">
                   <Typography
                     as="h4"
@@ -56,14 +56,15 @@ const WaysToContribute: Component = () => {
 
                 <div className="mt-auto grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
                   {actions.map((action) => {
-                    const { name, variant, href, target } = action;
+                    const { name, variant, href, target, disabled } = action;
 
                     return (
                       <button
                         key={name}
+                        disabled={disabled}
                         type="button"
                         className={cn(
-                          'rounded-lg font-semibold transition-all duration-300',
+                          'rounded-lg font-semibold transition-all duration-300 disabled:opacity-50',
                           actions.length === 1 ? 'w-full' : 'basis-1/2',
                           variant === 'solid' &&
                             'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:scale-105 hover:shadow-lg hover:shadow-green-500/25',
@@ -71,7 +72,14 @@ const WaysToContribute: Component = () => {
                             'border-2 border-gray-600 text-white hover:border-green-500 hover:bg-green-500/10 hover:text-white',
                         )}
                       >
-                        <Link className="flex justify-center py-3" href={href} target={target}>
+                        <Link
+                          href={href}
+                          target={target}
+                          className={cn(
+                            'flex justify-center py-3',
+                            disabled && 'pointer-events-none',
+                          )}
+                        >
                           {name}
                         </Link>
                       </button>

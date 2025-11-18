@@ -9,7 +9,7 @@ const Commitment: Component = () => {
 
   return (
     <Section>
-      <ContentWrapper className="mb-0" description={description} title={title} />
+      <ContentWrapper className="sm:mb-0" description={description} title={title} />
     </Section>
   );
 };

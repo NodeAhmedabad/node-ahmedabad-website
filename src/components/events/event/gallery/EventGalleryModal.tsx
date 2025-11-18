@@ -142,7 +142,7 @@ const EventGalleryModal: Component<EventGalleryModalProps> = (props) => {
           >
             <ChevronRightIcon className="size-5" />
           </button>
-          <Typography as="p" className="mb-1 px-12" color="white" variant="xl" weight="bold">
+          <Typography as="p" className="mb-1 px-16" color="white" variant="lg" weight="bold">
             {title}
           </Typography>
           <Typography as="p" className="mt-2" color="gray-500" variant="sm">

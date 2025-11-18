@@ -15,6 +15,8 @@ export const metadata = {
 const TeamPage: Component = () => (
   <MainLayout>
     <Banner
+      // 80px fix height of header
+      className="xl:pb-52 xl:pt-72"
       description="The passionate individuals who make our community thrive"
       image={teamImage.src}
       title="Meet Our Team"

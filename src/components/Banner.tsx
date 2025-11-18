@@ -3,25 +3,32 @@ import { Fragment } from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import ScrollReveal from '@/components/ScrollReveal';
 import Typography from '@/components/ui/Typography';
+import cn from '@/lib/cn';
 
-import type { ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import type { Component } from '@/types';
 
-interface BannerProps {
+type BannerProps = ComponentProps<'section'> & {
   title: string;
   description: string;
   image?: string;
   content?: ReactNode;
   children?: ReactNode;
-}
+};
 
 const Banner: Component<BannerProps> = (props) => {
-  const { title, description, image, content, children } = props;
+  const { title, description, image, content, children, className, ...restProps } = props;
 
   return (
     // 80px fix height of header
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-16 pt-32 sm:pb-28 sm:pt-48">
+    <section
+      {...restProps}
+      className={cn(
+        'relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-16 pt-32 sm:pb-28 sm:pt-48',
+        className,
+      )}
+    >
       {image ? (
         <Fragment>
           <div
