@@ -1,0 +1,29 @@
+import { FileTextIcon, MailIcon } from 'lucide-react';
+
+import { socialMedias } from '@/data/information';
+
+import type { CtaBlockProps } from '@/components/CtaBlock';
+
+const ctaBlock = {
+  icon: FileTextIcon,
+  title: 'Questions?',
+  description:
+    "If you have any questions about these Terms and Conditions, please don't hesitate to contact us.",
+  actions: [
+    {
+      label: socialMedias.EMAIL.url.replace('mailto:', ''),
+      href: socialMedias.EMAIL.url,
+      icon: MailIcon,
+      isOutlined: false,
+    },
+    {
+      label: 'Contact Form',
+      href: '/contact',
+      isOutlined: true,
+      target: '_self',
+    },
+  ],
+  variant: 'default',
+} satisfies CtaBlockProps;
+
+export default ctaBlock;

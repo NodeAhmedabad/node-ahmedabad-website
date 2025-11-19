@@ -1,0 +1,157 @@
+'use client';
+
+import { useState } from 'react';
+
+import { SendIcon } from 'lucide-react';
+import { toast } from 'sonner';
+
+import Typography from '@/components/ui/Typography';
+import { statuses } from '@/constants';
+
+import type { ChangeEvent, FormEvent } from 'react';
+
+import type { Component } from '@/types';
+
+const initialState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
+
+const ContactForm: Component = () => {
+  const [status, setStatus] = useState(statuses.PENDING);
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setStatus(statuses.IN_PROGRESS);
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    await res.json();
+
+    if (res.ok) {
+      setFormData(initialState);
+      toast.success('Message received! Our team of Node ninjas will get back to you soon 🥷💚');
+    } else {
+      toast.error('Oops! Your message threw an unhandled rejection 😅 Try again!');
+    }
+
+    setStatus(statuses.PENDING);
+  };
+
+  return (
+    <div className="rounded-2xl border border-gray-700 px-4 py-6 md:p-8">
+      <Typography
+        as="h2"
+        className="mb-6 text-center sm:mb-8 sm:text-left"
+        color="white"
+        variant="3xl"
+      >
+        Contact
+      </Typography>
+      <form className="flex flex-col gap-4 sm:gap-6" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+          <div>
+            <label className="mb-2 block" htmlFor="name">
+              <Typography as="span" color="white" variant="content" weight="medium">
+                Full Name *
+              </Typography>
+            </label>
+            <input
+              required
+              className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
+              id="name"
+              name="name"
+              onChange={handleChange}
+              placeholder="Your full name"
+              type="text"
+              value={formData.name}
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 block" htmlFor="email">
+              <Typography as="span" color="white" variant="content" weight="medium">
+                Email Address *
+              </Typography>
+            </label>
+            <input
+              required
+              className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
+              id="email"
+              name="email"
+              onChange={handleChange}
+              placeholder="your@email.com"
+              type="email"
+              value={formData.email}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="mb-2 block" htmlFor="subject">
+            <Typography as="span" color="white" variant="content" weight="medium">
+              Subject *
+            </Typography>
+          </label>
+          <input
+            required
+            className="w-full rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
+            id="subject"
+            name="subject"
+            onChange={handleChange}
+            placeholder="What's this about?"
+            type="text"
+            value={formData.subject}
+          />
+        </div>
+
+        <div>
+          <label className="mb-2 block" htmlFor="message">
+            <Typography as="span" color="white" variant="content" weight="medium">
+              Message *
+            </Typography>
+          </label>
+          <textarea
+            required
+            className="w-full resize-none rounded-lg border border-gray-600 bg-slate-700 px-4 py-3 text-white transition-colors placeholder:text-gray-400 focus:border-green-500 focus:outline-none"
+            id="message"
+            name="message"
+            onChange={handleChange}
+            placeholder="Tell us more about your inquiry..."
+            rows={6}
+            value={formData.message}
+          />
+        </div>
+
+        <button
+          className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg enabled:hover:shadow-green-500/25 disabled:opacity-40"
+          disabled={status !== statuses.PENDING}
+          type="submit"
+        >
+          <SendIcon className="mr-2 size-5" />
+          <Typography as="span" variant="content">
+            {status === statuses.IN_PROGRESS ? 'Loading...' : 'Send Message'}
+          </Typography>
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;

@@ -9,7 +9,7 @@ export interface RecursiveType<T> {
   [key: string]: T | RecursiveType<T>;
 }
 
-interface Children {
+export interface Children {
   children: ReactNode;
 }
 

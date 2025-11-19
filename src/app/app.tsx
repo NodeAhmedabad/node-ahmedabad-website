@@ -1,12 +1,12 @@
-import MaintenanceMode from '@/components/MaintenanceMode/MaintenanceMode';
+import MaintenanceMode from '@/components/maintenanceMode/MaintenanceMode';
 import config from '@/config';
 
 import type { Layout } from '@/types';
 
-const App: Layout = ({ children }) => {
+const App: Layout = async ({ children }) => {
   const isInMaintenance = config.MAINTENANCE_MODE === 'ON';
 
-  return <main id="main">{isInMaintenance ? <MaintenanceMode /> : children}</main>;
+  return isInMaintenance ? <MaintenanceMode /> : children;
 };
 
 export default App;

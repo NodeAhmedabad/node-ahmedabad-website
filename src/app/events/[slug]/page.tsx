@@ -1,0 +1,44 @@
+import { notFound } from 'next/navigation';
+
+import EventAgenda from '@/components/events/event/EventAgenda';
+import EventHeader from '@/components/events/event/EventHeader';
+import EventSpeakers from '@/components/events/event/EventSpeakers';
+import EventSponsors from '@/components/events/event/EventSponsors';
+import EventGallery from '@/components/events/event/gallery/EventGallery';
+import constants from '@/constants';
+import events from '@/data/events/events';
+import MainLayout from '@/layouts/MainLayout';
+
+import type { GenerateMetadata, ParamsComponent } from '@/types/next';
+
+export const generateMetadata: GenerateMetadata<'slug'> = async (props) => {
+  const { params } = props;
+  const { slug } = await params;
+
+  const event = events.find((item) => item.slug === slug);
+
+  return {
+    title: [...(event?.title ? [event.title] : []), constants.APP_NAME].join(' | '),
+  };
+};
+
+const TeamMemberPage: ParamsComponent<'slug'> = async (props) => {
+  const { params } = props;
+  const { slug } = await params;
+
+  const event = events.find((item) => item.slug === slug);
+
+  if (!event) return notFound();
+
+  return (
+    <MainLayout>
+      <EventHeader event={event} />
+      {event.agenda.length > 0 ? <EventAgenda event={event} /> : null}
+      {event.speakers.length > 0 ? <EventSpeakers event={event} /> : null}
+      {event.gallery.length > 0 ? <EventGallery event={event} /> : null}
+      {event.sponsors.length > 0 ? <EventSponsors event={event} /> : null}
+    </MainLayout>
+  );
+};
+
+export default TeamMemberPage;

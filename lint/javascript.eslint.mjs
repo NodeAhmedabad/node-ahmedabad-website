@@ -1,7 +1,10 @@
 import js from '@eslint/js';
 import { configs, plugins } from 'eslint-config-airbnb-extended';
 import promisePlugin from 'eslint-plugin-promise';
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
 import unicornPlugin from 'eslint-plugin-unicorn';
+
+import config from '../prettier.config.mjs';
 
 const customJSESLintConfig = [
   // ESLint Recommended Rules
@@ -38,6 +41,15 @@ const customJSESLintConfig = [
       'unicorn/no-null': 'off',
       'unicorn/no-array-reduce': 'off',
       'unicorn/consistent-function-scoping': 'off',
+    },
+  },
+  ...tailwindcssPlugin.configs['flat/recommended'],
+  {
+    settings: {
+      tailwindcss: {
+        config: './tailwind.config.ts',
+        callees: config.tailwindFunctions,
+      },
     },
   },
 ];

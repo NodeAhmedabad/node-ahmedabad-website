@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 
 import { Analytics } from '@vercel/analytics/next';
+import { Toaster } from 'sonner';
 
 import App from '@/app/app';
 import constants from '@/constants';
@@ -16,9 +17,17 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: Layout = async ({ children }) => (
-  <html lang="en">
-    <body>
+  <html className="scroll-smooth" lang="en">
+    <body className="bg-slate-900 antialiased">
       <Suspense fallback={null}>
+        <Toaster
+          richColors
+          duration={5000}
+          position="top-right"
+          toastOptions={{
+            className: '!text-[16px]',
+          }}
+        />
         <App>{children}</App>
       </Suspense>
       <Analytics />

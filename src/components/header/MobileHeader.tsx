@@ -1,0 +1,69 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import Section from '@/components/Section';
+import Typography from '@/components/ui/Typography';
+import menu, { menuButtonText } from '@/data/homepage/menu';
+import cn from '@/lib/cn';
+
+import type { Dispatch, SetStateAction } from 'react';
+
+import type { Component } from '@/types';
+
+interface MobileHeaderProps {
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const MobileHeader: Component<MobileHeaderProps> = (props) => {
+  const { setIsMenuOpen } = props;
+
+  const pathname = usePathname();
+
+  return (
+    <Section
+      as="div"
+      className="absolute inset-x-0 top-full animate-fade-in !scroll-mt-4 border-b border-green-500/20 bg-slate-900/95 !py-4 backdrop-blur-lg lg:hidden"
+    >
+      <div className="flex flex-col gap-3">
+        {menu.map((item) => {
+          const { name, path, icon: Icon, className } = item;
+
+          return (
+            <Link
+              key={name}
+              href={path}
+              onClick={() => setIsMenuOpen(false)}
+              className={cn(
+                'flex items-center gap-x-3 rounded-lg px-4 py-3 transition-all duration-300',
+                pathname === path
+                  ? 'bg-green-400/10 text-green-400'
+                  : 'text-gray-300 hover:bg-green-400/5 hover:text-green-400',
+                className,
+              )}
+            >
+              <Icon className="size-5" />
+              <Typography as="span" color="content" variant="content" weight="medium">
+                {name}
+              </Typography>
+            </Link>
+          );
+        })}
+        <div className="border-t border-gray-700 pt-4">
+          <Link
+            className="block w-full rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 text-center text-white transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
+            href="/community"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Typography as="span" color="white" variant="content" weight="semibold">
+              {menuButtonText}
+            </Typography>
+          </Link>
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+export default MobileHeader;
