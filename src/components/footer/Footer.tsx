@@ -102,8 +102,8 @@ const Footer: Component = () => (
       <div className="mt-12 border-t border-gray-800 pt-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <Typography as="p" className="text-center md:text-left" color="gray-400" variant="sm">
-            © {new Date().getFullYear()} {constants.APP_NAME}. All rights reserved. Built with ❤️
-            by the community.
+            © {new Date().getFullYear()} {constants.APP_NAME}. All rights reserved. Built with ❤️ by
+            the community.
           </Typography>
           <div className="flex items-center gap-4">
             <div className="size-2 animate-pulse rounded-full bg-green-400" />
